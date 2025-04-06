@@ -16,39 +16,67 @@ interface ScheduleItem {
 const scheduleData: Record<string, ScheduleItem[]> = {
   'day1': [
     { 
-      time: '09:00 - 10:00', 
-      title: 'Opening Keynote: The Future of Innovation', 
-      speaker: 'Michel Dubois', 
+      time: '07:00 - 12:00', 
+      title: 'Arrivals', 
+      speaker: 'Conference Staff', 
+      location: 'Main Entrance',
+      category: 'Registration'
+    },
+    { 
+      time: '13:00 - 16:00', 
+      title: 'Registration', 
+      speaker: 'Conference Staff', 
+      location: 'Reception Hall',
+      category: 'Registration'
+    },
+    { 
+      time: '18:00', 
+      title: 'Opening Events Ceremonies', 
+      speaker: 'Organizing Committee', 
+      location: 'Main Hall',
+      category: 'Ceremony'
+    },
+    { 
+      time: '18:30', 
+      title: 'Worship', 
+      speaker: 'Worship Team', 
+      location: 'Main Hall',
+      category: 'Worship'
+    },
+    { 
+      time: '19:00', 
+      title: 'Why this Gathering', 
+      speaker: 'Conference Committee', 
+      location: 'Main Hall',
+      category: 'Talk'
+    },
+    { 
+      time: '19:30', 
+      title: 'Opening Remark from Coordinator', 
+      speaker: 'Conference Coordinator', 
       location: 'Main Hall',
       category: 'Keynote'
     },
     { 
-      time: '10:30 - 11:30', 
-      title: 'Design Thinking Workshop', 
-      speaker: 'Sophie Laurent', 
-      location: 'Workshop Room A',
-      category: 'Workshop'
+      time: '20:00', 
+      title: 'The Important of Reaching Europe Sunday', 
+      speaker: 'Dr. Hisham Kamel', 
+      location: 'Main Hall',
+      category: 'Keynote'
     },
     { 
-      time: '12:00 - 13:00', 
-      title: 'Global Market Trends Panel', 
-      speaker: 'Amara Khan & Panel', 
-      location: 'Conference Room B',
-      category: 'Panel'
+      time: '20:45', 
+      title: 'Chairman Address', 
+      speaker: 'Dr. Obed Alvarez - Chairman GCM', 
+      location: 'Main Hall',
+      category: 'Keynote'
     },
     { 
-      time: '14:30 - 15:30', 
-      title: 'Creative Breakthroughs in Technology', 
-      speaker: 'Carlos Rivera', 
-      location: 'Innovation Lab',
-      category: 'Talk'
-    },
-    { 
-      time: '16:00 - 17:30', 
-      title: 'Networking Reception', 
-      speaker: 'All Speakers & Attendees', 
-      location: 'Terrace Lounge',
-      category: 'Networking'
+      time: '21:30', 
+      title: 'Announcement and closing', 
+      speaker: 'Conference Staff', 
+      location: 'Main Hall',
+      category: 'Ceremony'
     }
   ],
   'day2': [
@@ -198,6 +226,8 @@ const Schedule = () => {
       case 'social': return 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200';
       case 'discussion': return 'bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200';
       case 'ceremony': return 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200';
+      case 'worship': return 'bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-200';
+      case 'registration': return 'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200';
       default: return 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300';
     }
   };
