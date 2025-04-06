@@ -11,41 +11,106 @@ interface Speaker {
   role: string;
   company: string;
   image: string;
-  bio: string;
 }
 
 const speakersData: Speaker[] = [
   {
     id: 1,
-    name: 'Sophie Laurent',
-    role: 'Design Director',
-    company: 'Atelier Moderne',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80',
-    bio: 'Leading innovative design strategies across digital and physical experiences.'
+    name: 'David Bogosian',
+    role: 'President/CEO',
+    company: 'Christian Aid Mission',
+    image: '/lovable-uploads/919c036e-6a71-4c21-8820-bb7993fcbc92.png',
   },
   {
     id: 2,
-    name: 'Michel Dubois',
-    role: 'Tech Innovator',
-    company: 'NexGen Solutions',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80',
-    bio: 'Pioneering the future of technology through sustainable, user-centered solutions.'
+    name: 'Gabriel Barau',
+    role: 'Executive Director',
+    company: 'Go International',
+    image: '/lovable-uploads/919c036e-6a71-4c21-8820-bb7993fcbc92.png',
   },
   {
     id: 3,
-    name: 'Amara Khan',
-    role: 'Global Strategist',
-    company: 'Horizon Partners',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80',
-    bio: 'Helping organizations navigate complex global challenges with innovative approaches.'
+    name: 'Enoch Nyador',
+    role: 'Executive Member',
+    company: 'Africa Missions Association',
+    image: '/lovable-uploads/919c036e-6a71-4c21-8820-bb7993fcbc92.png',
   },
   {
     id: 4,
-    name: 'Carlos Rivera',
-    role: 'Creative Director',
-    company: 'Studio Lumière',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80',
-    bio: 'Blending art and technology to create immersive brand experiences worldwide.'
+    name: 'Eliseo Soto',
+    role: 'Pastor',
+    company: 'Kerygma Church',
+    image: '/lovable-uploads/919c036e-6a71-4c21-8820-bb7993fcbc92.png',
+  },
+  {
+    id: 5,
+    name: 'Joshua Lingel',
+    role: 'President',
+    company: 'I2 Ministries',
+    image: '/lovable-uploads/919c036e-6a71-4c21-8820-bb7993fcbc92.png',
+  },
+  {
+    id: 6,
+    name: 'Yong Cho',
+    role: 'General Secretary',
+    company: 'Korean World Mission Council for Christ',
+    image: '/lovable-uploads/919c036e-6a71-4c21-8820-bb7993fcbc92.png',
+  },
+  {
+    id: 7,
+    name: 'Lalano Badoy',
+    role: 'National Director',
+    company: 'Philippine Missions Association',
+    image: '/lovable-uploads/919c036e-6a71-4c21-8820-bb7993fcbc92.png',
+  },
+  {
+    id: 8,
+    name: 'Obed Alvarez',
+    role: 'President',
+    company: 'New World Missions Association',
+    image: '/lovable-uploads/919c036e-6a71-4c21-8820-bb7993fcbc92.png',
+  },
+  {
+    id: 9,
+    name: 'Gbile Akanni',
+    role: 'Director',
+    company: 'The Ministry in Living Seed',
+    image: '/lovable-uploads/919c036e-6a71-4c21-8820-bb7993fcbc92.png',
+  },
+  {
+    id: 10,
+    name: 'Wagih Abdelmassih',
+    role: 'Pastor',
+    company: 'London Arabic Evangelical Church',
+    image: '/lovable-uploads/919c036e-6a71-4c21-8820-bb7993fcbc92.png',
+  },
+  {
+    id: 11,
+    name: 'Hisham Kamel',
+    role: 'President',
+    company: 'Arabic Communication Center',
+    image: '/lovable-uploads/919c036e-6a71-4c21-8820-bb7993fcbc92.png',
+  },
+  {
+    id: 12,
+    name: 'Noel Anderson',
+    role: 'Pastor',
+    company: 'First Presbyterian Church',
+    image: '/lovable-uploads/919c036e-6a71-4c21-8820-bb7993fcbc92.png',
+  },
+  {
+    id: 13,
+    name: 'Sunday Adelaja',
+    role: 'Founder',
+    company: 'Embassy of God Church',
+    image: '/lovable-uploads/919c036e-6a71-4c21-8820-bb7993fcbc92.png',
+  },
+  {
+    id: 14,
+    name: 'Eric Nyamekye',
+    role: 'Chairman',
+    company: 'The Church of Pentecost',
+    image: '/lovable-uploads/919c036e-6a71-4c21-8820-bb7993fcbc92.png',
   },
 ];
 
@@ -80,32 +145,21 @@ const Speakers = () => {
           {t('speakers.description')}
         </p>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-12">
           {speakersData.map((speaker, index) => (
             <div 
               key={speaker.id} 
               className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover-scale reveal"
-              style={{ transitionDelay: `${index * 100}ms` }}
+              style={{ transitionDelay: `${index * 50}ms` }}
             >
-              <div className="relative h-64 bg-paris-blue/5 dark:bg-paris-blue/20">
-                <Avatar className="w-40 h-40 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 border-4 border-white dark:border-gray-700">
+              <div className="p-6 flex flex-col items-center">
+                <Avatar className="w-24 h-24 mb-4 border-2 border-paris-blue dark:border-paris-gold">
                   <AvatarImage src={speaker.image} alt={speaker.name} />
                   <AvatarFallback>{speaker.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                 </Avatar>
-              </div>
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-semibold mb-1 dark:text-white">{speaker.name}</h3>
-                <p className="text-paris-blue dark:text-paris-gold font-medium">{speaker.role}</p>
-                <p className="text-gray-500 dark:text-gray-400 mb-4">{speaker.company}</p>
-                <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">{speaker.bio}</p>
-                <div className="flex justify-center space-x-3">
-                  <button className="text-paris-blue hover:text-paris-navy transition-colors dark:text-paris-gold dark:hover:text-yellow-400">
-                    <Twitter size={18} />
-                  </button>
-                  <button className="text-paris-blue hover:text-paris-navy transition-colors dark:text-paris-gold dark:hover:text-yellow-400">
-                    <Linkedin size={18} />
-                  </button>
-                </div>
+                <h3 className="text-xl font-semibold mb-1 text-center dark:text-white">{speaker.name}</h3>
+                <p className="text-paris-blue dark:text-paris-gold font-medium text-center">{speaker.role}</p>
+                <p className="text-gray-500 dark:text-gray-400 text-center">{speaker.company}</p>
               </div>
             </div>
           ))}
