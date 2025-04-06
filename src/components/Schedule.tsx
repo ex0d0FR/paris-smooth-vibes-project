@@ -1,6 +1,4 @@
-
 import React, { useEffect, useState, useCallback } from 'react';
-import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Clock } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -346,13 +344,10 @@ const Schedule = () => {
   const [preloadedData, setPreloadedData] = useState<Record<string, ScheduleItem[]>>({});
   const { t } = useTranslation();
   
-  // Preload first activities of each day
   useEffect(() => {
     const preload = async () => {
-      // Simulate network delay (remove in production)
       await new Promise(resolve => setTimeout(resolve, 300));
       
-      // Create preloaded data with first 3 activities of each day
       const preloaded: Record<string, ScheduleItem[]> = {};
       Object.keys(scheduleData).forEach(day => {
         preloaded[day] = scheduleData[day].slice(0, 3);
@@ -365,10 +360,8 @@ const Schedule = () => {
     preload();
   }, []);
   
-  // Load remaining data when day tab is clicked
   useEffect(() => {
     if (!loading && !preloadedData[activeDay]) {
-      // If this day isn't loaded yet, load it now
       setPreloadedData(prev => ({
         ...prev,
         [activeDay]: scheduleData[activeDay]
@@ -376,7 +369,6 @@ const Schedule = () => {
     }
   }, [activeDay, loading, preloadedData]);
   
-  // Reveal all schedule items that are in the viewport
   const checkScheduleVisibility = useCallback(() => {
     const revealElements = document.querySelectorAll('#schedule .reveal');
     revealElements.forEach(el => {
@@ -390,7 +382,6 @@ const Schedule = () => {
     });
   }, []);
   
-  // Setup intersection observer for reveal animation
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -400,13 +391,11 @@ const Schedule = () => {
       });
     }, { threshold: 0.1 });
 
-    // When preloadedData changes or component mounts, reobserve elements
     const revealElements = document.querySelectorAll('#schedule .reveal');
     revealElements.forEach(el => {
       observer.observe(el);
     });
 
-    // Trigger a manual check for elements in viewport
     setTimeout(checkScheduleVisibility, 100);
 
     return () => {
@@ -416,19 +405,16 @@ const Schedule = () => {
     };
   }, [preloadedData, activeDay, checkScheduleVisibility]);
   
-  // Handle tab change with explicit scroll check
   const handleTabChange = useCallback((value: string) => {
     setActiveDay(value);
     
     if (!preloadedData[value] || preloadedData[value].length < scheduleData[value].length) {
-      // Load all data for this day if not already loaded
       setPreloadedData(prev => ({
         ...prev, 
         [value]: scheduleData[value]
       }));
     }
     
-    // Force re-check reveal elements on tab change
     setTimeout(checkScheduleVisibility, 50);
   }, [preloadedData, checkScheduleVisibility]);
   
@@ -452,10 +438,8 @@ const Schedule = () => {
     }
   };
   
-  // Function to render schedule items or skeleton loading state
   const renderScheduleItems = (day: string) => {
     if (loading) {
-      // Show skeleton loading for first 3 items
       return Array(3).fill(0).map((_, index) => (
         <div key={index} className="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 shadow-sm flex flex-col sm:flex-row gap-4 reveal">
           <div className="sm:w-1/4">
@@ -520,12 +504,6 @@ const Schedule = () => {
               </TabsContent>
             ))}
           </Tabs>
-          
-          <div className="text-center mt-10 reveal" style={{ transitionDelay: '600ms' }}>
-            <Button className="bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy">
-              {t('schedule.download')}
-            </Button>
-          </div>
         </div>
       </div>
     </section>
