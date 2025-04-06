@@ -73,10 +73,10 @@ const Speakers = () => {
   }, []);
   
   return (
-    <section id="speakers" className="py-20">
+    <section id="speakers" className="py-20 dark:bg-gray-900">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 reveal">{t('speakers.title')}</h2>
-        <p className="text-lg text-center mb-16 max-w-3xl mx-auto text-gray-600 reveal" style={{ transitionDelay: '100ms' }}>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 reveal dark:text-white">{t('speakers.title')}</h2>
+        <p className="text-lg text-center mb-16 max-w-3xl mx-auto text-gray-600 dark:text-gray-300 reveal" style={{ transitionDelay: '100ms' }}>
           {t('speakers.description')}
         </p>
         
@@ -84,25 +84,25 @@ const Speakers = () => {
           {speakersData.map((speaker, index) => (
             <div 
               key={speaker.id} 
-              className="bg-white rounded-lg overflow-hidden shadow-md hover-scale reveal"
+              className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover-scale reveal"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="relative h-64 bg-paris-blue/5">
-                <Avatar className="w-40 h-40 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 border-4 border-white">
+              <div className="relative h-64 bg-paris-blue/5 dark:bg-paris-blue/20">
+                <Avatar className="w-40 h-40 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 border-4 border-white dark:border-gray-700">
                   <AvatarImage src={speaker.image} alt={speaker.name} />
                   <AvatarFallback>{speaker.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                 </Avatar>
               </div>
               <div className="p-6 text-center">
-                <h3 className="text-xl font-semibold mb-1">{speaker.name}</h3>
-                <p className="text-paris-blue font-medium">{speaker.role}</p>
-                <p className="text-gray-500 mb-4">{speaker.company}</p>
-                <p className="text-gray-600 mb-4 text-sm">{speaker.bio}</p>
+                <h3 className="text-xl font-semibold mb-1 dark:text-white">{speaker.name}</h3>
+                <p className="text-paris-blue dark:text-paris-gold font-medium">{speaker.role}</p>
+                <p className="text-gray-500 dark:text-gray-400 mb-4">{speaker.company}</p>
+                <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">{speaker.bio}</p>
                 <div className="flex justify-center space-x-3">
-                  <button className="text-paris-blue hover:text-paris-navy transition-colors">
+                  <button className="text-paris-blue hover:text-paris-navy transition-colors dark:text-paris-gold dark:hover:text-yellow-400">
                     <Twitter size={18} />
                   </button>
-                  <button className="text-paris-blue hover:text-paris-navy transition-colors">
+                  <button className="text-paris-blue hover:text-paris-navy transition-colors dark:text-paris-gold dark:hover:text-yellow-400">
                     <Linkedin size={18} />
                   </button>
                 </div>
@@ -112,7 +112,7 @@ const Speakers = () => {
         </div>
         
         <div className="text-center reveal" style={{ transitionDelay: '600ms' }}>
-          <Button variant="outline" className="border-paris-blue text-paris-blue hover:bg-paris-blue hover:text-white">
+          <Button variant="outline" className="border-paris-blue text-paris-blue hover:bg-paris-blue hover:text-white dark:border-paris-gold dark:text-paris-gold dark:hover:bg-paris-gold dark:hover:text-paris-navy">
             {t('speakers.viewAll')}
           </Button>
         </div>
