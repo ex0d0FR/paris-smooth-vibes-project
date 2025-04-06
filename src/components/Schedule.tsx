@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Clock } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Skeleton } from '@/components/ui/skeleton';
 
 interface ScheduleItem {
   time: string;
@@ -341,7 +342,39 @@ const scheduleData: Record<string, ScheduleItem[]> = {
 
 const Schedule = () => {
   const [activeDay, setActiveDay] = useState('day1');
+  const [loading, setLoading] = useState(true);
+  const [preloadedData, setPreloadedData] = useState<Record<string, ScheduleItem[]>>({});
   const { t } = useTranslation();
+  
+  // Preload first activities of each day
+  useEffect(() => {
+    const preload = async () => {
+      // Simulate network delay (remove in production)
+      await new Promise(resolve => setTimeout(resolve, 300));
+      
+      // Create preloaded data with first 3 activities of each day
+      const preloaded: Record<string, ScheduleItem[]> = {};
+      Object.keys(scheduleData).forEach(day => {
+        preloaded[day] = scheduleData[day].slice(0, 3);
+      });
+      
+      setPreloadedData(preloaded);
+      setLoading(false);
+    };
+    
+    preload();
+  }, []);
+  
+  // Load remaining data when day tab is clicked
+  useEffect(() => {
+    if (!loading && !preloadedData[activeDay]) {
+      // If this day isn't loaded yet, load it now
+      setPreloadedData(prev => ({
+        ...prev,
+        [activeDay]: scheduleData[activeDay]
+      }));
+    }
+  }, [activeDay, loading, preloadedData]);
   
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -361,7 +394,7 @@ const Schedule = () => {
         observer.unobserve(el);
       });
     };
-  }, []);
+  }, [preloadedData]);
   
   const getCategoryColor = (category: string) => {
     switch(category.toLowerCase()) {
@@ -383,6 +416,51 @@ const Schedule = () => {
     }
   };
   
+  // Function to render schedule items or skeleton loading state
+  const renderScheduleItems = (day: string) => {
+    if (loading) {
+      // Show skeleton loading for first 3 items
+      return Array(3).fill(0).map((_, index) => (
+        <div key={index} className="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 shadow-sm flex flex-col sm:flex-row gap-4 reveal">
+          <div className="sm:w-1/4">
+            <Skeleton className="h-4 w-20 mb-2" />
+            <Skeleton className="h-3 w-16" />
+          </div>
+          <div className="sm:w-3/4">
+            <Skeleton className="h-5 w-3/4 mb-2" />
+            <Skeleton className="h-4 w-1/2" />
+          </div>
+        </div>
+      ));
+    }
+    
+    const itemsToRender = preloadedData[day] || [];
+    
+    return itemsToRender.map((item, index) => (
+      <div 
+        key={index}
+        className="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row gap-4 reveal"
+        style={{ transitionDelay: `${index * 100}ms` }}
+      >
+        <div className="sm:w-1/4">
+          <div className="flex items-center">
+            <Clock className="mr-2 text-paris-blue dark:text-paris-gold h-4 w-4" />
+            <span className="text-sm font-medium dark:text-gray-200">{item.time}</span>
+          </div>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{item.location}</p>
+          <span className={`inline-block px-2 py-1 rounded text-xs font-medium mt-2 ${getCategoryColor(item.category)}`}>
+            {item.category}
+          </span>
+        </div>
+        
+        <div className="sm:w-3/4">
+          <h3 className="text-lg font-semibold dark:text-white">{item.title}</h3>
+          <p className="text-paris-blue dark:text-paris-gold">{item.speaker}</p>
+        </div>
+      </div>
+    ));
+  };
+  
   return (
     <section id="schedule" className="py-20 bg-paris-light dark:bg-gray-900">
       <div className="container mx-auto px-4">
@@ -392,7 +470,16 @@ const Schedule = () => {
         </p>
         
         <div className="max-w-4xl mx-auto reveal" style={{ transitionDelay: '200ms' }}>
-          <Tabs defaultValue="day1" className="w-full" onValueChange={setActiveDay}>
+          <Tabs defaultValue="day1" className="w-full" onValueChange={(value) => {
+            setActiveDay(value);
+            if (!preloadedData[value] || preloadedData[value].length < scheduleData[value].length) {
+              // Load all data for this day if not already loaded
+              setPreloadedData(prev => ({
+                ...prev, 
+                [value]: scheduleData[value]
+              }));
+            }
+          }}>
             <TabsList className="grid grid-cols-4 mb-8">
               <TabsTrigger value="day1" className="text-sm sm:text-base">{t('schedule.day1')}</TabsTrigger>
               <TabsTrigger value="day2" className="text-sm sm:text-base">{t('schedule.day2')}</TabsTrigger>
@@ -402,29 +489,7 @@ const Schedule = () => {
             
             {Object.keys(scheduleData).map((day) => (
               <TabsContent key={day} value={day} className="space-y-4">
-                {scheduleData[day].map((item, index) => (
-                  <div 
-                    key={index}
-                    className="bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row gap-4 reveal"
-                    style={{ transitionDelay: `${index * 100}ms` }}
-                  >
-                    <div className="sm:w-1/4">
-                      <div className="flex items-center">
-                        <Clock className="mr-2 text-paris-blue dark:text-paris-gold h-4 w-4" />
-                        <span className="text-sm font-medium dark:text-gray-200">{item.time}</span>
-                      </div>
-                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{item.location}</p>
-                      <span className={`inline-block px-2 py-1 rounded text-xs font-medium mt-2 ${getCategoryColor(item.category)}`}>
-                        {item.category}
-                      </span>
-                    </div>
-                    
-                    <div className="sm:w-3/4">
-                      <h3 className="text-lg font-semibold dark:text-white">{item.title}</h3>
-                      <p className="text-paris-blue dark:text-paris-gold">{item.speaker}</p>
-                    </div>
-                  </div>
-                ))}
+                {renderScheduleItems(day)}
               </TabsContent>
             ))}
           </Tabs>
