@@ -49,7 +49,7 @@ const Hero = () => {
         <p className="text-paris-pink font-medium mb-2 reveal">October 12-15, 2025 | Paris, France</p>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 text-shadow reveal" style={{ transitionDelay: '200ms' }}>
           PARIS 2025<br /> 
-          <span className="text-paris-gold">INTERNATIONAL</span> CONFERENCE
+          <span className="text-paris-gold">BUILDING MISSIONARY</span> BRIDGES
         </h1>
         <p className="text-white text-lg md:text-xl max-w-2xl mx-auto mb-8 reveal" style={{ transitionDelay: '400ms' }}>
           Join us for the most anticipated global conference bringing together thought leaders, innovators and changemakers in the heart of Paris.

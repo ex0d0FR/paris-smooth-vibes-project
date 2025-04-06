@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <h2 className="text-2xl font-bold mb-4">PARIS<span className="text-paris-gold">2025</span></h2>
             <p className="text-white/80 mb-4">
-              The most anticipated global conference bringing together thought leaders, innovators and changemakers.
+              Building Missionary Bridges: bringing together thought leaders, innovators and changemakers.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-white hover:text-paris-gold transition-colors">
@@ -77,7 +77,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-white/10 pt-8 text-center text-white/60 text-sm">
-          <p>&copy; {currentYear} PARIS 2025 Conference. All rights reserved.</p>
+          <p>&copy; {currentYear} PARIS 2025 - Building Missionary Bridges. All rights reserved.</p>
           <div className="mt-2 flex justify-center space-x-4">
             <a href="#" className="hover:text-paris-gold transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-paris-gold transition-colors">Terms of Service</a>
