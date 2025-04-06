@@ -123,15 +123,18 @@
 
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
+  @apply dark:bg-gray-800;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 5px;
+  @apply dark:bg-gray-600;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+  @apply dark:bg-gray-500;
 }
 
 .reveal {

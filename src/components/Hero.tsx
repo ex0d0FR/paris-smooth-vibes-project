@@ -41,7 +41,7 @@ const Hero = () => {
             backgroundPosition: "center"
           }}
         />
-        <div className="absolute inset-0 hero-gradient"></div>
+        <div className="absolute inset-0 hero-gradient dark:bg-black/70"></div>
       </div>
       
       {/* Content */}
@@ -55,10 +55,10 @@ const Hero = () => {
           Join us for the most anticipated global conference bringing together thought leaders, innovators and changemakers in the heart of Paris.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center reveal" style={{ transitionDelay: '600ms' }}>
-          <Button onClick={scrollToRegister} size="lg" className="bg-paris-gold text-paris-navy hover:bg-yellow-500 font-semibold px-8">
+          <Button onClick={scrollToRegister} size="lg" className="bg-paris-gold text-paris-navy hover:bg-yellow-500 font-semibold px-8 dark:bg-paris-gold dark:hover:bg-yellow-400">
             Register Now
           </Button>
-          <Button variant="outline" size="lg" className="text-white border-white hover:bg-white/10 px-8">
+          <Button variant="outline" size="lg" className="text-white border-white hover:bg-white/10 px-8 dark:border-white dark:text-white dark:hover:bg-white/20">
             Learn More
           </Button>
         </div>
