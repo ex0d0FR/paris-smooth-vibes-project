@@ -13,7 +13,7 @@ const Index = () => {
   useEffect(() => {
     // Add scroll reveal effect
     const revealElements = () => {
-      const reveals = document.querySelectorAll('.reveal');
+      const reveals = document.querySelectorAll('.reveal:not(#schedule .reveal)');
       
       reveals.forEach((el) => {
         const windowHeight = window.innerHeight;
@@ -28,6 +28,19 @@ const Index = () => {
     
     window.addEventListener('scroll', revealElements);
     revealElements(); // Run once to check initial elements in view
+    
+    // Delay check to ensure schedule elements are properly revealed
+    setTimeout(() => {
+      const scheduleSection = document.getElementById('schedule');
+      if (scheduleSection) {
+        const isInView = scheduleSection.getBoundingClientRect().top < window.innerHeight;
+        if (isInView) {
+          // Force a visibility check on schedule items
+          const event = new CustomEvent('scroll');
+          window.dispatchEvent(event);
+        }
+      }
+    }, 800);
     
     return () => window.removeEventListener('scroll', revealElements);
   }, []);

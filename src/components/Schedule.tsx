@@ -376,6 +376,20 @@ const Schedule = () => {
     }
   }, [activeDay, loading, preloadedData]);
   
+  // Reveal all schedule items that are in the viewport
+  const checkScheduleVisibility = useCallback(() => {
+    const revealElements = document.querySelectorAll('#schedule .reveal');
+    revealElements.forEach(el => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      const elementVisible = 150;
+      
+      if (elementTop < windowHeight - elementVisible) {
+        el.classList.add('revealed');
+      }
+    });
+  }, []);
+  
   // Setup intersection observer for reveal animation
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -392,17 +406,15 @@ const Schedule = () => {
       observer.observe(el);
     });
 
-    // Trigger a manual check for visibility on initial load and day change
-    setTimeout(() => {
-      window.dispatchEvent(new CustomEvent('scroll'));
-    }, 100);
+    // Trigger a manual check for elements in viewport
+    setTimeout(checkScheduleVisibility, 100);
 
     return () => {
       revealElements.forEach(el => {
         observer.unobserve(el);
       });
     };
-  }, [preloadedData, activeDay]);
+  }, [preloadedData, activeDay, checkScheduleVisibility]);
   
   // Handle tab change with explicit scroll check
   const handleTabChange = useCallback((value: string) => {
@@ -417,19 +429,8 @@ const Schedule = () => {
     }
     
     // Force re-check reveal elements on tab change
-    setTimeout(() => {
-      const revealElements = document.querySelectorAll('#schedule .reveal');
-      revealElements.forEach(el => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < windowHeight - elementVisible) {
-          el.classList.add('revealed');
-        }
-      });
-    }, 50);
-  }, [preloadedData]);
+    setTimeout(checkScheduleVisibility, 50);
+  }, [preloadedData, checkScheduleVisibility]);
   
   const getCategoryColor = (category: string) => {
     switch(category.toLowerCase()) {
