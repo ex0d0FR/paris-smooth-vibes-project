@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -28,7 +27,7 @@ const speakersData: Speaker[] = [
     name: 'Gabriel Barau',
     role: 'Executive Director',
     company: 'Go International',
-    image: '/lovable-uploads/919c036e-6a71-4c21-8820-bb7993fcbc92.png',
+    image: '/lovable-uploads/afd7c32b-4c31-48d5-b548-da5e5d0b53e3.png',
   },
   {
     id: 3,
