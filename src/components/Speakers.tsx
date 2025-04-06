@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardContent } from "@/components/ui/card";
 import { Linkedin, Twitter } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -147,21 +148,30 @@ const Speakers = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-12">
           {speakersData.map((speaker, index) => (
-            <div 
+            <Card 
               key={speaker.id} 
               className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover-scale reveal"
               style={{ transitionDelay: `${index * 50}ms` }}
             >
-              <div className="p-6 flex flex-col items-center">
+              <CardContent className="p-6 flex flex-col items-center">
                 <Avatar className="w-24 h-24 mb-4 border-2 border-paris-blue dark:border-paris-gold">
-                  <AvatarImage src={speaker.image} alt={speaker.name} />
+                  <AvatarImage 
+                    src={speaker.image} 
+                    alt={speaker.name} 
+                    className="object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.onerror = null;
+                      target.src = '/placeholder.svg';
+                    }}
+                  />
                   <AvatarFallback>{speaker.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                 </Avatar>
                 <h3 className="text-xl font-semibold mb-1 text-center dark:text-white">{speaker.name}</h3>
                 <p className="text-paris-blue dark:text-paris-gold font-medium text-center">{speaker.role}</p>
                 <p className="text-gray-500 dark:text-gray-400 text-center">{speaker.company}</p>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
         
