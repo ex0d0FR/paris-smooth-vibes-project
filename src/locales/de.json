@@ -1,0 +1,125 @@
+
+{
+  "common": {
+    "languageName": "Deutsch"
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "speakers": "Redner",
+    "schedule": "Zeitplan",
+    "venue": "Veranstaltungsort",
+    "register": "Anmeldung"
+  },
+  "hero": {
+    "date": "12.-15. Oktober 2025 | Paris, Frankreich",
+    "title": "PARIS 2025",
+    "subtitle": "MISSIONARISCHE BRÜCKEN BAUEN",
+    "description": "Nehmen Sie an der mit Spannung erwarteten globalen Konferenz teil, die Vordenker, Innovatoren und Wegbereiter im Herzen von Paris zusammenbringt.",
+    "registerNow": "Jetzt anmelden",
+    "learnMore": "Mehr erfahren"
+  },
+  "about": {
+    "title": "Über die Konferenz",
+    "para1": "PARIS 2025 bringt die klügsten Köpfe und Branchenführer aus der ganzen Welt zusammen, um Ideen auszutauschen, Trends zu diskutieren und die Zukunft zu gestalten.",
+    "para2": "Während vier intensiver Tage im Herzen von Paris werden die Teilnehmer an anregenden Sitzungen, praktischen Workshops und unvergleichlichen Networking-Möglichkeiten teilnehmen.",
+    "para3": "Ob erfahrener Profi, aufstrebender Stern oder einfach nur von Innovation begeistert - PARIS 2025 verspricht ein unvergessliches Erlebnis, das inspiriert und stärkt.",
+    "highlights": {
+      "days": {
+        "title": "4 Tage",
+        "description": "Mit intensiven Sitzungen, Workshops und Networking-Events"
+      },
+      "speakers": {
+        "title": "Über 50 Redner",
+        "description": "Vordenker und Experten aus der ganzen Welt"
+      },
+      "venues": {
+        "title": "Symbolträchtige Orte",
+        "description": "Im Herzen des wunderschönen Paris gelegen"
+      },
+      "attendees": {
+        "title": "Über 2.000 Teilnehmer",
+        "description": "Aus mehr als 60 Ländern weltweit"
+      }
+    }
+  },
+  "speakers": {
+    "title": "Unsere Redner",
+    "description": "Hören Sie von Pionieren, Innovatoren und Vordenkern, die die Zukunft gestalten",
+    "viewAll": "Alle Redner ansehen"
+  },
+  "schedule": {
+    "title": "Konferenz-Zeitplan",
+    "description": "Planen Sie Ihr PARIS 2025-Erlebnis mit unserem umfassenden Programm",
+    "day1": "Tag 1 (12. Okt)",
+    "day2": "Tag 2 (13. Okt)",
+    "day3": "Tag 3 (14. Okt)",
+    "download": "Vollständigen Zeitplan herunterladen"
+  },
+  "venue": {
+    "title": "Informationen zum Veranstaltungsort",
+    "description": "PARIS 2025 findet im prestigeträchtigen Palais des Congrès statt, einem hochmodernen Konferenzzentrum im Herzen von Paris.",
+    "address": {
+      "name": "Palais des Congrès de Paris",
+      "street": "2 Place de la Porte Maillot",
+      "city": "75017 Paris, Frankreich"
+    },
+    "contact": {
+      "phone": "+33 (0)1 40 68 22 22",
+      "email": "info@paris2025.net"
+    },
+    "transport": {
+      "title": "Anfahrt",
+      "metro": "Mit der Metro: Linie 1, Station Porte Maillot",
+      "rer": "Mit dem RER: Linie C, Station Neuilly - Porte Maillot",
+      "bus": "Mit dem Bus: Linien 43, 73, 82, PC1, PC3",
+      "cdg": "Vom Flughafen Charles de Gaulle: 45 Minuten mit dem Taxi oder mit dem Air France Shuttle",
+      "orly": "Vom Flughafen Orly: 30 Minuten mit dem Taxi"
+    }
+  },
+  "register": {
+    "title": "Anmeldung für PARIS 2025",
+    "description": "Sichern Sie sich Ihren Platz auf der meisterwarteten globalen Konferenz des Jahres. Frühbucherpreise für begrenzte Zeit verfügbar.",
+    "tiers": {
+      "standard": {
+        "name": "Standard",
+        "price": "599 €",
+        "description": "Perfekt für Einzelpersonen",
+        "button": "Jetzt anmelden"
+      },
+      "professional": {
+        "name": "Professional",
+        "price": "999 €",
+        "description": "Bestes Preis-Leistungs-Verhältnis für Fachleute",
+        "button": "Jetzt anmelden"
+      },
+      "executive": {
+        "name": "Executive",
+        "price": "1.499 €",
+        "description": "Komplettes VIP-Erlebnis",
+        "button": "Jetzt anmelden"
+      }
+    },
+    "questions": "Haben Sie Fragen zur Anmeldung oder benötigen Sie Unterstützung?",
+    "contact": "Kontaktieren Sie uns"
+  },
+  "footer": {
+    "description": "Missionarische Brücken bauen: Vordenker, Innovatoren und Wegbereiter zusammenbringen.",
+    "quickLinks": "Schnelllinks",
+    "conferenceInfo": "Konferenz-Informationen",
+    "contactUs": "Kontakt",
+    "infoItems": {
+      "faqs": "Häufig gestellte Fragen",
+      "travel": "Reiseinformationen",
+      "visa": "Visa-Anforderungen",
+      "accommodations": "Unterkünfte",
+      "media": "Medienpaket"
+    },
+    "copyright": "© 2025 PARIS 2025 - Missionarische Brücken bauen. Alle Rechte vorbehalten.",
+    "policies": {
+      "privacy": "Datenschutzrichtlinie",
+      "terms": "Nutzungsbedingungen",
+      "cookies": "Cookie-Richtlinie"
+    }
+  }
+}

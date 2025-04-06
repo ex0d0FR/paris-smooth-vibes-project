@@ -1,0 +1,125 @@
+
+{
+  "common": {
+    "languageName": "English"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "speakers": "Speakers",
+    "schedule": "Schedule",
+    "venue": "Venue",
+    "register": "Register"
+  },
+  "hero": {
+    "date": "October 12-15, 2025 | Paris, France",
+    "title": "PARIS 2025",
+    "subtitle": "BUILDING MISSIONARY BRIDGES",
+    "description": "Join us for the most anticipated global conference bringing together thought leaders, innovators and changemakers in the heart of Paris.",
+    "registerNow": "Register Now",
+    "learnMore": "Learn More"
+  },
+  "about": {
+    "title": "About The Conference",
+    "para1": "PARIS 2025 brings together the brightest minds and industry leaders from around the globe to exchange ideas, discuss trends, and shape the future.",
+    "para2": "Over four immersive days in the heart of Paris, attendees will engage in thought-provoking sessions, hands-on workshops, and unparalleled networking opportunities.",
+    "para3": "Whether you're a seasoned professional, a rising star, or simply passionate about innovation, PARIS 2025 promises an unforgettable experience that will inspire and empower.",
+    "highlights": {
+      "days": {
+        "title": "4 Days",
+        "description": "Of immersive sessions, workshops and networking events"
+      },
+      "speakers": {
+        "title": "50+ Speakers",
+        "description": "Thought leaders and experts from around the world"
+      },
+      "venues": {
+        "title": "Iconic Venues",
+        "description": "Located in the heart of beautiful Paris"
+      },
+      "attendees": {
+        "title": "2,000+ Attendees",
+        "description": "From over 60 countries worldwide"
+      }
+    }
+  },
+  "speakers": {
+    "title": "Our Speakers",
+    "description": "Hear from pioneers, innovators, and thought leaders who are shaping the future",
+    "viewAll": "View All Speakers"
+  },
+  "schedule": {
+    "title": "Conference Schedule",
+    "description": "Plan your PARIS 2025 experience with our comprehensive program",
+    "day1": "Day 1 (Oct 12)",
+    "day2": "Day 2 (Oct 13)",
+    "day3": "Day 3 (Oct 14)",
+    "download": "Download Full Schedule"
+  },
+  "venue": {
+    "title": "Venue Information",
+    "description": "PARIS 2025 will take place at the prestigious Palais des Congrès, a state-of-the-art conference center in the heart of Paris.",
+    "address": {
+      "name": "Palais des Congrès de Paris",
+      "street": "2 Place de la Porte Maillot",
+      "city": "75017 Paris, France"
+    },
+    "contact": {
+      "phone": "+33 (0)1 40 68 22 22",
+      "email": "info@paris2025.net"
+    },
+    "transport": {
+      "title": "Getting There",
+      "metro": "By Metro: Line 1, Porte Maillot station",
+      "rer": "By RER: Line C, Neuilly - Porte Maillot station",
+      "bus": "By Bus: Lines 43, 73, 82, PC1, PC3",
+      "cdg": "From Charles de Gaulle Airport: 45 minutes by taxi or Air France shuttle",
+      "orly": "From Orly Airport: 30 minutes by taxi"
+    }
+  },
+  "register": {
+    "title": "Register for PARIS 2025",
+    "description": "Secure your spot at the most anticipated global conference of the year. Early bird pricing available for a limited time.",
+    "tiers": {
+      "standard": {
+        "name": "Standard",
+        "price": "€599",
+        "description": "Perfect for individuals",
+        "button": "Register Now"
+      },
+      "professional": {
+        "name": "Professional",
+        "price": "€999",
+        "description": "Best value for professionals",
+        "button": "Register Now"
+      },
+      "executive": {
+        "name": "Executive",
+        "price": "€1,499",
+        "description": "Complete VIP experience",
+        "button": "Register Now"
+      }
+    },
+    "questions": "Have questions about registration or need assistance?",
+    "contact": "Contact Us"
+  },
+  "footer": {
+    "description": "Building Missionary Bridges: bringing together thought leaders, innovators and changemakers.",
+    "quickLinks": "Quick Links",
+    "conferenceInfo": "Conference Info",
+    "contactUs": "Contact Us",
+    "infoItems": {
+      "faqs": "FAQs",
+      "travel": "Travel Information",
+      "visa": "Visa Requirements",
+      "accommodations": "Accommodations",
+      "media": "Media Kit"
+    },
+    "copyright": "© 2025 PARIS 2025 - Building Missionary Bridges. All rights reserved.",
+    "policies": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy"
+    }
+  }
+}

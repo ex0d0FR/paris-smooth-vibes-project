@@ -1,0 +1,125 @@
+
+{
+  "common": {
+    "languageName": "Français"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "speakers": "Intervenants",
+    "schedule": "Programme",
+    "venue": "Lieu",
+    "register": "Inscription"
+  },
+  "hero": {
+    "date": "12-15 octobre 2025 | Paris, France",
+    "title": "PARIS 2025",
+    "subtitle": "CONSTRUIRE DES PONTS MISSIONNAIRES",
+    "description": "Rejoignez la conférence mondiale la plus attendue, réunissant des leaders d'opinion, des innovateurs et des acteurs du changement au cœur de Paris.",
+    "registerNow": "S'inscrire",
+    "learnMore": "En savoir plus"
+  },
+  "about": {
+    "title": "À propos de la conférence",
+    "para1": "PARIS 2025 rassemble les esprits les plus brillants et les leaders de l'industrie du monde entier pour échanger des idées, discuter des tendances et façonner l'avenir.",
+    "para2": "Pendant quatre jours immersifs au cœur de Paris, les participants s'engageront dans des sessions stimulantes, des ateliers pratiques et des opportunités de réseautage sans pareil.",
+    "para3": "Que vous soyez un professionnel aguerri, une étoile montante ou simplement passionné par l'innovation, PARIS 2025 promet une expérience inoubliable qui inspirera et dynamisera.",
+    "highlights": {
+      "days": {
+        "title": "4 Jours",
+        "description": "De sessions immersives, d'ateliers et d'événements de réseautage"
+      },
+      "speakers": {
+        "title": "Plus de 50 Intervenants",
+        "description": "Leaders d'opinion et experts du monde entier"
+      },
+      "venues": {
+        "title": "Lieux Emblématiques",
+        "description": "Situés au cœur du magnifique Paris"
+      },
+      "attendees": {
+        "title": "Plus de 2 000 Participants",
+        "description": "Provenant de plus de 60 pays"
+      }
+    }
+  },
+  "speakers": {
+    "title": "Nos Intervenants",
+    "description": "Écoutez des pionniers, des innovateurs et des leaders d'opinion qui façonnent l'avenir",
+    "viewAll": "Voir tous les intervenants"
+  },
+  "schedule": {
+    "title": "Programme de la Conférence",
+    "description": "Planifiez votre expérience PARIS 2025 avec notre programme complet",
+    "day1": "Jour 1 (12 Oct)",
+    "day2": "Jour 2 (13 Oct)",
+    "day3": "Jour 3 (14 Oct)",
+    "download": "Télécharger le programme complet"
+  },
+  "venue": {
+    "title": "Informations sur le Lieu",
+    "description": "PARIS 2025 se tiendra au prestigieux Palais des Congrès, un centre de conférence ultramoderne au cœur de Paris.",
+    "address": {
+      "name": "Palais des Congrès de Paris",
+      "street": "2 Place de la Porte Maillot",
+      "city": "75017 Paris, France"
+    },
+    "contact": {
+      "phone": "+33 (0)1 40 68 22 22",
+      "email": "info@paris2025.net"
+    },
+    "transport": {
+      "title": "Comment s'y rendre",
+      "metro": "En métro : Ligne 1, station Porte Maillot",
+      "rer": "En RER : Ligne C, station Neuilly - Porte Maillot",
+      "bus": "En bus : Lignes 43, 73, 82, PC1, PC3",
+      "cdg": "Depuis l'aéroport Charles de Gaulle : 45 minutes en taxi ou navette Air France",
+      "orly": "Depuis l'aéroport d'Orly : 30 minutes en taxi"
+    }
+  },
+  "register": {
+    "title": "Inscrivez-vous pour PARIS 2025",
+    "description": "Réservez votre place à la conférence mondiale la plus attendue de l'année. Tarifs préférentiels disponibles pour une durée limitée.",
+    "tiers": {
+      "standard": {
+        "name": "Standard",
+        "price": "599 €",
+        "description": "Parfait pour les particuliers",
+        "button": "S'inscrire"
+      },
+      "professional": {
+        "name": "Professionnel",
+        "price": "999 €",
+        "description": "Meilleur rapport qualité-prix pour les professionnels",
+        "button": "S'inscrire"
+      },
+      "executive": {
+        "name": "Exécutif",
+        "price": "1 499 €",
+        "description": "Expérience VIP complète",
+        "button": "S'inscrire"
+      }
+    },
+    "questions": "Vous avez des questions sur l'inscription ou besoin d'assistance ?",
+    "contact": "Contactez-nous"
+  },
+  "footer": {
+    "description": "Construire des Ponts Missionnaires : rassembler des leaders d'opinion, des innovateurs et des acteurs du changement.",
+    "quickLinks": "Liens Rapides",
+    "conferenceInfo": "Informations sur la Conférence",
+    "contactUs": "Contactez-nous",
+    "infoItems": {
+      "faqs": "FAQ",
+      "travel": "Informations de Voyage",
+      "visa": "Exigences de Visa",
+      "accommodations": "Hébergement",
+      "media": "Kit Médias"
+    },
+    "copyright": "© 2025 PARIS 2025 - Construire des Ponts Missionnaires. Tous droits réservés.",
+    "policies": {
+      "privacy": "Politique de Confidentialité",
+      "terms": "Conditions d'Utilisation",
+      "cookies": "Politique de Cookies"
+    }
+  }
+}

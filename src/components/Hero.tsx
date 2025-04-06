@@ -1,9 +1,12 @@
 
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
 
 const Hero = () => {
+  const { t } = useTranslation();
+  
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -46,20 +49,20 @@ const Hero = () => {
       
       {/* Content */}
       <div className="container mx-auto px-4 z-10 text-center">
-        <p className="text-paris-pink font-medium mb-2 reveal">October 12-15, 2025 | Paris, France</p>
+        <p className="text-paris-pink font-medium mb-2 reveal">{t('hero.date')}</p>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 text-shadow reveal" style={{ transitionDelay: '200ms' }}>
-          PARIS 2025<br /> 
-          <span className="text-paris-gold">BUILDING MISSIONARY</span> BRIDGES
+          {t('hero.title')}<br /> 
+          <span className="text-paris-gold">{t('hero.subtitle')}</span>
         </h1>
         <p className="text-white text-lg md:text-xl max-w-2xl mx-auto mb-8 reveal" style={{ transitionDelay: '400ms' }}>
-          Join us for the most anticipated global conference bringing together thought leaders, innovators and changemakers in the heart of Paris.
+          {t('hero.description')}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center reveal" style={{ transitionDelay: '600ms' }}>
           <Button onClick={scrollToRegister} size="lg" className="bg-paris-gold text-paris-navy hover:bg-yellow-500 font-semibold px-8 dark:bg-paris-gold dark:hover:bg-yellow-400">
-            Register Now
+            {t('hero.registerNow')}
           </Button>
           <Button variant="outline" size="lg" className="text-white border-white hover:bg-white/10 px-8 dark:border-white dark:text-white dark:hover:bg-white/20">
-            Learn More
+            {t('hero.learnMore')}
           </Button>
         </div>
       </div>

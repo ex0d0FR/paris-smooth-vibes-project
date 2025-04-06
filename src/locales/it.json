@@ -1,0 +1,125 @@
+
+{
+  "common": {
+    "languageName": "Italiano"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "Chi siamo",
+    "speakers": "Relatori",
+    "schedule": "Programma",
+    "venue": "Sede",
+    "register": "Registrazione"
+  },
+  "hero": {
+    "date": "12-15 ottobre 2025 | Parigi, Francia",
+    "title": "PARIGI 2025",
+    "subtitle": "COSTRUIRE PONTI MISSIONARI",
+    "description": "Partecipa alla conferenza globale più attesa che riunisce leader di pensiero, innovatori e promotori del cambiamento nel cuore di Parigi.",
+    "registerNow": "Registrati Ora",
+    "learnMore": "Scopri di Più"
+  },
+  "about": {
+    "title": "Sulla Conferenza",
+    "para1": "PARIGI 2025 riunisce le menti più brillanti e i leader del settore da tutto il mondo per scambiare idee, discutere tendenze e modellare il futuro.",
+    "para2": "Durante quattro giorni immersivi nel cuore di Parigi, i partecipanti si impegneranno in sessioni stimolanti, workshop pratici e opportunità di networking senza pari.",
+    "para3": "Che tu sia un professionista esperto, una stella nascente o semplicemente appassionato di innovazione, PARIGI 2025 promette un'esperienza indimenticabile che ispirerà e darà potere.",
+    "highlights": {
+      "days": {
+        "title": "4 Giorni",
+        "description": "Di sessioni immersive, workshop ed eventi di networking"
+      },
+      "speakers": {
+        "title": "Oltre 50 Relatori",
+        "description": "Leader di pensiero ed esperti da tutto il mondo"
+      },
+      "venues": {
+        "title": "Sedi Iconiche",
+        "description": "Situate nel cuore della magnifica Parigi"
+      },
+      "attendees": {
+        "title": "Oltre 2.000 Partecipanti",
+        "description": "Da più di 60 paesi in tutto il mondo"
+      }
+    }
+  },
+  "speakers": {
+    "title": "I Nostri Relatori",
+    "description": "Ascolta pionieri, innovatori e leader di pensiero che stanno plasmando il futuro",
+    "viewAll": "Vedi Tutti i Relatori"
+  },
+  "schedule": {
+    "title": "Programma della Conferenza",
+    "description": "Pianifica la tua esperienza PARIGI 2025 con il nostro programma completo",
+    "day1": "Giorno 1 (12 Ott)",
+    "day2": "Giorno 2 (13 Ott)",
+    "day3": "Giorno 3 (14 Ott)",
+    "download": "Scarica il Programma Completo"
+  },
+  "venue": {
+    "title": "Informazioni sulla Sede",
+    "description": "PARIGI 2025 si svolgerà presso il prestigioso Palais des Congrès, un centro conferenze all'avanguardia nel cuore di Parigi.",
+    "address": {
+      "name": "Palais des Congrès de Paris",
+      "street": "2 Place de la Porte Maillot",
+      "city": "75017 Parigi, Francia"
+    },
+    "contact": {
+      "phone": "+33 (0)1 40 68 22 22",
+      "email": "info@paris2025.net"
+    },
+    "transport": {
+      "title": "Come Arrivare",
+      "metro": "In metropolitana: Linea 1, stazione Porte Maillot",
+      "rer": "In RER: Linea C, stazione Neuilly - Porte Maillot",
+      "bus": "In autobus: Linee 43, 73, 82, PC1, PC3",
+      "cdg": "Dall'aeroporto Charles de Gaulle: 45 minuti in taxi o navetta Air France",
+      "orly": "Dall'aeroporto di Orly: 30 minuti in taxi"
+    }
+  },
+  "register": {
+    "title": "Registrati per PARIGI 2025",
+    "description": "Assicurati il tuo posto alla conferenza globale più attesa dell'anno. Prezzi scontati disponibili per un tempo limitato.",
+    "tiers": {
+      "standard": {
+        "name": "Standard",
+        "price": "€599",
+        "description": "Perfetto per i singoli",
+        "button": "Registrati Ora"
+      },
+      "professional": {
+        "name": "Professionale",
+        "price": "€999",
+        "description": "Miglior rapporto qualità-prezzo per i professionisti",
+        "button": "Registrati Ora"
+      },
+      "executive": {
+        "name": "Executive",
+        "price": "€1.499",
+        "description": "Esperienza VIP completa",
+        "button": "Registrati Ora"
+      }
+    },
+    "questions": "Hai domande sulla registrazione o hai bisogno di assistenza?",
+    "contact": "Contattaci"
+  },
+  "footer": {
+    "description": "Costruire Ponti Missionari: riunire leader di pensiero, innovatori e promotori del cambiamento.",
+    "quickLinks": "Link Rapidi",
+    "conferenceInfo": "Informazioni sulla Conferenza",
+    "contactUs": "Contattaci",
+    "infoItems": {
+      "faqs": "FAQ",
+      "travel": "Informazioni di Viaggio",
+      "visa": "Requisiti per il Visto",
+      "accommodations": "Alloggi",
+      "media": "Kit per i Media"
+    },
+    "copyright": "© 2025 PARIGI 2025 - Costruire Ponti Missionari. Tutti i diritti riservati.",
+    "policies": {
+      "privacy": "Informativa sulla Privacy",
+      "terms": "Termini di Servizio",
+      "cookies": "Politica dei Cookie"
+    }
+  }
+}

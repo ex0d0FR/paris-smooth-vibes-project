@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/context/ThemeProvider";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import './i18n';
 
 const queryClient = new QueryClient();
 
