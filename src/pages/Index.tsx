@@ -8,6 +8,7 @@ import Schedule from '@/components/Schedule';
 import Venue from '@/components/Venue';
 import Register from '@/components/Register';
 import Footer from '@/components/Footer';
+import { Helmet } from 'react-helmet-async';
 
 const Index = () => {
   useEffect(() => {
@@ -45,17 +46,71 @@ const Index = () => {
     return () => window.removeEventListener('scroll', revealElements);
   }, []);
   
+  // JSON-LD structured data for the event
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "PARIS 2025 - Building Missionary Bridges",
+    "description": "Join us for the PARIS 2025 Building Missionary Bridges conference in October. Connect with thought leaders and innovators from around the world.",
+    "startDate": "2025-10-15",
+    "endDate": "2025-10-17",
+    "location": {
+      "@type": "Place",
+      "name": "Palais des Congrès de Paris",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2 Place de la Porte Maillot",
+        "addressLocality": "Paris",
+        "postalCode": "75017",
+        "addressCountry": "FR"
+      }
+    },
+    "image": "https://images.unsplash.com/photo-1499856871958-5b9357976b82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "In-Person Registration",
+        "price": "100",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "name": "Virtual Registration",
+        "price": "40",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      }
+    ],
+    "organizer": {
+      "@type": "Organization",
+      "name": "PARIS 2025 Conference Team",
+      "url": "https://paris2025.lovable.app"
+    }
+  };
+
   return (
-    <div className="min-h-screen overflow-x-hidden">
-      <Navbar />
-      <Hero />
-      <About />
-      <Speakers />
-      <Schedule />
-      <Venue />
-      <Register />
-      <Footer />
-    </div>
+    <>
+      <Helmet>
+        <title>PARIS 2025 - Building Missionary Bridges Conference</title>
+        <meta name="description" content="Join us for the PARIS 2025 Building Missionary Bridges conference in October. Connect with thought leaders and innovators from around the world." />
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
+      <div className="min-h-screen overflow-x-hidden">
+        <Navbar />
+        <main id="main-content">
+          <Hero />
+          <About />
+          <Speakers />
+          <Schedule />
+          <Venue />
+          <Register />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 
