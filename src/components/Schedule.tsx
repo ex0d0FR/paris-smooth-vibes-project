@@ -81,39 +81,88 @@ const scheduleData: Record<string, ScheduleItem[]> = {
   ],
   'day2': [
     { 
-      time: '09:30 - 10:30', 
-      title: 'Sustainability & Future Business Models', 
-      speaker: 'Amara Khan', 
+      time: '8:30 - 9:30', 
+      title: 'Spiritual Awakening (Devotion)', 
+      speaker: 'Worship Team', 
       location: 'Main Hall',
-      category: 'Keynote'
+      category: 'Devotion'
     },
     { 
-      time: '11:00 - 12:30', 
-      title: 'Interactive Design Sprint', 
-      speaker: 'Sophie Laurent & Team', 
-      location: 'Workshop Room A',
+      time: '9:30 - 10:45', 
+      title: 'Building the missionary bridges', 
+      speaker: 'Dr. Obed Alvarez', 
+      location: 'Main Hall',
+      category: 'Plenary'
+    },
+    { 
+      time: '10:45 - 10:55', 
+      title: 'Reflection and prayers', 
+      speaker: 'Conference Staff', 
+      location: 'Main Hall',
+      category: 'Reflection'
+    },
+    { 
+      time: '10:55 - 12:00', 
+      title: 'Breaking the barrier of secularism in Europe', 
+      speaker: 'Dr. Stefan', 
+      location: 'Main Hall',
+      category: 'Plenary'
+    },
+    { 
+      time: '12:00 - 12:10', 
+      title: 'Reflection and prayers', 
+      speaker: 'Conference Staff', 
+      location: 'Main Hall',
+      category: 'Reflection'
+    },
+    { 
+      time: '12:10 - 12:50', 
+      title: 'The states of the unreached people and the rise of Islam in Europe', 
+      speaker: 'Waggih Abdulmasih', 
+      location: 'Main Hall',
+      category: 'Plenary'
+    },
+    { 
+      time: '12:50 - 2:30', 
+      title: 'Lunch and Collaboration', 
+      speaker: 'All Attendees', 
+      location: 'Dining Hall',
+      category: 'Meal'
+    },
+    { 
+      time: '2:30 - 4:00', 
+      title: 'Workshop', 
+      speaker: 'Conference Staff', 
+      location: 'Workshop Rooms',
       category: 'Workshop'
     },
     { 
-      time: '14:00 - 15:00', 
-      title: 'Technology Implementation Case Studies', 
-      speaker: 'Michel Dubois & Industry Leaders', 
-      location: 'Conference Room C',
-      category: 'Panel'
+      time: '4:10 - 5:10', 
+      title: 'Biblical foundation for reaching Europe', 
+      speaker: 'Apostle Eric Nyamekye', 
+      location: 'Main Hall',
+      category: 'Plenary'
     },
     { 
-      time: '15:30 - 16:30', 
-      title: 'Visual Storytelling Masterclass', 
-      speaker: 'Carlos Rivera', 
-      location: 'Studio Space',
-      category: 'Workshop'
+      time: '5:10 - 5:20', 
+      title: 'Reflection', 
+      speaker: 'Conference Staff', 
+      location: 'Main Hall',
+      category: 'Reflection'
     },
     { 
-      time: '17:00 - 19:00', 
-      title: 'Cocktail Reception & Art Exhibition', 
-      speaker: 'Featuring Local Artists', 
-      location: 'Gallery Hall',
-      category: 'Social'
+      time: '5:20 - 6:30', 
+      title: 'Reflection', 
+      speaker: 'Conference Staff', 
+      location: 'Main Hall',
+      category: 'Reflection'
+    },
+    { 
+      time: '6:30 - 7:30', 
+      title: 'Dinner', 
+      speaker: 'All Attendees', 
+      location: 'Dining Hall',
+      category: 'Meal'
     }
   ],
   'day3': [
@@ -228,6 +277,10 @@ const Schedule = () => {
       case 'ceremony': return 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200';
       case 'worship': return 'bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-200';
       case 'registration': return 'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200';
+      case 'devotion': return 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200';
+      case 'plenary': return 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200';
+      case 'reflection': return 'bg-slate-100 text-slate-800 dark:bg-slate-900 dark:text-slate-200';
+      case 'meal': return 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200';
       default: return 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300';
     }
   };
