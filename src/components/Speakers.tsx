@@ -1,8 +1,9 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Linkedin, Twitter } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -117,6 +118,8 @@ const speakersData: Speaker[] = [
 
 const Speakers = () => {
   const { t } = useTranslation();
+  const [imageLoaded, setImageLoaded] = useState<Record<number, boolean>>({});
+  const [imageError, setImageError] = useState<Record<number, boolean>>({});
   
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -138,6 +141,15 @@ const Speakers = () => {
     };
   }, []);
   
+  const handleImageLoad = (id: number) => {
+    setImageLoaded(prev => ({ ...prev, [id]: true }));
+  };
+  
+  const handleImageError = (id: number) => {
+    console.log(`Image error for speaker ${id}`);
+    setImageError(prev => ({ ...prev, [id]: true }));
+  };
+  
   return (
     <section id="speakers" className="py-20 dark:bg-gray-900">
       <div className="container mx-auto px-4">
@@ -154,22 +166,41 @@ const Speakers = () => {
               style={{ transitionDelay: `${index * 50}ms` }}
             >
               <CardContent className="p-6 flex flex-col items-center">
-                <Avatar className="w-24 h-24 mb-4 border-2 border-paris-blue dark:border-paris-gold">
-                  <AvatarImage 
-                    src={speaker.image} 
-                    alt={speaker.name} 
-                    className="object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.onerror = null;
-                      target.src = '/placeholder.svg';
-                    }}
-                  />
-                  <AvatarFallback>{speaker.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                </Avatar>
+                <div className="relative w-24 h-24 mb-4">
+                  {!imageLoaded[speaker.id] && !imageError[speaker.id] && (
+                    <Skeleton className="w-24 h-24 rounded-full absolute" />
+                  )}
+                  <Avatar className="w-24 h-24 border-2 border-paris-blue dark:border-paris-gold">
+                    <AvatarImage 
+                      src={speaker.image} 
+                      alt={speaker.name} 
+                      className="object-cover"
+                      onLoad={() => handleImageLoad(speaker.id)}
+                      onError={() => handleImageError(speaker.id)}
+                    />
+                    <AvatarFallback>
+                      {imageError[speaker.id] ? (
+                        <img 
+                          src="/placeholder.svg" 
+                          alt={speaker.name} 
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        speaker.name.split(' ').map(n => n[0]).join('')
+                      )}
+                    </AvatarFallback>
+                  </Avatar>
+                </div>
                 <h3 className="text-xl font-semibold mb-1 text-center dark:text-white">{speaker.name}</h3>
                 <p className="text-paris-blue dark:text-paris-gold font-medium text-center">{speaker.role}</p>
                 <p className="text-gray-500 dark:text-gray-400 text-center">{speaker.company}</p>
+                
+                {speaker.id === 1 && (
+                  <div className="mt-3 text-center">
+                    <p className="text-xs text-gray-500 dark:text-gray-400">Image path: {speaker.image}</p>
+                    {imageError[speaker.id] && <p className="text-xs text-red-500">Image failed to load</p>}
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}
