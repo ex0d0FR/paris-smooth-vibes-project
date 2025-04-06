@@ -19,7 +19,7 @@ const speakersData: Speaker[] = [
     name: 'David Bogosian',
     role: 'President/CEO',
     company: 'Christian Aid Mission',
-    image: '/lovable-uploads/919c036e-6a71-4c21-8820-bb7993fcbc92.png',
+    image: '/lovable-uploads/d0642fe9-a11f-4450-8cce-3e892a775fb5.png',
   },
   {
     id: 2,
