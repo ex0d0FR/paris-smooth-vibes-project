@@ -1,3 +1,4 @@
+
 {
   "common": {
     "languageName": "Deutsch"
@@ -50,9 +51,10 @@
   "schedule": {
     "title": "Konferenz-Zeitplan",
     "description": "Planen Sie Ihr PARIS 2025-Erlebnis mit unserem umfassenden Programm",
-    "day1": "Tag 1 (12. Okt)",
-    "day2": "Tag 2 (13. Okt)",
-    "day3": "Tag 3 (14. Okt)",
+    "day1": "Tag 1 (28. Okt)",
+    "day2": "Tag 2 (29. Okt)",
+    "day3": "Tag 3 (30. Okt)",
+    "day4": "Tag 4 (31. Okt)",
     "download": "Vollständigen Zeitplan herunterladen"
   },
   "venue": {
