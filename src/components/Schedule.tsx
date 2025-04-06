@@ -175,9 +175,9 @@ const Schedule = () => {
         <div className="max-w-4xl mx-auto reveal" style={{ transitionDelay: '200ms' }}>
           <Tabs defaultValue="day1" className="w-full" onValueChange={setActiveDay}>
             <TabsList className="grid grid-cols-3 mb-8">
-              <TabsTrigger value="day1" className="text-sm sm:text-base">{t('schedule.day1')}</TabsTrigger>
-              <TabsTrigger value="day2" className="text-sm sm:text-base">{t('schedule.day2')}</TabsTrigger>
-              <TabsTrigger value="day3" className="text-sm sm:text-base">{t('schedule.day3')}</TabsTrigger>
+              <TabsTrigger value="day1" className="text-sm sm:text-base">{t('schedule.day1').replace('12', '28')}</TabsTrigger>
+              <TabsTrigger value="day2" className="text-sm sm:text-base">{t('schedule.day2').replace('13', '29')}</TabsTrigger>
+              <TabsTrigger value="day3" className="text-sm sm:text-base">{t('schedule.day3').replace('14', '30')}</TabsTrigger>
             </TabsList>
             
             {Object.keys(scheduleData).map((day) => (
