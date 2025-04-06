@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Clock } from 'lucide-react';
@@ -376,6 +376,7 @@ const Schedule = () => {
     }
   }, [activeDay, loading, preloadedData]);
   
+  // Setup intersection observer for reveal animation
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -385,15 +386,49 @@ const Schedule = () => {
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.reveal').forEach(el => {
+    // When preloadedData changes or component mounts, reobserve elements
+    const revealElements = document.querySelectorAll('#schedule .reveal');
+    revealElements.forEach(el => {
       observer.observe(el);
     });
 
+    // Trigger a manual check for visibility on initial load and day change
+    setTimeout(() => {
+      window.dispatchEvent(new CustomEvent('scroll'));
+    }, 100);
+
     return () => {
-      document.querySelectorAll('.reveal').forEach(el => {
+      revealElements.forEach(el => {
         observer.unobserve(el);
       });
     };
+  }, [preloadedData, activeDay]);
+  
+  // Handle tab change with explicit scroll check
+  const handleTabChange = useCallback((value: string) => {
+    setActiveDay(value);
+    
+    if (!preloadedData[value] || preloadedData[value].length < scheduleData[value].length) {
+      // Load all data for this day if not already loaded
+      setPreloadedData(prev => ({
+        ...prev, 
+        [value]: scheduleData[value]
+      }));
+    }
+    
+    // Force re-check reveal elements on tab change
+    setTimeout(() => {
+      const revealElements = document.querySelectorAll('#schedule .reveal');
+      revealElements.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < windowHeight - elementVisible) {
+          el.classList.add('revealed');
+        }
+      });
+    }, 50);
   }, [preloadedData]);
   
   const getCategoryColor = (category: string) => {
@@ -470,16 +505,7 @@ const Schedule = () => {
         </p>
         
         <div className="max-w-4xl mx-auto reveal" style={{ transitionDelay: '200ms' }}>
-          <Tabs defaultValue="day1" className="w-full" onValueChange={(value) => {
-            setActiveDay(value);
-            if (!preloadedData[value] || preloadedData[value].length < scheduleData[value].length) {
-              // Load all data for this day if not already loaded
-              setPreloadedData(prev => ({
-                ...prev, 
-                [value]: scheduleData[value]
-              }));
-            }
-          }}>
+          <Tabs defaultValue="day1" className="w-full" onValueChange={handleTabChange}>
             <TabsList className="grid grid-cols-4 mb-8">
               <TabsTrigger value="day1" className="text-sm sm:text-base">{t('schedule.day1')}</TabsTrigger>
               <TabsTrigger value="day2" className="text-sm sm:text-base">{t('schedule.day2')}</TabsTrigger>
