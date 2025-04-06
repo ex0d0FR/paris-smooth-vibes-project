@@ -24,7 +24,7 @@ const pricingTiers: PricingTier[] = [
       'Full conference access (all 3 days)',
       'All workshops included',
       'Networking sessions',
-      'Lunch and refreshments',
+      'Coffee breaks',
       'Conference materials',
       'Gala dinner invitation'
     ],
