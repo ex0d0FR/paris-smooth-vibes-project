@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Linkedin, Twitter } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface Speaker {
   id: number;
@@ -49,6 +50,8 @@ const speakersData: Speaker[] = [
 ];
 
 const Speakers = () => {
+  const { t } = useTranslation();
+  
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -72,9 +75,9 @@ const Speakers = () => {
   return (
     <section id="speakers" className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 reveal">Our Speakers</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 reveal">{t('speakers.title')}</h2>
         <p className="text-lg text-center mb-16 max-w-3xl mx-auto text-gray-600 reveal" style={{ transitionDelay: '100ms' }}>
-          Hear from pioneers, innovators, and thought leaders who are shaping the future
+          {t('speakers.description')}
         </p>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -110,7 +113,7 @@ const Speakers = () => {
         
         <div className="text-center reveal" style={{ transitionDelay: '600ms' }}>
           <Button variant="outline" className="border-paris-blue text-paris-blue hover:bg-paris-blue hover:text-white">
-            View All Speakers
+            {t('speakers.viewAll')}
           </Button>
         </div>
       </div>

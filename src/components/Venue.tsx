@@ -1,8 +1,11 @@
 
 import React, { useEffect } from 'react';
 import { MapPin, Phone, Mail } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Venue = () => {
+  const { t } = useTranslation();
+  
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -28,39 +31,39 @@ const Venue = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 reveal">Venue Information</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 reveal">{t('venue.title')}</h2>
             <p className="text-lg mb-6 reveal" style={{ transitionDelay: '100ms' }}>
-              PARIS 2025 will take place at the prestigious Palais des Congrès, a state-of-the-art conference center in the heart of Paris.
+              {t('venue.description')}
             </p>
             
             <div className="space-y-4 mb-8">
               <div className="flex items-start reveal" style={{ transitionDelay: '200ms' }}>
                 <MapPin className="text-paris-blue mr-3 mt-1 flex-shrink-0" />
                 <p>
-                  <span className="font-medium">Palais des Congrès de Paris</span><br />
-                  2 Place de la Porte Maillot,<br />
-                  75017 Paris, France
+                  <span className="font-medium">{t('venue.address.name')}</span><br />
+                  {t('venue.address.street')}<br />
+                  {t('venue.address.city')}
                 </p>
               </div>
               
               <div className="flex items-center reveal" style={{ transitionDelay: '300ms' }}>
                 <Phone className="text-paris-blue mr-3 flex-shrink-0" />
-                <p>+33 (0)1 40 68 22 22</p>
+                <p>{t('venue.contact.phone')}</p>
               </div>
               
               <div className="flex items-center reveal" style={{ transitionDelay: '400ms' }}>
                 <Mail className="text-paris-blue mr-3 flex-shrink-0" />
-                <p>info@paris2025.net</p>
+                <p>{t('venue.contact.email')}</p>
               </div>
             </div>
             
             <div className="space-y-4 reveal" style={{ transitionDelay: '500ms' }}>
-              <h3 className="text-xl font-semibold">Getting There</h3>
-              <p><span className="font-medium">By Metro:</span> Line 1, Porte Maillot station</p>
-              <p><span className="font-medium">By RER:</span> Line C, Neuilly - Porte Maillot station</p>
-              <p><span className="font-medium">By Bus:</span> Lines 43, 73, 82, PC1, PC3</p>
-              <p><span className="font-medium">From Charles de Gaulle Airport:</span> 45 minutes by taxi or Air France shuttle</p>
-              <p><span className="font-medium">From Orly Airport:</span> 30 minutes by taxi</p>
+              <h3 className="text-xl font-semibold">{t('venue.transport.title')}</h3>
+              <p><span className="font-medium">{t('venue.transport.metro')}</span></p>
+              <p><span className="font-medium">{t('venue.transport.rer')}</span></p>
+              <p><span className="font-medium">{t('venue.transport.bus')}</span></p>
+              <p><span className="font-medium">{t('venue.transport.cdg')}</span></p>
+              <p><span className="font-medium">{t('venue.transport.orly')}</span></p>
             </div>
           </div>
           

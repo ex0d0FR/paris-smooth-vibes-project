@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Clock } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface ScheduleItem {
   time: string;
@@ -128,6 +129,7 @@ const scheduleData: Record<string, ScheduleItem[]> = {
 
 const Schedule = () => {
   const [activeDay, setActiveDay] = useState('day1');
+  const { t } = useTranslation();
   
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -165,17 +167,17 @@ const Schedule = () => {
   return (
     <section id="schedule" className="py-20 bg-paris-light">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 reveal">Conference Schedule</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 reveal">{t('schedule.title')}</h2>
         <p className="text-lg text-center mb-12 max-w-3xl mx-auto text-gray-600 reveal" style={{ transitionDelay: '100ms' }}>
-          Plan your PARIS 2025 experience with our comprehensive program
+          {t('schedule.description')}
         </p>
         
         <div className="max-w-4xl mx-auto reveal" style={{ transitionDelay: '200ms' }}>
           <Tabs defaultValue="day1" className="w-full" onValueChange={setActiveDay}>
             <TabsList className="grid grid-cols-3 mb-8">
-              <TabsTrigger value="day1" className="text-sm sm:text-base">Day 1 (Oct 12)</TabsTrigger>
-              <TabsTrigger value="day2" className="text-sm sm:text-base">Day 2 (Oct 13)</TabsTrigger>
-              <TabsTrigger value="day3" className="text-sm sm:text-base">Day 3 (Oct 14)</TabsTrigger>
+              <TabsTrigger value="day1" className="text-sm sm:text-base">{t('schedule.day1')}</TabsTrigger>
+              <TabsTrigger value="day2" className="text-sm sm:text-base">{t('schedule.day2')}</TabsTrigger>
+              <TabsTrigger value="day3" className="text-sm sm:text-base">{t('schedule.day3')}</TabsTrigger>
             </TabsList>
             
             {Object.keys(scheduleData).map((day) => (
@@ -209,7 +211,7 @@ const Schedule = () => {
           
           <div className="text-center mt-10 reveal" style={{ transitionDelay: '600ms' }}>
             <Button className="bg-paris-blue hover:bg-paris-navy text-white">
-              Download Full Schedule
+              {t('schedule.download')}
             </Button>
           </div>
         </div>

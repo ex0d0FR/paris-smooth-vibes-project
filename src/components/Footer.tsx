@@ -1,9 +1,11 @@
 
 import React from 'react';
 import { Twitter, Linkedin, Facebook, Instagram, Mail, Phone } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
   
   return (
     <footer className="bg-paris-navy text-white pt-16 pb-8">
@@ -12,7 +14,7 @@ const Footer = () => {
           <div>
             <h2 className="text-2xl font-bold mb-4">PARIS<span className="text-paris-gold">2025</span></h2>
             <p className="text-white/80 mb-4">
-              Building Missionary Bridges: bringing together thought leaders, innovators and changemakers.
+              {t('footer.description')}
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-white hover:text-paris-gold transition-colors">
@@ -31,15 +33,22 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
-              {['Home', 'About', 'Speakers', 'Schedule', 'Venue', 'Register'].map((item) => (
-                <li key={item}>
+              {[
+                { key: 'home', label: 'Home' }, 
+                { key: 'about', label: 'About' }, 
+                { key: 'speakers', label: 'Speakers' }, 
+                { key: 'schedule', label: 'Schedule' }, 
+                { key: 'venue', label: 'Venue' }, 
+                { key: 'register', label: 'Register' }
+              ].map((item) => (
+                <li key={item.key}>
                   <a 
-                    href={`#${item.toLowerCase()}`}
+                    href={`#${item.key}`}
                     className="text-white/80 hover:text-paris-gold transition-colors"
                   >
-                    {item}
+                    {t(`nav.${item.key}`)}
                   </a>
                 </li>
               ))}
@@ -47,18 +56,18 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Conference Info</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.conferenceInfo')}</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">FAQs</a></li>
-              <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">Travel Information</a></li>
-              <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">Visa Requirements</a></li>
-              <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">Accommodations</a></li>
-              <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">Media Kit</a></li>
+              <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('footer.infoItems.faqs')}</a></li>
+              <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('footer.infoItems.travel')}</a></li>
+              <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('footer.infoItems.visa')}</a></li>
+              <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('footer.infoItems.accommodations')}</a></li>
+              <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('footer.infoItems.media')}</a></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.contactUs')}</h3>
             <div className="space-y-3">
               <div className="flex items-center">
                 <Mail className="mr-2 h-5 w-5" />
@@ -77,11 +86,11 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-white/10 pt-8 text-center text-white/60 text-sm">
-          <p>&copy; {currentYear} PARIS 2025 - Building Missionary Bridges. All rights reserved.</p>
+          <p>{t('footer.copyright')}</p>
           <div className="mt-2 flex justify-center space-x-4">
-            <a href="#" className="hover:text-paris-gold transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-paris-gold transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-paris-gold transition-colors">Cookie Policy</a>
+            <a href="#" className="hover:text-paris-gold transition-colors">{t('footer.policies.privacy')}</a>
+            <a href="#" className="hover:text-paris-gold transition-colors">{t('footer.policies.terms')}</a>
+            <a href="#" className="hover:text-paris-gold transition-colors">{t('footer.policies.cookies')}</a>
           </div>
         </div>
       </div>

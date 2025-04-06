@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Check } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
+import { useTranslation } from 'react-i18next';
 
 interface PricingTier {
   name: string;
@@ -61,6 +62,7 @@ const pricingTiers: PricingTier[] = [
 
 const Register = () => {
   const { toast } = useToast();
+  const { t } = useTranslation();
   
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -94,9 +96,9 @@ const Register = () => {
     <section id="register" className="py-20 bg-gradient-to-br from-paris-blue to-paris-navy text-white">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 reveal">Register for PARIS 2025</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 reveal">{t('register.title')}</h2>
           <p className="text-lg text-white/90 reveal" style={{ transitionDelay: '100ms' }}>
-            Secure your spot at the most anticipated global conference of the year. Early bird pricing available for a limited time.
+            {t('register.description')}
           </p>
         </div>
         
@@ -109,10 +111,10 @@ const Register = () => {
             >
               <Card className={`h-full flex flex-col ${tier.isPrimary ? 'border-paris-gold shadow-lg border-2' : ''}`}>
                 <CardHeader className={tier.isPrimary ? 'bg-paris-gold/10' : ''}>
-                  <CardTitle className="text-2xl">{tier.name}</CardTitle>
-                  <CardDescription className="text-white/70">{tier.description}</CardDescription>
+                  <CardTitle className="text-2xl">{t(`register.tiers.${tier.name.toLowerCase()}.name`)}</CardTitle>
+                  <CardDescription className="text-white/70">{t(`register.tiers.${tier.name.toLowerCase()}.description`)}</CardDescription>
                   <div className="mt-2">
-                    <span className="text-3xl font-bold">{tier.price}</span>
+                    <span className="text-3xl font-bold">{t(`register.tiers.${tier.name.toLowerCase()}.price`)}</span>
                     <span className="text-sm text-white/70"> / attendee</span>
                   </div>
                 </CardHeader>
@@ -129,7 +131,7 @@ const Register = () => {
                     className={`w-full ${tier.isPrimary ? 'bg-paris-gold hover:bg-yellow-500 text-paris-navy' : 'bg-white hover:bg-white/90 text-paris-navy'}`}
                     onClick={() => handleRegister(tier.name)}
                   >
-                    {tier.buttonText}
+                    {t(`register.tiers.${tier.name.toLowerCase()}.button`)}
                   </Button>
                 </CardContent>
               </Card>
@@ -138,9 +140,9 @@ const Register = () => {
         </div>
         
         <div className="text-center mt-12 reveal" style={{ transitionDelay: '400ms' }}>
-          <p className="text-white/80 mb-4">Have questions about registration or need assistance?</p>
+          <p className="text-white/80 mb-4">{t('register.questions')}</p>
           <Button variant="outline" className="border-white text-white hover:bg-white/10">
-            Contact Us
+            {t('register.contact')}
           </Button>
         </div>
       </div>

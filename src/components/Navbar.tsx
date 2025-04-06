@@ -1,14 +1,16 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import ThemeToggle from './ThemeToggle';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const { t } = useTranslation();
 
   // Handle scroll and highlight active nav item based on section
   useEffect(() => {
@@ -43,6 +45,15 @@ const Navbar = () => {
     }
   };
 
+  const navItems = [
+    { id: 'home', label: t('nav.home') },
+    { id: 'about', label: t('nav.about') },
+    { id: 'speakers', label: t('nav.speakers') },
+    { id: 'schedule', label: t('nav.schedule') },
+    { id: 'venue', label: t('nav.venue') },
+    { id: 'register', label: t('nav.register') }
+  ];
+
   return (
     <header className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 py-3",
@@ -55,20 +66,20 @@ const Navbar = () => {
         
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center space-x-6">
-          {['home', 'about', 'speakers', 'schedule', 'venue', 'register'].map((item) => (
+          {navItems.map((item) => (
             <button 
-              key={item}
-              onClick={() => scrollToSection(item)}
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
               className={cn(
                 "font-medium capitalize transition-all hover:text-paris-blue dark:hover:text-paris-gold",
-                activeSection === item 
+                activeSection === item.id 
                   ? "text-paris-blue dark:text-paris-gold" 
                   : isScrolled 
                     ? "text-paris-navy dark:text-white" 
                     : "text-white"
               )}
             >
-              {item}
+              {item.label}
             </button>
           ))}
           <ThemeToggle />
@@ -76,7 +87,7 @@ const Navbar = () => {
             className="bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy"
             onClick={() => scrollToSection('register')}
           >
-            Register Now
+            {t('nav.register')}
           </Button>
         </nav>
         
@@ -97,20 +108,20 @@ const Navbar = () => {
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         )}>
           <div className="flex flex-col space-y-6 mt-16">
-            {['home', 'about', 'speakers', 'schedule', 'venue', 'register'].map((item) => (
+            {navItems.map((item) => (
               <button
-                key={item}
-                onClick={() => scrollToSection(item)}
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
                 className="text-xl font-medium capitalize py-2 border-b border-gray-200 dark:border-gray-700 dark:text-white"
               >
-                {item}
+                {item.label}
               </button>
             ))}
             <Button 
               className="bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy w-full"
               onClick={() => scrollToSection('register')}
             >
-              Register Now
+              {t('nav.register')}
             </Button>
           </div>
         </div>
