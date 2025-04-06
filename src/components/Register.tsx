@@ -17,44 +17,31 @@ interface PricingTier {
 
 const pricingTiers: PricingTier[] = [
   {
-    name: 'Standard',
-    price: '€599',
-    description: 'Perfect for individuals',
-    features: [
-      'Access to all keynotes',
-      '2-day pass (Oct 12-13)',
-      'Networking sessions',
-      'Lunch and refreshments',
-      'Conference materials'
-    ],
-    buttonText: 'Register Now'
-  },
-  {
-    name: 'Professional',
-    price: '€999',
-    description: 'Best value for professionals',
+    name: 'In-Person',
+    price: '€100',
+    description: 'Complete on-site experience',
     features: [
       'Full conference access (all 3 days)',
       'All workshops included',
-      'Priority seating at keynotes',
-      'Exclusive networking events',
-      'Gala dinner invitation',
-      'Conference swag pack'
+      'Networking sessions',
+      'Lunch and refreshments',
+      'Conference materials',
+      'Gala dinner invitation'
     ],
     buttonText: 'Register Now',
     isPrimary: true
   },
   {
-    name: 'Executive',
-    price: '€1,499',
-    description: 'Complete VIP experience',
+    name: 'Virtual',
+    price: '€40',
+    description: 'Join from anywhere in the world',
     features: [
-      'Everything in Professional',
-      'VIP lounge access',
-      'Private meetups with speakers',
+      'Live stream of all keynotes',
+      'Digital access to workshops',
+      'Online networking opportunities',
       'Recorded sessions access',
-      'Executive dinner invitation',
-      '1-year digital membership'
+      'Digital conference materials',
+      '30-day access to content after event'
     ],
     buttonText: 'Register Now'
   }
@@ -102,7 +89,7 @@ const Register = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {pricingTiers.map((tier, index) => (
             <div 
               key={tier.name}
@@ -111,10 +98,10 @@ const Register = () => {
             >
               <Card className={`h-full flex flex-col ${tier.isPrimary ? 'border-paris-gold shadow-lg border-2' : ''}`}>
                 <CardHeader className={tier.isPrimary ? 'bg-paris-gold/10' : ''}>
-                  <CardTitle className="text-2xl">{t(`register.tiers.${tier.name.toLowerCase()}.name`)}</CardTitle>
-                  <CardDescription className="text-white/70">{t(`register.tiers.${tier.name.toLowerCase()}.description`)}</CardDescription>
+                  <CardTitle className="text-2xl">{tier.name}</CardTitle>
+                  <CardDescription className="text-white/70">{tier.description}</CardDescription>
                   <div className="mt-2">
-                    <span className="text-3xl font-bold">{t(`register.tiers.${tier.name.toLowerCase()}.price`)}</span>
+                    <span className="text-3xl font-bold">{tier.price}</span>
                     <span className="text-sm text-white/70"> / attendee</span>
                   </div>
                 </CardHeader>
@@ -131,7 +118,7 @@ const Register = () => {
                     className={`w-full ${tier.isPrimary ? 'bg-paris-gold hover:bg-yellow-500 text-paris-navy' : 'bg-white hover:bg-white/90 text-paris-navy'}`}
                     onClick={() => handleRegister(tier.name)}
                   >
-                    {t(`register.tiers.${tier.name.toLowerCase()}.button`)}
+                    {tier.buttonText}
                   </Button>
                 </CardContent>
               </Card>
