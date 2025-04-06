@@ -167,39 +167,88 @@ const scheduleData: Record<string, ScheduleItem[]> = {
   ],
   'day3': [
     { 
-      time: '09:00 - 10:00', 
-      title: 'Future Trends Keynote', 
-      speaker: 'Special Guest', 
+      time: '8:30 - 9:30', 
+      title: 'Spiritual Awakening (Devotion)', 
+      speaker: 'Worship Team', 
       location: 'Main Hall',
-      category: 'Keynote'
+      category: 'Devotion'
     },
     { 
-      time: '10:30 - 12:00', 
-      title: 'Innovation Roundtables', 
-      speaker: 'All Speakers', 
-      location: 'Multiple Rooms',
-      category: 'Discussion'
+      time: '9:30 - 10:45', 
+      title: 'Europe and the new missiological Reformation', 
+      speaker: 'David Bogosian', 
+      location: 'Main Hall',
+      category: 'Plenary'
     },
     { 
-      time: '13:30 - 15:00', 
-      title: 'Practical Applications Workshop', 
-      speaker: 'Industry Experts', 
+      time: '10:45 - 10:55', 
+      title: 'Reflection and prayers', 
+      speaker: 'Conference Staff', 
+      location: 'Main Hall',
+      category: 'Reflection'
+    },
+    { 
+      time: '10:55 - 12:00', 
+      title: 'Awakening the diaspora church to reach the host continent', 
+      speaker: 'Dr. Sunday Adelaja', 
+      location: 'Main Hall',
+      category: 'Plenary'
+    },
+    { 
+      time: '12:00 - 12:10', 
+      title: 'Reflection and prayers', 
+      speaker: 'Conference Staff', 
+      location: 'Main Hall',
+      category: 'Reflection'
+    },
+    { 
+      time: '12:10 - 2:30', 
+      title: 'Lunch and Collaboration', 
+      speaker: 'All Attendees', 
+      location: 'Dining Hall',
+      category: 'Meal'
+    },
+    { 
+      time: '2:30 - 4:00', 
+      title: 'Workshop', 
+      speaker: 'Conference Staff', 
       location: 'Workshop Rooms',
       category: 'Workshop'
     },
     { 
-      time: '15:30 - 17:00', 
-      title: 'Closing Panel & Discussion', 
-      speaker: 'All Keynote Speakers', 
+      time: '4:00 - 5:10', 
+      title: 'Discipleship as key to reaching Europe', 
+      speaker: 'Bro. Gbile Akanni', 
       location: 'Main Hall',
-      category: 'Panel'
+      category: 'Plenary'
     },
     { 
-      time: '19:00 - 22:00', 
-      title: 'Gala Dinner', 
+      time: '5:10 - 5:20', 
+      title: 'Reflection and prayers', 
+      speaker: 'Conference Staff', 
+      location: 'Main Hall',
+      category: 'Reflection'
+    },
+    { 
+      time: '5:20 - 6:20', 
+      title: 'The global strategy for reaching Europe', 
+      speaker: 'Gabriel Barau', 
+      location: 'Main Hall',
+      category: 'Plenary'
+    },
+    { 
+      time: '6:20 - 7:30', 
+      title: 'Dinner', 
       speaker: 'All Attendees', 
-      location: 'Le Grand Palais',
-      category: 'Social'
+      location: 'Dining Hall',
+      category: 'Meal'
+    },
+    { 
+      time: '7:30 - 8:00', 
+      title: 'The Uproar for Europe', 
+      speaker: 'Conference Staff', 
+      location: 'Main Hall',
+      category: 'Ceremony'
     }
   ],
   'day4': [
