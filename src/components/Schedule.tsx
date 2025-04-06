@@ -253,39 +253,88 @@ const scheduleData: Record<string, ScheduleItem[]> = {
   ],
   'day4': [
     { 
-      time: '09:30 - 11:00', 
-      title: 'Missionary Bridge Building Workshop', 
-      speaker: 'International Panel of Experts', 
+      time: '8:30 - 9:30', 
+      title: 'Spiritual Awakening (Devotion)', 
+      speaker: 'Worship Team', 
       location: 'Main Hall',
-      category: 'Workshop'
+      category: 'Devotion'
     },
     { 
-      time: '11:30 - 12:30', 
-      title: 'Cross-Cultural Communication', 
-      speaker: 'Dr. Elena Moretti', 
-      location: 'Conference Room A',
-      category: 'Talk'
+      time: '9:30 - 10:45', 
+      title: 'A return from denominationalism to the mission thrust', 
+      speaker: 'Dr. Noel Anderson', 
+      location: 'Main Hall',
+      category: 'Plenary'
     },
     { 
-      time: '13:00 - 14:30', 
-      title: 'Global Collaboration Strategies', 
-      speaker: 'Industry Leaders Panel', 
-      location: 'Conference Room B',
-      category: 'Panel'
+      time: '10:45 - 10:55', 
+      title: 'Reflection and prayers', 
+      speaker: 'Conference Staff', 
+      location: 'Main Hall',
+      category: 'Reflection'
     },
     { 
-      time: '15:00 - 16:30', 
-      title: 'Closing Ceremony & Awards', 
+      time: '10:55 - 12:00', 
+      title: 'The challenge of Islam in Europe', 
+      speaker: 'Dr. Joshua Lingel', 
+      location: 'Main Hall',
+      category: 'Plenary'
+    },
+    { 
+      time: '12:00 - 12:10', 
+      title: 'Reflection and prayers', 
+      speaker: 'Conference Staff', 
+      location: 'Main Hall',
+      category: 'Reflection'
+    },
+    { 
+      time: '12:10 - 2:30', 
+      title: 'Lunch and Collaboration', 
+      speaker: 'All Attendees', 
+      location: 'Dining Hall',
+      category: 'Meal'
+    },
+    { 
+      time: '2:30 - 4:00', 
+      title: 'Regional Alignments/Discussion', 
+      speaker: 'Conference Staff', 
+      location: 'Workshop Rooms',
+      category: 'Discussion'
+    },
+    { 
+      time: '4:00 - 5:10', 
+      title: 'Prayers as a tool in reaching Europe', 
+      speaker: 'Dr. Hisham Kamel', 
+      location: 'Main Hall',
+      category: 'Plenary'
+    },
+    { 
+      time: '5:10 - 5:30', 
+      title: 'Reflection and prayers', 
+      speaker: 'Conference Staff', 
+      location: 'Main Hall',
+      category: 'Reflection'
+    },
+    { 
+      time: '5:30 - 6:30', 
+      title: 'Arise to Bring back Europe', 
+      speaker: 'Gabriel Barau', 
+      location: 'Main Hall',
+      category: 'Plenary'
+    },
+    { 
+      time: '6:30 - 7:30', 
+      title: 'Dinner', 
+      speaker: 'All Attendees', 
+      location: 'Dining Hall',
+      category: 'Meal'
+    },
+    { 
+      time: '7:30 - 8:30', 
+      title: 'Closing Ceremony', 
       speaker: 'Conference Committee', 
       location: 'Main Hall',
       category: 'Ceremony'
-    },
-    { 
-      time: '17:00 - 19:00', 
-      title: 'Farewell Reception', 
-      speaker: 'All Attendees', 
-      location: 'Rooftop Garden',
-      category: 'Social'
     }
   ],
 };
