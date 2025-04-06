@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -25,8 +24,7 @@ const pricingTiers: PricingTier[] = [
       'All workshops included',
       'Networking sessions',
       'Coffee breaks',
-      'Conference materials',
-      'Gala dinner invitation'
+      'Conference materials'
     ],
     buttonText: 'Register Now',
     isPrimary: true
