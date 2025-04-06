@@ -55,7 +55,23 @@
     "day2": "Dia 2 (29 Out)",
     "day3": "Dia 3 (30 Out)",
     "day4": "Dia 4 (31 Out)",
-    "download": "Baixar Programação Completa"
+    "download": "Baixar Programação Completa",
+    "categories": {
+      "keynote": "Palestra Principal",
+      "workshop": "Workshop",
+      "panel": "Painel",
+      "talk": "Palestra",
+      "networking": "Networking",
+      "social": "Evento Social",
+      "discussion": "Discussão",
+      "ceremony": "Cerimônia",
+      "worship": "Adoração",
+      "registration": "Registro",
+      "devotion": "Devoção",
+      "plenary": "Plenária",
+      "reflection": "Reflexão",
+      "meal": "Refeição"
+    }
   },
   "venue": {
     "title": "Informações do Local",

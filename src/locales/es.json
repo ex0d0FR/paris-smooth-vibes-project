@@ -55,7 +55,23 @@
     "day2": "Día 2 (29 Oct)",
     "day3": "Día 3 (30 Oct)",
     "day4": "Día 4 (31 Oct)",
-    "download": "Descargar Programa Completo"
+    "download": "Descargar Programa Completo",
+    "categories": {
+      "keynote": "Conferencia Principal",
+      "workshop": "Taller",
+      "panel": "Panel",
+      "talk": "Charla",
+      "networking": "Networking",
+      "social": "Evento Social",
+      "discussion": "Discusión",
+      "ceremony": "Ceremonia",
+      "worship": "Adoración",
+      "registration": "Registro",
+      "devotion": "Devoción",
+      "plenary": "Plenaria",
+      "reflection": "Reflexión",
+      "meal": "Comida"
+    }
   },
   "venue": {
     "title": "Información del Lugar",

@@ -55,7 +55,23 @@
     "day2": "Tag 2 (29. Okt)",
     "day3": "Tag 3 (30. Okt)",
     "day4": "Tag 4 (31. Okt)",
-    "download": "Vollständigen Zeitplan herunterladen"
+    "download": "Vollständigen Zeitplan herunterladen",
+    "categories": {
+      "keynote": "Hauptvortrag",
+      "workshop": "Workshop",
+      "panel": "Podium",
+      "talk": "Vortrag",
+      "networking": "Networking",
+      "social": "Soziale Veranstaltung",
+      "discussion": "Diskussion",
+      "ceremony": "Zeremonie",
+      "worship": "Gottesdienst",
+      "registration": "Anmeldung",
+      "devotion": "Andacht",
+      "plenary": "Plenarsitzung",
+      "reflection": "Reflexion",
+      "meal": "Mahlzeit"
+    }
   },
   "venue": {
     "title": "Informationen zum Veranstaltungsort",

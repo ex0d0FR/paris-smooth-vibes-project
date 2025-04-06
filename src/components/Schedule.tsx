@@ -449,7 +449,7 @@ const Schedule = () => {
           </div>
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{item.location}</p>
           <span className={`inline-block px-2 py-1 rounded text-xs font-medium mt-2 ${getCategoryColor(item.category)}`}>
-            {item.category}
+            {t(`schedule.categories.${item.category.toLowerCase()}`, item.category)}
           </span>
         </div>
         

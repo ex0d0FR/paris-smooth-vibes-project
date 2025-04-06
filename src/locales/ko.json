@@ -55,7 +55,23 @@
     "day2": "2일차 (10월 29일)",
     "day3": "3일차 (10월 30일)",
     "day4": "4일차 (10월 31일)",
-    "download": "전체 일정 다운로드"
+    "download": "전체 일정 다운로드",
+    "categories": {
+      "keynote": "기조 연설",
+      "workshop": "워크샵",
+      "panel": "패널",
+      "talk": "강연",
+      "networking": "네트워킹",
+      "social": "소셜 이벤트",
+      "discussion": "토론",
+      "ceremony": "행사",
+      "worship": "예배",
+      "registration": "등록",
+      "devotion": "경건 시간",
+      "plenary": "본회의",
+      "reflection": "묵상",
+      "meal": "식사"
+    }
   },
   "venue": {
     "title": "장소 정보",
