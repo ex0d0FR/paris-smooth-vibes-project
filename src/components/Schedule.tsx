@@ -125,6 +125,43 @@ const scheduleData: Record<string, ScheduleItem[]> = {
       category: 'Social'
     }
   ],
+  'day4': [
+    { 
+      time: '09:30 - 11:00', 
+      title: 'Missionary Bridge Building Workshop', 
+      speaker: 'International Panel of Experts', 
+      location: 'Main Hall',
+      category: 'Workshop'
+    },
+    { 
+      time: '11:30 - 12:30', 
+      title: 'Cross-Cultural Communication', 
+      speaker: 'Dr. Elena Moretti', 
+      location: 'Conference Room A',
+      category: 'Talk'
+    },
+    { 
+      time: '13:00 - 14:30', 
+      title: 'Global Collaboration Strategies', 
+      speaker: 'Industry Leaders Panel', 
+      location: 'Conference Room B',
+      category: 'Panel'
+    },
+    { 
+      time: '15:00 - 16:30', 
+      title: 'Closing Ceremony & Awards', 
+      speaker: 'Conference Committee', 
+      location: 'Main Hall',
+      category: 'Ceremony'
+    },
+    { 
+      time: '17:00 - 19:00', 
+      title: 'Farewell Reception', 
+      speaker: 'All Attendees', 
+      location: 'Rooftop Garden',
+      category: 'Social'
+    }
+  ],
 };
 
 const Schedule = () => {
@@ -160,6 +197,7 @@ const Schedule = () => {
       case 'networking': return 'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200';
       case 'social': return 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200';
       case 'discussion': return 'bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200';
+      case 'ceremony': return 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200';
       default: return 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300';
     }
   };
@@ -174,10 +212,11 @@ const Schedule = () => {
         
         <div className="max-w-4xl mx-auto reveal" style={{ transitionDelay: '200ms' }}>
           <Tabs defaultValue="day1" className="w-full" onValueChange={setActiveDay}>
-            <TabsList className="grid grid-cols-3 mb-8">
-              <TabsTrigger value="day1" className="text-sm sm:text-base">{t('schedule.day1').replace('12', '28')}</TabsTrigger>
-              <TabsTrigger value="day2" className="text-sm sm:text-base">{t('schedule.day2').replace('13', '29')}</TabsTrigger>
-              <TabsTrigger value="day3" className="text-sm sm:text-base">{t('schedule.day3').replace('14', '30')}</TabsTrigger>
+            <TabsList className="grid grid-cols-4 mb-8">
+              <TabsTrigger value="day1" className="text-sm sm:text-base">{t('schedule.day1')}</TabsTrigger>
+              <TabsTrigger value="day2" className="text-sm sm:text-base">{t('schedule.day2')}</TabsTrigger>
+              <TabsTrigger value="day3" className="text-sm sm:text-base">{t('schedule.day3')}</TabsTrigger>
+              <TabsTrigger value="day4" className="text-sm sm:text-base">{t('schedule.day4')}</TabsTrigger>
             </TabsList>
             
             {Object.keys(scheduleData).map((day) => (

@@ -51,9 +51,10 @@
   "schedule": {
     "title": "Conference Schedule",
     "description": "Plan your PARIS 2025 experience with our comprehensive program",
-    "day1": "Day 1 (Oct 12)",
-    "day2": "Day 2 (Oct 13)",
-    "day3": "Day 3 (Oct 14)",
+    "day1": "Day 1 (Oct 28)",
+    "day2": "Day 2 (Oct 29)",
+    "day3": "Day 3 (Oct 30)",
+    "day4": "Day 4 (Oct 31)",
     "download": "Download Full Schedule"
   },
   "venue": {

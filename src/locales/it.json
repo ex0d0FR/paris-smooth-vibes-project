@@ -51,9 +51,10 @@
   "schedule": {
     "title": "Programma della Conferenza",
     "description": "Pianifica la tua esperienza PARIGI 2025 con il nostro programma completo",
-    "day1": "Giorno 1 (12 Ott)",
-    "day2": "Giorno 2 (13 Ott)",
-    "day3": "Giorno 3 (14 Ott)",
+    "day1": "Giorno 1 (28 Ott)",
+    "day2": "Giorno 2 (29 Ott)",
+    "day3": "Giorno 3 (30 Ott)",
+    "day4": "Giorno 4 (31 Ott)",
     "download": "Scarica il Programma Completo"
   },
   "venue": {
