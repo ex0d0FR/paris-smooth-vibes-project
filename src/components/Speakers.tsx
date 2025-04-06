@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -69,7 +70,7 @@ const speakersData: Speaker[] = [
     name: 'Obed Alvarez',
     role: 'President',
     company: 'New World Missions Association',
-    image: '/lovable-uploads/919c036e-6a71-4c21-8820-bb7993fcbc92.png',
+    image: '/lovable-uploads/2b1b7b20-8d11-4f7b-bd9c-c27458424515.png',
   },
   {
     id: 9,
