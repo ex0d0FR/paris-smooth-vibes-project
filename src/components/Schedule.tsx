@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useCallback } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Clock } from 'lucide-react';
@@ -348,9 +349,16 @@ const Schedule = () => {
     const preload = async () => {
       await new Promise(resolve => setTimeout(resolve, 300));
       
-      const preloaded: Record<string, ScheduleItem[]> = {};
+      // Immediately load all data for day1 instead of just the first 3 items
+      const preloaded: Record<string, ScheduleItem[]> = {
+        'day1': scheduleData['day1']
+      };
+      
+      // For other days, just preload first 3 items
       Object.keys(scheduleData).forEach(day => {
-        preloaded[day] = scheduleData[day].slice(0, 3);
+        if (day !== 'day1') {
+          preloaded[day] = scheduleData[day].slice(0, 3);
+        }
       });
       
       setPreloadedData(preloaded);
@@ -404,6 +412,28 @@ const Schedule = () => {
       });
     };
   }, [preloadedData, activeDay, checkScheduleVisibility]);
+
+  // Add a new effect to ensure all Day 1 items are revealed when scrolling to the schedule section
+  useEffect(() => {
+    const handleScroll = () => {
+      const scheduleSection = document.getElementById('schedule');
+      if (scheduleSection) {
+        const boundingRect = scheduleSection.getBoundingClientRect();
+        // If schedule section is in viewport, ensure all day1 items are loaded
+        if (boundingRect.top < window.innerHeight && boundingRect.bottom > 0) {
+          if (!loading && activeDay === 'day1') {
+            checkScheduleVisibility();
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    // Run once on mount to check initial position
+    handleScroll();
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [loading, activeDay, checkScheduleVisibility]);
   
   const handleTabChange = useCallback((value: string) => {
     setActiveDay(value);
@@ -415,7 +445,8 @@ const Schedule = () => {
       }));
     }
     
-    setTimeout(checkScheduleVisibility, 50);
+    // Use a slightly longer timeout to ensure DOM is updated before checking visibility
+    setTimeout(checkScheduleVisibility, 150);
   }, [preloadedData, checkScheduleVisibility]);
   
   const getCategoryColor = (category: string) => {
