@@ -95,6 +95,19 @@ const Footer = () => {
                 </a>
               </div>
             </div>
+            
+            <div className="mt-8">
+              <a href="https://kerygmaparis.fr/es/" target="_blank" rel="noopener noreferrer" className="block">
+                <img 
+                  src="/lovable-uploads/a4c4edbb-9b13-4fac-be62-f8df611638b6.png" 
+                  alt="Kerygma Paris" 
+                  className="w-40 h-auto mb-3" 
+                />
+                <p className="text-white/80 text-sm">
+                  {t('footer.kerygma')}
+                </p>
+              </a>
+            </div>
           </div>
         </div>
         
