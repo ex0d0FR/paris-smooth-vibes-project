@@ -1,4 +1,3 @@
-
 {
   "common": {
     "languageName": "Português"
@@ -97,31 +96,46 @@
   "register": {
     "title": "Inscreva-se para PARIS 2025",
     "description": "Garanta seu lugar na conferência global mais aguardada do ano. Preços especiais disponíveis por tempo limitado.",
+    "registerNow": "Inscreva-se Agora",
+    "toast": {
+      "title": "Inscrição Iniciada",
+      "description": "Você selecionou o pacote {{tier}}. Por favor, complete sua inscrição na janela pop-up."
+    },
     "tiers": {
-      "standard": {
-        "name": "Padrão",
-        "price": "€599",
-        "description": "Perfeito para indivíduos",
-        "button": "Inscreva-se Agora"
+      "inPerson": {
+        "name": "Presencial",
+        "price": "€100",
+        "description": "Experiência completa no local",
+        "features": {
+          "full": "Acesso completo à conferência (todos os 3 dias)",
+          "workshops": "Todos os workshops incluídos",
+          "networking": "Sessões de networking",
+          "coffee": "Intervalos para café",
+          "materials": "Materiais da conferência"
+        }
       },
-      "professional": {
-        "name": "Profissional",
-        "price": "€999",
-        "description": "Melhor valor para profissionais",
-        "button": "Inscreva-se Agora"
+      "virtual": {
+        "name": "Virtual",
+        "price": "€40",
+        "description": "Participe de qualquer lugar do mundo",
+        "features": {
+          "livestream": "Transmissão ao vivo de todas as palestras principais",
+          "digital": "Acesso digital aos workshops",
+          "online": "Oportunidades de networking online",
+          "recorded": "Acesso a sessões gravadas",
+          "materials": "Materiais digitais da conferência",
+          "access": "Acesso de 30 dias ao conteúdo após o evento"
+        }
       },
-      "executive": {
-        "name": "Executivo",
-        "price": "€1.499",
-        "description": "Experiência VIP completa",
-        "button": "Inscreva-se Agora"
-      }
+      "attendee": "participante"
     },
     "questions": "Tem perguntas sobre inscrição ou precisa de assistência?",
     "contact": "Entre em Contato"
   },
   "footer": {
     "description": "Construindo Pontes Missionárias: reunindo líderes de pensamento, inovadores e agentes de mudança.",
+    "globalCouncil": "O Conselho Global de Missão é o comitê de continuação do movimento Tóquio 2010.",
+    "kerygma": "Proclamando o Evangelho no Coração de Paris",
     "quickLinks": "Links Rápidos",
     "conferenceInfo": "Informações da Conferência",
     "contactUs": "Entre em Contato",

@@ -1,4 +1,3 @@
-
 {
   "common": {
     "languageName": "Italiano"
@@ -97,31 +96,46 @@
   "register": {
     "title": "Registrati per PARIGI 2025",
     "description": "Assicurati il tuo posto alla conferenza globale più attesa dell'anno. Prezzi scontati disponibili per un tempo limitato.",
+    "registerNow": "Registrati Ora",
+    "toast": {
+      "title": "Registrazione Avviata",
+      "description": "Hai selezionato il pacchetto {{tier}}. Completa la tua registrazione nella finestra popup."
+    },
     "tiers": {
-      "standard": {
-        "name": "Standard",
-        "price": "€599",
-        "description": "Perfetto per i singoli",
-        "button": "Registrati Ora"
+      "inPerson": {
+        "name": "In Presenza",
+        "price": "€100",
+        "description": "Esperienza completa in loco",
+        "features": {
+          "full": "Accesso completo alla conferenza (tutti i 3 giorni)",
+          "workshops": "Tutti i workshop inclusi",
+          "networking": "Sessioni di networking",
+          "coffee": "Pause caffè",
+          "materials": "Materiali della conferenza"
+        }
       },
-      "professional": {
-        "name": "Professionale",
-        "price": "€999",
-        "description": "Miglior rapporto qualità-prezzo per i professionisti",
-        "button": "Registrati Ora"
+      "virtual": {
+        "name": "Virtuale",
+        "price": "€40",
+        "description": "Partecipa da qualsiasi parte del mondo",
+        "features": {
+          "livestream": "Streaming live di tutti i discorsi principali",
+          "digital": "Accesso digitale ai workshop",
+          "online": "Opportunità di networking online",
+          "recorded": "Accesso alle sessioni registrate",
+          "materials": "Materiali digitali della conferenza",
+          "access": "Accesso ai contenuti per 30 giorni dopo l'evento"
+        }
       },
-      "executive": {
-        "name": "Executive",
-        "price": "€1.499",
-        "description": "Esperienza VIP completa",
-        "button": "Registrati Ora"
-      }
+      "attendee": "partecipante"
     },
     "questions": "Hai domande sulla registrazione o hai bisogno di assistenza?",
     "contact": "Contattaci"
   },
   "footer": {
     "description": "Costruire Ponti Missionari: riunire leader di pensiero, innovatori e promotori del cambiamento.",
+    "globalCouncil": "Il Consiglio Globale della Missione è il comitato di continuazione del movimento Tokyo 2010.",
+    "kerygma": "Proclamare il Vangelo nel Cuore di Parigi",
     "quickLinks": "Link Rapidi",
     "conferenceInfo": "Informazioni sulla Conferenza",
     "contactUs": "Contattaci",

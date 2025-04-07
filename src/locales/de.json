@@ -97,25 +97,38 @@
   "register": {
     "title": "Anmeldung für PARIS 2025",
     "description": "Sichern Sie sich Ihren Platz auf der meisterwarteten globalen Konferenz des Jahres. Frühbucherpreise für begrenzte Zeit verfügbar.",
+    "registerNow": "Jetzt anmelden",
+    "toast": {
+      "title": "Anmeldung gestartet",
+      "description": "Sie haben das {{tier}}-Paket ausgewählt. Bitte schließen Sie Ihre Anmeldung im Popup-Fenster ab."
+    },
     "tiers": {
-      "standard": {
-        "name": "Standard",
-        "price": "599 €",
-        "description": "Perfekt für Einzelpersonen",
-        "button": "Jetzt anmelden"
+      "inPerson": {
+        "name": "Vor Ort",
+        "price": "€100",
+        "description": "Komplettes Vor-Ort-Erlebnis",
+        "features": {
+          "full": "Voller Konferenzzugang (alle 3 Tage)",
+          "workshops": "Alle Workshops inklusive",
+          "networking": "Networking-Sessions",
+          "coffee": "Kaffeepausen",
+          "materials": "Konferenzmaterialien"
+        }
       },
-      "professional": {
-        "name": "Professional",
-        "price": "999 €",
-        "description": "Bestes Preis-Leistungs-Verhältnis für Fachleute",
-        "button": "Jetzt anmelden"
+      "virtual": {
+        "name": "Virtuell",
+        "price": "€40",
+        "description": "Nehmen Sie von überall auf der Welt teil",
+        "features": {
+          "livestream": "Livestream aller Hauptvorträge",
+          "digital": "Digitaler Zugang zu Workshops",
+          "online": "Online-Networking-Möglichkeiten",
+          "recorded": "Zugang zu aufgezeichneten Sitzungen",
+          "materials": "Digitale Konferenzmaterialien",
+          "access": "30 Tage Zugang zu Inhalten nach der Veranstaltung"
+        }
       },
-      "executive": {
-        "name": "Executive",
-        "price": "1.499 €",
-        "description": "Komplettes VIP-Erlebnis",
-        "button": "Jetzt anmelden"
-      }
+      "attendee": "Teilnehmer"
     },
     "questions": "Haben Sie Fragen zur Anmeldung oder benötigen Sie Unterstützung?",
     "contact": "Kontaktieren Sie uns"

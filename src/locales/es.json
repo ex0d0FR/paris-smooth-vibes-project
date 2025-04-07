@@ -1,4 +1,3 @@
-
 {
   "common": {
     "languageName": "Español"
@@ -97,31 +96,46 @@
   "register": {
     "title": "Regístrate para PARÍS 2025",
     "description": "Asegura tu lugar en la conferencia global más esperada del año. Precios especiales disponibles por tiempo limitado.",
+    "registerNow": "Regístrate Ahora",
+    "toast": {
+      "title": "Registro Iniciado",
+      "description": "Has seleccionado el paquete {{tier}}. Por favor completa tu registro en la ventana emergente."
+    },
     "tiers": {
-      "standard": {
-        "name": "Estándar",
-        "price": "€599",
-        "description": "Perfecto para particulares",
-        "button": "Regístrate Ahora"
+      "inPerson": {
+        "name": "Presencial",
+        "price": "€100",
+        "description": "Experiencia completa en el sitio",
+        "features": {
+          "full": "Acceso completo a la conferencia (los 3 días)",
+          "workshops": "Todos los talleres incluidos",
+          "networking": "Sesiones de networking",
+          "coffee": "Pausas para café",
+          "materials": "Materiales de la conferencia"
+        }
       },
-      "professional": {
-        "name": "Profesional",
-        "price": "€999",
-        "description": "La mejor opción para profesionales",
-        "button": "Regístrate Ahora"
+      "virtual": {
+        "name": "Virtual",
+        "price": "€40",
+        "description": "Únete desde cualquier parte del mundo",
+        "features": {
+          "livestream": "Transmisión en vivo de todas las conferencias principales",
+          "digital": "Acceso digital a talleres",
+          "online": "Oportunidades de networking en línea",
+          "recorded": "Acceso a sesiones grabadas",
+          "materials": "Materiales digitales de la conferencia",
+          "access": "Acceso de 30 días al contenido después del evento"
+        }
       },
-      "executive": {
-        "name": "Ejecutivo",
-        "price": "€1,499",
-        "description": "Experiencia VIP completa",
-        "button": "Regístrate Ahora"
-      }
+      "attendee": "asistente"
     },
     "questions": "¿Tienes preguntas sobre el registro o necesitas ayuda?",
     "contact": "Contáctanos"
   },
   "footer": {
     "description": "Construyendo Puentes Misioneros: reuniendo a líderes de pensamiento, innovadores y agentes de cambio.",
+    "globalCouncil": "El Consejo Global de Misión es el comité de continuación del movimiento Tokio 2010.",
+    "kerygma": "Proclamando el Evangelio en el Corazón de París",
     "quickLinks": "Enlaces Rápidos",
     "conferenceInfo": "Información de la Conferencia",
     "contactUs": "Contáctanos",

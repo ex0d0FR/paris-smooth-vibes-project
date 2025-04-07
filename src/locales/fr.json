@@ -1,4 +1,3 @@
-
 {
   "common": {
     "languageName": "Français"
@@ -97,31 +96,46 @@
   "register": {
     "title": "Inscrivez-vous pour PARIS 2025",
     "description": "Réservez votre place à la conférence mondiale la plus attendue de l'année. Tarifs préférentiels disponibles pour une durée limitée.",
+    "registerNow": "S'inscrire",
+    "toast": {
+      "title": "Inscription Commencée",
+      "description": "Vous avez sélectionné le forfait {{tier}}. Veuillez terminer votre inscription dans la fenêtre contextuelle."
+    },
     "tiers": {
-      "standard": {
-        "name": "Standard",
-        "price": "599 €",
-        "description": "Parfait pour les particuliers",
-        "button": "S'inscrire"
+      "inPerson": {
+        "name": "Présentiel",
+        "price": "€100",
+        "description": "Expérience complète sur place",
+        "features": {
+          "full": "Accès complet à la conférence (3 jours)",
+          "workshops": "Tous les ateliers inclus",
+          "networking": "Sessions de réseautage",
+          "coffee": "Pauses café",
+          "materials": "Matériel de conférence"
+        }
       },
-      "professional": {
-        "name": "Professionnel",
-        "price": "999 €",
-        "description": "Meilleur rapport qualité-prix pour les professionnels",
-        "button": "S'inscrire"
+      "virtual": {
+        "name": "Virtuel",
+        "price": "€40",
+        "description": "Participez depuis n'importe où dans le monde",
+        "features": {
+          "livestream": "Diffusion en direct de tous les discours principaux",
+          "digital": "Accès numérique aux ateliers",
+          "online": "Opportunités de réseautage en ligne",
+          "recorded": "Accès aux sessions enregistrées",
+          "materials": "Matériel de conférence numérique",
+          "access": "Accès au contenu pendant 30 jours après l'événement"
+        }
       },
-      "executive": {
-        "name": "Exécutif",
-        "price": "1 499 €",
-        "description": "Expérience VIP complète",
-        "button": "S'inscrire"
-      }
+      "attendee": "participant"
     },
     "questions": "Vous avez des questions sur l'inscription ou besoin d'assistance ?",
     "contact": "Contactez-nous"
   },
   "footer": {
     "description": "Construire des Ponts Missionnaires : rassembler des leaders d'opinion, des innovateurs et des acteurs du changement.",
+    "globalCouncil": "Le Conseil Mondial de Mission est le comité de continuation du mouvement Tokyo 2010.",
+    "kerygma": "Proclamer l'Évangile au Cœur de Paris",
     "quickLinks": "Liens Rapides",
     "conferenceInfo": "Informations sur la Conférence",
     "contactUs": "Contactez-nous",

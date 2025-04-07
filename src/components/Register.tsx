@@ -15,40 +15,40 @@ interface PricingTier {
   isPrimary?: boolean;
 }
 
-const pricingTiers: PricingTier[] = [
-  {
-    name: 'In-Person',
-    price: '€100',
-    description: 'Complete on-site experience',
-    features: [
-      'Full conference access (all 3 days)',
-      'All workshops included',
-      'Networking sessions',
-      'Coffee breaks',
-      'Conference materials'
-    ],
-    buttonText: 'Register Now',
-    isPrimary: true
-  },
-  {
-    name: 'Virtual',
-    price: '€40',
-    description: 'Join from anywhere in the world',
-    features: [
-      'Live stream of all keynotes',
-      'Digital access to workshops',
-      'Online networking opportunities',
-      'Recorded sessions access',
-      'Digital conference materials',
-      '30-day access to content after event'
-    ],
-    buttonText: 'Register Now'
-  }
-];
-
 const Register = () => {
   const { toast } = useToast();
   const { t } = useTranslation();
+  
+  const pricingTiers: PricingTier[] = [
+    {
+      name: t('register.tiers.inPerson.name', 'In-Person'),
+      price: t('register.tiers.inPerson.price', '€100'),
+      description: t('register.tiers.inPerson.description', 'Complete on-site experience'),
+      features: [
+        t('register.tiers.inPerson.features.full', 'Full conference access (all 3 days)'),
+        t('register.tiers.inPerson.features.workshops', 'All workshops included'),
+        t('register.tiers.inPerson.features.networking', 'Networking sessions'),
+        t('register.tiers.inPerson.features.coffee', 'Coffee breaks'),
+        t('register.tiers.inPerson.features.materials', 'Conference materials')
+      ],
+      buttonText: t('register.registerNow', 'Register Now'),
+      isPrimary: true
+    },
+    {
+      name: t('register.tiers.virtual.name', 'Virtual'),
+      price: t('register.tiers.virtual.price', '€40'),
+      description: t('register.tiers.virtual.description', 'Join from anywhere in the world'),
+      features: [
+        t('register.tiers.virtual.features.livestream', 'Live stream of all keynotes'),
+        t('register.tiers.virtual.features.digital', 'Digital access to workshops'),
+        t('register.tiers.virtual.features.online', 'Online networking opportunities'),
+        t('register.tiers.virtual.features.recorded', 'Recorded sessions access'),
+        t('register.tiers.virtual.features.materials', 'Digital conference materials'),
+        t('register.tiers.virtual.features.access', '30-day access to content after event')
+      ],
+      buttonText: t('register.registerNow', 'Register Now')
+    }
+  ];
   
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -80,8 +80,8 @@ const Register = () => {
     if (w) w.focus();
     
     toast({
-      title: "Registration Started",
-      description: `You've selected the ${tier} package. Please complete your registration in the popup window.`,
+      title: t('register.toast.title', 'Registration Started'),
+      description: t('register.toast.description', { tier: tier }, `You've selected the ${tier} package. Please complete your registration in the popup window.`),
       duration: 5000,
     });
   };
@@ -109,7 +109,7 @@ const Register = () => {
                   <CardDescription className="text-white/70">{tier.description}</CardDescription>
                   <div className="mt-2">
                     <span className="text-3xl font-bold">{tier.price}</span>
-                    <span className="text-sm text-white/70"> / attendee</span>
+                    <span className="text-sm text-white/70"> / {t('register.tiers.attendee', 'attendee')}</span>
                   </div>
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col">

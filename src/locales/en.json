@@ -98,25 +98,38 @@
   "register": {
     "title": "Register for PARIS 2025",
     "description": "Secure your spot at the most anticipated global conference of the year. Early bird pricing available for a limited time.",
+    "registerNow": "Register Now",
+    "toast": {
+      "title": "Registration Started",
+      "description": "You've selected the {{tier}} package. Please complete your registration in the popup window."
+    },
     "tiers": {
-      "standard": {
-        "name": "Standard",
-        "price": "€599",
-        "description": "Perfect for individuals",
-        "button": "Register Now"
+      "inPerson": {
+        "name": "In-Person",
+        "price": "€100",
+        "description": "Complete on-site experience",
+        "features": {
+          "full": "Full conference access (all 3 days)",
+          "workshops": "All workshops included",
+          "networking": "Networking sessions",
+          "coffee": "Coffee breaks",
+          "materials": "Conference materials"
+        }
       },
-      "professional": {
-        "name": "Professional",
-        "price": "€999",
-        "description": "Best value for professionals",
-        "button": "Register Now"
+      "virtual": {
+        "name": "Virtual",
+        "price": "€40",
+        "description": "Join from anywhere in the world",
+        "features": {
+          "livestream": "Live stream of all keynotes",
+          "digital": "Digital access to workshops",
+          "online": "Online networking opportunities",
+          "recorded": "Recorded sessions access",
+          "materials": "Digital conference materials",
+          "access": "30-day access to content after event"
+        }
       },
-      "executive": {
-        "name": "Executive",
-        "price": "€1,499",
-        "description": "Complete VIP experience",
-        "button": "Register Now"
-      }
+      "attendee": "attendee"
     },
     "questions": "Have questions about registration or need assistance?",
     "contact": "Contact Us"
