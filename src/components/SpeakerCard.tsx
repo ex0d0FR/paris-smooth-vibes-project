@@ -23,10 +23,8 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
     setImageError(true);
   };
 
-  // Determine image path - try to use the image from speakers folder if it exists
-  const imagePath = speaker.image.startsWith('/speakers/') 
-    ? speaker.image 
-    : `/speakers/${speaker.id}.jpg`;
+  // Use the image path from the speaker data
+  const imagePath = speaker.image;
 
   return (
     <Card 

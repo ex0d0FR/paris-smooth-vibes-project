@@ -7,4 +7,5 @@ Naming convention:
 - Recommended image size: 300x300px or similar square aspect ratio
 - Supported formats: jpg, png, webp
 
+Current implementation uses lovable-uploads directory with custom uploaded images.
 If a speaker image is not available, a fallback will be shown automatically.
