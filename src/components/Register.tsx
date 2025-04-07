@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -70,9 +71,17 @@ const Register = () => {
   }, []);
 
   const handleRegister = (tier: string) => {
+    const url = 'https://widget.weezevent.com/ticket/E1301418/?code=4111&locale=fr-FR&width_auto=1&color_primary=0032FA';
+    const w = window.open(
+      url, 
+      'Billetterie_weezevent', 
+      'width=650, height=600, top=100, left=100, toolbar=no, resizable=yes, scrollbars=yes, status=no'
+    );
+    if (w) w.focus();
+    
     toast({
       title: "Registration Started",
-      description: `You've selected the ${tier} package. Our registration system will be ready soon!`,
+      description: `You've selected the ${tier} package. Please complete your registration in the popup window.`,
       duration: 5000,
     });
   };
