@@ -69,7 +69,7 @@ const Venue = () => {
           
           <div className="rounded-lg overflow-hidden shadow-md h-[400px] md:h-auto reveal" style={{ transitionDelay: '200ms' }}>
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.1371580684896!2d2.2835103!3d48.8794645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66f91c9eb656d%3A0xe54fe41b6eff8a8f!2sPalais%20des%20Congr%C3%A8s%20de%20Paris!5e0!3m2!1sen!2sus!4v1655937254169!5m2!1sen!2sus" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.934180114468!2d2.252968977102953!3d48.84042319969336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67b5f4801f1cd%3A0x13a38f95fdaba799!2sCommunaut%C3%A9%20Chr%C3%A9tienne%20du%20Point%20du%20Jour!5e0!3m2!1sen!2sus!4v1712516512355!5m2!1sen!2sus" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
