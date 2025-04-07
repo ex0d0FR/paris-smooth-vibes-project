@@ -34,7 +34,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-lg leading-relaxed mb-6 reveal dark:text-gray-200">
-              <span className="font-semibold text-paris-blue dark:text-paris-gold">PARIS 2025</span> {t('about.para1')}
+              {t('about.para1')}
             </p>
             <p className="text-lg leading-relaxed mb-6 reveal dark:text-gray-200" style={{ transitionDelay: '200ms' }}>
               {t('about.para2')}
@@ -42,17 +42,9 @@ const About = () => {
             <p className="text-lg leading-relaxed mb-6 reveal dark:text-gray-200" style={{ transitionDelay: '400ms' }}>
               {t('about.para3')}
             </p>
-            
-            {/* New content about Paris 2025 */}
-            <div className="p-4 bg-white/50 dark:bg-gray-800/50 rounded-lg border border-paris-blue/20 dark:border-paris-gold/20 mb-6 reveal" style={{ transitionDelay: '600ms' }}>
-              <div className="flex gap-2 mb-2">
-                <Church className="text-paris-blue dark:text-paris-gold h-5 w-5 mt-1 flex-shrink-0" />
-                <h3 className="text-lg font-semibold text-paris-blue dark:text-paris-gold">About Paris 2025</h3>
-              </div>
-              <p className="text-gray-700 dark:text-gray-300">
-                Paris 2025 will bring together church leaders from around the world to examine relevant and pressing issues in global reformation today, engaging unreached peoples, evangelising Israel, the Muslim world and discipling the nations.
-              </p>
-            </div>
+            <p className="text-lg leading-relaxed mb-6 reveal dark:text-gray-200" style={{ transitionDelay: '600ms' }}>
+              {t('about.para4')}
+            </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
