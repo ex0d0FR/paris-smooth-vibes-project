@@ -3,9 +3,9 @@
 This folder contains speaker profile images.
 
 Naming convention:
-- Use speaker IDs as filenames (e.g., 1.jpg, 2.jpg)
+- Images are named after the speaker (e.g., David_Bogosian.png, Eliseo_Soto.png)
 - Recommended image size: 300x300px or similar square aspect ratio
 - Supported formats: jpg, png, webp
 
-Current implementation uses lovable-uploads directory with custom uploaded images.
+Speaker images are now directly loaded from this folder.
 If a speaker image is not available, a fallback will be shown automatically.
