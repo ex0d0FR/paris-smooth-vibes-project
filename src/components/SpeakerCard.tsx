@@ -23,6 +23,11 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
     setImageError(true);
   };
 
+  // Determine image path - try to use the image from speakers folder if it exists
+  const imagePath = speaker.image.startsWith('/speakers/') 
+    ? speaker.image 
+    : `/speakers/${speaker.id}.jpg`;
+
   return (
     <Card 
       className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover-scale reveal"
@@ -35,7 +40,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
           )}
           <Avatar className="w-24 h-24 border-2 border-paris-blue dark:border-paris-gold">
             <AvatarImage 
-              src={speaker.image} 
+              src={imagePath} 
               alt={speaker.name} 
               className="object-cover"
               onLoad={handleImageLoad}
@@ -57,13 +62,6 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
         <h3 className="text-xl font-semibold mb-1 text-center dark:text-white">{speaker.name}</h3>
         <p className="text-paris-blue dark:text-paris-gold font-medium text-center">{speaker.role}</p>
         <p className="text-gray-500 dark:text-gray-400 text-center">{speaker.company}</p>
-        
-        {speaker.id === 1 && (
-          <div className="mt-3 text-center">
-            <p className="text-xs text-gray-500 dark:text-gray-400">Image path: {speaker.image}</p>
-            {imageError && <p className="text-xs text-red-500">Image failed to load</p>}
-          </div>
-        )}
       </CardContent>
     </Card>
   );

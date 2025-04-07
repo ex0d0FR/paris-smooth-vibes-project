@@ -1,0 +1,10 @@
+
+# Speakers Images
+This folder contains speaker profile images.
+
+Naming convention:
+- Use speaker IDs as filenames (e.g., 1.jpg, 2.jpg)
+- Recommended image size: 300x300px or similar square aspect ratio
+- Supported formats: jpg, png, webp
+
+If a speaker image is not available, a fallback will be shown automatically.
