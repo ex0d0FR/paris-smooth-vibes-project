@@ -79,9 +79,10 @@ const Register = () => {
     );
     if (w) w.focus();
     
+    // Fix the translation function call format for variables
     toast({
       title: t('register.toast.title', 'Registration Started'),
-      description: t('register.toast.description', { tier: tier }, `You've selected the ${tier} package. Please complete your registration in the popup window.`),
+      description: t('register.toast.description', `You've selected the ${tier} package. Please complete your registration in the popup window.`, { tier }),
       duration: 5000,
     });
   };
