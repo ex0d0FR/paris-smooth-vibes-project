@@ -75,11 +75,11 @@
   },
   "venue": {
     "title": "장소 정보",
-    "description": "파리 2025는 파리 중심부에 위치한 최첨단 컨퍼런스 센터인 팔레 데 콩그레에서 개최됩니다.",
+    "description": "파리 2025는 파리 외곽의 불로뉴-비앙쿠르에 위치한 아름다운 장소인 뽀엥 뒤 쥬르 기독교 공동체에서 개최됩니다.",
     "address": {
-      "name": "팔레 데 콩그레 드 파리",
-      "street": "2 Place de la Porte Maillot",
-      "city": "75017 파리, 프랑스"
+      "name": "뽀엥 뒤 쥬르 기독교 공동체",
+      "street": "133 Rte de la Reine",
+      "city": "92100 불로뉴-비앙쿠르, 프랑스"
     },
     "contact": {
       "phone": "+33 (0)1 40 68 22 22",

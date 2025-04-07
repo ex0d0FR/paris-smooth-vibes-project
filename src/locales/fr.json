@@ -1,3 +1,4 @@
+
 {
   "common": {
     "languageName": "Français"
@@ -74,11 +75,11 @@
   },
   "venue": {
     "title": "Informations sur le Lieu",
-    "description": "PARIS 2025 se tiendra au prestigieux Palais des Congrès, un centre de conférence ultramoderne au cœur de Paris.",
+    "description": "PARIS 2025 se tiendra à la Communauté Chrétienne du Point du Jour, un magnifique lieu à Boulogne-Billancourt, juste à l'extérieur de Paris.",
     "address": {
-      "name": "Palais des Congrès de Paris",
-      "street": "2 Place de la Porte Maillot",
-      "city": "75017 Paris, France"
+      "name": "Communauté Chrétienne du Point du Jour",
+      "street": "133 Rte de la Reine",
+      "city": "92100 Boulogne-Billancourt, France"
     },
     "contact": {
       "phone": "+33 (0)1 40 68 22 22",

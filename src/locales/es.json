@@ -1,3 +1,4 @@
+
 {
   "common": {
     "languageName": "Español"
@@ -74,11 +75,11 @@
   },
   "venue": {
     "title": "Información del Lugar",
-    "description": "PARÍS 2025 se llevará a cabo en el prestigioso Palais des Congrès, un centro de conferencias de última generación en el corazón de París.",
+    "description": "PARÍS 2025 se llevará a cabo en la Comunidad Cristiana del Point du Jour, un hermoso lugar en Boulogne-Billancourt, a las afueras de París.",
     "address": {
-      "name": "Palais des Congrès de Paris",
-      "street": "2 Place de la Porte Maillot",
-      "city": "75017 París, Francia"
+      "name": "Comunidad Cristiana del Point du Jour",
+      "street": "133 Rte de la Reine",
+      "city": "92100 Boulogne-Billancourt, Francia"
     },
     "contact": {
       "phone": "+33 (0)1 40 68 22 22",
