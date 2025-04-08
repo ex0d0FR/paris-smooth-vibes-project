@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Globe } from "lucide-react";
 import { useTheme } from "@/context/ThemeProvider";
 import { Button } from "@/components/ui/button";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -21,7 +21,7 @@ const ThemeToggle = () => {
         {theme === "light" ? (
           <Moon className="h-5 w-5 text-paris-navy transition-all" />
         ) : (
-          <Sun className="h-5 w-5 text-yellow-200 transition-all" />
+          <Sun className="h-5 w-5 text-yellow-300 transition-all hover:text-yellow-200" />
         )}
       </Button>
     </div>
