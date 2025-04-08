@@ -1,4 +1,3 @@
-
 {
   "common": {
     "languageName": "Deutsch"
@@ -135,6 +134,8 @@
   },
   "footer": {
     "description": "Missionarische Brücken bauen: Vordenker, Innovatoren und Wegbereiter zusammenbringen.",
+    "globalCouncil": "Der Globale Missionsrat ist das Fortsetzungskomitee der Tokio 2010-Bewegung.",
+    "kerygma": "Das Evangelium im Herzen von Paris verkünden",
     "quickLinks": "Schnelllinks",
     "conferenceInfo": "Konferenz-Informationen",
     "contactUs": "Kontakt",
@@ -150,6 +151,7 @@
       "privacy": "Datenschutzrichtlinie",
       "terms": "Nutzungsbedingungen",
       "cookies": "Cookie-Richtlinie"
-    }
+    },
+    "developed": "Entwickelt mit"
   }
 }
