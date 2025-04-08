@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Twitter, Linkedin, Facebook, Instagram, Mail, Phone } from 'lucide-react';
+import { Twitter, Linkedin, Facebook, Instagram, Mail, Phone, Heart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
@@ -118,7 +118,7 @@ const Footer = () => {
             <a href="#" className="hover:text-paris-gold transition-colors">{t('footer.policies.terms')}</a>
             <a href="#" className="hover:text-paris-gold transition-colors">{t('footer.policies.cookies')}</a>
           </div>
-          <p className="mt-4 italic">Developed with love for "Soli Deo Gloria"</p>
+          <p className="mt-4 italic">Developed with <Heart size={14} className="inline text-paris-gold" /> for "Soli Deo Gloria"</p>
         </div>
       </div>
     </footer>
