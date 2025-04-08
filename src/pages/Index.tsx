@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -89,6 +88,9 @@ const Index = () => {
     }
   };
 
+  // Let's check what exports are available in the About component
+  console.log('About component exports:', Object.keys(About));
+
   return (
     <>
       <Helmet>
@@ -102,7 +104,13 @@ const Index = () => {
         <Navbar />
         <main id="main-content">
           <Hero />
-          {About.default ? <About.default /> : null}
+          {/* Use a more flexible approach to render the About component */}
+          {Object.keys(About).length > 0 && 
+            React.createElement(
+              // If there's a component named "About" use it, otherwise use the first export
+              About.About || Object.values(About)[0]
+            )
+          }
           <Speakers />
           <Schedule />
           <Venue />
