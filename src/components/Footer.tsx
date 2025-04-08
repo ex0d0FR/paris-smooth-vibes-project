@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Twitter, Linkedin, Facebook, Instagram, Mail, Phone, Heart } from 'lucide-react';
+import { Mail, Phone, Heart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
@@ -16,20 +16,6 @@ const Footer = () => {
             <p className="text-white/80 mb-4">
               {t('footer.description')}
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-white hover:text-paris-gold transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-white hover:text-paris-gold transition-colors">
-                <Linkedin size={20} />
-              </a>
-              <a href="#" className="text-white hover:text-paris-gold transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-white hover:text-paris-gold transition-colors">
-                <Instagram size={20} />
-              </a>
-            </div>
             
             <div className="mt-8">
               <a href="https://www.globalmissioncouncil.org/" target="_blank" rel="noopener noreferrer" className="block">
@@ -74,7 +60,6 @@ const Footer = () => {
               <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('footer.infoItems.travel')}</a></li>
               <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('footer.infoItems.visa')}</a></li>
               <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('footer.infoItems.accommodations')}</a></li>
-              <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('footer.infoItems.media')}</a></li>
             </ul>
           </div>
           
