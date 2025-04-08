@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import * as AboutComponent from '@/components/About';
+import * as About from '@/components/About';
 import Speakers from '@/components/Speakers';
 import Schedule from '@/components/Schedule';
 import Venue from '@/components/Venue';
@@ -102,7 +102,7 @@ const Index = () => {
         <Navbar />
         <main id="main-content">
           <Hero />
-          <AboutComponent.About />
+          {About.default ? <About.default /> : null}
           <Speakers />
           <Schedule />
           <Venue />
