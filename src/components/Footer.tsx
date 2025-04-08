@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Twitter, Linkedin, Facebook, Instagram, Mail, Phone, Heart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -112,13 +111,15 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-white/10 pt-8 text-center text-white/60 text-sm">
-          <p>{t('footer.copyright')}</p>
+          <div className="flex flex-wrap justify-center items-center gap-2">
+            <p>{t('footer.copyright')}</p>
+            <p className="italic">Developed with <Heart size={14} className="inline text-paris-gold" /> for "Soli Deo Gloria"</p>
+          </div>
           <div className="mt-2 flex justify-center space-x-4">
             <a href="#" className="hover:text-paris-gold transition-colors">{t('footer.policies.privacy')}</a>
             <a href="#" className="hover:text-paris-gold transition-colors">{t('footer.policies.terms')}</a>
             <a href="#" className="hover:text-paris-gold transition-colors">{t('footer.policies.cookies')}</a>
           </div>
-          <p className="mt-4 italic">Developed with <Heart size={14} className="inline text-paris-gold" /> for "Soli Deo Gloria"</p>
         </div>
       </div>
     </footer>
