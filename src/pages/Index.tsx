@@ -8,54 +8,55 @@ import Venue from '@/components/Venue';
 import Register from '@/components/Register';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 
 // Since About component is read-only and doesn't export what we need,
 // let's create our own AboutSection component
 const AboutSection = () => {
+  const { t } = useTranslation();
+  
   return (
     <section id="about" className="py-16 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 reveal">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-paris-navy dark:text-white">
-            About The Conference
+            {t('about.title')}
           </h2>
           <div className="w-20 h-1 bg-paris-gold mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            PARIS 2025 brings together missionaries, church leaders, and innovators 
-            from around the world to build bridges across cultures and communities.
+            {t('about.para1')}
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 reveal" style={{ transitionDelay: '200ms' }}>
           <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg hover-scale">
-            <div className="text-paris-gold text-3xl font-bold mb-3">15+</div>
+            <div className="text-paris-gold text-3xl font-bold mb-3">{t('about.highlights.speakers.title')}</div>
             <h3 className="text-xl font-semibold mb-2 text-paris-navy dark:text-white">Global Speakers</h3>
             <p className="text-gray-600 dark:text-gray-300">
-              Learn from renowned speakers and thought leaders from across the globe.
+              {t('about.highlights.speakers.description')}
             </p>
           </div>
           
           <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg hover-scale">
-            <div className="text-paris-gold text-3xl font-bold mb-3">30+</div>
+            <div className="text-paris-gold text-3xl font-bold mb-3">{t('about.highlights.days.title')}</div>
             <h3 className="text-xl font-semibold mb-2 text-paris-navy dark:text-white">Workshop Sessions</h3>
             <p className="text-gray-600 dark:text-gray-300">
-              Participate in interactive workshops and discussions on mission strategies.
+              {t('about.para2')}
             </p>
           </div>
           
           <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg hover-scale">
-            <div className="text-paris-gold text-3xl font-bold mb-3">500+</div>
+            <div className="text-paris-gold text-3xl font-bold mb-3">{t('about.highlights.attendees.title')}</div>
             <h3 className="text-xl font-semibold mb-2 text-paris-navy dark:text-white">Attendees Expected</h3>
             <p className="text-gray-600 dark:text-gray-300">
-              Connect with hundreds of missionaries and church leaders from around the world.
+              {t('about.highlights.attendees.description')}
             </p>
           </div>
         </div>
         
         <div className="mt-12 text-center reveal" style={{ transitionDelay: '400ms' }}>
           <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 max-w-3xl mx-auto">
-            Join us for three days of inspiration, connection, and learning as we explore 
-            the future of global missions and cross-cultural ministry.
+            {t('about.para4')}
           </p>
         </div>
       </div>
