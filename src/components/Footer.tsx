@@ -16,19 +16,6 @@ const Footer = () => {
             <p className="text-white/80 mb-4">
               {t('footer.description')}
             </p>
-            
-            <div className="mt-8">
-              <a href="https://www.globalmissioncouncil.org/" target="_blank" rel="noopener noreferrer" className="block">
-                <img 
-                  src="/lovable-uploads/dd272009-d49c-4a66-972c-5437dc84f909.png" 
-                  alt="Global Council of Mission" 
-                  className="w-40 h-auto mb-3" 
-                />
-                <p className="text-white/80 text-sm">
-                  {t('footer.globalCouncil')}
-                </p>
-              </a>
-            </div>
           </div>
           
           <div>
@@ -83,6 +70,19 @@ const Footer = () => {
                 />
                 <p className="text-white/80 text-sm">
                   {t('footer.kerygma')}
+                </p>
+              </a>
+            </div>
+            
+            <div className="mt-8">
+              <a href="https://www.globalmissioncouncil.org/" target="_blank" rel="noopener noreferrer" className="block">
+                <img 
+                  src="/lovable-uploads/dd272009-d49c-4a66-972c-5437dc84f909.png" 
+                  alt="Global Council of Mission" 
+                  className="w-40 h-auto mb-3" 
+                />
+                <p className="text-white/80 text-sm">
+                  {t('footer.globalCouncil')}
                 </p>
               </a>
             </div>
