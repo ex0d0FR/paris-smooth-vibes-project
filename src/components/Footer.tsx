@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone, Heart } from 'lucide-react';
+import { Mail, Heart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
@@ -70,12 +70,6 @@ const Footer = () => {
                 <Mail className="mr-2 h-5 w-5" />
                 <a href="mailto:info@paris2025.net" className="text-white/80 hover:text-paris-gold transition-colors">
                   info@paris2025.net
-                </a>
-              </div>
-              <div className="flex items-center">
-                <Phone className="mr-2 h-5 w-5" />
-                <a href="tel:+33123456789" className="text-white/80 hover:text-paris-gold transition-colors">
-                  +33 (0)1 23 45 67 89
                 </a>
               </div>
             </div>

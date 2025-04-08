@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Venue = () => {
@@ -44,11 +44,6 @@ const Venue = () => {
                   {t('venue.address.street')}<br />
                   {t('venue.address.city')}
                 </p>
-              </div>
-              
-              <div className="flex items-center reveal dark:text-gray-200" style={{ transitionDelay: '300ms' }}>
-                <Phone className="text-paris-blue dark:text-paris-gold mr-3 flex-shrink-0" />
-                <p>{t('venue.contact.phone')}</p>
               </div>
               
               <div className="flex items-center reveal dark:text-gray-200" style={{ transitionDelay: '400ms' }}>
