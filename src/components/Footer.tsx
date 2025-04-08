@@ -71,7 +71,6 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">{t('footer.conferenceInfo')}</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('footer.infoItems.faqs')}</a></li>
               <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('footer.infoItems.travel')}</a></li>
               <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('footer.infoItems.visa')}</a></li>
               <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('footer.infoItems.accommodations')}</a></li>
