@@ -57,12 +57,9 @@ const Hero = () => {
         <p className="text-white text-lg md:text-xl max-w-2xl mx-auto mb-8 reveal" style={{ transitionDelay: '400ms' }}>
           {t('hero.description')}
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center reveal" style={{ transitionDelay: '600ms' }}>
+        <div className="flex justify-center reveal" style={{ transitionDelay: '600ms' }}>
           <Button onClick={scrollToRegister} size="lg" className="bg-paris-gold text-paris-navy hover:bg-yellow-500 font-semibold px-8 dark:bg-paris-gold dark:hover:bg-yellow-400">
             {t('hero.registerNow')}
-          </Button>
-          <Button variant="outline" size="lg" className="text-white border-white hover:bg-white/10 px-8 dark:border-white dark:text-white dark:hover:bg-white/20">
-            {t('hero.learnMore')}
           </Button>
         </div>
       </div>
