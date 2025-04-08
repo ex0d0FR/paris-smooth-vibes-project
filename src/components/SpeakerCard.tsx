@@ -34,7 +34,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
       <CardContent className="p-6 flex flex-col items-center">
         <div className="relative w-24 h-24 mb-4">
           {!imageLoaded && !imageError && (
-            <Skeleton className="w-24 h-24 rounded-full absolute" />
+            <Skeleton className="w-24 h-24 absolute" />
           )}
           <Avatar className="w-24 h-24 border-2 border-paris-blue dark:border-paris-gold">
             <AvatarImage 

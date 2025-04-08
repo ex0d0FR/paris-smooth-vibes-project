@@ -101,6 +101,33 @@
   }
 }
 
+/* Make Avatar components square instead of rounded */
+.avatar-container, 
+.avatar-image {
+  border-radius: 0 !important;
+}
+
+/* Override the default rounded-full class in the Avatar component */
+.avatar-square {
+  @apply rounded-none;
+}
+
+/* Apply the square style to all Avatar components */
+[role="img"] {
+  @apply rounded-none;
+}
+
+/* Override the Avatar component's default rounded styling */
+.w-24.h-24.border-2 {
+  border-radius: 0;
+}
+
+/* Ensure AvatarImage and AvatarFallback are square */
+.w-24.h-24.border-2 img,
+.w-24.h-24.border-2 > div {
+  border-radius: 0;
+}
+
 .hero-gradient {
   background: linear-gradient(to right, rgba(26, 35, 126, 0.9), rgba(13, 27, 42, 0.8));
 }
