@@ -44,11 +44,11 @@ const LanguageSwitcher = () => {
     <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon" className="rounded-full">
-          <Globe 
-            className="h-5 w-5" 
-            color={isDark ? "#FFD700" : "#0D1B2A"} 
-            strokeWidth={2}
-          />
+          {isDark ? (
+            <Globe className="h-5 w-5 text-yellow-300 hover:text-yellow-200" strokeWidth={2} />
+          ) : (
+            <Globe className="h-5 w-5 text-paris-navy hover:text-paris-blue" strokeWidth={2} />
+          )}
           <span className="sr-only">Switch language</span>
         </Button>
       </DropdownMenuTrigger>
