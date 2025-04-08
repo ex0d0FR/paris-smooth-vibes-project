@@ -1,6 +1,5 @@
 
 import React, { useEffect } from 'react';
-import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
 import SpeakerCard from './SpeakerCard';
 import { speakersData } from '@/data/speakersData';
@@ -36,7 +35,7 @@ const Speakers = () => {
           {t('speakers.description')}
         </p>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {speakersData.map((speaker, index) => (
             <SpeakerCard 
               key={speaker.id} 
@@ -44,12 +43,6 @@ const Speakers = () => {
               index={index}
             />
           ))}
-        </div>
-        
-        <div className="text-center reveal" style={{ transitionDelay: '600ms' }}>
-          <Button variant="outline" className="border-paris-blue text-paris-blue hover:bg-paris-blue hover:text-white dark:border-paris-gold dark:text-paris-gold dark:hover:bg-paris-gold dark:hover:text-paris-navy">
-            {t('speakers.viewAll')}
-          </Button>
         </div>
       </div>
     </section>
