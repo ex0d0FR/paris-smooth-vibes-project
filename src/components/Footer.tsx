@@ -118,6 +118,7 @@ const Footer = () => {
             <a href="#" className="hover:text-paris-gold transition-colors">{t('footer.policies.terms')}</a>
             <a href="#" className="hover:text-paris-gold transition-colors">{t('footer.policies.cookies')}</a>
           </div>
+          <p className="mt-4 italic">Developed with love for "Soli Deo Gloria"</p>
         </div>
       </div>
     </footer>
