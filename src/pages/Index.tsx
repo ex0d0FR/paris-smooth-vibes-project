@@ -102,7 +102,7 @@ const Index = () => {
         <Navbar />
         <main id="main-content">
           <Hero />
-          <AboutComponent.default />
+          <AboutComponent.About />
           <Speakers />
           <Schedule />
           <Venue />
