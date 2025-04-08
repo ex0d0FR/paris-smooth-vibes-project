@@ -62,29 +62,30 @@ const Footer = () => {
             </div>
             
             <div className="mt-8">
-              <a href="https://kerygmaparis.fr/es/" target="_blank" rel="noopener noreferrer" className="block">
-                <img 
-                  src="/lovable-uploads/a4c4edbb-9b13-4fac-be62-f8df611638b6.png" 
-                  alt="Kerygma Paris" 
-                  className="w-40 h-auto mb-3" 
-                />
-                <p className="text-white/80 text-sm">
-                  {t('footer.kerygma')}
-                </p>
-              </a>
-            </div>
-            
-            <div className="mt-8">
-              <a href="https://www.globalmissioncouncil.org/" target="_blank" rel="noopener noreferrer" className="block">
-                <img 
-                  src="/lovable-uploads/dd272009-d49c-4a66-972c-5437dc84f909.png" 
-                  alt="Global Council of Mission" 
-                  className="w-40 h-auto mb-3" 
-                />
-                <p className="text-white/80 text-sm">
-                  {t('footer.globalCouncil')}
-                </p>
-              </a>
+              <h3 className="text-lg font-semibold mb-4">{t('footer.partners')}</h3>
+              <div className="flex flex-wrap gap-6">
+                <a href="https://kerygmaparis.fr/es/" target="_blank" rel="noopener noreferrer" className="block">
+                  <img 
+                    src="/lovable-uploads/a4c4edbb-9b13-4fac-be62-f8df611638b6.png" 
+                    alt="Kerygma Paris" 
+                    className="w-40 h-auto mb-2" 
+                  />
+                  <p className="text-white/80 text-sm">
+                    {t('footer.kerygma')}
+                  </p>
+                </a>
+                
+                <a href="https://www.globalmissioncouncil.org/" target="_blank" rel="noopener noreferrer" className="block">
+                  <img 
+                    src="/lovable-uploads/dd272009-d49c-4a66-972c-5437dc84f909.png" 
+                    alt="Global Council of Mission" 
+                    className="w-40 h-auto mb-2" 
+                  />
+                  <p className="text-white/80 text-sm">
+                    {t('footer.globalCouncil')}
+                  </p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
