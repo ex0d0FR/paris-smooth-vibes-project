@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import About from '@/components/About';
+import * as AboutComponent from '@/components/About';
 import Speakers from '@/components/Speakers';
 import Schedule from '@/components/Schedule';
 import Venue from '@/components/Venue';
@@ -102,7 +102,7 @@ const Index = () => {
         <Navbar />
         <main id="main-content">
           <Hero />
-          <About />
+          <AboutComponent.default />
           <Speakers />
           <Schedule />
           <Venue />
