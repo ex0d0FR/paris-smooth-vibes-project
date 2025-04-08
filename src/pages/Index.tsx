@@ -1,13 +1,67 @@
+
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import * as About from '@/components/About';
 import Speakers from '@/components/Speakers';
 import Schedule from '@/components/Schedule';
 import Venue from '@/components/Venue';
 import Register from '@/components/Register';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
+
+// Since About component is read-only and doesn't export what we need,
+// let's create our own AboutSection component
+const AboutSection = () => {
+  return (
+    <section id="about" className="py-16 bg-white dark:bg-gray-900">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12 reveal">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-paris-navy dark:text-white">
+            About The Conference
+          </h2>
+          <div className="w-20 h-1 bg-paris-gold mx-auto mb-6"></div>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            PARIS 2025 brings together missionaries, church leaders, and innovators 
+            from around the world to build bridges across cultures and communities.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 reveal" style={{ transitionDelay: '200ms' }}>
+          <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg hover-scale">
+            <div className="text-paris-gold text-3xl font-bold mb-3">15+</div>
+            <h3 className="text-xl font-semibold mb-2 text-paris-navy dark:text-white">Global Speakers</h3>
+            <p className="text-gray-600 dark:text-gray-300">
+              Learn from renowned speakers and thought leaders from across the globe.
+            </p>
+          </div>
+          
+          <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg hover-scale">
+            <div className="text-paris-gold text-3xl font-bold mb-3">30+</div>
+            <h3 className="text-xl font-semibold mb-2 text-paris-navy dark:text-white">Workshop Sessions</h3>
+            <p className="text-gray-600 dark:text-gray-300">
+              Participate in interactive workshops and discussions on mission strategies.
+            </p>
+          </div>
+          
+          <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg hover-scale">
+            <div className="text-paris-gold text-3xl font-bold mb-3">500+</div>
+            <h3 className="text-xl font-semibold mb-2 text-paris-navy dark:text-white">Attendees Expected</h3>
+            <p className="text-gray-600 dark:text-gray-300">
+              Connect with hundreds of missionaries and church leaders from around the world.
+            </p>
+          </div>
+        </div>
+        
+        <div className="mt-12 text-center reveal" style={{ transitionDelay: '400ms' }}>
+          <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 max-w-3xl mx-auto">
+            Join us for three days of inspiration, connection, and learning as we explore 
+            the future of global missions and cross-cultural ministry.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const Index = () => {
   useEffect(() => {
@@ -88,9 +142,6 @@ const Index = () => {
     }
   };
 
-  // Let's check what exports are available in the About component
-  console.log('About component exports:', Object.keys(About));
-
   return (
     <>
       <Helmet>
@@ -104,13 +155,7 @@ const Index = () => {
         <Navbar />
         <main id="main-content">
           <Hero />
-          {/* Use a more flexible approach to render the About component */}
-          {Object.keys(About).length > 0 && 
-            React.createElement(
-              // If there's a component named "About" use it, otherwise use the first export
-              About.About || Object.values(About)[0]
-            )
-          }
+          <AboutSection />
           <Speakers />
           <Schedule />
           <Venue />
