@@ -8,6 +8,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "@/context/ThemeProvider";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import LegalNotice from "./pages/LegalNotice";
 import './i18n';
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/legal-notice" element={<LegalNotice />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

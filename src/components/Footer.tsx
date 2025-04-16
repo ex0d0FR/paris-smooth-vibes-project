@@ -1,6 +1,7 @@
 import React from 'react';
 import { Mail, Heart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -108,9 +109,9 @@ const Footer = () => {
             <p className="italic">{t('footer.developed')} <Heart size={14} className="inline text-paris-gold" /> for "Soli Deo Gloria"</p>
           </div>
           <div className="mt-2 flex justify-center space-x-4">
-            <a href="#" className="hover:text-paris-gold transition-colors">{t('footer.policies.privacy')}</a>
-            <a href="#" className="hover:text-paris-gold transition-colors">{t('footer.policies.terms')}</a>
-            <a href="#" className="hover:text-paris-gold transition-colors">{t('footer.policies.cookies')}</a>
+            <Link to="/legal-notice" className="hover:text-paris-gold transition-colors">{t('footer.policies.privacy')}</Link>
+            <Link to="/legal-notice" className="hover:text-paris-gold transition-colors">Legal Notice</Link>
+            <Link to="/legal-notice" className="hover:text-paris-gold transition-colors">{t('footer.policies.cookies')}</Link>
           </div>
         </div>
       </div>
