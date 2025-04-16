@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Check, Globe } from 'lucide-react';
@@ -10,36 +10,18 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-
-const languages = [
-  { code: 'en', name: 'English' },
-  { code: 'es', name: 'Español' },
-  { code: 'fr', name: 'Français' },
-  { code: 'it', name: 'Italiano' },
-  { code: 'pt', name: 'Português' },
-  { code: 'de', name: 'Deutsch' },
-  { code: 'uk', name: 'Українська' },
-  { code: 'ko', name: '한국어' }
-];
+import useLanguageSelector from '@/hooks/useLanguageSelector';
 
 const LanguageSwitcher = () => {
-  const { i18n, t } = useTranslation();
-  const [open, setOpen] = useState(false);
-  
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-    setOpen(false);
-  };
-
-  const getCurrentLanguageName = () => {
-    const currentLang = languages.find(lang => lang.code === i18n.language);
-    return currentLang ? currentLang.name : 'English';
-  };
-
-  // Use the isDark property from our enhanced theme provider
+  const { t } = useTranslation();
   const { isDark } = useTheme();
-
-  console.log('Is Dark Mode:', isDark);
+  const { 
+    languages, 
+    currentLanguage, 
+    open, 
+    setOpen, 
+    changeLanguage 
+  } = useLanguageSelector();
 
   return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
@@ -61,7 +43,7 @@ const LanguageSwitcher = () => {
           >
             <div className="flex items-center justify-between w-full">
               <span>{language.name}</span>
-              {i18n.language === language.code && (
+              {currentLanguage === language.code && (
                 <Check className="h-4 w-4" />
               )}
             </div>

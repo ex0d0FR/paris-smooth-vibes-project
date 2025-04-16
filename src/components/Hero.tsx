@@ -1,35 +1,17 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Globe } from 'lucide-react';
 import { useTheme } from '@/context/ThemeProvider';
+import useRevealAnimation from '@/hooks/useRevealAnimation';
 
 const Hero = () => {
   const { t } = useTranslation();
   const { theme } = useTheme();
   
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-    
-    document.querySelectorAll('.reveal').forEach(el => {
-      observer.observe(el);
-    });
-    
-    return () => {
-      document.querySelectorAll('.reveal').forEach(el => {
-        observer.unobserve(el);
-      });
-    };
-  }, []);
+  // Use our custom hook for reveal animations
+  useRevealAnimation();
   
   const scrollToRegister = () => {
     document.getElementById('register')?.scrollIntoView({
