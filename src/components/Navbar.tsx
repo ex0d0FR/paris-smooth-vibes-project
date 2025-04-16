@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import ThemeToggle from './ThemeToggle';
 import { useTranslation } from 'react-i18next';
 import useNavigation from '@/hooks/useNavigation';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,12 +14,12 @@ const Navbar = () => {
   const { activeSection, isScrolled, scrollToSection } = useNavigation();
 
   const navItems = [
-    { id: 'home', label: t('nav.home') },
-    { id: 'about', label: t('nav.about') },
-    { id: 'speakers', label: t('nav.speakers') },
-    { id: 'schedule', label: t('nav.schedule') },
-    { id: 'venue', label: t('nav.venue') },
-    { id: 'register', label: t('nav.register') }
+    { id: 'home', label: t('nav.home'), href: '/#home' },
+    { id: 'about', label: t('nav.about'), href: '/#about' },
+    { id: 'speakers', label: t('nav.speakers'), href: '/#speakers' },
+    { id: 'schedule', label: t('nav.schedule'), href: '/#schedule' },
+    { id: 'venue', label: t('nav.venue'), href: '/#venue' },
+    { id: 'register', label: t('nav.register'), href: '/#register' }
   ];
 
   return (
@@ -27,16 +28,16 @@ const Navbar = () => {
       isScrolled ? "bg-white dark:bg-gray-900 shadow-md" : "bg-transparent"
     )}>
       <div className="container mx-auto flex justify-between items-center">
-        <a href="#home" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <h1 className="text-2xl font-bold text-paris-blue dark:text-paris-gold">PARIS<span className="text-paris-gold dark:text-white">2025</span></h1>
-        </a>
+        </Link>
         
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center space-x-6">
           {navItems.map((item) => (
-            <button 
+            <a 
               key={item.id}
-              onClick={() => scrollToSection(item.id)}
+              href={item.href}
               className={cn(
                 "font-medium capitalize transition-all hover:text-paris-blue dark:hover:text-paris-gold",
                 activeSection === item.id 
@@ -47,7 +48,7 @@ const Navbar = () => {
               )}
             >
               {item.label}
-            </button>
+            </a>
           ))}
           <ThemeToggle />
           <Button 
@@ -76,13 +77,13 @@ const Navbar = () => {
         )}>
           <div className="flex flex-col space-y-6 mt-16">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                href={item.href}
                 className="text-xl font-medium capitalize py-2 border-b border-gray-200 dark:border-gray-700 dark:text-white"
               >
                 {item.label}
-              </button>
+              </a>
             ))}
             <Button 
               className="bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy w-full"

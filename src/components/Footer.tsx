@@ -6,10 +6,9 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const {
-    t
-  } = useTranslation();
-  return <footer className="bg-paris-navy text-white pt-16 pb-8">
+  const { t } = useTranslation();
+  return (
+    <footer className="bg-paris-navy text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div>
@@ -116,7 +115,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
 
 export default Footer;
