@@ -156,7 +156,7 @@
     "developed": "Sviluppato con",
     "endorsedBy": "Sostenuto Da",
     "endorsementDescription": "PARIS 2025 è sostenuto e convalidato da queste importanti organizzazioni missionarie.",
-    "endorser": "Sostenuto Da:"
+    "endorsement": "Sostenuto Da:"
   },
   "visa": {
     "title": "Requisiti per il Visto",
@@ -198,9 +198,9 @@
       "questions": "Se avete domande riguardanti la conferenza stessa (non questioni relative al visto), non esitate a contattare:"
     },
     "contact": {
-      "name": "Luis Fernando Rosales",
-      "behalf": "Per conto della Fédération Protestante de France e dell'Église Kerygma",
-      "phone": "+33 749 44 26 26"
+      "name": "Team della Conferenza Parigi 2025",
+      "behalf": "Fédération Protestante de France e Église Kerygma",
+      "email": "info@puentesparis2025.net"
     },
     "backToHome": "Torna alla Home"
   }

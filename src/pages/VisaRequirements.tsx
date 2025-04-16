@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -113,9 +112,12 @@ const VisaRequirements = () => {
                   <p className="font-medium">{t('visa.contact.name')}</p>
                   <p className="text-gray-600 dark:text-gray-400">{t('visa.contact.behalf')}</p>
                   <p className="mt-2 flex items-center">
-                    <span className="mr-2">📞</span>
-                    <a href="tel:+33749442626" className="text-paris-blue dark:text-paris-gold hover:underline">
-                      {t('visa.contact.phone')}
+                    <span className="mr-2">📧</span>
+                    <a 
+                      href={`mailto:${t('visa.contact.email')}`} 
+                      className="text-paris-blue dark:text-paris-gold hover:underline"
+                    >
+                      {t('visa.contact.email')}
                     </a>
                   </p>
                 </div>
