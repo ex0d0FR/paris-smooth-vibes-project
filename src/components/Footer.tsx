@@ -1,10 +1,11 @@
 import React from 'react';
 import { Mail, Heart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const { t } = useTranslation();
+  const {
+    t
+  } = useTranslation();
   return <footer className="bg-paris-navy text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
@@ -65,7 +66,7 @@ const Footer = () => {
             </div>
             
             <div className="mt-8">
-              <h3 className="text-lg font-semibold mb-4">{t('footer.partners')}</h3>
+              
               
             </div>
           </div>
