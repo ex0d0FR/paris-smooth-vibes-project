@@ -36,11 +36,9 @@ const LanguageSwitcher = () => {
     return currentLang ? currentLang.name : 'English';
   };
 
-  // Determine icon color based on theme
-  const { theme } = useTheme();
-  const isDark = theme === 'dark';
+  // Use the isDark property from our enhanced theme provider
+  const { isDark } = useTheme();
 
-  console.log('Current Theme:', theme);
   console.log('Is Dark Mode:', isDark);
 
   return (
@@ -75,4 +73,3 @@ const LanguageSwitcher = () => {
 };
 
 export default LanguageSwitcher;
-
