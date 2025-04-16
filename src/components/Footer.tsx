@@ -71,7 +71,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Endorsed By Section */}
         <div className="border-t border-white/10 pt-12 pb-8">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-serif font-bold">{t('footer.endorsedBy')}</h2>
@@ -83,7 +82,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="text-center md:text-right">
               <a href="https://kerygmaparis.fr/es/" target="_blank" rel="noopener noreferrer" className="inline-block">
-                <img src="/lovable-uploads/a4c4edbb-9b13-4fac-be62-f8df611638b6.png" alt="Kerygma Paris" className="w-48 h-auto mx-auto md:mx-0 mb-3" />
+                <img src="/lovable-uploads/f1a350f4-d210-4cad-9ad3-9e954ce61634.png" alt="Kerygma Paris" className="w-48 h-auto mx-auto md:mx-0 mb-3" />
               </a>
               <p className="text-white/80 text-sm">
                 {t('footer.kerygma')}
