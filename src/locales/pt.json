@@ -1,3 +1,4 @@
+
 {
   "common": {
     "languageName": "Português"
@@ -153,6 +154,9 @@
       "terms": "Termos de Serviço",
       "cookies": "Política de Cookies"
     },
-    "developed": "Desenvolvido com"
+    "developed": "Desenvolvido com",
+    "endorsedBy": "Endossado Por",
+    "endorsementDescription": "PARIS 2025 é apoiado e validado por estas organizações missionárias chave.",
+    "endorser": "Endossado Por:"
   }
 }

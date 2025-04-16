@@ -1,3 +1,4 @@
+
 {
   "common": {
     "languageName": "한국어"
@@ -153,6 +154,9 @@
       "terms": "서비스 약관",
       "cookies": "쿠키 정책"
     },
-    "developed": "개발됨"
+    "developed": "개발됨",
+    "endorsedBy": "지지 받음",
+    "endorsementDescription": "파리 2025는 이러한 주요 선교 기관들의 지지와 검증을 받았습니다.",
+    "endorser": "지지 기관:"
   }
 }
