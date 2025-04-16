@@ -45,13 +45,13 @@ const VisaRequirements = () => {
                 </h3>
                 <p>{t('visa.disclaimer.intro')}</p>
                 <ul className="list-disc list-inside mb-4 mt-2">
-                  {t('visa.disclaimer.notResponsibleFor', { returnObjects: true }).map((item: string, index: number) => (
+                  {(t('visa.disclaimer.notResponsibleFor', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                     <li key={index}>{item}</li>
                   ))}
                 </ul>
                 <p>{t('visa.disclaimer.expenses.intro')}</p>
                 <ul className="list-disc list-inside mt-2">
-                  {t('visa.disclaimer.expenses.items', { returnObjects: true }).map((item: string, index: number) => (
+                  {(t('visa.disclaimer.expenses.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                     <li key={index}>
                       {index === 0 && <span className="mr-1">✈️</span>}
                       {index === 1 && <span className="mr-1">🍽️</span>}
