@@ -1,11 +1,10 @@
 import React from 'react';
 import { Mail, Heart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const {
-    t
-  } = useTranslation();
+  const { t } = useTranslation();
   return <footer className="bg-paris-navy text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
@@ -83,7 +82,6 @@ const Footer = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="text-center md:text-right">
-              
               <a href="https://kerygmaparis.fr/es/" target="_blank" rel="noopener noreferrer" className="inline-block">
                 <img src="/lovable-uploads/a4c4edbb-9b13-4fac-be62-f8df611638b6.png" alt="Kerygma Paris" className="w-48 h-auto mx-auto md:mx-0 mb-3" />
               </a>
@@ -101,8 +99,6 @@ const Footer = () => {
               </p>
             </div>
           </div>
-          
-          {/* Remove "Become a Sponsor" link */}
         </div>
         
         <div className="border-t border-white/10 pt-8 text-center text-white/60 text-sm">
