@@ -89,6 +89,51 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
+        {/* Endorsed By Section */}
+        <div className="border-t border-white/10 pt-12 pb-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-serif font-bold">{t('footer.endorsedBy')}</h2>
+            <p className="text-white/80 mt-3 max-w-3xl mx-auto">
+              PARIS 2025 is made possible by the generous support of our sponsors and partners.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="text-center md:text-right">
+              <h3 className="text-lg font-semibold mb-4">Organisateur :</h3>
+              <a href="https://kerygmaparis.fr/es/" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <img 
+                  src="/lovable-uploads/a4c4edbb-9b13-4fac-be62-f8df611638b6.png" 
+                  alt="Kerygma Paris" 
+                  className="w-48 h-auto mx-auto md:mx-0 mb-3" 
+                />
+              </a>
+              <p className="text-white/80 text-sm">
+                Proclaiming the Gospel in the<br />Heart of Paris
+              </p>
+            </div>
+            
+            <div className="text-center md:text-left">
+              <a href="https://www.globalmissioncouncil.org/" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <img 
+                  src="/lovable-uploads/dd272009-d49c-4a66-972c-5437dc84f909.png" 
+                  alt="Global Council of Mission" 
+                  className="w-32 h-auto mx-auto md:mx-0 mb-3" 
+                />
+              </a>
+              <p className="text-white/80 text-sm">
+                The Global Council of Mission is<br />the continuation committee of<br />the Tokyo 2010 movement.
+              </p>
+            </div>
+          </div>
+          
+          <div className="text-center mt-8">
+            <a href="#" className="inline-block text-paris-gold hover:text-yellow-400 transition-colors font-semibold">
+              Become a Sponsor
+            </a>
+          </div>
+        </div>
         
         <div className="border-t border-white/10 pt-8 text-center text-white/60 text-sm">
           <div className="flex flex-wrap justify-center items-center gap-2">
