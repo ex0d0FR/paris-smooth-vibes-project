@@ -1,6 +1,7 @@
+
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { QuestionMarkCircle } from 'lucide-react';
+import { HelpCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Check } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
@@ -137,7 +138,7 @@ const Register = () => {
           <p className="text-white/80 mb-4">{t('register.questions')}</p>
           <Button 
             variant="claire_outline" 
-            icon={<QuestionMarkCircle />}
+            icon={<HelpCircle />}
             size="claire"
           >
             {t('register.contact')}
