@@ -79,19 +79,19 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="text-center md:text-right">
-              <a href="https://kerygmaparis.fr/es/" target="_blank" rel="noopener noreferrer" className="inline-block">
-                <img src="/lovable-uploads/f1a350f4-d210-4cad-9ad3-9e954ce61634.png" alt="Kerygma Paris" className="w-48 h-auto mx-auto md:mx-0 mb-3" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-center">
+            <div className="flex flex-col items-center justify-center text-center">
+              <a href="https://kerygmaparis.fr/es/" target="_blank" rel="noopener noreferrer" className="inline-block mb-3">
+                <img src="/lovable-uploads/f1a350f4-d210-4cad-9ad3-9e954ce61634.png" alt="Kerygma Paris" className="w-40 h-auto mx-auto" />
               </a>
               <p className="text-white/80 text-sm">
                 {t('footer.kerygma')}
               </p>
             </div>
             
-            <div className="text-center md:text-left">
-              <a href="https://www.globalmissioncouncil.org/" target="_blank" rel="noopener noreferrer" className="inline-block">
-                <img src="/lovable-uploads/dd272009-d49c-4a66-972c-5437dc84f909.png" alt="Global Council of Mission" className="w-32 h-auto mx-auto md:mx-0 mb-3" />
+            <div className="flex flex-col items-center justify-center text-center">
+              <a href="https://www.globalmissioncouncil.org/" target="_blank" rel="noopener noreferrer" className="inline-block mb-3">
+                <img src="/lovable-uploads/dd272009-d49c-4a66-972c-5437dc84f909.png" alt="Global Council of Mission" className="w-40 h-auto mx-auto" />
               </a>
               <p className="text-white/80 text-sm">
                 {t('footer.globalCouncil')}
