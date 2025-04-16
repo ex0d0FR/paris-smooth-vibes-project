@@ -40,16 +40,16 @@ const Hero = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: "url('https://images.unsplash.com/photo-1499856871958-5b9357976b82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80')",
+            backgroundImage: "url('/lovable-uploads/2b54cf1b-8468-429d-b12b-26681ab670ea.png')",
             backgroundPosition: "center"
           }}
         />
-        <div className="absolute inset-0 hero-gradient dark:bg-black/70"></div>
+        <div className="absolute inset-0 bg-black/30 dark:bg-black/50"></div>
       </div>
       
       {/* Content */}
       <div className="container mx-auto px-4 z-10 text-center">
-        <p className="text-paris-pink font-medium mb-2 reveal">{t('hero.date')}</p>
+        <p className="text-paris-gold font-medium mb-2 reveal">{t('hero.date')}</p>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 text-shadow reveal" style={{ transitionDelay: '200ms' }}>
           {t('hero.title')}<br /> 
           <span className="text-paris-gold">{t('hero.subtitle')}</span>
