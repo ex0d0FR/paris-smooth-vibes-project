@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Globe } from 'lucide-react';
 import { useTheme } from '@/context/ThemeProvider';
 
 const Hero = () => {
@@ -39,58 +39,87 @@ const Hero = () => {
   
   return (
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Enhanced Background with Layers */}
+      {/* Enhanced Background with Mission-Oriented Map Design */}
       <div className="absolute inset-0 z-0">
-        {/* Abstract world map background with better visibility */}
+        {/* Vintage world map background with mission elements */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/paris-skyline.svg'), url('/world-map.png')",
-            backgroundSize: "contain, cover",
-            backgroundPosition: "bottom center, center",
-            backgroundRepeat: "no-repeat, no-repeat",
-            opacity: theme === 'dark' ? 0.15 : 0.25
+            backgroundImage: "url('/paris-skyline.svg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            opacity: theme === 'dark' ? 0.7 : 0.9
           }}
         />
         
-        {/* Theme-adaptive gradient overlay */}
+        {/* Theme-adaptive background overlay */}
         <div className={`absolute inset-0 ${
           theme === 'dark' 
-            ? 'bg-gradient-to-b from-paris-navy/95 via-paris-navy/90 to-paris-navy/98' 
-            : 'bg-gradient-to-b from-paris-navy/85 via-paris-navy/70 to-paris-navy/90'
+            ? 'bg-gradient-to-b from-paris-navy/90 via-paris-navy/80 to-paris-navy/95' 
+            : 'bg-gradient-to-b from-paris-navy/75 via-paris-navy/65 to-paris-navy/85'
         }`}></div>
         
-        {/* Decorative elements */}
+        {/* Vintage paper texture overlay */}
+        <div 
+          className={`absolute inset-0 ${theme === 'dark' ? 'opacity-10' : 'opacity-15'}`}
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            mixBlendMode: "multiply"
+          }}
+        />
+        
+        {/* Animated connection paths */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute w-full h-full">
-            {/* Golden accent light - adapted for theme */}
-            <div className={`absolute top-1/4 left-1/4 w-96 h-96 rounded-full ${
+          <div className="absolute top-1/4 left-1/3 w-20 h-20">
+            <div className={`absolute w-full h-full rounded-full border-2 ${
               theme === 'dark' 
-                ? 'bg-paris-gold/15 blur-3xl' 
-                : 'bg-paris-gold/20 blur-3xl'
-            } float-animation`}></div>
-            
-            {/* Blue accent light - adapted for theme */}
-            <div className={`absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full ${
+                ? 'border-paris-gold/20' 
+                : 'border-paris-gold/30'
+            } animate-ping`} style={{ animationDuration: '3s' }}></div>
+          </div>
+          
+          <div className="absolute bottom-1/3 right-1/3 w-16 h-16">
+            <div className={`absolute w-full h-full rounded-full border-2 ${
               theme === 'dark' 
-                ? 'bg-paris-blue/25 blur-3xl' 
-                : 'bg-paris-blue/30 blur-3xl'
-            } float-animation-delay`}></div>
-            
-            {/* Additional accent for visual interest */}
-            <div className={`absolute top-1/3 right-1/4 w-72 h-72 rounded-full ${
+                ? 'border-paris-gold/20' 
+                : 'border-paris-gold/30'
+            } animate-ping`} style={{ animationDuration: '4s', animationDelay: '1s' }}></div>
+          </div>
+          
+          <div className="absolute top-1/2 right-1/4 w-24 h-24">
+            <div className={`absolute w-full h-full rounded-full border-2 ${
               theme === 'dark' 
-                ? 'bg-paris-pink/10 blur-3xl' 
-                : 'bg-paris-pink/15 blur-3xl'
-            } float-animation-reverse`}></div>
+                ? 'border-paris-gold/20' 
+                : 'border-paris-gold/30'
+            } animate-ping`} style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
           </div>
         </div>
         
-        {/* Subtle grid pattern overlay for texture - adjusted for better visibility */}
+        {/* Golden accent lights */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute w-full h-full">
+            <div className={`absolute top-1/4 left-1/4 w-96 h-96 rounded-full ${
+              theme === 'dark' 
+                ? 'bg-paris-gold/10 blur-3xl' 
+                : 'bg-paris-gold/15 blur-3xl'
+            } float-animation`}></div>
+            
+            <div className={`absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full ${
+              theme === 'dark' 
+                ? 'bg-paris-gold/15 blur-3xl' 
+                : 'bg-paris-gold/20 blur-3xl'
+            } float-animation-delay`}></div>
+          </div>
+        </div>
+        
+        {/* Global connection grid pattern */}
         <div 
-          className={`absolute inset-0 ${theme === 'dark' ? 'opacity-5' : 'opacity-8'}`}
+          className={`absolute inset-0 ${theme === 'dark' ? 'opacity-10' : 'opacity-15'}`}
           style={{
-            backgroundImage: "linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .08) 25%, rgba(255, 255, 255, .08) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .08) 75%, rgba(255, 255, 255, .08) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .08) 25%, rgba(255, 255, 255, .08) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .08) 75%, rgba(255, 255, 255, .08) 76%, transparent 77%, transparent)",
+            backgroundImage: "linear-gradient(0deg, transparent 24%, rgba(255, 215, 0, .05) 25%, rgba(255, 215, 0, .05) 26%, transparent 27%, transparent 74%, rgba(255, 215, 0, .05) 75%, rgba(255, 215, 0, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 215, 0, .05) 25%, rgba(255, 215, 0, .05) 26%, transparent 27%, transparent 74%, rgba(255, 215, 0, .05) 75%, rgba(255, 215, 0, .05) 76%, transparent 77%, transparent)",
             backgroundSize: "50px 50px"
           }}
         />
@@ -98,7 +127,7 @@ const Hero = () => {
       
       {/* Content */}
       <div className="container mx-auto px-4 z-10 text-center">
-        <p className="text-paris-pink font-medium mb-2 reveal">{t('hero.date')}</p>
+        <p className="text-paris-gold font-medium mb-2 reveal">{t('hero.date')}</p>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 text-shadow reveal" style={{
           transitionDelay: '200ms'
         }}>
@@ -110,10 +139,10 @@ const Hero = () => {
         }}>
           {t('hero.description')}
         </p>
-        <div className="flex justify-center reveal" style={{
+        <div className="flex justify-center gap-4 reveal" style={{
           transitionDelay: '600ms'
         }}>
-          <Button onClick={scrollToRegister} size="claire" variant="claire" className="font-semibold">
+          <Button onClick={scrollToRegister} size="claire" variant="claire" className="font-semibold" icon={<Globe size={18} />}>
             {t('hero.registerNow')}
           </Button>
         </div>

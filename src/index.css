@@ -184,6 +184,23 @@ h1.text-shadow {
     0 4px 20px rgba(0,0,0,0.1);
 }
 
+/* Vintage paper effect */
+.vintage-paper {
+  background-image: url('https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: multiply;
+}
+
+/* Gold text effect for special elements */
+.gold-text {
+  background: linear-gradient(to bottom, #f1c40f, #f39c12);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+}
+
 /* Animated background elements */
 @keyframes float {
   0% { transform: translateY(0px); }
@@ -201,6 +218,18 @@ h1.text-shadow {
   0% { transform: translateY(0px); }
   50% { transform: translateY(15px); }
   100% { transform: translateY(0px); }
+}
+
+@keyframes path-animation {
+  0% { stroke-dashoffset: 1000; opacity: 0; }
+  50% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0.5; }
+}
+
+.path-animate {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: path-animation 10s linear infinite;
 }
 
 .float-animation {

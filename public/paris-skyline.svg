@@ -1,19 +1,47 @@
 
 <svg width="1440" height="400" viewBox="0 0 1440 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Simplified Paris skyline silhouette -->
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 400H1440V350H1420V330H1400V320H1390V300H1380V280H1370V290H1360V270H1350V260H1340V230H1320V210H1310V190H1300V180H1290V160H1280V140H1270V130H1260V120H1250V110H1240V100H1230V90H1220V80H1210V70H1200V60H1190V50H1180V40H1170V30H1160V20H1150V10H1140V20H1130V30H1120V40H1110V50H1100V60H1090V70H1080V80H1070V90H1060V100H1050V110H1040V120H1030V130H1020V140H1010V150H1000V160H990V170H980V180H970V190H960V200H950V210H940V220H930V230H920V240H910V250H900V260H890V270H880V280H870V290H860V300H850V310H840V320H830V330H820V340H810V350H800V360H790V370H780V380H770V390H760V380H750V370H740V360H730V350H720V340H710V330H700V320H690V310H680V300H670V290H660V280H650V270H640V260H630V250H620V240H610V230H600V220H590V230H580V240H570V250H560V240H550V230H540V220H530V210H520V200H510V190H500V180H490V170H480V160H470V150H460V140H450V130H440V120H430V110H420V100H410V110H400V120H390V130H380V140H370V150H360V160H350V170H340V180H330V190H320V200H310V210H300V220H290V230H280V240H270V250H260V260H250V270H240V280H230V290H220V300H210V310H200V320H190V330H180V340H170V350H160V360H150V370H140V380H130V390H120V380H110V370H100V360H90V350H80V340H70V330H60V320H50V310H40V300H30V290H20V280H10V270H0V400Z" fill="white" fill-opacity="0.1"/>
+  <!-- Vintage World Map with Connection Points -->
+  <path d="M0 0H1440V400H0V0Z" fill="#0D1B2A" fill-opacity="0.05"/>
   
-  <!-- Eiffel Tower -->
-  <path d="M710 40V350H730V40H710Z" fill="white" fill-opacity="0.2"/>
-  <path d="M690 60V350H750V60H690Z" fill="white" fill-opacity="0.15"/>
-  <path d="M670 120V350H770V120H670Z" fill="white" fill-opacity="0.1"/>
-  <path d="M650 240V350H790V240H650Z" fill="white" fill-opacity="0.08"/>
+  <!-- Continental Outlines -->
+  <path d="M400 100C450 90 500 120 520 150C540 180 580 200 610 190C640 180 660 150 680 160C700 170 710 200 740 210C770 220 810 200 840 210C870 220 890 250 920 240C950 230 970 200 1000 190C1030 180 1070 200 1100 190C1130 180 1150 150 1180 140C1210 130 1250 150 1280 140" stroke="#FFD700" stroke-opacity="0.3" stroke-width="2"/>
   
-  <!-- Notre Dame -->
-  <path d="M1040 170V350H1120V170H1040Z" fill="white" fill-opacity="0.12"/>
-  <path d="M1060 140V170H1100V140L1080 110L1060 140Z" fill="white" fill-opacity="0.15"/>
+  <path d="M200 180C250 170 300 200 320 230C340 260 380 280 410 270C440 260 460 230 480 240C500 250 510 280 540 290C570 300 610 280 640 290C670 300 690 330 720 320C750 310 770 280 800 270C830 260 870 280 900 270C930 260 950 230 980 220C1010 210 1050 230 1080 220" stroke="#FFD700" stroke-opacity="0.3" stroke-width="2"/>
   
-  <!-- Arc de Triomphe -->
-  <path d="M400 240V350H450V240H400Z" fill="white" fill-opacity="0.13"/>
-  <path d="M410 220V240H440V220L425 200L410 220Z" fill="white" fill-opacity="0.15"/>
+  <!-- Connection Points and Lines -->
+  <circle cx="500" cy="150" r="5" fill="#FFD700" fill-opacity="0.6"/>
+  <circle cx="700" cy="200" r="5" fill="#FFD700" fill-opacity="0.6"/>
+  <circle cx="900" cy="250" r="5" fill="#FFD700" fill-opacity="0.6"/>
+  <circle cx="1100" cy="150" r="5" fill="#FFD700" fill-opacity="0.6"/>
+  
+  <line x1="500" y1="150" x2="700" y2="200" stroke="#FFD700" stroke-opacity="0.4" stroke-width="1"/>
+  <line x1="700" y1="200" x2="900" y2="250" stroke="#FFD700" stroke-opacity="0.4" stroke-width="1"/>
+  <line x1="900" y1="250" x2="1100" y2="150" stroke="#FFD700" stroke-opacity="0.4" stroke-width="1"/>
+  
+  <!-- Target/Concentric Circles -->
+  <circle cx="700" cy="200" r="30" stroke="#FFD700" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+  <circle cx="700" cy="200" r="20" stroke="#FFD700" stroke-opacity="0.3" stroke-width="1" fill="none"/>
+  <circle cx="700" cy="200" r="10" stroke="#FFD700" stroke-opacity="0.4" stroke-width="1" fill="none"/>
+  
+  <circle cx="900" cy="250" r="30" stroke="#FFD700" stroke-opacity="0.2" stroke-width="1" fill="none"/>
+  <circle cx="900" cy="250" r="20" stroke="#FFD700" stroke-opacity="0.3" stroke-width="1" fill="none"/>
+  <circle cx="900" cy="250" r="10" stroke="#FFD700" stroke-opacity="0.4" stroke-width="1" fill="none"/>
+  
+  <!-- Regional Labels -->
+  <text x="300" y="330" fill="#FFD700" fill-opacity="0.6" font-family="serif" font-size="16">LATIN AMERICA</text>
+  <text x="700" y="150" fill="#FFD700" fill-opacity="0.6" font-family="serif" font-size="16">EUROPE</text>
+  <text x="1000" y="300" fill="#FFD700" fill-opacity="0.6" font-family="serif" font-size="16">ASIA</text>
+  <text x="500" y="250" fill="#FFD700" fill-opacity="0.6" font-family="serif" font-size="16">AFRICA</text>
+  
+  <!-- Paris Skyline (simplified) at bottom -->
+  <path d="M710 40V350H730V40H710Z" fill="#FFD700" fill-opacity="0.3"/>
+  <path d="M690 60V350H750V60H690Z" fill="#FFD700" fill-opacity="0.25"/>
+  <path d="M670 120V350H770V120H670Z" fill="#FFD700" fill-opacity="0.2"/>
+  <path d="M650 240V350H790V240H650Z" fill="#FFD700" fill-opacity="0.15"/>
+  
+  <!-- Additional Bridge-like elements (symbolizing "Building Bridges") -->
+  <path d="M300 380C350 350 400 350 450 380" stroke="#FFD700" stroke-opacity="0.5" stroke-width="2" fill="none"/>
+  <path d="M500 380C550 350 600 350 650 380" stroke="#FFD700" stroke-opacity="0.5" stroke-width="2" fill="none"/>
+  <path d="M700 380C750 350 800 350 850 380" stroke="#FFD700" stroke-opacity="0.5" stroke-width="2" fill="none"/>
+  <path d="M900 380C950 350 1000 350 1050 380" stroke="#FFD700" stroke-opacity="0.5" stroke-width="2" fill="none"/>
 </svg>
