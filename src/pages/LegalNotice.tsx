@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { FileText } from 'lucide-react';
@@ -61,6 +62,15 @@ const LegalNotice = () => {
                   <p>Kerygma Paris Church is committed to ensuring the confidentiality and security of your data.</p>
                   <p>You have the right to access, modify, or delete your personal information at any time by contacting: <a href="mailto:contact@kerygmaparis.fr" className="text-paris-blue dark:text-paris-gold">contact@kerygmaparis.fr</a></p>
                 </section>
+              </div>
+
+              <div className="mt-12 text-center">
+                <Link 
+                  to="/" 
+                  className="inline-block bg-paris-blue text-white px-6 py-2 rounded hover:bg-paris-navy transition-colors"
+                >
+                  Back to Home
+                </Link>
               </div>
             </div>
           </div>

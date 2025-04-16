@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Shield } from 'lucide-react';
@@ -68,6 +68,15 @@ const PrivacyPolicy = () => {
                     Your request must include a valid form of identification.
                   </p>
                 </section>
+              </div>
+
+              <div className="mt-12 text-center">
+                <Link 
+                  to="/" 
+                  className="inline-block bg-paris-blue text-white px-6 py-2 rounded hover:bg-paris-navy transition-colors"
+                >
+                  Back to Home
+                </Link>
               </div>
             </div>
           </div>
