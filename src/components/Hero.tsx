@@ -3,9 +3,11 @@ import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
+import { useTheme } from '@/context/ThemeProvider';
 
 const Hero = () => {
   const { t } = useTranslation();
+  const { theme } = useTheme();
   
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -39,35 +41,56 @@ const Hero = () => {
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Enhanced Background with Layers */}
       <div className="absolute inset-0 z-0">
-        {/* Paris skyline silhouette background */}
+        {/* Abstract world map background with better visibility */}
         <div 
-          className="absolute inset-0 bg-cover bg-center" 
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/world-map.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            opacity: 0.2
+            backgroundImage: "url('/paris-skyline.svg'), url('/world-map.png')",
+            backgroundSize: "contain, cover",
+            backgroundPosition: "bottom center, center",
+            backgroundRepeat: "no-repeat, no-repeat",
+            opacity: theme === 'dark' ? 0.15 : 0.25
           }}
         />
         
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-paris-navy/90 via-paris-navy/70 to-paris-navy/95"></div>
+        {/* Theme-adaptive gradient overlay */}
+        <div className={`absolute inset-0 ${
+          theme === 'dark' 
+            ? 'bg-gradient-to-b from-paris-navy/95 via-paris-navy/90 to-paris-navy/98' 
+            : 'bg-gradient-to-b from-paris-navy/85 via-paris-navy/70 to-paris-navy/90'
+        }`}></div>
         
         {/* Decorative elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute w-full h-full">
-            {/* Golden accent light */}
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-paris-gold/10 blur-3xl"></div>
-            {/* Blue accent light */}
-            <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-paris-blue/20 blur-3xl"></div>
+            {/* Golden accent light - adapted for theme */}
+            <div className={`absolute top-1/4 left-1/4 w-96 h-96 rounded-full ${
+              theme === 'dark' 
+                ? 'bg-paris-gold/15 blur-3xl' 
+                : 'bg-paris-gold/20 blur-3xl'
+            } float-animation`}></div>
+            
+            {/* Blue accent light - adapted for theme */}
+            <div className={`absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full ${
+              theme === 'dark' 
+                ? 'bg-paris-blue/25 blur-3xl' 
+                : 'bg-paris-blue/30 blur-3xl'
+            } float-animation-delay`}></div>
+            
+            {/* Additional accent for visual interest */}
+            <div className={`absolute top-1/3 right-1/4 w-72 h-72 rounded-full ${
+              theme === 'dark' 
+                ? 'bg-paris-pink/10 blur-3xl' 
+                : 'bg-paris-pink/15 blur-3xl'
+            } float-animation-reverse`}></div>
           </div>
         </div>
         
-        {/* Subtle grid pattern overlay for texture */}
+        {/* Subtle grid pattern overlay for texture - adjusted for better visibility */}
         <div 
-          className="absolute inset-0 opacity-10"
+          className={`absolute inset-0 ${theme === 'dark' ? 'opacity-5' : 'opacity-8'}`}
           style={{
-            backgroundImage: "linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent)",
+            backgroundImage: "linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .08) 25%, rgba(255, 255, 255, .08) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .08) 75%, rgba(255, 255, 255, .08) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .08) 25%, rgba(255, 255, 255, .08) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .08) 75%, rgba(255, 255, 255, .08) 76%, transparent 77%, transparent)",
             backgroundSize: "50px 50px"
           }}
         />
