@@ -40,12 +40,15 @@ const LanguageSwitcher = () => {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
 
+  console.log('Current Theme:', theme);
+  console.log('Is Dark Mode:', isDark);
+
   return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon" className="rounded-full">
           <Globe 
-            className={isDark ? "h-5 w-5 text-yellow-300" : "h-5 w-5 text-paris-navy"} 
+            className={`h-5 w-5 ${isDark ? 'text-yellow-300' : 'text-paris-navy'}`} 
             strokeWidth={2.5} 
           />
           <span className="sr-only">Switch language</span>
@@ -72,3 +75,4 @@ const LanguageSwitcher = () => {
 };
 
 export default LanguageSwitcher;
+
