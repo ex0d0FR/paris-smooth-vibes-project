@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
@@ -33,7 +32,7 @@ const LegalNotice = () => {
                 <section className="mb-8">
                   <h2 className="text-2xl font-semibold mb-4">MEDIA MANAGER</h2>
                   <p>Pastor Jacques DELGRANDE</p>
-                  <p>Contact: <a href="mailto:jackdkamshay@yahoo.fr" className="text-paris-blue dark:text-paris-gold">jackdkamshay@yahoo.fr</a></p>
+                  <p>Contact: <a href="mailto:contact@kerygmaparis.fr" className="text-paris-blue dark:text-paris-gold">contact@kerygmaparis.fr</a></p>
                 </section>
                 
                 <section className="mb-8">
@@ -60,7 +59,7 @@ const LegalNotice = () => {
                   <h2 className="text-2xl font-semibold mb-4">GDPR COMPLIANCE</h2>
                   <p>In accordance with the General Data Protection Regulation (GDPR), any personal data collected through this website (e.g., contact forms, newsletter subscriptions) is processed solely for the purpose of communication and church activities.</p>
                   <p>Kerygma Paris Church is committed to ensuring the confidentiality and security of your data.</p>
-                  <p>You have the right to access, modify, or delete your personal information at any time by contacting: <a href="mailto:jackdkamshay@yahoo.fr" className="text-paris-blue dark:text-paris-gold">jackdkamshay@yahoo.fr</a></p>
+                  <p>You have the right to access, modify, or delete your personal information at any time by contacting: <a href="mailto:contact@kerygmaparis.fr" className="text-paris-blue dark:text-paris-gold">contact@kerygmaparis.fr</a></p>
                 </section>
               </div>
             </div>
