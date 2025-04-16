@@ -39,13 +39,23 @@ export function ThemeProvider({
     }
 
     root.classList.add(theme);
+    
+    // Persist theme preference to localStorage
+    localStorage.setItem("theme", theme);
   }, [theme]);
+
+  // Add logic to read theme from localStorage on initial load
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") as Theme;
+    if (savedTheme && ["light", "dark", "system"].includes(savedTheme)) {
+      setTheme(savedTheme);
+    }
+  }, []);
 
   const value = {
     theme,
-    setTheme: (theme: Theme) => {
-      localStorage.setItem("theme", theme);
-      setTheme(theme);
+    setTheme: (newTheme: Theme) => {
+      setTheme(newTheme);
     },
   };
 
@@ -63,3 +73,4 @@ export const useTheme = () => {
   }
   return context;
 };
+
