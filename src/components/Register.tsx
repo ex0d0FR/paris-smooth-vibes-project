@@ -1,6 +1,6 @@
-
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { QuestionMarkCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Check } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
@@ -79,7 +79,6 @@ const Register = () => {
     );
     if (w) w.focus();
     
-    // Fix the translation function call format for variables
     toast({
       title: t('register.toast.title', 'Registration Started'),
       description: t('register.toast.description', `You've selected the ${tier} package. Please complete your registration in the popup window.`, { tier }),
@@ -136,7 +135,11 @@ const Register = () => {
         
         <div className="text-center mt-12 reveal" style={{ transitionDelay: '400ms' }}>
           <p className="text-white/80 mb-4">{t('register.questions')}</p>
-          <Button variant="outline" className="border-white text-white hover:bg-white/10">
+          <Button 
+            variant="claire_outline" 
+            icon={<QuestionMarkCircle />}
+            size="claire"
+          >
             {t('register.contact')}
           </Button>
         </div>
