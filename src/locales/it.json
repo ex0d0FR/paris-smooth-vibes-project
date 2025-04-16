@@ -157,5 +157,51 @@
     "endorsedBy": "Sostenuto Da",
     "endorsementDescription": "PARIS 2025 è sostenuto e convalidato da queste importanti organizzazioni missionarie.",
     "endorser": "Sostenuto Da:"
+  },
+  "visa": {
+    "title": "Requisiti per il Visto",
+    "subtitle": "Informazioni Importanti per i Partecipanti Internazionali",
+    "welcome": "Siamo lieti di accogliervi alla Conferenza Costruire Ponti Missionari, che si terrà a Parigi dal 28 al 31 ottobre 2025.",
+    "readCarefully": "Si prega di leggere attentamente le seguenti informazioni se viaggiate da fuori Francia.",
+    "disclaimer": {
+      "title": "Dichiarazione di Non Responsabilità su Viaggi e Visti",
+      "intro": "La Fédération Protestante de France e l'Église Kerygma non sono responsabili per:",
+      "notResponsibleFor": [
+        "Il rilascio di lettere d'invito per le richieste di visto",
+        "La copertura di costi relativi al vostro viaggio o partecipazione all'evento"
+      ],
+      "expenses": {
+        "intro": "Questo include, ma non è limitato a:",
+        "items": [
+          "Biglietti aerei",
+          "Cibo e pasti",
+          "Alloggio e sistemazione",
+          "Assicurazione medica o spese sanitarie",
+          "Tariffe per la richiesta del visto o qualsiasi organizzazione di viaggio"
+        ],
+        "conclusion": "Tutte queste spese devono essere coperte interamente da ciascun partecipante o dalla propria organizzazione di invio."
+      }
+    },
+    "visaType": {
+      "title": "Tipo di Visto",
+      "info": "Poiché si tratta di un evento di breve durata, i partecipanti devono richiedere un visto turistico Schengen di breve durata, che generalmente copre soggiorni fino a 90 giorni nell'area Schengen.",
+      "personal": "Questo visto deve essere richiesto personalmente nel vostro paese di residenza."
+    },
+    "resources": {
+      "title": "Risorse Utili per la Vostra Domanda",
+      "intro": "Per guidarvi attraverso il processo di richiesta del visto, vi consigliamo di visitare i seguenti siti web ufficiali:",
+      "schengenInfo": "Schengen Visa Info – Sito Web Ufficiale",
+      "franceVisas": "France Visas – Portale Ufficiale dei Visti Francesi"
+    },
+    "conclusion": {
+      "appreciation": "Apprezziamo la vostra comprensione e cooperazione. Questa politica garantisce chiarezza e trasparenza per tutti i partecipanti internazionali.",
+      "questions": "Se avete domande riguardanti la conferenza stessa (non questioni relative al visto), non esitate a contattare:"
+    },
+    "contact": {
+      "name": "Luis Fernando Rosales",
+      "behalf": "Per conto della Fédération Protestante de France e dell'Église Kerygma",
+      "phone": "+33 749 44 26 26"
+    },
+    "backToHome": "Torna alla Home"
   }
 }
