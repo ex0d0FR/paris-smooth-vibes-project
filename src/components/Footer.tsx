@@ -1,6 +1,7 @@
 import React from 'react';
 import { Mail, Heart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const {
@@ -59,8 +60,8 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center">
                 <Mail className="mr-2 h-5 w-5" />
-                <a href="mailto:info@paris2025.net" className="text-white/80 hover:text-paris-gold transition-colors">
-                  info@paris2025.net
+                <a href="mailto:info@puentesparis2025.net" className="text-white/80 hover:text-paris-gold transition-colors">
+                  info@puentesparis2025.net
                 </a>
               </div>
             </div>
@@ -115,4 +116,5 @@ const Footer = () => {
       </div>
     </footer>;
 };
+
 export default Footer;
