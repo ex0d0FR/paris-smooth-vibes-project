@@ -26,7 +26,7 @@ const Registration = () => {
       
       <Navbar />
       
-      <main className="pt-24 pb-16">
+      <main className="pt-24 pb-16 min-h-screen">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <Link to="/#register" className="inline-flex items-center text-paris-blue hover:text-paris-gold mb-6">
