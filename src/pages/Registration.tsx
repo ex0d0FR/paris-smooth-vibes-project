@@ -1,7 +1,7 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -11,11 +11,16 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 const Registration = () => {
   const { t } = useTranslation();
+  const location = useLocation();
   
-  // Scroll to top when component mounts
+  // Scroll to top when component mounts or route changes
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant'
+    });
+  }, [location.pathname]);
   
   return (
     <>
