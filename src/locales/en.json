@@ -1,3 +1,4 @@
+
 {
   "common": {
     "languageName": "English"
@@ -100,7 +101,7 @@
     "registerNow": "Register Now",
     "toast": {
       "title": "Registration Started",
-      "description": "You've selected the {{tier}} package. Please complete your registration in the popup window."
+      "description": "You've selected the {{tier}} package. Please complete your registration."
     },
     "tiers": {
       "inPerson": {
@@ -132,6 +133,14 @@
     },
     "questions": "Have questions about registration or need assistance?",
     "contact": "Contact Us"
+  },
+  "registration": {
+    "title": "Complete Your Registration",
+    "subtitle": "Please fill out the form below to secure your spot at PARIS 2025",
+    "description": "Register for the PARIS 2025 conference - secure your spot today",
+    "backToPricing": "Back to pricing options",
+    "securePayment": "Secure payment processing provided by Weezevent",
+    "questions": "Having trouble? Contact us at"
   },
   "footer": {
     "description": "Building Missionary Bridges: bringing together thought leaders, innovators and changemakers.",

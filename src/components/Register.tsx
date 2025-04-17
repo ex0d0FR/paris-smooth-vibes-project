@@ -1,33 +1,30 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { HelpCircle } from 'lucide-react';
+import { HelpCircle, ExternalLink } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 import { useTranslation } from 'react-i18next';
 import { getPricingTiers } from '@/data/registerData';
 import PricingCard from './PricingCard';
 import useRevealAnimation from '@/hooks/useRevealAnimation';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const { toast } = useToast();
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const pricingTiers = getPricingTiers(t);
   
   // Use our custom hook for reveal animations
   useRevealAnimation();
 
   const handleRegister = (tier: string) => {
-    const url = 'https://widget.weezevent.com/ticket/E1301418/?code=4111&locale=fr-FR&width_auto=1&color_primary=0032FA';
-    const w = window.open(
-      url, 
-      'Billetterie_weezevent', 
-      'width=650, height=600, top=100, left=100, toolbar=no, resizable=yes, scrollbars=yes, status=no'
-    );
-    if (w) w.focus();
+    // Navigate to registration page
+    navigate('/registration');
     
     toast({
       title: t('register.toast.title', 'Registration Started'),
-      description: t('register.toast.description', `You've selected the ${tier} package. Please complete your registration in the popup window.`, { tier }),
+      description: t('register.toast.description', `You've selected the ${tier} package. Please complete your registration.`, { tier }),
       duration: 5000,
     });
   };
@@ -40,6 +37,16 @@ const Register = () => {
           <p className="text-lg text-white/90 reveal" style={{ transitionDelay: '100ms' }}>
             {t('register.description')}
           </p>
+          
+          {/* Top Yellow Button */}
+          <div className="mt-8 reveal" style={{ transitionDelay: '150ms' }}>
+            <Button 
+              onClick={() => navigate('/registration')}
+              className="bg-yellow-100 hover:bg-yellow-200 text-paris-navy font-bold text-lg px-8 py-6 rounded-xl border-2 border-yellow-200 shadow-lg transition-all hover:scale-105"
+            >
+              {t('register.registerNow')} <ExternalLink className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
