@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import Navbar from '@/components/Navbar';
@@ -11,6 +11,11 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 const Registration = () => {
   const { t } = useTranslation();
+  
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   
   return (
     <>
