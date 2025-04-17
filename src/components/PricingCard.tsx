@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Check } from 'lucide-react';
 import { PricingTier } from '@/data/registerData';
+import { useNavigate } from 'react-router-dom';
 
 interface PricingCardProps {
   tier: PricingTier;
@@ -12,6 +13,13 @@ interface PricingCardProps {
 }
 
 const PricingCard = ({ tier, onRegister, index }: PricingCardProps) => {
+  const navigate = useNavigate();
+
+  const handleRegister = () => {
+    navigate('/registration');
+    onRegister(tier.name);
+  };
+
   return (
     <div 
       className={`reveal ${tier.isPrimary ? 'md:-mt-4 md:mb-4' : ''}`} 
@@ -37,7 +45,7 @@ const PricingCard = ({ tier, onRegister, index }: PricingCardProps) => {
           </ul>
           <Button 
             className={`w-full ${tier.isPrimary ? 'bg-paris-gold hover:bg-yellow-500 text-paris-navy' : 'bg-white hover:bg-white/90 text-paris-navy'}`}
-            onClick={() => onRegister(tier.name)}
+            onClick={handleRegister}
           >
             {tier.buttonText}
           </Button>
