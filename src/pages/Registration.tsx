@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import Navbar from '@/components/Navbar';
@@ -7,28 +7,11 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const Registration = () => {
   const { t } = useTranslation();
   
-  useEffect(() => {
-    // Create and append the Weezevent script tag 
-    const script = document.createElement('script');
-    script.src = 'https://widget.weezevent.com/weez.js';
-    script.async = true;
-    script.type = 'text/javascript';
-    
-    // Insert the script into the document
-    document.body.appendChild(script);
-    
-    return () => {
-      // Clean up
-      if (script.parentNode) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
-
   return (
     <>
       <Helmet>
@@ -57,23 +40,16 @@ const Registration = () => {
               </div>
               
               <div className="p-6">
-                {/* Weezevent widget using their recommended approach */}
-                <div className="weezevent-widget-integration mb-6"
-                  data-src="https://widget.weezevent.com/ticket/E1301418/?code=4111&locale=fr-FR&width_auto=1&color_primary=0032FA"
-                  data-id="1301418"
-                  data-resize="1"
-                  data-width_auto="1"
-                  data-noscroll="0"
-                  data-use-container="yes"
-                  data-type="neo">
-                  <div className="text-center py-16">
-                    <div className="animate-pulse flex flex-col items-center">
-                      <div className="rounded-full bg-slate-200 h-12 w-12 mb-4"></div>
-                      <div className="h-4 bg-slate-200 rounded w-3/4 mb-2"></div>
-                      <div className="h-4 bg-slate-200 rounded w-1/2"></div>
-                    </div>
-                    <p className="mt-8 text-gray-500">Loading registration form...</p>
-                  </div>
+                {/* Direct iframe implementation */}
+                <div className="mb-6 aspect-auto min-h-[600px]">
+                  <iframe 
+                    src="https://widget.weezevent.com/ticket/E1301418/?code=4111&locale=fr-FR&width_auto=1&color_primary=0032FA" 
+                    width="100%" 
+                    height="600" 
+                    frameBorder="0" 
+                    scrolling="auto"
+                    className="w-full min-h-[600px]"
+                  ></iframe>
                 </div>
                 
                 <div className="mt-6 text-center">
