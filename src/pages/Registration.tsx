@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import Navbar from '@/components/Navbar';
@@ -10,41 +10,19 @@ import { ChevronLeft } from 'lucide-react';
 
 const Registration = () => {
   const { t } = useTranslation();
-  const containerRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    // First check if WeezTarget is already defined
-    if (window.WeezTarget) {
-      window.WeezTarget.load();
-      return;
-    }
-
-    // Load Weezevent script
+    // Create and append the Weezevent script tag 
     const script = document.createElement('script');
     script.src = 'https://widget.weezevent.com/weez.js';
     script.async = true;
+    script.type = 'text/javascript';
+    
+    // Insert the script into the document
     document.body.appendChild(script);
-    
-    // Create a function to initialize the widget
-    const initializeWidget = () => {
-      if (window.WeezTarget && containerRef.current) {
-        // Make sure we're trying to load after the container is in the DOM
-        setTimeout(() => {
-          window.WeezTarget.load();
-          console.log('WeezTarget.load() called');
-        }, 500);
-      }
-    };
-    
-    // Initialize widget after script is loaded
-    script.onload = initializeWidget;
-    
-    // Set up a fallback in case the onload event doesn't fire
-    const fallbackTimer = setTimeout(initializeWidget, 2000);
     
     return () => {
       // Clean up
-      clearTimeout(fallbackTimer);
       if (script.parentNode) {
         document.body.removeChild(script);
       }
@@ -79,19 +57,15 @@ const Registration = () => {
               </div>
               
               <div className="p-6">
-                {/* Direct inline script approach for Weezevent */}
-                <div 
-                  id="weezevent-widget-container" 
-                  ref={containerRef}
-                  className="weezevent-widget-integration"
+                {/* Weezevent widget using their recommended approach */}
+                <div className="weezevent-widget-integration mb-6"
                   data-src="https://widget.weezevent.com/ticket/E1301418/?code=4111&locale=fr-FR&width_auto=1&color_primary=0032FA"
                   data-id="1301418"
                   data-resize="1"
                   data-width_auto="1"
                   data-noscroll="0"
                   data-use-container="yes"
-                  data-type="neo"
-                >
+                  data-type="neo">
                   <div className="text-center py-16">
                     <div className="animate-pulse flex flex-col items-center">
                       <div className="rounded-full bg-slate-200 h-12 w-12 mb-4"></div>
@@ -120,14 +94,5 @@ const Registration = () => {
     </>
   );
 };
-
-// Add this to make TypeScript happy
-declare global {
-  interface Window {
-    WeezTarget?: {
-      load: () => void;
-    };
-  }
-}
 
 export default Registration;
