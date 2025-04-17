@@ -1,29 +1,25 @@
-
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Globe } from 'lucide-react';
 import { useTheme } from '@/context/ThemeProvider';
 import useRevealAnimation from '@/hooks/useRevealAnimation';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
   const { t } = useTranslation();
   const { theme } = useTheme();
+  const navigate = useNavigate();
   
-  // Use our custom hook for reveal animations
   useRevealAnimation();
   
-  const scrollToRegister = () => {
-    document.getElementById('register')?.scrollIntoView({
-      behavior: 'smooth'
-    });
+  const navigateToRegistration = () => {
+    navigate('/registration');
   };
   
   return (
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Enhanced Background with Mission-Oriented Map Design */}
       <div className="absolute inset-0 z-0">
-        {/* Vintage world map background with mission elements */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -35,14 +31,12 @@ const Hero = () => {
           }}
         />
         
-        {/* Theme-adaptive background overlay */}
         <div className={`absolute inset-0 ${
           theme === 'dark' 
             ? 'bg-gradient-to-b from-paris-navy/90 via-paris-navy/80 to-paris-navy/95' 
             : 'bg-gradient-to-b from-paris-navy/75 via-paris-navy/65 to-paris-navy/85'
         }`}></div>
         
-        {/* Vintage paper texture overlay */}
         <div 
           className={`absolute inset-0 ${theme === 'dark' ? 'opacity-10' : 'opacity-15'}`}
           style={{
@@ -53,7 +47,6 @@ const Hero = () => {
           }}
         />
         
-        {/* Animated connection paths */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/3 w-20 h-20">
             <div className={`absolute w-full h-full rounded-full border-2 ${
@@ -80,7 +73,6 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Golden accent lights */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute w-full h-full">
             <div className={`absolute top-1/4 left-1/4 w-96 h-96 rounded-full ${
@@ -97,7 +89,6 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Global connection grid pattern */}
         <div 
           className={`absolute inset-0 ${theme === 'dark' ? 'opacity-10' : 'opacity-15'}`}
           style={{
@@ -107,7 +98,6 @@ const Hero = () => {
         />
       </div>
       
-      {/* Content */}
       <div className="container mx-auto px-4 z-10 text-center">
         <p className="text-paris-gold font-medium mb-2 reveal">{t('hero.date')}</p>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 text-shadow reveal" style={{
@@ -124,13 +114,18 @@ const Hero = () => {
         <div className="flex justify-center gap-4 reveal" style={{
           transitionDelay: '600ms'
         }}>
-          <Button onClick={scrollToRegister} size="claire" variant="claire" className="font-semibold" icon={<Globe size={18} />}>
+          <Button 
+            onClick={navigateToRegistration} 
+            size="claire" 
+            variant="claire" 
+            className="font-semibold" 
+            icon={<Globe size={18} />}
+          >
             {t('hero.registerNow')}
           </Button>
         </div>
       </div>
       
-      {/* Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
         <ArrowDown className="text-white" />
       </div>

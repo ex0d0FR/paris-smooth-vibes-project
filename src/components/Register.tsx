@@ -7,12 +7,12 @@ import { useTranslation } from 'react-i18next';
 import { getPricingTiers } from '@/data/registerData';
 import PricingCard from './PricingCard';
 import useRevealAnimation from '@/hooks/useRevealAnimation';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // Add this import
 
 const Register = () => {
   const { toast } = useToast();
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Add navigation hook
   const pricingTiers = getPricingTiers(t);
   
   // Use our custom hook for reveal animations
@@ -76,3 +76,4 @@ const Register = () => {
 };
 
 export default Register;
+
