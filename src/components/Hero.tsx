@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
@@ -13,8 +14,10 @@ const Hero = () => {
   
   useRevealAnimation();
   
-  const navigateToRegistration = () => {
-    navigate('/registration');
+  const scrollToRegister = () => {
+    document.getElementById('register')?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
   
   return (
@@ -115,7 +118,7 @@ const Hero = () => {
           transitionDelay: '600ms'
         }}>
           <Button 
-            onClick={navigateToRegistration} 
+            onClick={scrollToRegister} 
             size="claire" 
             variant="claire" 
             className="font-semibold" 
