@@ -1,11 +1,23 @@
-import React from 'react';
+
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { FileText } from 'lucide-react';
 
 const LegalNotice = () => {
+  const location = useLocation();
+  
+  // Scroll to top when component mounts or route changes
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant'
+    });
+  }, [location.pathname]);
+  
   return (
     <>
       <Helmet>
