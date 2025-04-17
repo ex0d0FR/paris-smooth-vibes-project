@@ -19,9 +19,18 @@ const Registration = () => {
     script.async = true;
     document.body.appendChild(script);
     
+    // Initialize widget after script is loaded
+    script.onload = () => {
+      if (window.WeezTarget && containerRef.current) {
+        window.WeezTarget.load();
+      }
+    };
+    
     return () => {
       // Clean up
-      document.body.removeChild(script);
+      if (script.parentNode) {
+        document.body.removeChild(script);
+      }
     };
   }, []);
 
@@ -91,5 +100,14 @@ const Registration = () => {
     </>
   );
 };
+
+// Add this to make TypeScript happy
+declare global {
+  interface Window {
+    WeezTarget?: {
+      load: () => void;
+    };
+  }
+}
 
 export default Registration;
