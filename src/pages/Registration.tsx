@@ -13,21 +13,38 @@ const Registration = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
+    // First check if WeezTarget is already defined
+    if (window.WeezTarget) {
+      window.WeezTarget.load();
+      return;
+    }
+
     // Load Weezevent script
     const script = document.createElement('script');
     script.src = 'https://widget.weezevent.com/weez.js';
     script.async = true;
     document.body.appendChild(script);
     
-    // Initialize widget after script is loaded
-    script.onload = () => {
+    // Create a function to initialize the widget
+    const initializeWidget = () => {
       if (window.WeezTarget && containerRef.current) {
-        window.WeezTarget.load();
+        // Make sure we're trying to load after the container is in the DOM
+        setTimeout(() => {
+          window.WeezTarget.load();
+          console.log('WeezTarget.load() called');
+        }, 500);
       }
     };
     
+    // Initialize widget after script is loaded
+    script.onload = initializeWidget;
+    
+    // Set up a fallback in case the onload event doesn't fire
+    const fallbackTimer = setTimeout(initializeWidget, 2000);
+    
     return () => {
       // Clean up
+      clearTimeout(fallbackTimer);
       if (script.parentNode) {
         document.body.removeChild(script);
       }
@@ -62,7 +79,9 @@ const Registration = () => {
               </div>
               
               <div className="p-6">
+                {/* Direct inline script approach for Weezevent */}
                 <div 
+                  id="weezevent-widget-container" 
                   ref={containerRef}
                   className="weezevent-widget-integration"
                   data-src="https://widget.weezevent.com/ticket/E1301418/?code=4111&locale=fr-FR&width_auto=1&color_primary=0032FA"
@@ -73,12 +92,13 @@ const Registration = () => {
                   data-use-container="yes"
                   data-type="neo"
                 >
-                  <div className="text-center py-8">
+                  <div className="text-center py-16">
                     <div className="animate-pulse flex flex-col items-center">
                       <div className="rounded-full bg-slate-200 h-12 w-12 mb-4"></div>
                       <div className="h-4 bg-slate-200 rounded w-3/4 mb-2"></div>
                       <div className="h-4 bg-slate-200 rounded w-1/2"></div>
                     </div>
+                    <p className="mt-8 text-gray-500">Loading registration form...</p>
                   </div>
                 </div>
                 
