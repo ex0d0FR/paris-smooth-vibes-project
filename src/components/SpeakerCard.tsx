@@ -14,6 +14,9 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
   const [imageLoaded, setImageLoaded] = useState<boolean>(false);
   const [imageError, setImageError] = useState<boolean>(false);
   
+  // Use a direct path without query parameters for initial state
+  const imagePath = speaker.image;
+  
   const handleImageLoad = () => {
     setImageLoaded(true);
     console.log(`Image loaded successfully for ${speaker.name}`, {
@@ -40,13 +43,13 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
     img.onerror = handleImageError;
     
     // Add timestamp to prevent caching issues
-    img.src = `${speaker.image}?t=${new Date().getTime()}`;
+    img.src = `${imagePath}?t=${new Date().getTime()}`;
     
     return () => {
       img.onload = null;
       img.onerror = null;
     };
-  }, [speaker.image, speaker.name]);
+  }, [imagePath, speaker.name]);
 
   // Generate initials for fallback
   const getInitials = (name: string) => {
@@ -65,19 +68,19 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
           )}
           <Avatar className="w-24 h-24 border-2 border-paris-blue dark:border-paris-gold">
             {imageError ? (
-              <AvatarFallback>
+              <AvatarFallback className="text-lg font-bold">
                 {getInitials(speaker.name)}
               </AvatarFallback>
             ) : (
               <>
                 <AvatarImage 
-                  src={`${speaker.image}?t=${new Date().getTime()}`} 
+                  src={`${imagePath}?t=${new Date().getTime()}`} 
                   alt={speaker.name} 
                   className="object-cover"
                   onLoad={handleImageLoad}
                   onError={handleImageError}
                 />
-                <AvatarFallback>
+                <AvatarFallback className="text-lg font-bold">
                   {getInitials(speaker.name)}
                 </AvatarFallback>
               </>
