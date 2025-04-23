@@ -30,8 +30,10 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
   };
 
   useEffect(() => {
+    // Force browser to reload the image by adding a cache-busting parameter
+    const cacheBuster = `?cache=${Date.now()}`;
     const img = new Image();
-    img.src = speaker.image;
+    img.src = `${speaker.image}${cacheBuster}`;
     img.onload = handleImageLoad;
     img.onerror = handleImageError;
     
@@ -58,11 +60,9 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
           <Avatar className="w-24 h-24 border-2 border-paris-blue dark:border-paris-gold">
             {imageError ? (
               <AvatarFallback>
-                <img 
-                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" 
-                  alt={`Placeholder for ${speaker.name}`} 
-                  className="w-full h-full object-cover"
-                />
+                <div className="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700">
+                  {speaker.name.split(' ').map(n => n[0]).join('')}
+                </div>
               </AvatarFallback>
             ) : (
               <>
