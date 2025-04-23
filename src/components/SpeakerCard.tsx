@@ -16,7 +16,9 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
   
   const handleImageLoad = () => {
     setImageLoaded(true);
-    console.log(`Image loaded successfully for ${speaker.name}`);
+    console.log(`Image loaded successfully for ${speaker.name}`, {
+      imagePath: speaker.image
+    });
   };
   
   const handleImageError = () => {
@@ -29,16 +31,15 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
 
   // Preload image to check if it loads correctly
   useEffect(() => {
-    // Don't preload images from the /speakers/ directory as they are reliable
-    if (!speaker.image.includes('/speakers/')) {
-      const img = new Image();
-      img.src = speaker.image;
-      img.onload = handleImageLoad;
-      img.onerror = handleImageError;
-    } else {
-      // For /speakers/ directory images, we assume they load correctly
-      setImageLoaded(true);
-    }
+    const img = new Image();
+    img.src = speaker.image;
+    img.onload = handleImageLoad;
+    img.onerror = handleImageError;
+    
+    return () => {
+      img.onload = null;
+      img.onerror = null;
+    };
   }, [speaker.image]);
 
   return (
