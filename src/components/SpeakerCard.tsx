@@ -29,12 +29,15 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
     setImageError(true);
   };
 
-  // Preload image to check if it loads correctly
   useEffect(() => {
     const img = new Image();
     img.src = speaker.image;
     img.onload = handleImageLoad;
     img.onerror = handleImageError;
+    
+    // Reset state when speaker changes
+    setImageLoaded(false);
+    setImageError(false);
     
     return () => {
       img.onload = null;
