@@ -1,4 +1,3 @@
-
 export interface Speaker {
   id: number;
   name: string;
@@ -13,7 +12,7 @@ export const speakersData: Speaker[] = [
     name: 'Said Oujibou',
     role: 'Evangelist',
     company: 'Médiateur socioreligieux, Paris',
-    image: '/lovable-uploads/01bc07a4-a9a5-45e0-b320-b1a0c96d0427.png',
+    image: '/lovable-uploads/982fd9f4-527b-46a7-80dc-9fc6d6aa9982.png',
   },
   {
     id: 1,
