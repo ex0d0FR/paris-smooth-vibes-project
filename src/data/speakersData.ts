@@ -1,3 +1,4 @@
+
 export interface Speaker {
   id: number;
   name: string;
@@ -9,7 +10,7 @@ export interface Speaker {
 export const speakersData: Speaker[] = [
   {
     id: 15,
-    name: 'Jacques Delgrande',
+    name: 'Said Oujibou',
     role: 'Evangelist',
     company: 'Médiateur socioreligieux, Paris',
     image: '/lovable-uploads/0ea612fb-2528-44ab-9f9f-c6cda6477732.png',
