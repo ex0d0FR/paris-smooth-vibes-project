@@ -42,8 +42,8 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
     img.onload = handleImageLoad;
     img.onerror = handleImageError;
     
-    // Add timestamp to prevent caching issues
-    img.src = `${imagePath}?t=${new Date().getTime()}`;
+    // Add cache-busting timestamp
+    img.src = imagePath;
     
     return () => {
       img.onload = null;
@@ -74,7 +74,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
             ) : (
               <>
                 <AvatarImage 
-                  src={`${imagePath}?t=${new Date().getTime()}`} 
+                  src={imagePath}
                   alt={speaker.name} 
                   className="object-cover"
                   onLoad={handleImageLoad}

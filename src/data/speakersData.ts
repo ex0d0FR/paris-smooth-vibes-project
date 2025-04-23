@@ -12,7 +12,7 @@ export const speakersData: Speaker[] = [
     name: 'Said Oujibou',
     role: 'Evangelist',
     company: 'Médiateur socioreligieux, Paris',
-    image: '/lovable-uploads/5a3a7dca-fbe2-40fa-93c9-94ffca3cfcc0.png',
+    image: '/lovable-uploads/c4f2da71-329e-4a01-89fe-9f0151cc83e2.png',
   },
   {
     id: 1,
