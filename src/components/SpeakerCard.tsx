@@ -27,11 +27,14 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
     setImageError(true);
   };
 
+  // Only use useEffect for images that are not from the /speakers/ directory
   useEffect(() => {
-    const img = new Image();
-    img.src = speaker.image;
-    img.onload = handleImageLoad;
-    img.onerror = handleImageError;
+    if (!speaker.image.includes('/speakers/')) {
+      const img = new Image();
+      img.src = speaker.image;
+      img.onload = handleImageLoad;
+      img.onerror = handleImageError;
+    }
   }, [speaker.image]);
 
   return (
@@ -45,24 +48,28 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
             <Skeleton className="w-24 h-24 absolute" />
           )}
           <Avatar className="w-24 h-24 border-2 border-paris-blue dark:border-paris-gold">
-            <AvatarImage 
-              src={speaker.image} 
-              alt={speaker.name} 
-              className="object-cover"
-              onLoad={handleImageLoad}
-              onError={handleImageError}
-            />
-            <AvatarFallback>
-              {imageError ? (
+            {imageError ? (
+              <AvatarFallback>
                 <img 
                   src="/placeholder.svg" 
                   alt={`Placeholder for ${speaker.name}`} 
                   className="w-full h-full object-cover"
                 />
-              ) : (
-                speaker.name.split(' ').map(n => n[0]).join('')
-              )}
-            </AvatarFallback>
+              </AvatarFallback>
+            ) : (
+              <>
+                <AvatarImage 
+                  src={speaker.image} 
+                  alt={speaker.name} 
+                  className="object-cover"
+                  onLoad={handleImageLoad}
+                  onError={handleImageError}
+                />
+                <AvatarFallback>
+                  {speaker.name.split(' ').map(n => n[0]).join('')}
+                </AvatarFallback>
+              </>
+            )}
           </Avatar>
         </div>
         <h3 className="text-xl font-semibold mb-1 text-center dark:text-white">{speaker.name}</h3>
