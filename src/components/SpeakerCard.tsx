@@ -34,20 +34,24 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
     setImageLoaded(false);
     setImageError(false);
     
-    // Force browser to reload the image with a strong cache-busting parameter
-    const timestamp = new Date().getTime();
-    const cacheBuster = `?v=${timestamp}`;
-    
+    // Create a new image object to properly handle load/error events
     const img = new Image();
-    img.src = `${speaker.image}${cacheBuster}`;
     img.onload = handleImageLoad;
     img.onerror = handleImageError;
+    
+    // Add timestamp to prevent caching issues
+    img.src = `${speaker.image}?t=${new Date().getTime()}`;
     
     return () => {
       img.onload = null;
       img.onerror = null;
     };
-  }, [speaker.image]);
+  }, [speaker.image, speaker.name]);
+
+  // Generate initials for fallback
+  const getInitials = (name: string) => {
+    return name.split(' ').map(n => n[0]).join('');
+  };
 
   return (
     <Card 
@@ -57,26 +61,24 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
       <CardContent className="p-6 flex flex-col items-center">
         <div className="relative w-24 h-24 mb-4">
           {!imageLoaded && !imageError && (
-            <Skeleton className="w-24 h-24 absolute" />
+            <Skeleton className="w-24 h-24 absolute rounded-full" />
           )}
           <Avatar className="w-24 h-24 border-2 border-paris-blue dark:border-paris-gold">
             {imageError ? (
               <AvatarFallback>
-                <div className="w-full h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700">
-                  {speaker.name.split(' ').map(n => n[0]).join('')}
-                </div>
+                {getInitials(speaker.name)}
               </AvatarFallback>
             ) : (
               <>
                 <AvatarImage 
-                  src={`${speaker.image}?v=${new Date().getTime()}`}
+                  src={`${speaker.image}?t=${new Date().getTime()}`} 
                   alt={speaker.name} 
                   className="object-cover"
                   onLoad={handleImageLoad}
                   onError={handleImageError}
                 />
                 <AvatarFallback>
-                  {speaker.name.split(' ').map(n => n[0]).join('')}
+                  {getInitials(speaker.name)}
                 </AvatarFallback>
               </>
             )}
