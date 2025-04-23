@@ -27,13 +27,17 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
     setImageError(true);
   };
 
-  // Only use useEffect for images that are not from the /speakers/ directory
+  // Preload image to check if it loads correctly
   useEffect(() => {
+    // Don't preload images from the /speakers/ directory as they are reliable
     if (!speaker.image.includes('/speakers/')) {
       const img = new Image();
       img.src = speaker.image;
       img.onload = handleImageLoad;
       img.onerror = handleImageError;
+    } else {
+      // For /speakers/ directory images, we assume they load correctly
+      setImageLoaded(true);
     }
   }, [speaker.image]);
 
@@ -51,7 +55,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
             {imageError ? (
               <AvatarFallback>
                 <img 
-                  src="/placeholder.svg" 
+                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" 
                   alt={`Placeholder for ${speaker.name}`} 
                   className="w-full h-full object-cover"
                 />
