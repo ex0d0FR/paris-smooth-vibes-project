@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -16,15 +16,23 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
   
   const handleImageLoad = () => {
     setImageLoaded(true);
+    console.log(`Image loaded successfully for ${speaker.name}`);
   };
   
   const handleImageError = () => {
-    console.log(`Image error for speaker ${speaker.id}`);
+    console.error(`Image failed to load for ${speaker.name}`, {
+      imagePath: speaker.image,
+      speakerId: speaker.id
+    });
     setImageError(true);
   };
 
-  // Use the image path from the speaker data
-  const imagePath = speaker.image;
+  useEffect(() => {
+    const img = new Image();
+    img.src = speaker.image;
+    img.onload = handleImageLoad;
+    img.onerror = handleImageError;
+  }, [speaker.image]);
 
   return (
     <Card 
@@ -38,7 +46,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
           )}
           <Avatar className="w-24 h-24 border-2 border-paris-blue dark:border-paris-gold">
             <AvatarImage 
-              src={imagePath} 
+              src={speaker.image} 
               alt={speaker.name} 
               className="object-cover"
               onLoad={handleImageLoad}
@@ -48,7 +56,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
               {imageError ? (
                 <img 
                   src="/placeholder.svg" 
-                  alt={speaker.name} 
+                  alt={`Placeholder for ${speaker.name}`} 
                   className="w-full h-full object-cover"
                 />
               ) : (
