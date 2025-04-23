@@ -30,16 +30,18 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
   };
 
   useEffect(() => {
-    // Force browser to reload the image by adding a cache-busting parameter
-    const cacheBuster = `?cache=${Date.now()}`;
+    // Reset state when speaker changes
+    setImageLoaded(false);
+    setImageError(false);
+    
+    // Force browser to reload the image with a strong cache-busting parameter
+    const timestamp = new Date().getTime();
+    const cacheBuster = `?v=${timestamp}`;
+    
     const img = new Image();
     img.src = `${speaker.image}${cacheBuster}`;
     img.onload = handleImageLoad;
     img.onerror = handleImageError;
-    
-    // Reset state when speaker changes
-    setImageLoaded(false);
-    setImageError(false);
     
     return () => {
       img.onload = null;
@@ -67,7 +69,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
             ) : (
               <>
                 <AvatarImage 
-                  src={speaker.image} 
+                  src={`${speaker.image}?v=${new Date().getTime()}`}
                   alt={speaker.name} 
                   className="object-cover"
                   onLoad={handleImageLoad}
