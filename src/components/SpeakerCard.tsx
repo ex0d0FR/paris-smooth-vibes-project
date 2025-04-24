@@ -16,6 +16,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
   
   const handleImageLoad = () => {
     setImageLoaded(true);
+    console.log(`Image loaded successfully for ${speaker.name}`);
   };
   
   const handleImageError = () => {
