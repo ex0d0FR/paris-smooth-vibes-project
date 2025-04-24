@@ -1,9 +1,10 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Speaker } from '@/data/speakersData';
+import { toast } from "@/components/ui/use-toast";
 
 interface SpeakerCardProps {
   speaker: Speaker;
@@ -32,6 +33,22 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
     return name.split(' ').map(n => n[0]).join('');
   };
 
+  // Fallback image when the main image fails to load
+  const fallbackAvatarStyle = {
+    background: speaker.id % 5 === 0 ? '#4F46E5' : 
+                speaker.id % 4 === 0 ? '#059669' :
+                speaker.id % 3 === 0 ? '#DB2777' :
+                speaker.id % 2 === 0 ? '#D97706' : '#7C3AED',
+    color: 'white',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    height: '100%',
+    fontSize: '1.5rem',
+    fontWeight: 'bold'
+  };
+
   return (
     <Card 
       className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover-scale reveal"
@@ -50,7 +67,10 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
               onLoad={handleImageLoad}
               onError={handleImageError}
             />
-            <AvatarFallback className="text-lg font-bold">
+            <AvatarFallback 
+              className="text-lg font-bold"
+              style={imageError ? fallbackAvatarStyle : {}}
+            >
               {getInitials(speaker.name)}
             </AvatarFallback>
           </Avatar>
