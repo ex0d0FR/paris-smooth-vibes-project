@@ -14,14 +14,8 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
   const [imageLoaded, setImageLoaded] = useState<boolean>(false);
   const [imageError, setImageError] = useState<boolean>(false);
   
-  // Use a direct path without query parameters for initial state
-  const imagePath = speaker.image;
-  
   const handleImageLoad = () => {
     setImageLoaded(true);
-    console.log(`Image loaded successfully for ${speaker.name}`, {
-      imagePath: speaker.image
-    });
   };
   
   const handleImageError = () => {
@@ -31,25 +25,6 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
     });
     setImageError(true);
   };
-
-  useEffect(() => {
-    // Reset state when speaker changes
-    setImageLoaded(false);
-    setImageError(false);
-    
-    // Create a new image object to properly handle load/error events
-    const img = new Image();
-    img.onload = handleImageLoad;
-    img.onerror = handleImageError;
-    
-    // Add cache-busting timestamp
-    img.src = imagePath;
-    
-    return () => {
-      img.onload = null;
-      img.onerror = null;
-    };
-  }, [imagePath, speaker.name]);
 
   // Generate initials for fallback
   const getInitials = (name: string) => {
@@ -67,24 +42,16 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
             <Skeleton className="w-24 h-24 absolute rounded-full" />
           )}
           <Avatar className="w-24 h-24 border-2 border-paris-blue dark:border-paris-gold">
-            {imageError ? (
-              <AvatarFallback className="text-lg font-bold">
-                {getInitials(speaker.name)}
-              </AvatarFallback>
-            ) : (
-              <>
-                <AvatarImage 
-                  src={imagePath}
-                  alt={speaker.name} 
-                  className="object-cover"
-                  onLoad={handleImageLoad}
-                  onError={handleImageError}
-                />
-                <AvatarFallback className="text-lg font-bold">
-                  {getInitials(speaker.name)}
-                </AvatarFallback>
-              </>
-            )}
+            <AvatarImage 
+              src={speaker.image}
+              alt={speaker.name} 
+              className="object-cover"
+              onLoad={handleImageLoad}
+              onError={handleImageError}
+            />
+            <AvatarFallback className="text-lg font-bold">
+              {getInitials(speaker.name)}
+            </AvatarFallback>
           </Avatar>
         </div>
         <h3 className="text-xl font-semibold mb-1 text-center dark:text-white">{speaker.name}</h3>
