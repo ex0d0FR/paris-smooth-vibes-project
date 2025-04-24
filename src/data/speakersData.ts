@@ -8,13 +8,6 @@ export interface Speaker {
 
 export const speakersData: Speaker[] = [
   {
-    id: 15,
-    name: 'Said Oujibou',
-    role: 'Evangelist',
-    company: 'Médiateur socioreligieux, Paris',
-    image: '/lovable-uploads/481e07cc-8b06-4247-bc0c-0a9961163ecf.png',
-  },
-  {
     id: 1,
     name: 'David Bogosian',
     role: 'President/CEO',
@@ -112,4 +105,11 @@ export const speakersData: Speaker[] = [
     company: 'The Church of Pentecost',
     image: '/speakers/Eric_Nyamekye.png',
   },
+  {
+        id: 15,
+        name: 'Said Oujibou',
+        role: 'Evangelist',
+        company: 'Médiateur socioreligieux, Paris',
+        image: '/speakers/Sais_Oujibou.png',
+    },
 ];
