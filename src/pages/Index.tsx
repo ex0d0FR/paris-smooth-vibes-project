@@ -7,6 +7,7 @@ import Schedule from '@/components/Schedule';
 import Venue from '@/components/Venue';
 import Register from '@/components/Register';
 import Footer from '@/components/Footer';
+import FAQ from '@/components/FAQ';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 
@@ -160,6 +161,7 @@ const Index = () => {
           <Speakers />
           <Schedule />
           <Venue />
+          <FAQ />
           <Register />
         </main>
         <Footer />
