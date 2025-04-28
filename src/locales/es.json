@@ -203,5 +203,42 @@
       "email": "info@puentesparis2025.net"
     },
     "backToHome": "Volver al Inicio"
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "questions": {
+      "venue": {
+        "question": "¿Dónde se realiza el evento?",
+        "answer": "El evento se realiza en el Palais des Congrès de Paris. La dirección es: 2 Place de la Porte Maillot, 75017 París, Francia"
+      },
+      "transport": {
+        "question": "¿Organizan el transporte al evento?",
+        "answer": "No organizamos el transporte, cada participante organiza su propia logística."
+      },
+      "accommodation": {
+        "question": "¿Dónde puedo alojarme?",
+        "answer": "Hay opciones de alojamiento disponibles alrededor de la sede de la conferencia. Le recomendamos utilizar sitios como booking.com o airbnb.com para encontrar la solución que mejor se adapte a sus necesidades."
+      },
+      "food": {
+        "question": "¿Podré comprar comida en la conferencia?",
+        "answer": "Habrá un punto de comida rápida en la conferencia. También encontrará restaurantes y supermercados en la ciudad."
+      },
+      "program": {
+        "question": "¿Cuál es el programa?",
+        "answer": "Los días comienzan a las 9:00 y terminan alrededor de las 22:00. Se planifican descansos entre sesiones y para las comidas. Dado que el horario cambia constantemente hasta el último momento, no podemos proporcionar detalles sobre el contenido o las fechas y horarios de los diversos ponentes."
+      },
+      "price": {
+        "question": "¿Cuál es el precio?",
+        "answer": "El pase de 3 días para adultos cuesta 100€ hasta el 31 de marzo de 2024, luego 130€ a partir del 1 de agosto de 2024. Las tarifas para niños y días individuales se detallan en el enlace para comprar entradas."
+      },
+      "refund": {
+        "question": "Quiero obtener un reembolso de mi entrada, ¿cómo funciona?",
+        "answer": "Para cualquier solicitud de reembolso, debe enviar un correo electrónico a info@puentesparis2025.net desde el correo electrónico que se utilizó para comprar las entradas. Debe especificar el nombre, apellido y número de pedido. El reembolso se realizará sin las tarifas de la plataforma de compra de entradas, que no son reembolsables. No se aceptarán solicitudes de reembolso menos de 15 días antes del evento."
+      },
+      "video": {
+        "question": "¿Se puede seguir la conferencia por video de forma remota?",
+        "answer": "Sí, la conferencia se transmitirá en vivo por video en francés e inglés, regístrese aquí para recibir el enlace."
+      }
+    }
   }
 }
