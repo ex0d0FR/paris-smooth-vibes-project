@@ -156,7 +156,7 @@
     "developed": "Desenvolvido com",
     "endorsedBy": "Endossado Por",
     "endorsementDescription": "PARIS 2025 é apoiado e validado por estas organizações missionárias chave.",
-    "endorser": "Endossado Por:"
+    "endorsement": "Endossado Por:"
   },
   "visa": {
     "title": "Requisitos de Visto",
@@ -203,5 +203,42 @@
       "email": "info@puentesparis2025.net"
     },
     "backToHome": "Voltar à Página Inicial"
+  },
+  "faq": {
+    "title": "Perguntas Frequentes",
+    "questions": {
+      "venue": {
+        "question": "Onde o evento será realizado?",
+        "answer": "O evento acontece no Palais des Congrès de Paris. O endereço é: 2 Place de la Porte Maillot, 75017 Paris, França"
+      },
+      "transport": {
+        "question": "Vocês organizam o transporte para o evento?",
+        "answer": "Não organizamos o transporte, cada participante organiza sua própria logística."
+      },
+      "accommodation": {
+        "question": "Onde posso me hospedar?",
+        "answer": "Existem opções de acomodação disponíveis ao redor do local da conferência. Recomendamos usar sites como booking.com ou airbnb.com para encontrar a solução que melhor se adapte a você."
+      },
+      "food": {
+        "question": "Poderei comprar comida na conferência?",
+        "answer": "Haverá um estabelecimento de fast food na conferência. Você também encontrará restaurantes e supermercados na cidade."
+      },
+      "program": {
+        "question": "Qual é a programação?",
+        "answer": "Os dias começam às 9:00 e terminam por volta das 22:00. Estão planejados intervalos entre as sessões e para refeições. Como a programação está em constante mudança até o último momento, não podemos fornecer detalhes sobre o conteúdo ou os horários dos diversos palestrantes."
+      },
+      "price": {
+        "question": "Qual é o preço?",
+        "answer": "O passe de 3 dias para adulto custa €100 até 31 de março de 2024, depois €130 a partir de 1º de agosto de 2024. As tarifas para crianças e diárias estão detalhadas no link para compra de ingressos."
+      },
+      "refund": {
+        "question": "Quero um reembolso do meu ingresso, como funciona?",
+        "answer": "Para qualquer solicitação de reembolso, você deve enviar um e-mail para info@puentesparis2025.net do e-mail que foi usado para comprar os ingressos. Você deve especificar o nome, sobrenome e número do pedido. O reembolso será feito sem as taxas da plataforma de compra de ingressos, que não são reembolsáveis. Nenhuma solicitação de reembolso será aceita menos de 15 dias antes do evento."
+      },
+      "video": {
+        "question": "A conferência pode ser acompanhada por vídeo remotamente?",
+        "answer": "Sim, a conferência será transmitida ao vivo em vídeo em francês e inglês, registre-se aqui para receber o link."
+      }
+    }
   }
 }
