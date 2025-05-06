@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useCallback } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Clock } from 'lucide-react';
@@ -59,7 +58,7 @@ const scheduleData: Record<string, ScheduleItem[]> = {
     },
     { 
       time: '20:00', 
-      title: 'The Important of Reaching Europe Sunday', 
+      title: 'The Important of Reaching Europe', 
       speaker: 'Dr. Hisham Kamel', 
       location: 'Main Hall',
       category: 'Keynote'
