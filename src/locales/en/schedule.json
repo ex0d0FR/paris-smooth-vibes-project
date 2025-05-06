@@ -1,0 +1,26 @@
+
+{
+  "title": "Conference Schedule",
+  "description": "Plan your PARIS 2025 experience with our comprehensive program",
+  "day1": "Day 1 (Oct 28)",
+  "day2": "Day 2 (Oct 29)",
+  "day3": "Day 3 (Oct 30)",
+  "day4": "Day 4 (Oct 31)",
+  "download": "Download Full Schedule",
+  "categories": {
+    "keynote": "Keynote",
+    "workshop": "Workshop",
+    "panel": "Panel",
+    "talk": "Talk",
+    "networking": "Networking",
+    "social": "Social Event",
+    "discussion": "Discussion",
+    "ceremony": "Ceremony",
+    "worship": "Worship",
+    "registration": "Registration",
+    "devotion": "Devotion",
+    "plenary": "Plenary",
+    "reflection": "Reflection",
+    "meal": "Meal"
+  }
+}
