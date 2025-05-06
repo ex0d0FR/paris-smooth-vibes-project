@@ -19,6 +19,7 @@ import enFaq from './locales/en/faq.json';
 import enRegistration from './locales/en/registration.json';
 
 // Spanish translations
+import esCommon from './locales/es/common.json';
 import esNav from './locales/es/nav.json';
 import esHero from './locales/es/hero.json';
 import esAbout from './locales/es/about.json';
@@ -38,7 +39,7 @@ import koAbout from './locales/ko/about.json';
 // Ukrainian translations
 import ukAbout from './locales/uk/about.json';
 
-// Combine English translations as the fallback
+// Combine English translations
 const enTranslation = {
   common: enCommon,
   nav: enNav,
@@ -54,7 +55,9 @@ const enTranslation = {
   registration: enRegistration
 };
 
+// Combine Spanish translations
 const esTranslation = {
+  common: esCommon,
   nav: esNav,
   hero: esHero,
   about: esAbout

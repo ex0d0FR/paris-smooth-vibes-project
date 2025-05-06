@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { t } = useTranslation();
+  
   return (
     <footer className="bg-paris-navy text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
@@ -22,28 +23,28 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
               {[{
-              key: 'home',
-              label: 'Home'
-            }, {
-              key: 'about',
-              label: 'About'
-            }, {
-              key: 'speakers',
-              label: 'Speakers'
-            }, {
-              key: 'schedule',
-              label: 'Schedule'
-            }, {
-              key: 'venue',
-              label: 'Venue'
-            }, {
-              key: 'register',
-              label: 'Register'
-            }].map(item => <li key={item.key}>
-                  <a href={`/#${item.key}`} className="text-white/80 hover:text-paris-gold transition-colors">
-                    {t(`nav.${item.key}`)}
-                  </a>
-                </li>)}
+                key: 'home',
+                label: t('nav.home')
+              }, {
+                key: 'about',
+                label: t('nav.about')
+              }, {
+                key: 'speakers',
+                label: t('nav.speakers')
+              }, {
+                key: 'schedule',
+                label: t('nav.schedule')
+              }, {
+                key: 'venue',
+                label: t('nav.venue')
+              }, {
+                key: 'register',
+                label: t('nav.register')
+              }].map(item => <li key={item.key}>
+                <a href={`/#${item.key}`} className="text-white/80 hover:text-paris-gold transition-colors">
+                  {item.label}
+                </a>
+              </li>)}
             </ul>
           </div>
           
