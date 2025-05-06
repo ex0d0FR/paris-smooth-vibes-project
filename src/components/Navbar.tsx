@@ -81,13 +81,17 @@ const Navbar = () => {
                 key={item.id}
                 href={item.href}
                 className="text-xl font-medium capitalize py-2 border-b border-gray-200 dark:border-gray-700 dark:text-white"
+                onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
               </a>
             ))}
             <Button 
               className="bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy w-full"
-              onClick={() => scrollToSection('register')}
+              onClick={() => {
+                scrollToSection('register');
+                setIsMenuOpen(false);
+              }}
             >
               {t('nav.register')}
             </Button>

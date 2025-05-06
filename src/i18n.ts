@@ -18,6 +18,26 @@ import enVisa from './locales/en/visa.json';
 import enFaq from './locales/en/faq.json';
 import enRegistration from './locales/en/registration.json';
 
+// Spanish translations
+import esNav from './locales/es/nav.json';
+import esHero from './locales/es/hero.json';
+import esAbout from './locales/es/about.json';
+
+// French translations
+import frAbout from './locales/fr/about.json';
+
+// Italian translations
+import itAbout from './locales/it/about.json';
+
+// Portuguese translations
+import ptAbout from './locales/pt/about.json';
+
+// Korean translations
+import koAbout from './locales/ko/about.json';
+
+// Ukrainian translations
+import ukAbout from './locales/uk/about.json';
+
 // Combine English translations as the fallback
 const enTranslation = {
   common: enCommon,
@@ -34,6 +54,12 @@ const enTranslation = {
   registration: enRegistration
 };
 
+const esTranslation = {
+  nav: esNav,
+  hero: esHero,
+  about: esAbout
+};
+
 i18n
   .use(Backend)
   .use(LanguageDetector)
@@ -42,6 +68,34 @@ i18n
     resources: {
       en: {
         translation: enTranslation
+      },
+      es: {
+        translation: esTranslation
+      },
+      fr: {
+        translation: {
+          about: frAbout
+        }
+      },
+      it: {
+        translation: {
+          about: itAbout
+        }
+      },
+      pt: {
+        translation: {
+          about: ptAbout
+        }
+      },
+      ko: {
+        translation: {
+          about: koAbout
+        }
+      },
+      uk: {
+        translation: {
+          about: ukAbout
+        }
       }
     },
     fallbackLng: 'en',
