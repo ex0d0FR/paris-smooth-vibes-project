@@ -31,7 +31,7 @@
       },
       "speakers": {
         "title": "14+ Speakers",
-        "description": "Thought leaders and experts from around the world"
+        "description": "Global Speakers: Thought leaders and experts from around the world"
       },
       "venues": {
         "title": "Iconic Venues",
@@ -201,7 +201,7 @@
     "developed": "Developed with",
     "endorsedBy": "Endorsed By",
     "endorsementDescription": "PARIS 2025 is supported and validated by these key mission organizations.",
-    "endorser": "Endorsed By:"
+    "endorsement": "Endorsed By:"
   },
   "visa": {
     "title": "Visa Requirements",
