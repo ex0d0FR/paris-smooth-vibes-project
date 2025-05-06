@@ -1,0 +1,47 @@
+
+{
+  "title": "Visa Requirements",
+  "subtitle": "Important Information for International Participants",
+  "welcome": "We are delighted to welcome you to the Building Bridges Conference, taking place in Paris from October 28–31, 2025.",
+  "readCarefully": "Please read the following information carefully if you are traveling from outside France.",
+  "disclaimer": {
+    "title": "Disclaimer on Travel and Visa Responsibilities",
+    "intro": "The Fédération Protestante de France and Église Kerygma are not responsible for:",
+    "notResponsibleFor": [
+      "Issuing invitation letters for visa applications",
+      "Covering any costs related to your travel or participation in the event"
+    ],
+    "expenses": {
+      "intro": "This includes, but is not limited to:",
+      "items": [
+        "Airfare",
+        "Food and meals",
+        "Lodging and accommodation",
+        "Medical insurance or healthcare expenses",
+        "Visa application fees or any travel arrangements"
+      ],
+      "conclusion": "All these expenses must be covered entirely by each participant or their sending organization."
+    }
+  },
+  "visaType": {
+    "title": "Visa Type",
+    "info": "As this is a short-term event, attendees must apply for a Schengen short-stay tourist visa, which typically covers stays of up to 90 days within the Schengen area.",
+    "personal": "This visa must be applied for personally in your country of residence."
+  },
+  "resources": {
+    "title": "Helpful Resources for Your Application",
+    "intro": "To guide you through the visa process, we recommend visiting the following official websites:",
+    "schengenInfo": "Schengen Visa Info – Official Website",
+    "franceVisas": "France Visas – Official French Visa Portal"
+  },
+  "conclusion": {
+    "appreciation": "We appreciate your understanding and cooperation. This policy ensures clarity and transparency for all international participants.",
+    "questions": "If you have questions regarding the conference itself (not visa matters), feel free to contact:"
+  },
+  "contact": {
+    "name": "Paris 2025 Conference Team",
+    "behalf": "Fédération Protestante de France & Église Kerygma",
+    "email": "info@puentesparis2025.net"
+  },
+  "backToHome": "Back to Home"
+}

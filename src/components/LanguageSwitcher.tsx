@@ -13,7 +13,7 @@ import {
 import useLanguageSelector from '@/hooks/useLanguageSelector';
 
 const LanguageSwitcher = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { isDark } = useTheme();
   const { 
     languages, 
@@ -38,7 +38,11 @@ const LanguageSwitcher = () => {
         {languages.map((language) => (
           <DropdownMenuItem
             key={language.code}
-            onClick={() => changeLanguage(language.code)}
+            onClick={() => {
+              changeLanguage(language.code);
+              // Force reload translations
+              i18n.reloadResources(language.code);
+            }}
             className="cursor-pointer"
           >
             <div className="flex items-center justify-between w-full">

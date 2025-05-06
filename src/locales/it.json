@@ -1,3 +1,4 @@
+
 {
   "common": {
     "languageName": "Italiano"
@@ -30,8 +31,8 @@
         "description": "Di sessioni immersive, workshop ed eventi di networking"
       },
       "speakers": {
-        "title": "Oltre 50 Relatori",
-        "description": "Leader di pensiero ed esperti da tutto il mondo"
+        "title": "14+ Relatori",
+        "description": "Relatori Globali: Leader di pensiero ed esperti da tutto il mondo"
       },
       "venues": {
         "title": "Sedi Iconiche",
@@ -203,5 +204,42 @@
       "email": "info@puentesparis2025.net"
     },
     "backToHome": "Torna alla Home"
+  },
+  "faq": {
+    "title": "Domande Frequenti",
+    "questions": {
+      "venue": {
+        "question": "Dove si svolge l'evento?",
+        "answer": "L'evento si svolge al Palais des Congrès de Paris. L'indirizzo è: 2 Place de la Porte Maillot, 75017 Parigi, Francia"
+      },
+      "transport": {
+        "question": "Organizzate il trasporto per l'evento?",
+        "answer": "Non organizziamo il trasporto, ogni partecipante organizza la propria logistica."
+      },
+      "accommodation": {
+        "question": "Dove posso alloggiare?",
+        "answer": "Sono disponibili opzioni di alloggio intorno alla sede della conferenza. Vi consigliamo di utilizzare siti come booking.com o airbnb.com per trovare la soluzione più adatta a voi."
+      },
+      "food": {
+        "question": "Potrò comprare da mangiare alla conferenza?",
+        "answer": "Ci sarà un punto di ristoro rapido alla conferenza. Troverete anche ristoranti e supermercati in città."
+      },
+      "program": {
+        "question": "Qual è il programma?",
+        "answer": "Le giornate iniziano alle 9:00 e terminano intorno alle 22:00. Sono previste pause tra le sessioni e per i pasti. Poiché il programma è in costante evoluzione fino all'ultimo momento, non possiamo fornire dettagli sul contenuto o sugli orari dei vari relatori."
+      },
+      "price": {
+        "question": "Qual è il prezzo?",
+        "answer": "Il pass di 3 giorni per un adulto costa €100 fino al 31 marzo 2024, poi €130 dal 1° agosto 2024. Le tariffe per bambini e giornaliere sono dettagliate nel link per l'acquisto dei biglietti."
+      },
+      "refund": {
+        "question": "Voglio ottenere un rimborso per il mio biglietto, come funziona?",
+        "answer": "Per qualsiasi richiesta di rimborso, dovete inviare un'email a info@puentesparis2025.net dalla casella email utilizzata per l'acquisto dei biglietti. Dovete specificare nome, cognome e numero d'ordine. Il rimborso sarà effettuato senza le commissioni della piattaforma di acquisto dei biglietti che non sono rimborsabili. Nessuna richiesta di rimborso sarà accettata meno di 15 giorni prima dell'evento."
+      },
+      "video": {
+        "question": "La conferenza può essere seguita in video da remoto?",
+        "answer": "Sì, la conferenza sarà trasmessa in diretta video in francese e inglese, registratevi qui per ricevere il link."
+      }
+    }
   }
 }

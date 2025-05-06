@@ -5,12 +5,10 @@ import { Button } from '@/components/ui/button';
 import { ArrowDown, Globe } from 'lucide-react';
 import { useTheme } from '@/context/ThemeProvider';
 import useRevealAnimation from '@/hooks/useRevealAnimation';
-import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
   const { t } = useTranslation();
   const { theme } = useTheme();
-  const navigate = useNavigate();
   
   useRevealAnimation();
   
