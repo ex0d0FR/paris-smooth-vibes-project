@@ -69,36 +69,22 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
-      en: {
-        translation: enTranslation
-      },
-      es: {
-        translation: esTranslation
-      },
+      en: enTranslation,
+      es: esTranslation,
       fr: {
-        translation: {
-          about: frAbout
-        }
+        about: frAbout
       },
       it: {
-        translation: {
-          about: itAbout
-        }
+        about: itAbout
       },
       pt: {
-        translation: {
-          about: ptAbout
-        }
+        about: ptAbout
       },
       ko: {
-        translation: {
-          about: koAbout
-        }
+        about: koAbout
       },
       uk: {
-        translation: {
-          about: ukAbout
-        }
+        about: ukAbout
       }
     },
     fallbackLng: 'en',
@@ -112,7 +98,6 @@ i18n
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
-    ns: ['common', 'nav', 'hero', 'about', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration'],
     defaultNS: 'common'
   });
 

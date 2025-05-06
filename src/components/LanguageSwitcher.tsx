@@ -41,7 +41,7 @@ const LanguageSwitcher = () => {
             onClick={() => {
               changeLanguage(language.code);
               // Force reload translations
-              i18n.reloadResources(language.code);
+              i18n.reloadResources([language.code], Object.keys(i18n.options.resources?.en || {}));
             }}
             className="cursor-pointer"
           >
