@@ -38,11 +38,7 @@ const LanguageSwitcher = () => {
         {languages.map((language) => (
           <DropdownMenuItem
             key={language.code}
-            onClick={() => {
-              changeLanguage(language.code);
-              // Force reload translations
-              i18n.reloadResources([language.code], Object.keys(i18n.options.resources?.en || {}));
-            }}
+            onClick={() => changeLanguage(language.code)}
             className="cursor-pointer"
           >
             <div className="flex items-center justify-between w-full">

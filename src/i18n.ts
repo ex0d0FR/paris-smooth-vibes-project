@@ -39,38 +39,32 @@ import koAbout from './locales/ko/about.json';
 // Ukrainian translations
 import ukAbout from './locales/uk/about.json';
 
-// Combine English translations
-const enTranslation = {
-  common: enCommon,
-  nav: enNav,
-  hero: enHero,
-  about: enAbout,
-  speakers: enSpeakers,
-  schedule: enSchedule,
-  venue: enVenue,
-  register: enRegister,
-  footer: enFooter,
-  visa: enVisa,
-  faq: enFaq,
-  registration: enRegistration
-};
-
-// Combine Spanish translations
-const esTranslation = {
-  common: esCommon,
-  nav: esNav,
-  hero: esHero,
-  about: esAbout
-};
-
 i18n
   .use(Backend)
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources: {
-      en: enTranslation,
-      es: esTranslation,
+      en: {
+        common: enCommon,
+        nav: enNav,
+        hero: enHero,
+        about: enAbout,
+        speakers: enSpeakers,
+        schedule: enSchedule,
+        venue: enVenue,
+        register: enRegister,
+        footer: enFooter,
+        visa: enVisa,
+        faq: enFaq,
+        registration: enRegistration
+      },
+      es: {
+        common: esCommon,
+        nav: esNav,
+        hero: esHero,
+        about: esAbout
+      },
       fr: {
         about: frAbout
       },

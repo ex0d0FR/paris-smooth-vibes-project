@@ -23,15 +23,8 @@ export const useLanguageSelector = () => {
   const [open, setOpen] = useState(false);
   
   const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng).then(() => {
-      // Force reload all namespaces for the selected language
-      const namespaces = ['common', 'nav', 'hero', 'about', 'speakers', 
-                          'schedule', 'venue', 'register', 'footer',
-                          'visa', 'faq', 'registration'];
-      
-      i18n.reloadResources(lng, namespaces);
-      setOpen(false);
-    });
+    i18n.changeLanguage(lng);
+    setOpen(false);
   };
 
   const getCurrentLanguageName = () => {
