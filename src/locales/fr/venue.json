@@ -1,0 +1,22 @@
+
+{
+  "title": "Informations sur le Lieu",
+  "description": "PARIS 2025 se tiendra à la Communauté Chrétienne du Point du Jour, un magnifique lieu à Boulogne-Billancourt, juste à l'extérieur de Paris.",
+  "address": {
+    "name": "Communauté Chrétienne du Point du Jour",
+    "street": "133 Rte de la Reine",
+    "city": "92100 Boulogne-Billancourt, France"
+  },
+  "contact": {
+    "phone": "+33 (0)1 40 68 22 22",
+    "email": "info@puentesparis2025.net"
+  },
+  "transport": {
+    "title": "Comment s'y rendre",
+    "metro": "En métro : Ligne 1, station Porte Maillot",
+    "rer": "En RER : Ligne C, station Neuilly - Porte Maillot",
+    "bus": "En bus : Lignes 43, 73, 82, PC1, PC3",
+    "cdg": "Depuis l'aéroport Charles de Gaulle : 45 minutes en taxi ou navette Air France",
+    "orly": "Depuis l'aéroport d'Orly : 30 minutes en taxi"
+  }
+}

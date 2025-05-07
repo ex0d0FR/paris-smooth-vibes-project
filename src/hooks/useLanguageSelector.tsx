@@ -21,36 +21,60 @@ const languages: Language[] = [
 export const useLanguageSelector = () => {
   const { i18n, t } = useTranslation();
   const [open, setOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState(i18n.language);
+  const [currentLang, setCurrentLang] = useState(i18n.language?.split('-')[0] || 'en');
   
   const changeLanguage = (lng: string) => {
-    console.log("Changing language to:", lng);
-    i18n.changeLanguage(lng).then(() => {
-      document.documentElement.lang = lng;
-      localStorage.setItem('i18nextLng', lng);
-      setCurrentLang(lng);
-      setOpen(false);
-      console.log("Language changed successfully to:", lng);
-      console.log("Current namespaces loaded:", i18n.reportNamespaces.getUsedNamespaces());
-    }).catch(e => {
-      console.error("Error changing language:", e);
+    console.log("Attempting to change language to:", lng);
+    
+    // Force reload namespaces if needed
+    const requiredNamespaces = ['common', 'nav', 'hero', 'about', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration'];
+    const loadingPromises = requiredNamespaces.map(ns => {
+      if (!i18n.hasLoadedNamespace(ns)) {
+        console.log(`Loading namespace: ${ns}`);
+        return i18n.loadNamespaces(ns);
+      }
+      return Promise.resolve();
     });
+    
+    // Once namespaces are loaded, change language
+    Promise.all(loadingPromises)
+      .then(() => {
+        return i18n.changeLanguage(lng);
+      })
+      .then(() => {
+        console.log("Language changed successfully to:", lng);
+        document.documentElement.lang = lng;
+        localStorage.setItem('i18nextLng', lng);
+        setCurrentLang(lng);
+        setOpen(false);
+        console.log("Current namespaces loaded:", i18n.reportNamespaces?.getUsedNamespaces());
+      })
+      .catch(e => {
+        console.error("Error changing language:", e);
+      });
   };
 
   const getCurrentLanguageName = () => {
-    const currentLang = languages.find(lang => lang.code === i18n.language);
-    return currentLang ? currentLang.name : 'English';
+    const lang = languages.find(lang => lang.code === currentLang);
+    return lang ? lang.name : 'English';
   };
   
   useEffect(() => {
     // Set initial language attribute
-    document.documentElement.lang = i18n.language;
-    setCurrentLang(i18n.language);
+    const detectedLang = i18n.language?.split('-')[0] || 'en';
+    document.documentElement.lang = detectedLang;
+    setCurrentLang(detectedLang);
+    
+    console.log("useLanguageSelector hook initialized");
+    console.log("Current language:", detectedLang);
+    console.log("Available namespaces:", i18n.options.ns);
+    console.log("Loaded namespaces:", i18n.reportNamespaces?.getUsedNamespaces());
     
     // Listen for language changes
     const handleLanguageChanged = (lng: string) => {
-      console.log("Language changed detected:", lng);
-      setCurrentLang(lng);
+      console.log("Language changed detected in hook:", lng);
+      const simpleLng = lng.split('-')[0];
+      setCurrentLang(simpleLng);
     };
     
     i18n.on('languageChanged', handleLanguageChanged);

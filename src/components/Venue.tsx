@@ -4,9 +4,16 @@ import { MapPin, Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Venue = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation('venue');
   
   useEffect(() => {
+    console.log("Venue component mounted");
+    console.log("Current language:", i18n.language);
+    console.log("Available namespaces:", i18n.options.ns);
+    console.log("Loaded namespaces:", i18n.reportNamespaces?.getUsedNamespaces());
+    console.log("Venue title from translations:", t('title', 'Fallback Venue Title'));
+    console.log("Venue description from translations:", t('description', 'Fallback Description'));
+    
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -24,41 +31,41 @@ const Venue = () => {
         observer.unobserve(el);
       });
     };
-  }, []);
+  }, [t, i18n]);
   
   return (
     <section id="venue" className="py-20 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 reveal dark:text-white">{t('venue.title')}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 reveal dark:text-white">{t('title')}</h2>
             <p className="text-lg mb-6 reveal dark:text-gray-200" style={{ transitionDelay: '100ms' }}>
-              {t('venue.description')}
+              {t('description')}
             </p>
             
             <div className="space-y-4 mb-8">
               <div className="flex items-start reveal dark:text-gray-200" style={{ transitionDelay: '200ms' }}>
                 <MapPin className="text-paris-blue dark:text-paris-gold mr-3 mt-1 flex-shrink-0" />
                 <p>
-                  <span className="font-medium">{t('venue.address.name')}</span><br />
-                  {t('venue.address.street')}<br />
-                  {t('venue.address.city')}
+                  <span className="font-medium">{t('address.name')}</span><br />
+                  {t('address.street')}<br />
+                  {t('address.city')}
                 </p>
               </div>
               
               <div className="flex items-center reveal dark:text-gray-200" style={{ transitionDelay: '400ms' }}>
                 <Mail className="text-paris-blue dark:text-paris-gold mr-3 flex-shrink-0" />
-                <p>{t('venue.contact.email')}</p>
+                <p>{t('contact.email')}</p>
               </div>
             </div>
             
             <div className="space-y-4 reveal dark:text-gray-200" style={{ transitionDelay: '500ms' }}>
-              <h3 className="text-xl font-semibold dark:text-white">{t('venue.transport.title')}</h3>
-              <p><span className="font-medium dark:text-white">{t('venue.transport.metro')}</span></p>
-              <p><span className="font-medium dark:text-white">{t('venue.transport.rer')}</span></p>
-              <p><span className="font-medium dark:text-white">{t('venue.transport.bus')}</span></p>
-              <p><span className="font-medium dark:text-white">{t('venue.transport.cdg')}</span></p>
-              <p><span className="font-medium dark:text-white">{t('venue.transport.orly')}</span></p>
+              <h3 className="text-xl font-semibold dark:text-white">{t('transport.title')}</h3>
+              <p><span className="font-medium dark:text-white">{t('transport.metro')}</span></p>
+              <p><span className="font-medium dark:text-white">{t('transport.rer')}</span></p>
+              <p><span className="font-medium dark:text-white">{t('transport.bus')}</span></p>
+              <p><span className="font-medium dark:text-white">{t('transport.cdg')}</span></p>
+              <p><span className="font-medium dark:text-white">{t('transport.orly')}</span></p>
             </div>
           </div>
           

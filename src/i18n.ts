@@ -33,6 +33,7 @@ import esFaq from './locales/es/faq.json';
 import esRegistration from './locales/es/registration.json';
 
 // French translations
+import frCommon from './locales/fr/common.json';
 import frAbout from './locales/fr/about.json';
 
 // Italian translations
@@ -47,6 +48,7 @@ import koAbout from './locales/ko/about.json';
 // Ukrainian translations
 import ukAbout from './locales/uk/about.json';
 
+// Define resources including all imported translations
 const resources = {
   en: {
     common: enCommon,
@@ -77,6 +79,7 @@ const resources = {
     registration: esRegistration
   },
   fr: {
+    common: frCommon,
     about: frAbout
   },
   it: {
@@ -93,6 +96,8 @@ const resources = {
   }
 };
 
+console.log("Initializing i18n with resources:", Object.keys(resources));
+
 i18n
   .use(Backend)
   .use(LanguageDetector)
@@ -100,7 +105,7 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
-    debug: true, // Enable debug to see what's happening
+    debug: true,
     interpolation: {
       escapeValue: false, // React already escapes values
     },
@@ -110,19 +115,23 @@ i18n
     },
     defaultNS: 'common',
     ns: ['common', 'nav', 'hero', 'about', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration'],
+  }, (err) => {
+    if (err) {
+      console.error("i18n initialization error:", err);
+    } else {
+      console.log("i18n initialized successfully");
+      console.log("Current language:", i18n.language);
+      console.log("Available namespaces:", i18n.options.ns);
+      console.log("Loaded namespaces:", i18n.reportNamespaces?.getUsedNamespaces());
+    }
   });
 
 // Make sure the document lang attribute is set on language change
 i18n.on('languageChanged', (lng) => {
   document.documentElement.setAttribute('lang', lng);
   console.log("Language changed to:", lng);
-});
-
-// Log when i18n is ready
-i18n.on('initialized', () => {
-  console.log('i18n initialized with languages:', Object.keys(resources));
-  console.log('Current language:', i18n.language);
-  console.log('Available namespaces:', i18n.options.ns);
+  console.log("Available namespaces:", i18n.options.ns);
+  console.log("Used namespaces:", i18n.reportNamespaces?.getUsedNamespaces());
 });
 
 export default i18n;
