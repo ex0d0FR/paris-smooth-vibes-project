@@ -39,50 +39,52 @@ import koAbout from './locales/ko/about.json';
 // Ukrainian translations
 import ukAbout from './locales/uk/about.json';
 
-// Import the entire PT and UK translation files
-import ptTranslations from './locales/pt.json';
-import ukTranslations from './locales/uk.json';
+const resources = {
+  en: {
+    common: enCommon,
+    nav: enNav,
+    hero: enHero,
+    about: enAbout,
+    speakers: enSpeakers,
+    schedule: enSchedule,
+    venue: enVenue,
+    register: enRegister,
+    footer: enFooter,
+    visa: enVisa,
+    faq: enFaq,
+    registration: enRegistration
+  },
+  es: {
+    common: esCommon,
+    nav: esNav,
+    hero: esHero,
+    about: esAbout
+  },
+  fr: {
+    about: frAbout
+  },
+  it: {
+    about: itAbout
+  },
+  pt: {
+    about: ptAbout
+  },
+  ko: {
+    about: koAbout
+  },
+  uk: {
+    about: ukAbout
+  }
+};
 
 i18n
   .use(Backend)
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    resources: {
-      en: {
-        common: enCommon,
-        nav: enNav,
-        hero: enHero,
-        about: enAbout,
-        speakers: enSpeakers,
-        schedule: enSchedule,
-        venue: enVenue,
-        register: enRegister,
-        footer: enFooter,
-        visa: enVisa,
-        faq: enFaq,
-        registration: enRegistration
-      },
-      es: {
-        common: esCommon,
-        nav: esNav,
-        hero: esHero,
-        about: esAbout
-      },
-      fr: {
-        about: frAbout
-      },
-      it: {
-        about: itAbout
-      },
-      pt: ptTranslations,  // Use the full PT translations from json file
-      ko: {
-        about: koAbout
-      },
-      uk: ukTranslations  // Use the full UK translations from json file
-    },
+    resources,
     fallbackLng: 'en',
-    debug: false,
+    debug: true, // Enable debug to see what's happening
     interpolation: {
       escapeValue: false, // React already escapes values
     },
@@ -98,6 +100,13 @@ i18n
 i18n.on('languageChanged', (lng) => {
   document.documentElement.setAttribute('lang', lng);
   console.log("Language changed to:", lng);
+});
+
+// Log when i18n is ready
+i18n.on('initialized', () => {
+  console.log('i18n initialized with languages:', Object.keys(resources));
+  console.log('Current language:', i18n.language);
+  console.log('Available namespaces:', i18n.options.ns);
 });
 
 export default i18n;

@@ -27,10 +27,18 @@ const LanguageSwitcher = () => {
   // Ensure we have the language set correctly on load
   useEffect(() => {
     console.log("LanguageSwitcher component mounted");
+    console.log("Current i18n language:", i18n.language);
+    console.log("Available languages:", languages.map(l => l.code).join(", "));
+    
     const storedLanguage = localStorage.getItem('i18nextLng');
     if (storedLanguage && storedLanguage !== currentLanguage) {
       console.log("Setting language from localStorage:", storedLanguage);
       changeLanguage(storedLanguage);
+    } else {
+      // Force a load of translations
+      i18n.reloadResources().then(() => {
+        console.log("Translations reloaded");
+      });
     }
   }, []);
 

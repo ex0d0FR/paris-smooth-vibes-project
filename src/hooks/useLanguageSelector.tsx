@@ -19,18 +19,22 @@ const languages: Language[] = [
 ];
 
 export const useLanguageSelector = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [open, setOpen] = useState(false);
-  const [, forceUpdate] = useState({});
+  const [currentLang, setCurrentLang] = useState(i18n.language);
   
   const changeLanguage = (lng: string) => {
     console.log("Changing language to:", lng);
-    i18n.changeLanguage(lng);
-    document.documentElement.lang = lng;
-    localStorage.setItem('i18nextLng', lng);
-    setOpen(false);
-    // Force component re-render
-    forceUpdate({});
+    i18n.changeLanguage(lng).then(() => {
+      document.documentElement.lang = lng;
+      localStorage.setItem('i18nextLng', lng);
+      setCurrentLang(lng);
+      setOpen(false);
+      console.log("Language changed successfully to:", lng);
+      console.log("Current namespaces loaded:", i18n.reportNamespaces.getUsedNamespaces());
+    }).catch(e => {
+      console.error("Error changing language:", e);
+    });
   };
 
   const getCurrentLanguageName = () => {
@@ -41,10 +45,12 @@ export const useLanguageSelector = () => {
   useEffect(() => {
     // Set initial language attribute
     document.documentElement.lang = i18n.language;
+    setCurrentLang(i18n.language);
     
     // Listen for language changes
-    const handleLanguageChanged = () => {
-      forceUpdate({});
+    const handleLanguageChanged = (lng: string) => {
+      console.log("Language changed detected:", lng);
+      setCurrentLang(lng);
     };
     
     i18n.on('languageChanged', handleLanguageChanged);
@@ -55,7 +61,7 @@ export const useLanguageSelector = () => {
 
   return { 
     languages, 
-    currentLanguage: i18n.language, 
+    currentLanguage: currentLang, 
     open,
     setOpen,
     changeLanguage, 
