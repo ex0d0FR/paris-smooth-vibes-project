@@ -34,7 +34,9 @@ import esRegistration from './locales/es/registration.json';
 
 // French translations
 import frCommon from './locales/fr/common.json';
+import frNav from './locales/fr/nav.json';
 import frAbout from './locales/fr/about.json';
+import frVenue from './locales/fr/venue.json';
 
 // Italian translations
 import itAbout from './locales/it/about.json';
@@ -80,7 +82,9 @@ const resources = {
   },
   fr: {
     common: frCommon,
-    about: frAbout
+    nav: frNav,
+    about: frAbout,
+    venue: frVenue
   },
   it: {
     about: itAbout
