@@ -21,11 +21,16 @@ const languages: Language[] = [
 export const useLanguageSelector = () => {
   const { i18n } = useTranslation();
   const [open, setOpen] = useState(false);
+  const [, forceUpdate] = useState({});
   
   const changeLanguage = (lng: string) => {
+    console.log("Changing language to:", lng);
     i18n.changeLanguage(lng);
     document.documentElement.lang = lng;
+    localStorage.setItem('i18nextLng', lng);
     setOpen(false);
+    // Force component re-render
+    forceUpdate({});
   };
 
   const getCurrentLanguageName = () => {
@@ -36,7 +41,17 @@ export const useLanguageSelector = () => {
   useEffect(() => {
     // Set initial language attribute
     document.documentElement.lang = i18n.language;
-  }, [i18n.language]);
+    
+    // Listen for language changes
+    const handleLanguageChanged = () => {
+      forceUpdate({});
+    };
+    
+    i18n.on('languageChanged', handleLanguageChanged);
+    return () => {
+      i18n.off('languageChanged', handleLanguageChanged);
+    };
+  }, [i18n]);
 
   return { 
     languages, 

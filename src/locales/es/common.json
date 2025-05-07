@@ -1,4 +1,29 @@
 
 {
-  "languageName": "Español"
+  "languageName": "Español",
+  "footer": {
+    "description": "Construyendo Puentes Misioneros: reuniendo a líderes de pensamiento, innovadores y agentes de cambio.",
+    "globalCouncil": "El Consejo Global de Misión es el comité de continuación del movimiento Tokio 2010.",
+    "kerygma": "Proclamando el Evangelio en el Corazón de París",
+    "quickLinks": "Enlaces Rápidos",
+    "conferenceInfo": "Información de la Conferencia",
+    "contactUs": "Contáctenos",
+    "infoItems": {
+      "faqs": "Preguntas Frecuentes",
+      "travel": "Información de Viaje",
+      "visa": "Requisitos de Visa",
+      "accommodations": "Alojamiento",
+      "media": "Kit de Medios"
+    },
+    "copyright": "© 2025 PARÍS 2025 - Construyendo Puentes Misioneros. Todos los derechos reservados.",
+    "policies": {
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Servicio",
+      "cookies": "Política de Cookies"
+    },
+    "developed": "Desarrollado con",
+    "endorsedBy": "Respaldado Por",
+    "endorsementDescription": "PARÍS 2025 es apoyado y validado por estas organizaciones misioneras clave.",
+    "endorsement": "Respaldado Por:"
+  }
 }

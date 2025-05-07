@@ -1,10 +1,9 @@
-
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import Backend from 'i18next-http-backend';
 
-// Import English translations as the fallback
+// Import translations directly
 import enCommon from './locales/en/common.json';
 import enNav from './locales/en/nav.json';
 import enHero from './locales/en/hero.json';
@@ -48,7 +47,6 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    debug: true,  // Enable debug mode to see what's happening with translations
     resources: {
       en: {
         common: enCommon,
@@ -83,6 +81,7 @@ i18n
       uk: ukTranslations  // Use the full UK translations from json file
     },
     fallbackLng: 'en',
+    debug: false,
     interpolation: {
       escapeValue: false, // React already escapes values
     },
@@ -93,5 +92,10 @@ i18n
     defaultNS: 'common',
     ns: ['common', 'nav', 'hero', 'about', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration'],
   });
+
+// Make sure the document lang attribute is set on language change
+i18n.on('languageChanged', (lng) => {
+  document.documentElement.setAttribute('lang', lng);
+});
 
 export default i18n;
