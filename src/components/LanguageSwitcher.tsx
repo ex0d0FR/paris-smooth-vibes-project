@@ -26,20 +26,12 @@ const LanguageSwitcher = () => {
   
   // Ensure we have the language set correctly on load
   useEffect(() => {
+    console.log("LanguageSwitcher component mounted");
     const storedLanguage = localStorage.getItem('i18nextLng');
     if (storedLanguage && storedLanguage !== currentLanguage) {
+      console.log("Setting language from localStorage:", storedLanguage);
       changeLanguage(storedLanguage);
     }
-    // Force a re-render when the language changes to ensure translations are applied
-    const handleLanguageChanged = () => {
-      console.log("Language changed to:", i18n.language);
-      document.documentElement.lang = i18n.language;
-    };
-
-    i18n.on('languageChanged', handleLanguageChanged);
-    return () => {
-      i18n.off('languageChanged', handleLanguageChanged);
-    };
   }, []);
 
   return (

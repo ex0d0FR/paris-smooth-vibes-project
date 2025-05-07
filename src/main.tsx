@@ -14,18 +14,17 @@ const renderApp = () => {
 };
 
 // Initialize and render
-i18n.ready.then(() => {
+// i18n is already initialized in the i18n.ts file
+// and doesn't have a ready property, so we'll just render the app
+console.log("Initializing app with i18n");
+renderApp();
+
+// Add a listener for when i18n has loaded
+i18n.on('initialized', () => {
   console.log("i18n initialized successfully");
-  renderApp();
-}).catch(error => {
-  console.error("Failed to initialize i18n:", error);
-  renderApp(); // Render anyway to prevent blank screen
 });
 
-// Failsafe - if i18n takes too long
-setTimeout(() => {
-  if (!rootElement.hasChildNodes()) {
-    console.log("Fallback rendering due to i18n not initializing quickly");
-    renderApp();
-  }
-}, 1000);
+i18n.on('languageChanged', (lng) => {
+  console.log("Language changed to:", lng);
+});
+

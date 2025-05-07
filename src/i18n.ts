@@ -1,3 +1,4 @@
+
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -96,6 +97,7 @@ i18n
 // Make sure the document lang attribute is set on language change
 i18n.on('languageChanged', (lng) => {
   document.documentElement.setAttribute('lang', lng);
+  console.log("Language changed to:", lng);
 });
 
 export default i18n;
