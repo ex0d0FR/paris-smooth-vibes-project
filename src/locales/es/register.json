@@ -1,0 +1,40 @@
+
+{
+  "title": "Regístrate para PARÍS 2025",
+  "description": "Asegura tu lugar en la conferencia global más esperada del año. Precios especiales disponibles por tiempo limitado.",
+  "registerNow": "Regístrate Ahora",
+  "toast": {
+    "title": "Registro Iniciado",
+    "description": "Has seleccionado el paquete {{tier}}. Por favor completa tu registro en la ventana emergente."
+  },
+  "tiers": {
+    "inPerson": {
+      "name": "Presencial",
+      "price": "€100",
+      "description": "Experiencia completa en el sitio",
+      "features": {
+        "full": "Acceso completo a la conferencia (los 3 días)",
+        "workshops": "Todos los talleres incluidos",
+        "networking": "Sesiones de networking",
+        "coffee": "Pausas para café",
+        "materials": "Materiales de la conferencia"
+      }
+    },
+    "virtual": {
+      "name": "Virtual",
+      "price": "€40",
+      "description": "Únete desde cualquier parte del mundo",
+      "features": {
+        "livestream": "Transmisión en vivo de todas las conferencias principales",
+        "digital": "Acceso digital a talleres",
+        "online": "Oportunidades de networking en línea",
+        "recorded": "Acceso a sesiones grabadas",
+        "materials": "Materiales digitales de la conferencia",
+        "access": "Acceso de 30 días al contenido después del evento"
+      }
+    },
+    "attendee": "asistente"
+  },
+  "questions": "¿Tienes preguntas sobre el registro o necesitas ayuda?",
+  "contact": "Contáctanos"
+}

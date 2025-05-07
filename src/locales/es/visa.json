@@ -1,0 +1,47 @@
+
+{
+  "title": "Requisitos de Visado",
+  "subtitle": "Información Importante para Participantes Internacionales",
+  "welcome": "Nos complace darle la bienvenida a la Conferencia Construyendo Puentes, que tendrá lugar en París del 28 al 31 de octubre de 2025.",
+  "readCarefully": "Por favor, lea la siguiente información cuidadosamente si viaja desde fuera de Francia.",
+  "disclaimer": {
+    "title": "Descargo de Responsabilidad sobre Viajes y Visados",
+    "intro": "La Fédération Protestante de France y la Église Kerygma no son responsables de:",
+    "notResponsibleFor": [
+      "Emitir cartas de invitación para solicitudes de visado",
+      "Cubrir costos relacionados con su viaje o participación en el evento"
+    ],
+    "expenses": {
+      "intro": "Esto incluye, pero no se limita a:",
+      "items": [
+        "Pasajes aéreos",
+        "Comidas y alimentos",
+        "Hospedaje y alojamiento",
+        "Seguro médico o gastos de atención médica",
+        "Tarifas de solicitud de visado o cualquier gestión de viaje"
+      ],
+      "conclusion": "Todos estos gastos deben ser cubiertos en su totalidad por cada participante o su organización de envío."
+    }
+  },
+  "visaType": {
+    "title": "Tipo de Visado",
+    "info": "Como se trata de un evento de corta duración, los asistentes deben solicitar un visado turístico Schengen de corta estancia, que normalmente cubre estancias de hasta 90 días dentro del área Schengen.",
+    "personal": "Este visado debe ser solicitado personalmente en su país de residencia."
+  },
+  "resources": {
+    "title": "Recursos Útiles para su Solicitud",
+    "intro": "Para guiarle a través del proceso de visado, recomendamos visitar los siguientes sitios web oficiales:",
+    "schengenInfo": "Schengen Visa Info – Sitio Web Oficial",
+    "franceVisas": "France Visas – Portal Oficial de Visados Francés"
+  },
+  "conclusion": {
+    "appreciation": "Agradecemos su comprensión y cooperación. Esta política asegura claridad y transparencia para todos los participantes internacionales.",
+    "questions": "Si tiene preguntas sobre la conferencia en sí (no sobre asuntos de visado), no dude en contactar a:"
+  },
+  "contact": {
+    "name": "Equipo de la Conferencia París 2025",
+    "behalf": "Fédération Protestante de France y Église Kerygma",
+    "email": "info@puentesparis2025.net"
+  },
+  "backToHome": "Volver al Inicio"
+}

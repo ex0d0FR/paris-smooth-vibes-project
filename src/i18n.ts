@@ -23,6 +23,14 @@ import esCommon from './locales/es/common.json';
 import esNav from './locales/es/nav.json';
 import esHero from './locales/es/hero.json';
 import esAbout from './locales/es/about.json';
+import esSpeakers from './locales/es/speakers.json';
+import esSchedule from './locales/es/schedule.json';
+import esVenue from './locales/es/venue.json';
+import esRegister from './locales/es/register.json';
+import esFooter from './locales/es/footer.json';
+import esVisa from './locales/es/visa.json';
+import esFaq from './locales/es/faq.json';
+import esRegistration from './locales/es/registration.json';
 
 // French translations
 import frAbout from './locales/fr/about.json';
@@ -58,7 +66,15 @@ const resources = {
     common: esCommon,
     nav: esNav,
     hero: esHero,
-    about: esAbout
+    about: esAbout,
+    speakers: esSpeakers,
+    schedule: esSchedule,
+    venue: esVenue,
+    register: esRegister,
+    footer: esFooter,
+    visa: esVisa,
+    faq: esFaq,
+    registration: esRegistration
   },
   fr: {
     about: frAbout
