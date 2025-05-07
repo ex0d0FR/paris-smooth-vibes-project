@@ -39,11 +39,16 @@ import koAbout from './locales/ko/about.json';
 // Ukrainian translations
 import ukAbout from './locales/uk/about.json';
 
+// Import the entire PT and UK translation files
+import ptTranslations from './locales/pt.json';
+import ukTranslations from './locales/uk.json';
+
 i18n
   .use(Backend)
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    debug: true,  // Enable debug mode to see what's happening with translations
     resources: {
       en: {
         common: enCommon,
@@ -71,15 +76,11 @@ i18n
       it: {
         about: itAbout
       },
-      pt: {
-        about: ptAbout
-      },
+      pt: ptTranslations,  // Use the full PT translations from json file
       ko: {
         about: koAbout
       },
-      uk: {
-        about: ukAbout
-      }
+      uk: ukTranslations  // Use the full UK translations from json file
     },
     fallbackLng: 'en',
     interpolation: {
@@ -89,10 +90,8 @@ i18n
       order: ['localStorage', 'navigator'],
       caches: ['localStorage'],
     },
-    backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json',
-    },
-    defaultNS: 'common'
+    defaultNS: 'common',
+    ns: ['common', 'nav', 'hero', 'about', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration'],
   });
 
 export default i18n;

@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export interface Language {
@@ -24,6 +24,7 @@ export const useLanguageSelector = () => {
   
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
+    document.documentElement.lang = lng;
     setOpen(false);
   };
 
@@ -31,6 +32,11 @@ export const useLanguageSelector = () => {
     const currentLang = languages.find(lang => lang.code === i18n.language);
     return currentLang ? currentLang.name : 'English';
   };
+  
+  useEffect(() => {
+    // Set initial language attribute
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
 
   return { 
     languages, 

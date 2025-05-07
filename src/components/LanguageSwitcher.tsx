@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Check, Globe } from 'lucide-react';
@@ -22,6 +22,14 @@ const LanguageSwitcher = () => {
     setOpen, 
     changeLanguage 
   } = useLanguageSelector();
+  
+  // Ensure we have the language set correctly on load
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem('i18nextLng');
+    if (storedLanguage && storedLanguage !== currentLanguage) {
+      changeLanguage(storedLanguage);
+    }
+  }, []);
 
   return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
