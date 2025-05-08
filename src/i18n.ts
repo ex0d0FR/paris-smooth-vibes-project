@@ -5,6 +5,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import Backend from 'i18next-http-backend';
 
 // Import translations directly
+// English translations
 import enCommon from './locales/en/common.json';
 import enNav from './locales/en/nav.json';
 import enHero from './locales/en/hero.json';
@@ -58,6 +59,9 @@ import koAbout from './locales/ko/about.json';
 // Ukrainian translations
 import ukAbout from './locales/uk/about.json';
 
+// Define all namespaces we use in the application
+const namespaces = ['common', 'nav', 'hero', 'about', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration'];
+
 // Define resources including all imported translations
 const resources = {
   en: {
@@ -103,16 +107,53 @@ const resources = {
     registration: frRegistration
   },
   it: {
+    common: { languageName: "Italiano" },
     about: itAbout
   },
   pt: {
-    about: ptAbout
+    common: { languageName: "Português" },
+    about: ptAbout,
+    // Add empty objects for the missing namespaces to prevent errors
+    nav: {},
+    hero: {},
+    speakers: {},
+    schedule: {},
+    venue: {},
+    register: {},
+    footer: {},
+    visa: {},
+    faq: {},
+    registration: {}
   },
   ko: {
-    about: koAbout
+    common: { languageName: "한국어" },
+    about: koAbout,
+    // Add empty objects for the missing namespaces to prevent errors
+    nav: {},
+    hero: {},
+    speakers: {},
+    schedule: {},
+    venue: {},
+    register: {},
+    footer: {},
+    visa: {},
+    faq: {},
+    registration: {}
   },
   uk: {
-    about: ukAbout
+    common: { languageName: "Українська" },
+    about: ukAbout,
+    // Add empty objects for the missing namespaces to prevent errors
+    nav: {},
+    hero: {},
+    speakers: {},
+    schedule: {},
+    venue: {},
+    register: {},
+    footer: {},
+    visa: {},
+    faq: {},
+    registration: {}
   }
 };
 
@@ -125,7 +166,7 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
-    debug: true,
+    debug: process.env.NODE_ENV === 'development',
     interpolation: {
       escapeValue: false, // React already escapes values
     },
@@ -134,7 +175,12 @@ i18n
       caches: ['localStorage'],
     },
     defaultNS: 'common',
-    ns: ['common', 'nav', 'hero', 'about', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration'],
+    ns: namespaces,
+    fallbackNS: 'common',
+    load: 'languageOnly', // Strip region code from language (e.g., 'en-US' becomes 'en')
+    react: {
+      useSuspense: false, // Set to false to prevent issues during initial load
+    }
   }, (err) => {
     if (err) {
       console.error("i18n initialization error:", err);
@@ -148,8 +194,9 @@ i18n
 
 // Make sure the document lang attribute is set on language change
 i18n.on('languageChanged', (lng) => {
-  document.documentElement.setAttribute('lang', lng);
-  console.log("Language changed to:", lng);
+  const simpleLng = lng.split('-')[0]; // Strip region code
+  document.documentElement.setAttribute('lang', simpleLng);
+  console.log("Language changed to:", simpleLng);
   console.log("Available namespaces:", i18n.options.ns);
   console.log("Used namespaces:", i18n.reportNamespaces?.getUsedNamespaces());
 });

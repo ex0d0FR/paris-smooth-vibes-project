@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Check, Globe } from 'lucide-react';
@@ -13,7 +13,6 @@ import {
 import useLanguageSelector from '@/hooks/useLanguageSelector';
 
 const LanguageSwitcher = () => {
-  const { t, i18n } = useTranslation();
   const { isDark } = useTheme();
   const { 
     languages, 
@@ -24,27 +23,6 @@ const LanguageSwitcher = () => {
     getCurrentLanguageName 
   } = useLanguageSelector();
   
-  // Ensure we have the language set correctly on load
-  useEffect(() => {
-    console.log("LanguageSwitcher component mounted");
-    console.log("Current i18n language:", i18n.language);
-    console.log("Current selected language:", currentLanguage);
-    console.log("Available languages:", languages.map(l => l.code).join(", "));
-    
-    // Ensure translations are loaded
-    const namespaces = ['common', 'nav', 'hero', 'about', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration'];
-    i18n.loadNamespaces(namespaces).then(() => {
-      console.log("Namespaces loaded in LanguageSwitcher");
-      console.log("Loaded namespaces:", i18n.reportNamespaces?.getUsedNamespaces());
-    });
-    
-    const storedLanguage = localStorage.getItem('i18nextLng');
-    if (storedLanguage && storedLanguage !== currentLanguage) {
-      console.log("Setting language from localStorage:", storedLanguage);
-      changeLanguage(storedLanguage.split('-')[0]);
-    }
-  }, []);
-
   return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
