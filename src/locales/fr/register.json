@@ -1,0 +1,40 @@
+
+{
+  "title": "Inscrivez-vous pour PARIS 2025",
+  "description": "Réservez votre place pour la conférence mondiale la plus attendue de l'année. Tarifs préférentiels disponibles pour une durée limitée.",
+  "registerNow": "Inscrivez-vous maintenant",
+  "toast": {
+    "title": "Inscription commencée",
+    "description": "Vous avez sélectionné le forfait {{tier}}. Veuillez compléter votre inscription."
+  },
+  "tiers": {
+    "inPerson": {
+      "name": "En présentiel",
+      "price": "€100",
+      "description": "Expérience complète sur place",
+      "features": {
+        "full": "Accès complet à la conférence (les 3 jours)",
+        "workshops": "Tous les ateliers inclus",
+        "networking": "Sessions de réseautage",
+        "coffee": "Pauses café",
+        "materials": "Matériels de conférence"
+      }
+    },
+    "virtual": {
+      "name": "Virtuel",
+      "price": "€40",
+      "description": "Rejoignez depuis n'importe où dans le monde",
+      "features": {
+        "livestream": "Diffusion en direct de toutes les conférences principales",
+        "digital": "Accès numérique aux ateliers",
+        "online": "Opportunités de réseautage en ligne",
+        "recorded": "Accès aux sessions enregistrées",
+        "materials": "Matériels numériques de la conférence",
+        "access": "Accès au contenu pendant 30 jours après l'événement"
+      }
+    },
+    "attendee": "participant"
+  },
+  "questions": "Vous avez des questions sur l'inscription ou besoin d'aide ?",
+  "contact": "Contactez-nous"
+}

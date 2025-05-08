@@ -19,7 +19,7 @@ const languages: Language[] = [
 ];
 
 export const useLanguageSelector = () => {
-  const { i18n, t } = useTranslation();
+  const { i18n, t } = useTranslation('common');
   const [open, setOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState(i18n.language?.split('-')[0] || 'en');
   
@@ -28,17 +28,10 @@ export const useLanguageSelector = () => {
     
     // Force reload namespaces if needed
     const requiredNamespaces = ['common', 'nav', 'hero', 'about', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration'];
-    const loadingPromises = requiredNamespaces.map(ns => {
-      if (!i18n.hasLoadedNamespace(ns)) {
-        console.log(`Loading namespace: ${ns}`);
-        return i18n.loadNamespaces(ns);
-      }
-      return Promise.resolve();
-    });
     
-    // Once namespaces are loaded, change language
-    Promise.all(loadingPromises)
+    i18n.loadNamespaces(requiredNamespaces)
       .then(() => {
+        console.log("All namespaces loaded before changing language");
         return i18n.changeLanguage(lng);
       })
       .then(() => {
@@ -55,6 +48,17 @@ export const useLanguageSelector = () => {
   };
 
   const getCurrentLanguageName = () => {
+    // First try to get the name from translations
+    try {
+      const translatedName = t('languageName');
+      if (translatedName && translatedName !== 'languageName') {
+        return translatedName;
+      }
+    } catch (e) {
+      console.log("Could not get translated language name, falling back to default");
+    }
+    
+    // Fall back to our hardcoded list
     const lang = languages.find(lang => lang.code === currentLang);
     return lang ? lang.name : 'English';
   };
@@ -68,7 +72,13 @@ export const useLanguageSelector = () => {
     console.log("useLanguageSelector hook initialized");
     console.log("Current language:", detectedLang);
     console.log("Available namespaces:", i18n.options.ns);
-    console.log("Loaded namespaces:", i18n.reportNamespaces?.getUsedNamespaces());
+    
+    // Load all namespaces on initialization
+    const allNamespaces = ['common', 'nav', 'hero', 'about', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration'];
+    i18n.loadNamespaces(allNamespaces).then(() => {
+      console.log("All namespaces loaded in useLanguageSelector");
+      console.log("Loaded namespaces:", i18n.reportNamespaces?.getUsedNamespaces());
+    });
     
     // Listen for language changes
     const handleLanguageChanged = (lng: string) => {

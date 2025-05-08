@@ -35,8 +35,16 @@ import esRegistration from './locales/es/registration.json';
 // French translations
 import frCommon from './locales/fr/common.json';
 import frNav from './locales/fr/nav.json';
+import frHero from './locales/fr/hero.json';
 import frAbout from './locales/fr/about.json';
+import frSpeakers from './locales/fr/speakers.json';
+import frSchedule from './locales/fr/schedule.json';
 import frVenue from './locales/fr/venue.json';
+import frRegister from './locales/fr/register.json';
+import frFooter from './locales/fr/footer.json';
+import frVisa from './locales/fr/visa.json';
+import frFaq from './locales/fr/faq.json';
+import frRegistration from './locales/fr/registration.json';
 
 // Italian translations
 import itAbout from './locales/it/about.json';
@@ -83,8 +91,16 @@ const resources = {
   fr: {
     common: frCommon,
     nav: frNav,
+    hero: frHero,
     about: frAbout,
-    venue: frVenue
+    speakers: frSpeakers,
+    schedule: frSchedule,
+    venue: frVenue,
+    register: frRegister,
+    footer: frFooter,
+    visa: frVisa,
+    faq: frFaq,
+    registration: frRegistration
   },
   it: {
     about: itAbout
