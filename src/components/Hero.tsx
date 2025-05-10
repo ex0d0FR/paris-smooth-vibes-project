@@ -21,6 +21,7 @@ const Hero = () => {
   return (
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
+        {/* Background layers */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
