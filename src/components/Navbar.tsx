@@ -10,16 +10,16 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { t } = useTranslation();
+  const { t } = useTranslation('nav');
   const { activeSection, isScrolled, scrollToSection } = useNavigation();
 
   const navItems = [
-    { id: 'home', label: t('nav.home'), href: '/#home' },
-    { id: 'about', label: t('nav.about'), href: '/#about' },
-    { id: 'speakers', label: t('nav.speakers'), href: '/#speakers' },
-    { id: 'schedule', label: t('nav.schedule'), href: '/#schedule' },
-    { id: 'venue', label: t('nav.venue'), href: '/#venue' },
-    { id: 'register', label: t('nav.register'), href: '/#register' }
+    { id: 'home', label: t('home'), href: '/#home' },
+    { id: 'about', label: t('about'), href: '/#about' },
+    { id: 'speakers', label: t('speakers'), href: '/#speakers' },
+    { id: 'schedule', label: t('schedule'), href: '/#schedule' },
+    { id: 'venue', label: t('venue'), href: '/#venue' },
+    { id: 'register', label: t('register'), href: '/#register' }
   ];
 
   return (
@@ -55,7 +55,7 @@ const Navbar = () => {
             className="bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy"
             onClick={() => scrollToSection('register')}
           >
-            {t('nav.register')}
+            {t('register')}
           </Button>
         </nav>
         
@@ -93,7 +93,7 @@ const Navbar = () => {
                 setIsMenuOpen(false);
               }}
             >
-              {t('nav.register')}
+              {t('register')}
             </Button>
           </div>
         </div>
