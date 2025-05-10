@@ -8,6 +8,13 @@ import { ptResources } from './pt';
 import { koResources } from './ko';
 import { ukResources } from './uk';
 
+// Import hero JSON files directly
+import itHero from '../../locales/it/hero.json';
+import ptHero from '../../locales/pt/hero.json';
+import koHero from '../../locales/ko/hero.json';
+import ukHero from '../../locales/uk/hero.json';
+import deHero from '../../locales/de/hero.json';
+
 // Define resources including all imported translations
 export const resources = {
   en: enResources,
@@ -16,7 +23,7 @@ export const resources = {
   it: {
     common: { languageName: "Italiano" },
     about: itResources.about,
-    hero: require('../../locales/it/hero.json'),
+    hero: itHero,
     footer: { // Add footer translations for Italian
       ...createEmptyTranslations(['footer']).footer
     },
@@ -25,7 +32,7 @@ export const resources = {
   pt: {
     common: { languageName: "Português" },
     about: ptResources.about,
-    hero: require('../../locales/pt/hero.json'),
+    hero: ptHero,
     footer: { // Add footer translations for Portuguese
       ...createEmptyTranslations(['footer']).footer
     },
@@ -34,7 +41,7 @@ export const resources = {
   ko: {
     common: { languageName: "한국어" },
     about: koResources.about,
-    hero: require('../../locales/ko/hero.json'),
+    hero: koHero,
     footer: { // Add footer translations for Korean
       ...createEmptyTranslations(['footer']).footer
     },
@@ -43,7 +50,7 @@ export const resources = {
   uk: {
     common: { languageName: "Українська" },
     about: ukResources.about,
-    hero: require('../../locales/uk/hero.json'),
+    hero: ukHero,
     footer: { // Add footer translations for Ukrainian
       ...createEmptyTranslations(['footer']).footer
     },
@@ -51,7 +58,7 @@ export const resources = {
   },
   de: {
     common: { languageName: "Deutsch" },
-    hero: require('../../locales/de/hero.json'),
+    hero: deHero,
     footer: { // Add footer translations for German
       ...createEmptyTranslations(['footer']).footer
     },
