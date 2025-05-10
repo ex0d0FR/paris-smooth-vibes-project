@@ -32,7 +32,9 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 reveal" style={{ transitionDelay: '200ms' }}>
           <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg hover-scale">
             <div className="text-paris-gold text-3xl font-bold mb-3">{t('about.highlights.speakers.title')}</div>
-            <h3 className="text-xl font-semibold mb-2 text-paris-navy dark:text-white">Global Speakers</h3>
+            <h3 className="text-xl font-semibold mb-2 text-paris-navy dark:text-white">
+              {t('speakers.title')}
+            </h3>
             <p className="text-gray-600 dark:text-gray-300">
               {t('about.highlights.speakers.description')}
             </p>
@@ -40,15 +42,19 @@ const AboutSection = () => {
           
           <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg hover-scale">
             <div className="text-paris-gold text-3xl font-bold mb-3">{t('about.highlights.days.title')}</div>
-            <h3 className="text-xl font-semibold mb-2 text-paris-navy dark:text-white">Workshop Sessions</h3>
+            <h3 className="text-xl font-semibold mb-2 text-paris-navy dark:text-white">
+              {t('schedule.title')}
+            </h3>
             <p className="text-gray-600 dark:text-gray-300">
-              {t('about.para2')}
+              {t('about.highlights.days.description')}
             </p>
           </div>
           
           <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg hover-scale">
             <div className="text-paris-gold text-3xl font-bold mb-3">{t('about.highlights.attendees.title')}</div>
-            <h3 className="text-xl font-semibold mb-2 text-paris-navy dark:text-white">Attendees Expected</h3>
+            <h3 className="text-xl font-semibold mb-2 text-paris-navy dark:text-white">
+              {t('about.highlights.attendees.title')}
+            </h3>
             <p className="text-gray-600 dark:text-gray-300">
               {t('about.highlights.attendees.description')}
             </p>
