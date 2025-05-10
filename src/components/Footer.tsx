@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const { t } = useTranslation();
+  const { t } = useTranslation('footer');
   
   return (
     <footer className="bg-paris-navy text-white pt-16 pb-8">
@@ -15,31 +15,31 @@ const Footer = () => {
           <div>
             <h2 className="text-2xl font-bold mb-4">PARIS<span className="text-paris-gold">2025</span></h2>
             <p className="text-white/80 mb-4">
-              {t('footer.description')}
+              {t('description')}
             </p>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t('footer.quickLinks')}</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('quickLinks')}</h3>
             <ul className="space-y-2">
               {[{
                 key: 'home',
-                label: t('nav.home')
+                label: t('nav.home', { ns: 'nav' })
               }, {
                 key: 'about',
-                label: t('nav.about')
+                label: t('nav.about', { ns: 'nav' })
               }, {
                 key: 'speakers',
-                label: t('nav.speakers')
+                label: t('nav.speakers', { ns: 'nav' })
               }, {
                 key: 'schedule',
-                label: t('nav.schedule')
+                label: t('nav.schedule', { ns: 'nav' })
               }, {
                 key: 'venue',
-                label: t('nav.venue')
+                label: t('nav.venue', { ns: 'nav' })
               }, {
                 key: 'register',
-                label: t('nav.register')
+                label: t('nav.register', { ns: 'nav' })
               }].map(item => <li key={item.key}>
                 <a href={`/#${item.key}`} className="text-white/80 hover:text-paris-gold transition-colors">
                   {item.label}
@@ -49,16 +49,16 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t('footer.conferenceInfo')}</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('conferenceInfo')}</h3>
             <ul className="space-y-2">
-              <li><Link to="/visa-requirements" className="text-white/80 hover:text-paris-gold transition-colors">{t('footer.infoItems.visa')}</Link></li>
-              <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('footer.infoItems.travel')}</a></li>
-              <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('footer.infoItems.accommodations')}</a></li>
+              <li><Link to="/visa-requirements" className="text-white/80 hover:text-paris-gold transition-colors">{t('infoItems.visa')}</Link></li>
+              <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('infoItems.travel')}</a></li>
+              <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('infoItems.accommodations')}</a></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t('footer.contactUs')}</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('contactUs')}</h3>
             <div className="space-y-3">
               <div className="flex items-center">
                 <Mail className="mr-2 h-5 w-5" />
@@ -77,9 +77,9 @@ const Footer = () => {
 
         <div className="border-t border-white/10 pt-12 pb-8">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-serif font-bold">{t('footer.endorsedBy')}</h2>
+            <h2 className="text-2xl font-serif font-bold">{t('endorsedBy')}</h2>
             <p className="text-white/80 mt-3 max-w-3xl mx-auto">
-              {t('footer.endorsementDescription')}
+              {t('endorsementDescription')}
             </p>
           </div>
 
@@ -89,7 +89,7 @@ const Footer = () => {
                 <img src="/lovable-uploads/f1a350f4-d210-4cad-9ad3-9e954ce61634.png" alt="Kerygma Paris" className="w-40 h-auto mx-auto" />
               </a>
               <p className="text-white/80 text-sm">
-                {t('footer.kerygma')}
+                {t('kerygma')}
               </p>
             </div>
             
@@ -98,7 +98,7 @@ const Footer = () => {
                 <img src="/lovable-uploads/dd272009-d49c-4a66-972c-5437dc84f909.png" alt="Global Council of Mission" className="w-40 h-auto mx-auto" />
               </a>
               <p className="text-white/80 text-sm">
-                {t('footer.globalCouncil')}
+                {t('globalCouncil')}
               </p>
             </div>
           </div>
@@ -106,13 +106,13 @@ const Footer = () => {
         
         <div className="border-t border-white/10 pt-8 text-center text-white/60 text-sm">
           <div className="flex flex-wrap justify-center items-center gap-2">
-            <p>{t('footer.copyright')}</p>
-            <p className="italic">{t('footer.developed')} <Heart size={14} className="inline text-paris-gold" /> for "Soli Deo Gloria"</p>
+            <p>{t('copyright')}</p>
+            <p className="italic">{t('developed')} <Heart size={14} className="inline text-paris-gold" /> for "Soli Deo Gloria"</p>
           </div>
           <div className="mt-2 flex justify-center space-x-4">
-            <Link to="/privacy-policy" className="hover:text-paris-gold transition-colors">{t('footer.policies.privacy')}</Link>
+            <Link to="/privacy-policy" className="hover:text-paris-gold transition-colors">{t('policies.privacy')}</Link>
             <Link to="/legal-notice" className="hover:text-paris-gold transition-colors">Legal Notice</Link>
-            <Link to="/legal-notice" className="hover:text-paris-gold transition-colors">{t('footer.policies.cookies')}</Link>
+            <Link to="/legal-notice" className="hover:text-paris-gold transition-colors">{t('policies.cookies')}</Link>
           </div>
         </div>
       </div>

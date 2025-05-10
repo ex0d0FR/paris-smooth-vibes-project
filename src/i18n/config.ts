@@ -9,6 +9,8 @@ import { resources } from './resources';
 const namespaces = ['common', 'nav', 'hero', 'about', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration'];
 
 console.log("Initializing i18n with resources:", Object.keys(resources));
+console.log("Available languages:", Object.keys(resources).join(", "));
+console.log("Available namespaces:", namespaces.join(", "));
 
 i18n
   .use(Backend)
@@ -44,7 +46,12 @@ i18n
       console.log("Loaded namespaces:", i18n.reportNamespaces?.getUsedNamespaces());
       
       // Force load all namespaces
-      i18n.loadNamespaces(namespaces);
+      i18n.loadNamespaces(namespaces).then(() => {
+        console.log("All namespaces loaded successfully");
+        console.log("Loaded namespaces:", i18n.reportNamespaces?.getUsedNamespaces());
+      }).catch(err => {
+        console.error("Error loading namespaces:", err);
+      });
     }
   });
 
@@ -55,6 +62,13 @@ i18n.on('languageChanged', (lng) => {
   console.log("Language changed to:", simpleLng);
   console.log("Available namespaces:", i18n.options.ns);
   console.log("Used namespaces:", i18n.reportNamespaces?.getUsedNamespaces());
+  
+  // Force reload the footer namespace on language change
+  i18n.loadNamespaces('footer').then(() => {
+    console.log("Footer namespace reloaded after language change");
+  }).catch(err => {
+    console.error("Failed to reload footer namespace:", err);
+  });
 });
 
 // Add additional event listeners for better debugging

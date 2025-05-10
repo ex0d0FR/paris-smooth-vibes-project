@@ -16,25 +16,40 @@ export const resources = {
   it: {
     common: { languageName: "Italiano" },
     about: itResources.about,
-    ...createEmptyTranslations(['nav', 'hero', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration'])
+    footer: { // Add footer translations for Italian
+      ...createEmptyTranslations(['footer']).footer
+    },
+    ...createEmptyTranslations(['nav', 'hero', 'speakers', 'schedule', 'venue', 'register', 'visa', 'faq', 'registration'])
   },
   pt: {
     common: { languageName: "Português" },
     about: ptResources.about,
-    ...createEmptyTranslations(['nav', 'hero', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration'])
+    footer: { // Add footer translations for Portuguese
+      ...createEmptyTranslations(['footer']).footer
+    },
+    ...createEmptyTranslations(['nav', 'hero', 'speakers', 'schedule', 'venue', 'register', 'visa', 'faq', 'registration'])
   },
   ko: {
     common: { languageName: "한국어" },
     about: koResources.about,
-    ...createEmptyTranslations(['nav', 'hero', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration'])
+    footer: { // Add footer translations for Korean
+      ...createEmptyTranslations(['footer']).footer
+    },
+    ...createEmptyTranslations(['nav', 'hero', 'speakers', 'schedule', 'venue', 'register', 'visa', 'faq', 'registration'])
   },
   uk: {
     common: { languageName: "Українська" },
     about: ukResources.about,
-    ...createEmptyTranslations(['nav', 'hero', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration'])
+    footer: { // Add footer translations for Ukrainian
+      ...createEmptyTranslations(['footer']).footer
+    },
+    ...createEmptyTranslations(['nav', 'hero', 'speakers', 'schedule', 'venue', 'register', 'visa', 'faq', 'registration'])
   },
   de: {
     common: { languageName: "Deutsch" },
-    ...createEmptyTranslations()
+    footer: { // Add footer translations for German
+      ...createEmptyTranslations(['footer']).footer
+    },
+    ...createEmptyTranslations(['nav', 'hero', 'about', 'speakers', 'schedule', 'venue', 'register', 'visa', 'faq', 'registration'])
   }
 };
