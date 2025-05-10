@@ -7,7 +7,7 @@ import { useTheme } from '@/context/ThemeProvider';
 import useRevealAnimation from '@/hooks/useRevealAnimation';
 
 const Hero = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('hero');
   const { theme } = useTheme();
   
   useRevealAnimation();
@@ -100,17 +100,17 @@ const Hero = () => {
       </div>
       
       <div className="container mx-auto px-4 z-10 text-center">
-        <p className="text-paris-gold font-medium mb-2 reveal">{t('hero.date')}</p>
+        <p className="text-paris-gold font-medium mb-2 reveal">{t('date')}</p>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 text-shadow reveal" style={{
           transitionDelay: '200ms'
         }}>
-          {t('hero.title')}<br /> 
-          <span className="text-paris-gold">{t('hero.subtitle')}</span>
+          {t('title')}<br /> 
+          <span className="text-paris-gold">{t('subtitle')}</span>
         </h1>
         <p className="text-white text-lg md:text-xl max-w-2xl mx-auto mb-8 reveal" style={{
           transitionDelay: '400ms'
         }}>
-          {t('hero.description')}
+          {t('description')}
         </p>
         <div className="flex justify-center gap-4 reveal" style={{
           transitionDelay: '600ms'
@@ -122,7 +122,7 @@ const Hero = () => {
             className="font-semibold" 
             icon={<Globe size={18} />}
           >
-            {t('hero.registerNow')}
+            {t('registerNow')}
           </Button>
         </div>
       </div>
