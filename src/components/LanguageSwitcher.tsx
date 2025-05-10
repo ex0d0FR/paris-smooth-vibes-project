@@ -1,8 +1,7 @@
 
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
-import { Check, Globe } from 'lucide-react';
+import { Check, Globe, Loader2 } from 'lucide-react';
 import { useTheme } from "@/context/ThemeProvider";
 import {
   DropdownMenu,
@@ -20,17 +19,24 @@ const LanguageSwitcher = () => {
     open, 
     setOpen, 
     changeLanguage,
-    getCurrentLanguageName 
+    isLoading
   } = useLanguageSelector();
   
   return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon" className="rounded-full">
-          <Globe 
-            className={`h-5 w-5 ${isDark ? 'text-yellow-300' : 'text-paris-navy'}`} 
-            strokeWidth={2.5} 
-          />
+          {isLoading ? (
+            <Loader2 
+              className={`h-5 w-5 ${isDark ? 'text-yellow-300' : 'text-paris-navy'} animate-spin`} 
+              strokeWidth={2.5} 
+            />
+          ) : (
+            <Globe 
+              className={`h-5 w-5 ${isDark ? 'text-yellow-300' : 'text-paris-navy'}`} 
+              strokeWidth={2.5} 
+            />
+          )}
           <span className="sr-only">Switch language</span>
         </Button>
       </DropdownMenuTrigger>

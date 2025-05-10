@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { ensureNamespacesLoaded } from '@/utils/i18nUtils';
 
 export interface Language {
   code: string;
@@ -22,34 +23,49 @@ export const useLanguageSelector = () => {
   const { i18n, t } = useTranslation('common');
   const [open, setOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState<string>('en');
+  const [isLoading, setIsLoading] = useState(false);
   
-  const changeLanguage = (lng: string) => {
+  // Define namespaces to ensure they're loaded for each language
+  const requiredNamespaces = ['common', 'nav', 'hero', 'about', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration'];
+  
+  const changeLanguage = async (lng: string) => {
     console.log("Attempting to change language to:", lng);
+    setIsLoading(true);
     
-    // Normalize language code (strip region)
-    const simpleLng = lng.split('-')[0];
-    
-    // Change language with fallback to English if something goes wrong
-    i18n.changeLanguage(simpleLng)
-      .then(() => {
-        console.log("Language changed successfully to:", simpleLng);
-        document.documentElement.lang = simpleLng;
-        localStorage.setItem('i18nextLng', simpleLng);
-        setCurrentLang(simpleLng);
-        setOpen(false);
-      })
-      .catch(e => {
-        console.error("Error changing language:", e);
-        // If there's an error, try falling back to English
-        if (simpleLng !== 'en') {
-          console.log("Falling back to English");
-          i18n.changeLanguage('en');
-          document.documentElement.lang = 'en';
-          localStorage.setItem('i18nextLng', 'en');
-          setCurrentLang('en');
-          setOpen(false);
-        }
-      });
+    try {
+      // Normalize language code (strip region)
+      const simpleLng = lng.split('-')[0];
+      
+      // Ensure all required namespaces are loaded
+      await ensureNamespacesLoaded(i18n, requiredNamespaces);
+      
+      // Change language
+      await i18n.changeLanguage(simpleLng);
+      console.log("Language changed successfully to:", simpleLng);
+      
+      // Update document language and localStorage
+      document.documentElement.lang = simpleLng;
+      localStorage.setItem('i18nextLng', simpleLng);
+      
+      // Update state
+      setCurrentLang(simpleLng);
+      setOpen(false);
+    } catch (e) {
+      console.error("Error changing language:", e);
+      // If there's an error, try falling back to English
+      try {
+        console.log("Falling back to English");
+        await i18n.changeLanguage('en');
+        document.documentElement.lang = 'en';
+        localStorage.setItem('i18nextLng', 'en');
+        setCurrentLang('en');
+      } catch (fallbackError) {
+        console.error("Failed even with fallback to English:", fallbackError);
+      }
+      setOpen(false);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const getCurrentLanguageName = () => {
@@ -69,6 +85,18 @@ export const useLanguageSelector = () => {
   };
   
   useEffect(() => {
+    // When component mounts, ensure all namespaces are loaded
+    const loadNamespaces = async () => {
+      try {
+        await ensureNamespacesLoaded(i18n, requiredNamespaces);
+        console.log("All required namespaces loaded successfully");
+      } catch (error) {
+        console.error("Failed to load all namespaces:", error);
+      }
+    };
+    
+    loadNamespaces();
+    
     // Set initial language 
     const storedLang = localStorage.getItem('i18nextLng') || i18n.language || 'en';
     const detectedLang = storedLang.split('-')[0]; // Strip region code
@@ -106,7 +134,8 @@ export const useLanguageSelector = () => {
     open,
     setOpen,
     changeLanguage, 
-    getCurrentLanguageName 
+    getCurrentLanguageName,
+    isLoading
   };
 };
 

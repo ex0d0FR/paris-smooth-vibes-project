@@ -3,34 +3,26 @@ import { createRoot } from 'react-dom/client';
 import { StrictMode, Suspense } from 'react';
 import App from './App.tsx';
 import './index.css';
-import i18n from './i18n';
+import './i18n';
 
 // Create root element
 const rootElement = document.getElementById("root")!;
 const root = createRoot(rootElement);
 
 console.log("Starting app initialization");
-console.log("Current i18n language:", i18n.language);
-console.log("Available namespaces:", i18n.options.ns);
 
 // Render app with loading state
 root.render(
   <StrictMode>
-    <Suspense fallback={<div className="flex h-screen items-center justify-center">Loading translations...</div>}>
+    <Suspense fallback={
+      <div className="flex h-screen items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-paris-blue mx-auto mb-4"></div>
+          <p className="text-paris-blue">Loading translations...</p>
+        </div>
+      </div>
+    }>
       <App />
     </Suspense>
   </StrictMode>
 );
-
-// Add listeners for i18n events after initial render
-i18n.on('initialized', () => {
-  console.log("i18n initialized event fired!");
-});
-
-i18n.on('loaded', () => {
-  console.log("i18n resources loaded event fired!");
-});
-
-i18n.on('failedLoading', (lng, ns, msg) => {
-  console.error(`i18n failed loading: ${lng} ${ns}`, msg);
-});
