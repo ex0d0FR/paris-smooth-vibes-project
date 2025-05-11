@@ -1,8 +1,8 @@
 
 {
-  "title": "Acerca de París 2025 – Construyendo Puentes Misioneros",
-  "para1": "París 2025 es una reunión global de líderes de iglesias, misioneros y visionarios comprometidos con el avance del Reino de Dios en nuestra generación. Ubicada en el corazón de París, esta conferencia de cuatro días explorará temas urgentes que están moldeando el panorama misionero global actual: alcanzar a los no alcanzados, evangelizar a Israel y al mundo musulmán, y discipular a las naciones para una transformación duradera.",
-  "para2": "Con poderosas sesiones plenarias, talleres dinámicos y oportunidades significativas de networking, CONSTRUYENDO PUENTES MISIONEROS es más que una conferencia: es un llamado a la unidad, la colaboración y la acción audaz.",
+  "title": "Sobre París 2025 – Construyendo Puentes Misioneros",
+  "para1": "París 2025 reunirá a líderes de iglesias de todo el mundo para examinar temas relevantes y urgentes en la reforma global actual, alcanzando a pueblos no alcanzados, evangelizando al mundo musulmán y discipulando naciones.",
+  "para2": "Con potentes sesiones plenarias, talleres dinámicos y oportunidades significativas de networking, CONSTRUYENDO PUENTES MISIONEROS es más que una conferencia—es un llamado a la unidad, la colaboración y la acción audaz.",
   "para3": "Reuniendo algunas de las voces más estratégicas de todos los continentes, París 2025 es un espacio catalizador para intercambiar ideas, discernir tendencias espirituales y trazar el curso del papel de la Iglesia en la reforma global.",
   "para4": "Ya sea que seas un líder experimentado, un misionero emergente o simplemente apasionado por la misión de Dios para las naciones, París 2025 te desafiará, equipará e inspirará para un mayor impacto.",
   "highlights": {
@@ -11,16 +11,16 @@
       "description": "De sesiones inmersivas, talleres y eventos de networking"
     },
     "speakers": {
-      "title": "14+ Oradores",
-      "description": "Oradores globales: Líderes de pensamiento y expertos de todo el mundo"
+      "title": "14+ Ponentes",
+      "description": "Ponentes Globales: Líderes de pensamiento y expertos de todo el mundo"
     },
     "venues": {
-      "title": "Sedes Icónicas",
-      "description": "Ubicadas en el corazón del hermoso París"
+      "title": "Lugares Emblemáticos",
+      "description": "Ubicados en el corazón del hermoso París"
     },
     "attendees": {
       "title": "1,000+ Asistentes",
-      "description": ""
+      "description": "De más de 60 países en todo el mundo"
     }
   }
 }

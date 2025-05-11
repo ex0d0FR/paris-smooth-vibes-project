@@ -21,11 +21,11 @@ const AboutSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 reveal">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-paris-navy dark:text-white">
-            About Paris 2025
+            {t('about.title')}
           </h2>
           <div className="w-20 h-1 bg-paris-gold mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Paris 2025 will bring together church leaders from all over the world to examine relevant and pressing topics in today's global reformation, engaging unreached peoples, evangelizing the Muslim world and discipling nations.
+            {t('about.para1')}
           </p>
         </div>
         
