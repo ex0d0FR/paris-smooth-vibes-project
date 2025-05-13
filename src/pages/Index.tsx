@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -24,7 +25,7 @@ const AboutSection = () => {
           </h2>
           <div className="w-20 h-1 bg-paris-gold mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            {t('para1', 'Paris 2025 will bring together church leaders from all over the world to examine relevant and pressing topics in today's global reformation, engaging unreached peoples, evangelizing the Muslim world and discipling nations.')}
+            {t('para1', "Paris 2025 will bring together church leaders from all over the world to examine relevant and pressing topics in today's global reformation, engaging unreached peoples, evangelizing the Muslim world and discipling nations.")}
           </p>
         </div>
         

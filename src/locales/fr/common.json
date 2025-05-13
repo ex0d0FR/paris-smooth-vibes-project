@@ -1,4 +1,8 @@
 
 {
-  "languageName": "Français"
+  "languageName": "Français",
+  "about": {
+    "title": "À propos de Paris 2025",
+    "para1": "Paris 2025 réunira des leaders d'églises du monde entier pour examiner des sujets pertinents et urgents dans la réforme mondiale actuelle, engageant des peuples non atteints, évangélisant le monde musulman et faisant des disciples des nations."
+  }
 }
