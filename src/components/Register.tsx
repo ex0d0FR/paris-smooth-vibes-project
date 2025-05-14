@@ -52,9 +52,9 @@ const Register = () => {
         <div className="text-center mt-12 reveal" style={{
         transitionDelay: '400ms'
       }}>
-          <p className="text-white/80 mb-4">{t('register.questions')}</p>
+          <p className="text-white/80 mb-4">{t('register.questions', 'Have questions about registration or need assistance?')}</p>
           <Button variant="claire_outline" icon={<HelpCircle />} size="claire">
-            {t('register.contact')}
+            {t('register.contact', 'Contact Us')}
           </Button>
         </div>
       </div>
