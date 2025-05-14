@@ -15,14 +15,8 @@ export const resources = {
   es: esResources,
   fr: frResources,
   it: itResources,
-  pt: {
-    ...ptResources,
-    ...createEmptyTranslations(['nav', 'speakers', 'schedule', 'venue', 'register', 'visa', 'faq', 'registration'])
-  },
+  pt: ptResources,
   ko: koResources,
-  uk: {
-    ...ukResources,
-    ...createEmptyTranslations(['nav', 'speakers', 'schedule', 'venue', 'register', 'visa', 'faq', 'registration'])
-  },
+  uk: ukResources,
   de: deResources
 };

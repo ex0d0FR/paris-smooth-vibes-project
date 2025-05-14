@@ -26,7 +26,11 @@ export const useLanguageSelector = () => {
   const [isLoading, setIsLoading] = useState(false);
   
   // Define namespaces to ensure they're loaded for each language
-  const requiredNamespaces = ['common', 'nav', 'hero', 'about', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration'];
+  const requiredNamespaces = [
+    'common', 'nav', 'hero', 'about', 'speakers', 
+    'schedule', 'venue', 'register', 'footer', 
+    'visa', 'faq', 'registration'
+  ];
   
   const changeLanguage = async (lng: string) => {
     console.log("Attempting to change language to:", lng);
