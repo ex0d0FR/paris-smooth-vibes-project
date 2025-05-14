@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { HelpCircle, ExternalLink } from 'lucide-react';
@@ -6,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { getPricingTiers } from '@/data/registerData';
 import PricingCard from './PricingCard';
 import useRevealAnimation from '@/hooks/useRevealAnimation';
-import { useNavigate } from 'react-router-dom'; // Add this import
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const {
@@ -15,7 +16,7 @@ const Register = () => {
   const {
     t
   } = useTranslation();
-  const navigate = useNavigate(); // Add navigation hook
+  const navigate = useNavigate();
   const pricingTiers = getPricingTiers(t);
 
   // Use our custom hook for reveal animations
@@ -34,12 +35,7 @@ const Register = () => {
   return <section id="register" className="py-20 bg-gradient-to-br from-paris-blue to-paris-navy text-white">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 reveal">{t('register.title')}</h2>
-          <p className="text-lg text-white/90 reveal" style={{
-          transitionDelay: '100ms'
-        }}>
-            {t('register.description')}
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 reveal">Register</h2>
           
           {/* Top Yellow Button */}
           <div className="mt-8 reveal" style={{
