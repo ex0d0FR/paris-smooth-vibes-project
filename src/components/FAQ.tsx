@@ -23,7 +23,7 @@ const FAQ = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 reveal">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">
-            {t('faq.title')}
+            Frequently Asked Questions
           </h2>
         </div>
 
