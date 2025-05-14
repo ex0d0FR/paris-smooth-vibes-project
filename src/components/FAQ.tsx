@@ -5,7 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { MapPin, Bus, Hotel, Utensils, Calendar, Euro, Ticket, Video } from "lucide-react";
 
 const FAQ = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('faq');
 
   const icons = {
     venue: MapPin,
@@ -23,7 +23,7 @@ const FAQ = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 reveal">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">
-            Frequently Asked Questions
+            {t('title', 'Frequently Asked Questions')}
           </h2>
         </div>
 
@@ -33,11 +33,11 @@ const FAQ = () => {
               <AccordionTrigger className="text-paris-gold hover:text-paris-gold/90 text-lg">
                 <div className="flex items-center gap-3">
                   <Icon className="h-5 w-5" />
-                  <span>{t(`faq.questions.${key}.question`)}</span>
+                  <span>{t(`questions.${key}.question`)}</span>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-gray-300">
-                {t(`faq.questions.${key}.answer`)}
+                {t(`questions.${key}.answer`)}
               </AccordionContent>
             </AccordionItem>
           ))}
