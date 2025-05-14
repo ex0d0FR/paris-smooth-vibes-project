@@ -4,20 +4,20 @@ import { useTranslation } from 'react-i18next';
 import { Button } from './ui/button';
 import { toast } from '@/components/ui/use-toast';
 import { Mail } from 'lucide-react';
-import { useRevealAnimation } from '@/hooks/useRevealAnimation';
+import useRevealAnimation from '@/hooks/useRevealAnimation';
 
 const Register = () => {
-  const { t } = useTranslation(['register']);
-  
+  const { t } = useTranslation('register');
   const [selectedTier, setSelectedTier] = useState<string | null>(null);
   const [isToastVisible, setIsToastVisible] = useState(false);
 
-  useEffect(() => {
-    useRevealAnimation();
-  }, []);
-
-  useEffect(() => {
-    if (selectedTier) {
+  // Use the hook properly inside the component body
+  useRevealAnimation();
+  
+  const handleRegisterClick = (tier: string) => {
+    // Only show the toast if not already visible
+    if (!isToastVisible) {
+      setSelectedTier(tier);
       setIsToastVisible(true);
       toast({
         title: t('register.toast.title', 'Registration Started'),
@@ -25,36 +25,62 @@ const Register = () => {
       });
       // Reset selectedTier after showing the toast
       setSelectedTier(null);
+      
+      // Reset after toast has been shown
+      setTimeout(() => {
+        setIsToastVisible(false);
+      }, 5000);
     }
-  }, [selectedTier, t]);
-
-  const handleRegisterClick = (tier: string) => {
-    setSelectedTier(tier);
-    // Open Weezevent in a new tab
-    window.open('https://widget.weezevent.com/ticket/E1301418/?code=4111&locale=en-GB&width_auto=1&color_primary=0032FA', '_blank');
   };
   
   return (
-    <div id="register" className="bg-gradient-to-b from-paris-navy to-paris-gold-dark text-white pt-24 pb-20">
+    <section id="register" className="py-16 bg-paris-navy">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 reveal">
-          <h2 className="text-4xl font-bold mb-4">Register</h2>
+        <div className="text-center mb-12 reveal">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">{t('title', 'Register for PARIS 2025')}</h2>
+          <div className="w-20 h-1 bg-paris-gold mx-auto mb-6"></div>
+          <p className="text-lg text-white/80 max-w-3xl mx-auto">
+            {t('description', 'Secure your spot at the most anticipated global conference of the year. Early bird pricing available for a limited time.')}
+          </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <div className="bg-white text-gray-800 rounded-xl shadow-lg p-6 flex flex-col justify-between reveal">
             <div>
               <h3 className="text-2xl font-semibold mb-2 text-paris-navy">{t('register.tiers.inPerson.name', 'In-Person')}</h3>
               <p className="text-gray-600 mb-4">{t('register.tiers.inPerson.description', 'Complete on-site experience')}</p>
-              <div className="mb-4">
-                <h4 className="font-semibold text-paris-navy">Features:</h4>
-                <ul className="list-disc pl-5 text-gray-700">
-                  <li>{t('register.tiers.inPerson.features.full', 'Full conference access (all 3 days)')}</li>
-                  <li>{t('register.tiers.inPerson.features.workshops', 'All workshops included')}</li>
-                  <li>{t('register.tiers.inPerson.features.networking', 'Networking sessions')}</li>
-                  <li>{t('register.tiers.inPerson.features.coffee', 'Coffee breaks')}</li>
-                  <li>{t('register.tiers.inPerson.features.materials', 'Conference materials')}</li>
-                </ul>
+              
+              <div className="space-y-2 mb-6">
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                  </svg>
+                  <span>{t('register.tiers.inPerson.features.full', 'Full conference access (all 3 days)')}</span>
+                </div>
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                  </svg>
+                  <span>{t('register.tiers.inPerson.features.workshops', 'All workshops included')}</span>
+                </div>
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                  </svg>
+                  <span>{t('register.tiers.inPerson.features.networking', 'Networking sessions')}</span>
+                </div>
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                  </svg>
+                  <span>{t('register.tiers.inPerson.features.coffee', 'Coffee breaks')}</span>
+                </div>
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                  </svg>
+                  <span>{t('register.tiers.inPerson.features.materials', 'Conference materials')}</span>
+                </div>
               </div>
             </div>
             <div>
@@ -74,16 +100,38 @@ const Register = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-2 text-paris-navy">{t('register.tiers.virtual.name', 'Virtual')}</h3>
               <p className="text-gray-600 mb-4">{t('register.tiers.virtual.description', 'Join from anywhere in the world')}</p>
-              <div className="mb-4">
-                <h4 className="font-semibold text-paris-navy">Features:</h4>
-                <ul className="list-disc pl-5 text-gray-700">
-                  <li>{t('register.tiers.virtual.features.livestream', 'Live stream of all keynotes')}</li>
-                  <li>{t('register.tiers.virtual.features.digital', 'Digital access to workshops')}</li>
-                  <li>{t('register.tiers.virtual.features.online', 'Online networking opportunities')}</li>
-                  <li>{t('register.tiers.virtual.features.recorded', 'Recorded sessions access')}</li>
-                  <li>{t('register.tiers.virtual.features.materials', 'Digital conference materials')}</li>
-                  <li>{t('register.tiers.virtual.features.access', '30-day access to content after event')}</li>
-                </ul>
+              
+              <div className="space-y-2 mb-6">
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                  </svg>
+                  <span>{t('register.tiers.virtual.features.livestream', 'Live stream of all keynotes')}</span>
+                </div>
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                  </svg>
+                  <span>{t('register.tiers.virtual.features.digital', 'Digital access to workshops')}</span>
+                </div>
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                  </svg>
+                  <span>{t('register.tiers.virtual.features.online', 'Online networking opportunities')}</span>
+                </div>
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                  </svg>
+                  <span>{t('register.tiers.virtual.features.recorded', 'Recorded sessions access')}</span>
+                </div>
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                  </svg>
+                  <span>{t('register.tiers.virtual.features.access', '30-day access to content after event')}</span>
+                </div>
               </div>
             </div>
             <div>
@@ -101,18 +149,18 @@ const Register = () => {
         <div className="text-center mt-12 reveal" style={{
             transitionDelay: '400ms'
           }}>
-          <p className="text-white/80 mb-4">Have questions about registration or need assistance?</p>
+          <p className="text-white/80 mb-4">{t('register.questions', 'Have questions about registration or need assistance?')}</p>
           <Button 
             variant="claire_outline" 
             size="claire"
             onClick={() => window.location.href = 'mailto:info@puentesparis2025.net'}
           >
             <Mail className="w-4 h-4 mr-2" />
-            Contact Us
+            {t('register.contact', 'Contact Us')}
           </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

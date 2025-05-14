@@ -1,40 +1,28 @@
 
 import { useEffect } from 'react';
 
-interface UseRevealAnimationProps {
-  selector?: string;
-  threshold?: number;
-  rootMargin?: string;
-}
-
-export const useRevealAnimation = ({
-  selector = '.reveal',
-  threshold = 0.1,
-  rootMargin = '0px'
-}: UseRevealAnimationProps = {}) => {
+const useRevealAnimation = () => {
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-          }
-        });
-      },
-      { threshold, rootMargin }
-    );
-
-    const elements = document.querySelectorAll(selector);
-    elements.forEach((el) => {
-      observer.observe(el);
-    });
-
-    return () => {
-      elements.forEach((el) => {
-        observer.unobserve(el);
+    const revealElements = () => {
+      const reveals = document.querySelectorAll('.reveal:not(#schedule .reveal)');
+      
+      reveals.forEach((el) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < windowHeight - elementVisible) {
+          el.classList.add('revealed');
+        }
       });
     };
-  }, [selector, threshold, rootMargin]);
+    
+    window.addEventListener('scroll', revealElements);
+    // Run once to check initial elements in view
+    revealElements();
+    
+    return () => window.removeEventListener('scroll', revealElements);
+  }, []);
 };
 
 export default useRevealAnimation;
