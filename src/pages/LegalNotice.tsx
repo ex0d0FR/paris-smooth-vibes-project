@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useLocation } from 'react-router-dom';
@@ -70,10 +71,6 @@ const LegalNotice = () => {
                   <p>Kerygma Paris Church is committed to ensuring the confidentiality and security of your data.</p>
                   <p>You have the right to access, modify, or delete your personal information at any time by contacting: <a href="mailto:contact@kerygmaparis.fr" className="text-paris-blue dark:text-paris-gold">contact@kerygmaparis.fr</a></p>
                 </section>
-              </div>
-
-              <div className="mt-12 text-center">
-                
               </div>
             </div>
           </div>
