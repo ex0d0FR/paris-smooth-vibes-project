@@ -136,6 +136,15 @@ const VisaRequirements = () => {
                     </a>
                   </p>
                 </div>
+                
+                <div className="mt-8 text-center">
+                  <Link 
+                    to="/" 
+                    className="inline-flex items-center px-4 py-2 bg-paris-blue hover:bg-paris-navy text-white rounded transition-colors"
+                  >
+                    <span className="mr-2">←</span> {t('backToHome')}
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
