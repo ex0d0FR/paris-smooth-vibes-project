@@ -4,27 +4,32 @@ import { useTranslation } from 'react-i18next';
 import { Button } from './ui/button';
 import { toast } from '@/components/ui/use-toast';
 import { Mail } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import useRevealAnimation from '@/hooks/useRevealAnimation';
 
 const Register = () => {
   const { t } = useTranslation('register');
   const [selectedTier, setSelectedTier] = useState<string | null>(null);
   const [isToastVisible, setIsToastVisible] = useState(false);
-
+  const navigate = useNavigate();
+  
   // Use the hook properly inside the component body
   useRevealAnimation();
   
   const handleRegisterClick = (tier: string) => {
+    // Set selected tier first
+    setSelectedTier(tier);
+    
     // Only show the toast if not already visible
     if (!isToastVisible) {
-      setSelectedTier(tier);
       setIsToastVisible(true);
       toast({
-        title: t('register.toast.title', 'Registration Started'),
-        description: t('register.toast.description', { tier: selectedTier }),
+        title: t('toast.title'),
+        description: t('toast.description', { tier }),
       });
-      // Reset selectedTier after showing the toast
-      setSelectedTier(null);
+      
+      // Navigate to registration page
+      navigate('/registration');
       
       // Reset after toast has been shown
       setTimeout(() => {
@@ -45,102 +50,122 @@ const Register = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className="bg-white text-gray-800 rounded-xl shadow-lg p-6 flex flex-col justify-between reveal">
+          {/* In-Person Card */}
+          <div className="bg-[#1a1f2c] text-white rounded-xl shadow-lg p-6 flex flex-col justify-between reveal border-2 border-paris-gold">
             <div>
-              <h3 className="text-2xl font-semibold mb-2 text-paris-navy">{t('register.tiers.inPerson.name', 'In-Person')}</h3>
-              <p className="text-gray-600 mb-4">{t('register.tiers.inPerson.description', 'Complete on-site experience')}</p>
+              <h3 className="text-2xl font-semibold mb-2">{t('tiers.inPerson.name', 'In-Person')}</h3>
+              <p className="text-gray-300 mb-4">{t('tiers.inPerson.description', 'Complete on-site experience')}</p>
               
-              <div className="space-y-2 mb-6">
+              <div className="mb-4">
+                <div className="text-3xl font-bold mb-2">
+                  {t('tiers.inPerson.price', '€100')}
+                  <span className="text-sm text-gray-300 ml-1">/ {t('tiers.attendee', 'attendee')}</span>
+                </div>
+              </div>
+              
+              <div className="space-y-3 mb-6">
                 <div className="flex items-start">
                   <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                   </svg>
-                  <span>{t('register.tiers.inPerson.features.full', 'Full conference access (all 3 days)')}</span>
+                  <span>{t('tiers.inPerson.features.full', 'Full conference access (all 3 days)')}</span>
                 </div>
                 <div className="flex items-start">
                   <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                   </svg>
-                  <span>{t('register.tiers.inPerson.features.workshops', 'All workshops included')}</span>
+                  <span>{t('tiers.inPerson.features.workshops', 'All workshops included')}</span>
                 </div>
                 <div className="flex items-start">
                   <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                   </svg>
-                  <span>{t('register.tiers.inPerson.features.networking', 'Networking sessions')}</span>
+                  <span>{t('tiers.inPerson.features.networking', 'Networking sessions')}</span>
                 </div>
                 <div className="flex items-start">
                   <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                   </svg>
-                  <span>{t('register.tiers.inPerson.features.coffee', 'Coffee breaks')}</span>
+                  <span>{t('tiers.inPerson.features.coffee', 'Coffee breaks')}</span>
                 </div>
                 <div className="flex items-start">
                   <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                   </svg>
-                  <span>{t('register.tiers.inPerson.features.materials', 'Conference materials')}</span>
+                  <span>{t('tiers.inPerson.features.materials', 'Conference materials')}</span>
                 </div>
               </div>
             </div>
             <div>
               <Button 
-                variant="claire" 
-                size="claire" 
+                className="w-full bg-paris-gold hover:bg-yellow-500 text-[#1a1f2c] font-bold py-3 text-lg"
                 onClick={() => handleRegisterClick('inPerson')}
               >
-                {t('register.registerNow', 'Register Now')} - {t('register.tiers.inPerson.price', '€100')}
+                {t('registerNow', 'Register Now')}
               </Button>
             </div>
           </div>
           
-          <div className="bg-white text-gray-800 rounded-xl shadow-lg p-6 flex flex-col justify-between reveal" style={{
+          {/* Virtual Card */}
+          <div className="bg-[#0c1121] text-white rounded-xl shadow-lg p-6 flex flex-col justify-between reveal" style={{
             transitionDelay: '200ms'
           }}>
             <div>
-              <h3 className="text-2xl font-semibold mb-2 text-paris-navy">{t('register.tiers.virtual.name', 'Virtual')}</h3>
-              <p className="text-gray-600 mb-4">{t('register.tiers.virtual.description', 'Join from anywhere in the world')}</p>
+              <h3 className="text-2xl font-semibold mb-2">{t('tiers.virtual.name', 'Virtual')}</h3>
+              <p className="text-gray-300 mb-4">{t('tiers.virtual.description', 'Join from anywhere in the world')}</p>
               
-              <div className="space-y-2 mb-6">
+              <div className="mb-4">
+                <div className="text-3xl font-bold mb-2">
+                  {t('tiers.virtual.price', '€40')}
+                  <span className="text-sm text-gray-300 ml-1">/ {t('tiers.attendee', 'attendee')}</span>
+                </div>
+              </div>
+              
+              <div className="space-y-3 mb-6">
                 <div className="flex items-start">
                   <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                   </svg>
-                  <span>{t('register.tiers.virtual.features.livestream', 'Live stream of all keynotes')}</span>
+                  <span>{t('tiers.virtual.features.livestream', 'Live stream of all keynotes')}</span>
                 </div>
                 <div className="flex items-start">
                   <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                   </svg>
-                  <span>{t('register.tiers.virtual.features.digital', 'Digital access to workshops')}</span>
+                  <span>{t('tiers.virtual.features.digital', 'Digital access to workshops')}</span>
                 </div>
                 <div className="flex items-start">
                   <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                   </svg>
-                  <span>{t('register.tiers.virtual.features.online', 'Online networking opportunities')}</span>
+                  <span>{t('tiers.virtual.features.online', 'Online networking opportunities')}</span>
                 </div>
                 <div className="flex items-start">
                   <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                   </svg>
-                  <span>{t('register.tiers.virtual.features.recorded', 'Recorded sessions access')}</span>
+                  <span>{t('tiers.virtual.features.recorded', 'Recorded sessions access')}</span>
                 </div>
                 <div className="flex items-start">
                   <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                   </svg>
-                  <span>{t('register.tiers.virtual.features.access', '30-day access to content after event')}</span>
+                  <span>{t('tiers.virtual.features.materials', 'Digital conference materials')}</span>
+                </div>
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                  </svg>
+                  <span>{t('tiers.virtual.features.access', '30-day access to content after event')}</span>
                 </div>
               </div>
             </div>
             <div>
               <Button 
-                variant="claire" 
-                size="claire" 
+                className="w-full bg-white hover:bg-gray-100 text-[#0c1121] font-bold py-3 text-lg"
                 onClick={() => handleRegisterClick('virtual')}
               >
-                {t('register.registerNow', 'Register Now')} - {t('register.tiers.virtual.price', '€40')}
+                {t('registerNow', 'Register Now')}
               </Button>
             </div>
           </div>
@@ -149,14 +174,13 @@ const Register = () => {
         <div className="text-center mt-12 reveal" style={{
             transitionDelay: '400ms'
           }}>
-          <p className="text-white/80 mb-4">{t('register.questions', 'Have questions about registration or need assistance?')}</p>
+          <p className="text-white/80 mb-4">{t('questions', 'Have questions about registration or need assistance?')}</p>
           <Button 
-            variant="claire_outline" 
-            size="claire"
+            className="bg-transparent hover:bg-white/10 text-white border border-white/30 px-6 py-2"
             onClick={() => window.location.href = 'mailto:info@puentesparis2025.net'}
           >
             <Mail className="w-4 h-4 mr-2" />
-            {t('register.contact', 'Contact Us')}
+            {t('contact', 'Contact Us')}
           </Button>
         </div>
       </div>
