@@ -1,0 +1,22 @@
+
+{
+  "title": "장소 정보",
+  "description": "파리 2025는 파리 외곽의 불로뉴-비앙쿠르에 위치한 아름다운 장소인 뽀엥 뒤 쥬르 기독교 공동체에서 개최됩니다.",
+  "address": {
+    "name": "뽀엥 뒤 쥬르 기독교 공동체",
+    "street": "133 Rte de la Reine",
+    "city": "92100 불로뉴-비앙쿠르, 프랑스"
+  },
+  "contact": {
+    "phone": "+33 (0)1 40 68 22 22",
+    "email": "info@puentesparis2025.net"
+  },
+  "transport": {
+    "title": "오시는 길",
+    "metro": "지하철: 1호선, Porte Maillot 역",
+    "rer": "RER: C선, Neuilly - Porte Maillot 역",
+    "bus": "버스: 43, 73, 82, PC1, PC3 노선",
+    "cdg": "샤를 드골 공항에서: 택시로 45분 또는 에어프랑스 셔틀",
+    "orly": "오를리 공항에서: 택시로 30분"
+  }
+}

@@ -1,0 +1,47 @@
+
+{
+  "title": "Visa-Anforderungen",
+  "subtitle": "Wichtige Informationen für internationale Teilnehmer",
+  "welcome": "Wir freuen uns, Sie zur Konferenz 'Missionarische Brücken bauen' begrüßen zu dürfen, die vom 28. bis 31. Oktober 2025 in Paris stattfindet.",
+  "readCarefully": "Bitte lesen Sie die folgenden Informationen sorgfältig durch, wenn Sie von außerhalb Frankreichs anreisen.",
+  "disclaimer": {
+    "title": "Haftungsausschluss bezüglich Reise- und Visaverantwortlichkeiten",
+    "intro": "Die Fédération Protestante de France und die Église Kerygma sind nicht verantwortlich für:",
+    "notResponsibleFor": [
+      "Die Ausstellung von Einladungsschreiben für Visa-Anträge",
+      "Die Übernahme von Kosten im Zusammenhang mit Ihrer Reise oder Teilnahme an der Veranstaltung"
+    ],
+    "expenses": {
+      "intro": "Dies umfasst unter anderem:",
+      "items": [
+        "Flugtickets",
+        "Verpflegung und Mahlzeiten",
+        "Unterkunft und Übernachtung",
+        "Krankenversicherung oder Gesundheitsausgaben",
+        "Visumsgebühren oder jegliche Reisevorbereitungen"
+      ],
+      "conclusion": "Alle diese Ausgaben müssen vollständig von jedem Teilnehmer oder der entsendenden Organisation getragen werden."
+    }
+  },
+  "visaType": {
+    "title": "Visa-Typ",
+    "info": "Da es sich um eine kurzfristige Veranstaltung handelt, müssen Teilnehmer ein Schengen-Kurzaufenthaltsvisum für Touristen beantragen, das typischerweise Aufenthalte von bis zu 90 Tagen im Schengen-Raum abdeckt.",
+    "personal": "Dieses Visum muss persönlich in Ihrem Wohnsitzland beantragt werden."
+  },
+  "resources": {
+    "title": "Hilfreiche Ressourcen für Ihren Antrag",
+    "intro": "Um Sie durch den Visa-Prozess zu führen, empfehlen wir den Besuch der folgenden offiziellen Websites:",
+    "schengenInfo": "Schengen Visa Info – Offizielle Website",
+    "franceVisas": "France Visas – Offizielles französisches Visa-Portal"
+  },
+  "conclusion": {
+    "appreciation": "Wir danken für Ihr Verständnis und Ihre Zusammenarbeit. Diese Regelung gewährleistet Klarheit und Transparenz für alle internationalen Teilnehmer.",
+    "questions": "Bei Fragen zur Konferenz selbst (nicht zu Visa-Angelegenheiten) können Sie sich gerne an folgende Person wenden:"
+  },
+  "contact": {
+    "name": "Luis Fernando Rosales",
+    "behalf": "Im Namen der Fédération Protestante de France und der Église Kerygma",
+    "phone": "+33 749 44 26 26"
+  },
+  "backToHome": "Zurück zur Startseite"
+}
