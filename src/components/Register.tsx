@@ -1,8 +1,9 @@
+
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, ClaireButton } from './ui/button';
+import { Button } from './ui/button';
 import { toast } from '@/components/ui/use-toast';
-import { HelpCircle, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { useRevealAnimation } from '@/hooks/useRevealAnimation';
 
 const Register = () => {
@@ -20,7 +21,7 @@ const Register = () => {
       setIsToastVisible(true);
       toast({
         title: t('register.toast.title', 'Registration Started'),
-        description: t('register.toast.description', { tier: selectedTier }, `You've selected the ${selectedTier} package. Please complete your registration.`),
+        description: t('register.toast.description', { tier: selectedTier }),
       });
       // Reset selectedTier after showing the toast
       setSelectedTier(null);
@@ -57,15 +58,19 @@ const Register = () => {
               </div>
             </div>
             <div>
-              <ClaireButton onClick={() => handleRegisterClick('inPerson')}>
+              <Button 
+                variant="claire" 
+                size="claire" 
+                onClick={() => handleRegisterClick('inPerson')}
+              >
                 {t('register.registerNow', 'Register Now')} - {t('register.tiers.inPerson.price', '€100')}
-              </ClaireButton>
+              </Button>
             </div>
           </div>
           
           <div className="bg-white text-gray-800 rounded-xl shadow-lg p-6 flex flex-col justify-between reveal" style={{
-        transitionDelay: '200ms'
-      }}>
+            transitionDelay: '200ms'
+          }}>
             <div>
               <h3 className="text-2xl font-semibold mb-2 text-paris-navy">{t('register.tiers.virtual.name', 'Virtual')}</h3>
               <p className="text-gray-600 mb-4">{t('register.tiers.virtual.description', 'Join from anywhere in the world')}</p>
@@ -82,24 +87,28 @@ const Register = () => {
               </div>
             </div>
             <div>
-              <ClaireButton onClick={() => handleRegisterClick('virtual')}>
+              <Button 
+                variant="claire" 
+                size="claire" 
+                onClick={() => handleRegisterClick('virtual')}
+              >
                 {t('register.registerNow', 'Register Now')} - {t('register.tiers.virtual.price', '€40')}
-              </ClaireButton>
+              </Button>
             </div>
           </div>
         </div>
         
         <div className="text-center mt-12 reveal" style={{
-        transitionDelay: '400ms'
-      }}>
-          <p className="text-white/80 mb-4">{t('register.questions', 'Have questions about registration or need assistance?')}</p>
+            transitionDelay: '400ms'
+          }}>
+          <p className="text-white/80 mb-4">Have questions about registration or need assistance?</p>
           <Button 
             variant="claire_outline" 
             size="claire"
             onClick={() => window.location.href = 'mailto:info@puentesparis2025.net'}
           >
             <Mail className="w-4 h-4 mr-2" />
-            {t('register.contact', 'Contact Us')}
+            Contact Us
           </Button>
         </div>
       </div>
