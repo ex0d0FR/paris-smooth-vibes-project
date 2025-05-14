@@ -1,14 +1,12 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Shield } from 'lucide-react';
-
 const PrivacyPolicy = () => {
   const location = useLocation();
-  
+
   // Scroll to top when component mounts or route changes
   useEffect(() => {
     window.scrollTo({
@@ -17,9 +15,7 @@ const PrivacyPolicy = () => {
       behavior: 'instant'
     });
   }, [location.pathname]);
-  
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Privacy Policy - PARIS 2025</title>
         <meta name="description" content="Privacy Policy for the PARIS 2025 Building Missionary Bridges conference." />
@@ -83,20 +79,13 @@ const PrivacyPolicy = () => {
               </div>
 
               <div className="mt-12 text-center">
-                <Link 
-                  to="/" 
-                  className="inline-block bg-paris-blue text-white px-6 py-2 rounded hover:bg-paris-navy transition-colors"
-                >
-                  Back to Home
-                </Link>
+                
               </div>
             </div>
           </div>
         </main>
         <Footer />
       </div>
-    </>
-  );
+    </>;
 };
-
 export default PrivacyPolicy;
