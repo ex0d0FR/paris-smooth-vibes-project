@@ -342,7 +342,7 @@ const Schedule = () => {
   const [activeDay, setActiveDay] = useState('day1');
   const [loading, setLoading] = useState(true);
   const [preloadedData, setPreloadedData] = useState<Record<string, ScheduleItem[]>>({});
-  const { t } = useTranslation();
+  const { t } = useTranslation('schedule');
   
   useEffect(() => {
     const preload = async () => {
@@ -499,7 +499,7 @@ const Schedule = () => {
           </div>
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{item.location}</p>
           <span className={`inline-block px-2 py-1 rounded text-xs font-medium mt-2 ${getCategoryColor(item.category)}`}>
-            {t(`schedule.categories.${item.category.toLowerCase()}`, item.category)}
+            {t(`categories.${item.category.toLowerCase()}`, item.category)}
           </span>
         </div>
         
@@ -514,18 +514,20 @@ const Schedule = () => {
   return (
     <section id="schedule" className="py-20 bg-paris-light dark:bg-gray-900">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 reveal dark:text-white">{t('schedule.title')}</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 reveal dark:text-white">
+          {t('title')}
+        </h2>
         <p className="text-lg text-center mb-12 max-w-3xl mx-auto text-gray-600 dark:text-gray-300 reveal" style={{ transitionDelay: '100ms' }}>
-          {t('schedule.description')}
+          {t('description')}
         </p>
         
         <div className="max-w-4xl mx-auto reveal" style={{ transitionDelay: '200ms' }}>
           <Tabs defaultValue="day1" className="w-full" onValueChange={handleTabChange}>
             <TabsList className="grid grid-cols-4 mb-8">
-              <TabsTrigger value="day1" className="text-sm sm:text-base">{t('schedule.day1')}</TabsTrigger>
-              <TabsTrigger value="day2" className="text-sm sm:text-base">{t('schedule.day2')}</TabsTrigger>
-              <TabsTrigger value="day3" className="text-sm sm:text-base">{t('schedule.day3')}</TabsTrigger>
-              <TabsTrigger value="day4" className="text-sm sm:text-base">{t('schedule.day4')}</TabsTrigger>
+              <TabsTrigger value="day1" className="text-sm sm:text-base">{t('day1')}</TabsTrigger>
+              <TabsTrigger value="day2" className="text-sm sm:text-base">{t('day2')}</TabsTrigger>
+              <TabsTrigger value="day3" className="text-sm sm:text-base">{t('day3')}</TabsTrigger>
+              <TabsTrigger value="day4" className="text-sm sm:text-base">{t('day4')}</TabsTrigger>
             </TabsList>
             
             {Object.keys(scheduleData).map((day) => (
