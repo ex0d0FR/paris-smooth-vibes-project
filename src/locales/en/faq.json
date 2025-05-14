@@ -4,7 +4,7 @@
   "questions": {
     "venue": {
       "question": "Where is the event taking place?",
-      "answer": "The event takes place at the Palais des Congrès de Paris. The address is: 2 Place de la Porte Maillot, 75017 Paris, France"
+      "answer": "The event takes place at the Communauté Chrétienne du Point du Jour. The address is: 133 Rte de la Reine, 92100 Boulogne-Billancourt, France"
     },
     "transport": {
       "question": "Do you organize transportation to the event?",
@@ -24,7 +24,7 @@
     },
     "price": {
       "question": "What is the price?",
-      "answer": "The 4-day pass for one adult costs 100 euros until 31 July 2024, and 130 euros from 1 August 2024."
+      "answer": "The 3-day pass for an adult is €100 until March 31, 2024, then €130 from August 1, 2024. Child and day rates are detailed on the link to buy tickets."
     },
     "refund": {
       "question": "I want to get a refund for my ticket, how does that work?",

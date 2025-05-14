@@ -4,31 +4,31 @@
   "questions": {
     "venue": {
       "question": "¿Dónde se lleva a cabo el evento?",
-      "answer": "El evento se lleva a cabo en el Palais des Congrès de Paris. La dirección es: 2 Place de la Porte Maillot, 75017 París, Francia"
+      "answer": "El evento se lleva a cabo en la Comunidad Cristiana del Point du Jour. La dirección es: 133 Rte de la Reine, 92100 Boulogne-Billancourt, Francia"
     },
     "transport": {
-      "question": "¿Organizan transporte al evento?",
-      "answer": "No organizamos transporte, cada participante organiza su propia logística."
+      "question": "¿Organizan el transporte para el evento?",
+      "answer": "No organizamos el transporte, cada participante organiza su propia logística."
     },
     "accommodation": {
       "question": "¿Dónde puedo alojarme?",
-      "answer": "Hay opciones de alojamiento disponibles alrededor del lugar de la conferencia. Te animamos a utilizar sitios como booking.com o airbnb.com para encontrar la solución que te convenga."
+      "answer": "Hay opciones de alojamiento disponibles alrededor de la sede de la conferencia. Te recomendamos usar sitios como booking.com o airbnb.com para encontrar la solución que se adapte a ti."
     },
     "food": {
       "question": "¿Podré comprar comida en la conferencia?",
-      "answer": "Habrá un punto de comida rápida en la conferencia. También encontrarás restaurantes y supermercados en la ciudad."
+      "answer": "Habrá un puesto de comida rápida en la conferencia. También encontrarás restaurantes y supermercados en la ciudad."
     },
     "program": {
       "question": "¿Cuál es el programa?",
-      "answer": "Los días comienzan a las 9:00 y terminan alrededor de las 22:00. Están previstas pausas entre sesiones y para las comidas. Como el programa cambia constantemente hasta el último momento, no podemos proporcionar detalles sobre el contenido o las fechas y horas de los diversos ponentes."
+      "answer": "Los días comienzan a las 9:00 y terminan alrededor de las 22:00. Están planificados descansos entre sesiones y para las comidas. Dado que el horario cambia constantemente hasta el último momento, no podemos proporcionar detalles sobre el contenido o las fechas y horarios de los diversos oradores."
     },
     "price": {
       "question": "¿Cuál es el precio?",
-      "answer": "El pase de 4 días para un adulto cuesta 100 euros hasta el 31 de julio de 2024, y 130 euros a partir del 1 de agosto de 2024."
+      "answer": "El pase de 3 días para un adulto es de 100 € hasta el 31 de marzo de 2024, luego 130 € a partir del 1 de agosto de 2024. Las tarifas para niños y por día se detallan en el enlace para comprar boletos."
     },
     "refund": {
-      "question": "Quiero un reembolso de mi boleto, ¿cómo funciona eso?",
-      "answer": "Para cualquier solicitud de reembolso, debes enviar un correo electrónico a info@puentesparis2025.net desde el correo electrónico que se utilizó para comprar los boletos. Debes especificar el nombre, apellido y número de pedido. El reembolso se realizará sin las tarifas de la plataforma de compra de boletos, que no son reembolsables. No se aceptará ninguna solicitud de reembolso menos de 15 días antes del evento."
+      "question": "Quiero obtener un reembolso de mi boleto, ¿cómo funciona eso?",
+      "answer": "Para cualquier solicitud de reembolso, debes enviar un correo electrónico a info@puentesparis2025.net desde el buzón de correo que se utilizó para comprar los boletos. Debes especificar el nombre, apellido y número de pedido. El reembolso se realizará sin las tarifas de la plataforma de compra de entradas que no son reembolsables. No se aceptará ninguna solicitud de reembolso menos de 15 días antes del evento."
     },
     "video": {
       "question": "¿Se puede seguir la conferencia por video remotamente?",
