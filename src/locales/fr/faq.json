@@ -1,6 +1,6 @@
 
 {
-  "title": "Foire Aux Questions",
+  "title": "Questions Fréquemment Posées",
   "questions": {
     "venue": {
       "question": "Où se déroule l'événement ?",
@@ -20,19 +20,19 @@
     },
     "program": {
       "question": "Quel est le programme ?",
-      "answer": "Les journées commencent à 9h00 et se terminent vers 22h00. Des pauses entre les sessions et pour les repas sont prévues. Comme le programme change constamment jusqu'au dernier moment, nous ne pouvons pas fournir de détails sur le contenu ou les dates et heures des différents intervenants."
+      "answer": "Les journées commencent à 9h00 et se terminent vers 22h00. Des pauses entre les sessions et pour les repas sont prévues. Comme le programme change constamment jusqu'au dernier moment, nous ne sommes pas en mesure de fournir des détails sur le contenu ou les dates et heures des différents intervenants."
     },
     "price": {
       "question": "Quel est le prix ?",
-      "answer": "Le pass 3 jours pour un adulte est de 100€ jusqu'au 31 mars 2024, puis 130€ à partir du 1er août 2024. Les tarifs enfant et journalier sont détaillés sur le lien pour acheter les billets."
+      "answer": "Le pass de 4 jours pour un adulte coûte 100 euros jusqu'au 31 juillet 2024, et 130 euros à partir du 1er août 2024."
     },
     "refund": {
-      "question": "Je souhaite me faire rembourser mon billet, comment cela fonctionne-t-il ?",
-      "answer": "Pour toute demande de remboursement, vous devez envoyer un email à info@puentesparis2025.net depuis la boîte email qui a été utilisée pour acheter les billets. Vous devez préciser le nom, prénom et numéro de commande. Le remboursement sera effectué sans les frais de la plateforme d'achat de billets qui ne sont pas remboursables. Aucune demande de remboursement ne sera acceptée moins de 15 jours avant l'événement."
+      "question": "Je veux me faire rembourser mon billet, comment ça marche ?",
+      "answer": "Pour toute demande de remboursement, vous devez envoyer un e-mail à info@puentesparis2025.net depuis la boîte e-mail qui a été utilisée pour acheter les billets. Vous devez préciser le nom, le prénom et le numéro de commande. Le remboursement sera effectué sans les frais de la plateforme d'achat de billets qui ne sont pas remboursables. Aucune demande de remboursement ne sera acceptée moins de 15 jours avant l'événement."
     },
     "video": {
       "question": "La conférence peut-elle être suivie par vidéo à distance ?",
-      "answer": "Oui la conférence sera diffusée en direct en vidéo en français et en anglais, inscrivez-vous ici pour recevoir le lien."
+      "answer": "Oui, la conférence sera diffusée en direct en vidéo en français et en anglais, inscrivez-vous ici pour recevoir le lien."
     }
   }
 }
