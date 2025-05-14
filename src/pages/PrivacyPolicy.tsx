@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useLocation } from 'react-router-dom';
@@ -76,10 +77,6 @@ const PrivacyPolicy = () => {
                     Your request must include a valid form of identification.
                   </p>
                 </section>
-              </div>
-
-              <div className="mt-12 text-center">
-                
               </div>
             </div>
           </div>
