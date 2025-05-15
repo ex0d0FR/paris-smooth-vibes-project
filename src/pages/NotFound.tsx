@@ -5,10 +5,12 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
+import { Button } from "@/components/ui/button";
+import { ensureNamespacesLoaded } from '@/utils/i18nUtils';
 
 const NotFound = () => {
   const location = useLocation();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     console.error(
@@ -16,13 +18,25 @@ const NotFound = () => {
       location.pathname
     );
     
+    // Ensure we have the proper translations for the 404 page
+    const loadTranslations = async () => {
+      try {
+        await ensureNamespacesLoaded(i18n, ['common']);
+        console.log("NotFound page translations loaded successfully");
+      } catch (error) {
+        console.error("Failed to load NotFound page translations:", error);
+      }
+    };
+    
+    loadTranslations();
+    
     // Scroll to top when component mounts
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: 'instant'
     });
-  }, [location.pathname]);
+  }, [location.pathname, i18n]);
 
   return (
     <>
@@ -44,12 +58,14 @@ const NotFound = () => {
               <p className="text-gray-500 dark:text-gray-400 mb-8">
                 {t('notFound.description', 'The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.')}
               </p>
-              <Link 
-                to="/" 
-                className="inline-block bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy px-6 py-3 rounded-lg transition-colors"
+              <Button 
+                asChild
+                className="bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy px-6 py-3 rounded-lg transition-colors"
               >
-                {t('notFound.returnHome', 'Return to Home')}
-              </Link>
+                <Link to="/">
+                  {t('notFound.returnHome', 'Return to Home')}
+                </Link>
+              </Button>
             </div>
           </div>
         </main>

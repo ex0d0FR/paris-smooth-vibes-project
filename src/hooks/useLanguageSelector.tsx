@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ensureNamespacesLoaded } from '@/utils/i18nUtils';
+import { toast } from '@/components/ui/use-toast';
 
 export interface Language {
   code: string;
@@ -40,7 +41,7 @@ export const useLanguageSelector = () => {
       // Normalize language code (strip region)
       const simpleLng = lng.split('-')[0];
       
-      // Ensure all required namespaces are loaded
+      // Ensure all required namespaces are loaded before changing language
       await ensureNamespacesLoaded(i18n, requiredNamespaces);
       
       // Change language
@@ -56,6 +57,13 @@ export const useLanguageSelector = () => {
       setOpen(false);
     } catch (e) {
       console.error("Error changing language:", e);
+      // Show error toast
+      toast({
+        title: "Language change failed",
+        description: "We couldn't switch to your selected language. Please try again.",
+        variant: "destructive"
+      });
+      
       // If there's an error, try falling back to English
       try {
         console.log("Falling back to English");
