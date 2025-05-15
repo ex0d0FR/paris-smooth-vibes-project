@@ -1,0 +1,22 @@
+
+{
+  "title": "Informações do Local",
+  "description": "PARIS 2025 acontecerá na Comunidade Cristã do Point du Jour, um belo local em Boulogne-Billancourt, nos arredores de Paris.",
+  "address": {
+    "name": "Comunidade Cristã do Point du Jour",
+    "street": "133 Rte de la Reine",
+    "city": "92100 Boulogne-Billancourt, França"
+  },
+  "contact": {
+    "phone": "+33 (0)1 40 68 22 22",
+    "email": "info@puentesparis2025.net"
+  },
+  "transport": {
+    "title": "Como Chegar",
+    "metro": "De Metrô: Linha 1, estação Porte Maillot",
+    "rer": "De RER: Linha C, estação Neuilly - Porte Maillot",
+    "bus": "De Ônibus: Linhas 43, 73, 82, PC1, PC3",
+    "cdg": "Do Aeroporto Charles de Gaulle: 45 minutos de táxi ou ônibus Air France",
+    "orly": "Do Aeroporto de Orly: 30 minutos de táxi"
+  }
+}
