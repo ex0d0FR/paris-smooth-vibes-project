@@ -1,4 +1,9 @@
 
 {
-  "languageName": "Italiano"
+  "languageName": "Italiano",
+  "notFound": {
+    "message": "Ops! Pagina non trovata",
+    "description": "La pagina che stai cercando potrebbe essere stata rimossa, rinominata o temporaneamente non disponibile.",
+    "returnHome": "Torna alla Home"
+  }
 }

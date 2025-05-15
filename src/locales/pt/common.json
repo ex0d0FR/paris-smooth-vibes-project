@@ -1,4 +1,9 @@
 
 {
-  "languageName": "Português"
+  "languageName": "Português",
+  "notFound": {
+    "message": "Ops! Página não encontrada",
+    "description": "A página que você está procurando pode ter sido removida, teve seu nome alterado ou está temporariamente indisponível.",
+    "returnHome": "Voltar para a Página Inicial"
+  }
 }

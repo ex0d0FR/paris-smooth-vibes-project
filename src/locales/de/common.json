@@ -1,4 +1,9 @@
 
 {
-  "languageName": "Deutsch"
+  "languageName": "Deutsch",
+  "notFound": {
+    "message": "Hoppla! Seite nicht gefunden",
+    "description": "Die von Ihnen gesuchte Seite wurde möglicherweise entfernt, umbenannt oder ist vorübergehend nicht verfügbar.",
+    "returnHome": "Zurück zur Startseite"
+  }
 }

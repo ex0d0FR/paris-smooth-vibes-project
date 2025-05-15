@@ -1,4 +1,9 @@
 
 {
-  "languageName": "English"
+  "languageName": "English",
+  "notFound": {
+    "message": "Oops! Page not found",
+    "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+    "returnHome": "Return to Home"
+  }
 }
