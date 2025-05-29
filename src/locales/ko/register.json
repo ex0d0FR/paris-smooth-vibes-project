@@ -10,7 +10,7 @@
   "tiers": {
     "inPerson": {
       "name": "현장 참석",
-      "price": "€100",
+      "price": "€60",
       "description": "완전한 현장 경험",
       "features": {
         "full": "컨퍼런스 전체 이용 (3일 모두)",

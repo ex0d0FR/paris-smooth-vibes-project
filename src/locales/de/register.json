@@ -10,7 +10,7 @@
   "tiers": {
     "inPerson": {
       "name": "Vor Ort",
-      "price": "€100",
+      "price": "€60",
       "description": "Komplettes Vor-Ort-Erlebnis",
       "features": {
         "full": "Voller Konferenzzugang (alle 3 Tage)",

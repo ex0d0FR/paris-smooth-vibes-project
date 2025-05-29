@@ -10,7 +10,7 @@
   "tiers": {
     "inPerson": {
       "name": "In Presenza",
-      "price": "€100",
+      "price": "€60",
       "description": "Esperienza completa in loco",
       "features": {
         "full": "Accesso completo alla conferenza (tutti i 3 giorni)",

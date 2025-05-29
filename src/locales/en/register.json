@@ -10,7 +10,7 @@
   "tiers": {
     "inPerson": {
       "name": "In-Person",
-      "price": "€100",
+      "price": "€60",
       "description": "Complete on-site experience",
       "features": {
         "full": "Full conference access (all 3 days)",

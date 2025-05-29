@@ -10,7 +10,7 @@
   "tiers": {
     "inPerson": {
       "name": "Presencial",
-      "price": "€100",
+      "price": "€60",
       "description": "Experiencia completa en el sitio",
       "features": {
         "full": "Acceso completo a la conferencia (los 3 días)",

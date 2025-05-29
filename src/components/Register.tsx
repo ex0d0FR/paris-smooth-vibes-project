@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from './ui/button';
@@ -58,7 +57,7 @@ const Register = () => {
               
               <div className="mb-4">
                 <div className="text-3xl font-bold mb-2">
-                  {t('tiers.inPerson.price', '€100')}
+                  €60
                   <span className="text-sm text-gray-300 ml-1">/ {t('tiers.attendee', 'attendee')}</span>
                 </div>
               </div>
@@ -116,7 +115,7 @@ const Register = () => {
               
               <div className="mb-4">
                 <div className="text-3xl font-bold mb-2">
-                  {t('tiers.virtual.price', '€40')}
+                  €40
                   <span className="text-sm text-gray-300 ml-1">/ {t('tiers.attendee', 'attendee')}</span>
                 </div>
               </div>
