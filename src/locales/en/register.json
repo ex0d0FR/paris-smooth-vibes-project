@@ -22,7 +22,7 @@
     },
     "virtual": {
       "name": "Virtual",
-      "price": "€40",
+      "price": "€20",
       "description": "Join from anywhere in the world",
       "features": {
         "livestream": "Live stream of all keynotes",

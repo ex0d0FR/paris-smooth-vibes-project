@@ -115,7 +115,7 @@ const Register = () => {
               
               <div className="mb-4">
                 <div className="text-3xl font-bold mb-2">
-                  €40
+                  €20
                   <span className="text-sm text-gray-300 ml-1">/ {t('tiers.attendee', 'attendee')}</span>
                 </div>
               </div>

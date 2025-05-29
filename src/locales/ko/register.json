@@ -22,7 +22,7 @@
     },
     "virtual": {
       "name": "온라인",
-      "price": "€40",
+      "price": "€20",
       "description": "전 세계 어디에서나 참여 가능",
       "features": {
         "livestream": "모든 기조 연설의 라이브 스트리밍",
