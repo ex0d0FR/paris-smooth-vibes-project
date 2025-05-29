@@ -3,12 +3,12 @@
   "title": "Frequently Asked Questions",
   "questions": {
     "venue": {
-      "question": "Where is the event taking place?",
-      "answer": "The event takes place at the Communauté Chrétienne du Point du Jour, 133 Rte de la Reine, 92100 Boulogne-Billancourt, France"
+      "question": "Where does the event take place?",
+      "answer": "The event takes place at the Christian Community of Point du Jour, 133 Rte de la Reine, 92100 Boulogne-Billancourt, France"
     },
     "transport": {
-      "question": "Do you organize transportation to the event?",
-      "answer": "We do not organize transportation, each participant organizes their own logistics."
+      "question": "Do you organize transport for the event?",
+      "answer": "We do not organize transport, each participant organizes their own logistics."
     },
     "accommodation": {
       "question": "Where can I stay?",
@@ -16,23 +16,23 @@
     },
     "food": {
       "question": "Will I be able to buy food at the conference?",
-      "answer": "There will be a fast food outlet at the conference. You will also find restaurants and supermarkets in town."
+      "answer": "There will be a fast food point at the conference. You will also find restaurants and supermarkets in the city."
     },
     "program": {
       "question": "What is the program?",
-      "answer": "The days start at 9:00 and end around 22:00. Breaks between sessions and for meals are planned. Since the schedule is constantly changing until the last moment, we are unable to provide details on the content or the dates and times of the various speakers."
+      "answer": "The days start at 9:00 AM and end around 10:00 PM. Breaks between sessions and for meals are planned. Since the program is constantly evolving until the last moment, we cannot provide details on the content or dates and times of the various speakers."
     },
     "price": {
       "question": "What is the price?",
-      "answer": "The 4-day pass for one adult costs 100 euros until 31 July 2025, and 130 euros from 1 August 2025."
+      "answer": "The 4-day pass for one adult costs 60 euros until 31 August 2025, and 80 euros from 1 September 2025."
     },
     "refund": {
-      "question": "I want to get a refund for my ticket, how does that work?",
-      "answer": "For any refund request, you must send an email to info@puentesparis2025.net from the email box that was used to purchase the tickets. You must specify the name, first name and order number. The refund will be made without the fees of the ticket purchasing platform which are not refundable. No refund request will be accepted less than 15 days before the event."
+      "question": "I want to get a refund for my ticket, how does it work?",
+      "answer": "For any refund request, you must send an email to info@puentesparis2025.net from the email box that was used to purchase the tickets. You must specify the name, surname and order number. The refund will be made excluding the fees of the ticket purchasing platform which are non-refundable. No refund request will be accepted less than 15 days before the event."
     },
     "video": {
       "question": "Can the conference be followed by video remotely?",
-      "answer": "Yes the conference will be broadcast live on video in French and English, register here to receive the link."
+      "answer": "Yes, the conference will be broadcast live on video in French and English, register here to receive the link."
     }
   }
 }

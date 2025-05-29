@@ -3,8 +3,8 @@
   "title": "Preguntas Frecuentes",
   "questions": {
     "venue": {
-      "question": "¿Dónde se lleva a cabo el evento?",
-      "answer": "El evento se lleva a cabo en la Comunidad Cristiana del Point du Jour. La dirección es: 133 Rte de la Reine, 92100 Boulogne-Billancourt, Francia"
+      "question": "¿Dónde tiene lugar el evento?",
+      "answer": "El evento tiene lugar en la Comunidad Cristiana de Point du Jour, 133 Rte de la Reine, 92100 Boulogne-Billancourt, Francia"
     },
     "transport": {
       "question": "¿Organizan el transporte para el evento?",
@@ -12,26 +12,26 @@
     },
     "accommodation": {
       "question": "¿Dónde puedo alojarme?",
-      "answer": "Hay opciones de alojamiento disponibles alrededor de la sede de la conferencia. Te recomendamos usar sitios como booking.com o airbnb.com para encontrar la solución que se adapte a ti."
+      "answer": "Hay opciones de alojamiento disponibles alrededor del lugar de la conferencia. Te animamos a usar sitios como booking.com o airbnb.com para encontrar la solución que te convenga."
     },
     "food": {
       "question": "¿Podré comprar comida en la conferencia?",
-      "answer": "Habrá un puesto de comida rápida en la conferencia. También encontrarás restaurantes y supermercados en la ciudad."
+      "answer": "Habrá un punto de comida rápida en la conferencia. También encontrarás restaurantes y supermercados en la ciudad."
     },
     "program": {
       "question": "¿Cuál es el programa?",
-      "answer": "Los días comienzan a las 9:00 y terminan alrededor de las 22:00. Están planificados descansos entre sesiones y para las comidas. Dado que el horario cambia constantemente hasta el último momento, no podemos proporcionar detalles sobre el contenido o las fechas y horarios de los diversos oradores."
+      "answer": "Los días comienzan a las 9:00 y terminan alrededor de las 22:00. Se planifican descansos entre sesiones y para las comidas. Como el programa está en constante evolución hasta el último momento, no podemos proporcionar detalles sobre el contenido o las fechas y horarios de los diversos oradores."
     },
     "price": {
       "question": "¿Cuál es el precio?",
-      "answer": "El pase de 4 días para un adulto cuesta 100 euros hasta el 31 de julio de 2025, y 130 euros a partir del 1 de agosto de 2025."
+      "answer": "El pase de 4 días para un adulto cuesta 60 euros hasta el 31 de agosto de 2025, y 80 euros a partir del 1 de septiembre de 2025."
     },
     "refund": {
-      "question": "Quiero obtener un reembolso de mi boleto, ¿cómo funciona eso?",
-      "answer": "Para cualquier solicitud de reembolso, debes enviar un correo electrónico a info@puentesparis2025.net desde el buzón de correo que se utilizó para comprar los boletos. Debes especificar el nombre, apellido y número de pedido. El reembolso se realizará sin las tarifas de la plataforma de compra de entradas que no son reembolsables. No se aceptará ninguna solicitud de reembolso menos de 15 días antes del evento."
+      "question": "Quiero obtener un reembolso de mi entrada, ¿cómo funciona?",
+      "answer": "Para cualquier solicitud de reembolso, debes enviar un correo electrónico a info@puentesparis2025.net desde la dirección de correo que se utilizó para comprar las entradas. Debes especificar el nombre, apellido y número de pedido. El reembolso se realizará excluyendo las tarifas de la plataforma de compra de entradas que no son reembolsables. No se aceptará ninguna solicitud de reembolso menos de 15 días antes del evento."
     },
     "video": {
-      "question": "¿Se puede seguir la conferencia por video remotamente?",
+      "question": "¿Se puede seguir la conferencia por video de forma remota?",
       "answer": "Sí, la conferencia se transmitirá en vivo por video en francés e inglés, regístrate aquí para recibir el enlace."
     }
   }

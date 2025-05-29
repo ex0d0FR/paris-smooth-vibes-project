@@ -4,7 +4,7 @@
   "questions": {
     "venue": {
       "question": "Wo findet die Veranstaltung statt?",
-      "answer": "Die Veranstaltung findet in der Christlichen Gemeinschaft Point du Jour statt. Die Adresse lautet: 133 Rte de la Reine, 92100 Boulogne-Billancourt, Frankreich"
+      "answer": "Die Veranstaltung findet in der Christlichen Gemeinschaft du Point du Jour statt, 133 Rte de la Reine, 92100 Boulogne-Billancourt, Frankreich"
     },
     "transport": {
       "question": "Organisieren Sie den Transport zur Veranstaltung?",
@@ -12,27 +12,27 @@
     },
     "accommodation": {
       "question": "Wo kann ich übernachten?",
-      "answer": "Rund um den Konferenzort stehen Übernachtungsmöglichkeiten zur Verfügung. Wir empfehlen die Nutzung von Websites wie booking.com oder airbnb.com, um die für Sie passende Lösung zu finden."
+      "answer": "Unterkunftsmöglichkeiten sind rund um den Veranstaltungsort verfügbar. Wir empfehlen Ihnen, Websites wie booking.com oder airbnb.com zu nutzen, um die für Sie passende Lösung zu finden."
     },
     "food": {
       "question": "Kann ich auf der Konferenz Essen kaufen?",
-      "answer": "Es wird einen Fast-Food-Stand auf der Konferenz geben. Sie finden auch Restaurants und Supermärkte in der Stadt."
+      "answer": "Es wird einen Schnellimbiss auf der Konferenz geben. Sie finden auch Restaurants und Supermärkte in der Stadt."
     },
     "program": {
-      "question": "Wie sieht das Programm aus?",
-      "answer": "Die Tage beginnen um 9:00 Uhr und enden gegen 22:00 Uhr. Pausen zwischen den Sitzungen und für Mahlzeiten sind eingeplant. Da sich der Zeitplan bis zum letzten Moment ständig ändert, können wir keine Details über den Inhalt oder die Termine und Zeiten der verschiedenen Redner angeben."
+      "question": "Wie ist das Programm?",
+      "answer": "Die Tage beginnen um 9:00 Uhr und enden gegen 22:00 Uhr. Pausen zwischen den Sitzungen und für Mahlzeiten sind geplant. Da sich das Programm bis zum letzten Moment ständig weiterentwickelt, können wir keine Details zum Inhalt oder zu den Terminen und Zeiten der verschiedenen Redner geben."
     },
     "price": {
-      "question": "Was kostet es?",
-      "answer": "Der 4-Tages-Pass für einen Erwachsenen kostet 100 Euro bis zum 31. Juli 2025 und 130 Euro ab dem 1. August 2025."
+      "question": "Wie hoch ist der Preis?",
+      "answer": "Der 4-Tage-Pass für einen Erwachsenen kostet 60 Euro bis zum 31. August 2025 und 80 Euro ab dem 1. September 2025."
     },
     "refund": {
       "question": "Ich möchte eine Rückerstattung für mein Ticket, wie funktioniert das?",
-      "answer": "Für jede Rückerstattungsanfrage müssen Sie eine E-Mail an info@puentesparis2025.net von der E-Mail-Adresse senden, die für den Ticketkauf verwendet wurde. Sie müssen Namen, Vornamen und Bestellnummer angeben. Die Rückerstattung erfolgt ohne die Gebühren der Ticket-Verkaufsplattform, die nicht erstattungsfähig sind. Keine Rückerstattungsanfrage wird weniger als 15 Tage vor der Veranstaltung akzeptiert."
+      "answer": "Für jede Rückerstattungsanfrage müssen Sie eine E-Mail an info@puentesparis2025.net von der E-Mail-Adresse senden, die zum Kauf der Tickets verwendet wurde. Sie müssen Namen, Nachnamen und Bestellnummer angeben. Die Rückerstattung erfolgt ohne die Gebühren der Ticket-Kaufplattform, die nicht erstattungsfähig sind. Keine Rückerstattungsanfrage wird weniger als 15 Tage vor der Veranstaltung akzeptiert."
     },
     "video": {
       "question": "Kann die Konferenz per Video aus der Ferne verfolgt werden?",
-      "answer": "Ja, die Konferenz wird live per Video in Französisch und Englisch übertragen, registrieren Sie sich hier, um den Link zu erhalten."
+      "answer": "Ja, die Konferenz wird live per Video auf Französisch und Englisch übertragen. Registrieren Sie sich hier, um den Link zu erhalten."
     }
   }
 }
