@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from './ui/button';
@@ -110,8 +111,8 @@ const Register = () => {
             transitionDelay: '200ms'
           }}>
             <div>
-              <h3 className="text-2xl font-semibold mb-2">{t('tiers.virtual.name', 'Virtual')}</h3>
-              <p className="text-gray-300 mb-4">{t('tiers.virtual.description', 'Join from anywhere in the world')}</p>
+              <h3 className="text-2xl font-semibold mb-2">{t('tiers.virtual.name', 'Evening pass')}</h3>
+              <p className="text-gray-300 mb-4">{t('tiers.virtual.description', 'Join us from 7pm')}</p>
               
               <div className="mb-4">
                 <div className="text-3xl font-bold mb-2">
@@ -125,37 +126,7 @@ const Register = () => {
                   <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                   </svg>
-                  <span>{t('tiers.virtual.features.livestream', 'Live stream of all keynotes')}</span>
-                </div>
-                <div className="flex items-start">
-                  <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
-                  </svg>
-                  <span>{t('tiers.virtual.features.digital', 'Digital access to workshops')}</span>
-                </div>
-                <div className="flex items-start">
-                  <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
-                  </svg>
-                  <span>{t('tiers.virtual.features.online', 'Online networking opportunities')}</span>
-                </div>
-                <div className="flex items-start">
-                  <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
-                  </svg>
-                  <span>{t('tiers.virtual.features.recorded', 'Recorded sessions access')}</span>
-                </div>
-                <div className="flex items-start">
-                  <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
-                  </svg>
-                  <span>{t('tiers.virtual.features.materials', 'Digital conference materials')}</span>
-                </div>
-                <div className="flex items-start">
-                  <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
-                  </svg>
-                  <span>{t('tiers.virtual.features.access', '30-day access to content after event')}</span>
+                  <span>{t('tiers.virtual.features.access', 'Night access to the conference (all 3 nights)')}</span>
                 </div>
               </div>
             </div>
