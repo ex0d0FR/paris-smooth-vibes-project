@@ -25,11 +25,6 @@
       "price": "€20",
       "description": "오후 7시부터 함께하세요",
       "features": {
-        "livestream": "모든 기조 연설의 라이브 스트리밍",
-        "digital": "워크샵 디지털 액세스",
-        "online": "온라인 네트워킹 기회",
-        "recorded": "녹화된 세션 접근",
-        "materials": "디지털 컨퍼런스 자료",
         "access": "컨퍼런스 야간 접근 (3일 밤 모두)"
       }
     },

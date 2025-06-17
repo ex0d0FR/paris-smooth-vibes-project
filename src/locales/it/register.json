@@ -25,11 +25,6 @@
       "price": "€20",
       "description": "Unisciti a noi dalle 19:00",
       "features": {
-        "livestream": "Streaming live di tutti i discorsi principali",
-        "digital": "Accesso digitale ai workshop",
-        "online": "Opportunità di networking online",
-        "recorded": "Accesso alle sessioni registrate",
-        "materials": "Materiali digitali della conferenza",
         "access": "Accesso notturno alla conferenza (tutte le 3 notti)"
       }
     },

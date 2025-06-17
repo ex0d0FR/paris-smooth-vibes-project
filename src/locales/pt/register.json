@@ -25,11 +25,6 @@
       "price": "€20",
       "description": "Junte-se a nós a partir das 19h",
       "features": {
-        "livestream": "Transmissão ao vivo de todas as palestras principais",
-        "digital": "Acesso digital aos workshops",
-        "online": "Oportunidades de networking online",
-        "recorded": "Acesso a sessões gravadas",
-        "materials": "Materiais digitais da conferência",
         "access": "Acesso noturno à conferência (todas as 3 noites)"
       }
     },

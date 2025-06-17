@@ -25,11 +25,6 @@
       "price": "€20",
       "description": "Begleiten Sie uns ab 19 Uhr",
       "features": {
-        "livestream": "Livestream aller Hauptvorträge",
-        "digital": "Digitaler Zugang zu Workshops",
-        "online": "Online-Networking-Möglichkeiten",
-        "recorded": "Zugang zu aufgezeichneten Sitzungen",
-        "materials": "Digitale Konferenzmaterialien",
         "access": "Nächtlicher Zugang zur Konferenz (alle 3 Nächte)"
       }
     },

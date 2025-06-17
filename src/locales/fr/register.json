@@ -25,11 +25,6 @@
       "price": "€20",
       "description": "Rejoignez-nous à partir de 19h",
       "features": {
-        "livestream": "Diffusion en direct de toutes les conférences principales",
-        "digital": "Accès numérique aux ateliers",
-        "online": "Opportunités de réseautage en ligne",
-        "recorded": "Accès aux sessions enregistrées",
-        "materials": "Matériels numériques de la conférence",
         "access": "Accès nocturne à la conférence (les 3 nuits)"
       }
     },
