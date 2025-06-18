@@ -85,7 +85,7 @@ const Venue = () => {
           
           <div className="rounded-lg overflow-hidden shadow-md h-[400px] md:h-auto reveal" style={{ transitionDelay: '200ms' }}>
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.5420672467256!2d2.2581277!3d48.847124099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67ae3f137b5cf%3A0x9dd1e865a23b4a44!2s133%20Rte%20de%20la%20Reine%2C%2092100%20Boulogne-Billancourt%2C%20France!5e0!3m2!1sen!2sus!4v1712600464712!5m2!1sen!2sus" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.8236!2d2.273765!3d48.8252781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6707c8b5b5b5b%3A0x8b5b5b5b5b5b5b5b!2s19%20Rue%20Victor%20Hugo%2C%2092130%20Issy-les-Moulineaux%2C%20France!5e0!3m2!1sen!2sus!4v1734000000000!5m2!1sen!2sus" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
