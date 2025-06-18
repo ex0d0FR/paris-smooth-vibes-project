@@ -12,11 +12,14 @@
     "email": "info@puentesparis2025.net"
   },
   "transport": {
-    "title": "Comment s'y rendre",
-    "metro": "En métro : Ligne 1, station Porte Maillot",
-    "rer": "En RER : Ligne C, station Neuilly - Porte Maillot",
-    "bus": "En bus : Lignes 43, 73, 82, PC1, PC3",
-    "cdg": "Depuis l'aéroport Charles de Gaulle : 45 minutes en taxi ou navette Air France",
-    "orly": "Depuis l'aéroport d'Orly : 30 minutes en taxi"
+    "title": "Depuis Paris et la région Île-de-France",
+    "walk5": "5 minutes à pied",
+    "corentin": "Arrêt Corentin Celton - Métro ligne 12, bus 126, bus 189, bus 394",
+    "mairie": "Arrêt Mairie d'Issy - Métro ligne 12, bus 190, bus 123, bus 169, bus 290 et bus 323",
+    "freres": "Arrêt Issy - frères Voisin bus 39 et bus 169",
+    "walk10": "10 minutes à pied ou 5 minutes en métro",
+    "porte": "Arrêt Porte de Versailles - Tram T3a, Tram T2, Métro ligne 12, bus 80",
+    "walk15": "15 minutes à pied ou 10 minutes en bus",
+    "rer": "RER C Issy-Val-de-Seine, Tram T2, bus 189, bus 290, bus 323 et bus 394"
   }
 }

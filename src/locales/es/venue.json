@@ -12,11 +12,14 @@
     "email": "info@puentesparis2025.net"
   },
   "transport": {
-    "title": "Cómo Llegar",
-    "metro": "En Metro: Línea 1, estación Porte Maillot",
-    "rer": "En RER: Línea C, estación Neuilly - Porte Maillot",
-    "bus": "En Autobús: Líneas 43, 73, 82, PC1, PC3",
-    "cdg": "Desde el Aeropuerto Charles de Gaulle: 45 minutos en taxi o lanzadera de Air France",
-    "orly": "Desde el Aeropuerto de Orly: 30 minutos en taxi"
+    "title": "Desde París y la región de Île-de-France",
+    "walk5": "5 minutos a pie",
+    "corentin": "Parada Corentin Celton - Metro línea 12, autobús 126, autobús 189, autobús 394",
+    "mairie": "Parada Mairie d'Issy - Metro línea 12, autobús 190, autobús 123, autobús 169, autobús 290 y autobús 323",
+    "freres": "Parada Issy - frères Voisin autobús 39 y autobús 169",
+    "walk10": "10 minutos a pie o 5 minutos en metro",
+    "porte": "Parada Porte de Versailles - Tranvía T3a, Tranvía T2, Metro línea 12, autobús 80",
+    "walk15": "15 minutos a pie o 10 minutos en autobús",
+    "rer": "RER C Issy-Val-de-Seine, Tranvía T2, autobús 189, autobús 290, autobús 323 y autobús 394"
   }
 }

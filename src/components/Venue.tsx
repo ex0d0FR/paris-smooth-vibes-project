@@ -61,11 +61,25 @@ const Venue = () => {
             
             <div className="space-y-4 reveal dark:text-gray-200" style={{ transitionDelay: '500ms' }}>
               <h3 className="text-xl font-semibold dark:text-white">{t('transport.title')}</h3>
-              <p><span className="font-medium dark:text-white">{t('transport.metro')}</span></p>
-              <p><span className="font-medium dark:text-white">{t('transport.rer')}</span></p>
-              <p><span className="font-medium dark:text-white">{t('transport.bus')}</span></p>
-              <p><span className="font-medium dark:text-white">{t('transport.cdg')}</span></p>
-              <p><span className="font-medium dark:text-white">{t('transport.orly')}</span></p>
+              
+              <div className="space-y-3">
+                <div>
+                  <p className="font-medium text-sm text-paris-blue dark:text-paris-gold">{t('transport.walk5')}</p>
+                  <p className="text-sm">{t('transport.corentin')}</p>
+                  <p className="text-sm">{t('transport.mairie')}</p>
+                  <p className="text-sm">{t('transport.freres')}</p>
+                </div>
+                
+                <div>
+                  <p className="font-medium text-sm text-paris-blue dark:text-paris-gold">{t('transport.walk10')}</p>
+                  <p className="text-sm">{t('transport.porte')}</p>
+                </div>
+                
+                <div>
+                  <p className="font-medium text-sm text-paris-blue dark:text-paris-gold">{t('transport.walk15')}</p>
+                  <p className="text-sm">{t('transport.rer')}</p>
+                </div>
+              </div>
             </div>
           </div>
           
