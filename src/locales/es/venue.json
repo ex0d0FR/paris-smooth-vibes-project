@@ -1,11 +1,11 @@
 
 {
   "title": "Información del Lugar",
-  "description": "PARÍS 2025 se llevará a cabo en la Comunidad Cristiana del Point du Jour, un hermoso lugar en Boulogne-Billancourt, a las afueras de París.",
+  "description": "PARÍS 2025 se llevará a cabo en la Comunidad Cristiana del Point du Jour, un hermoso lugar en Issy-les-Moulineaux, a las afueras de París.",
   "address": {
     "name": "Comunidad Cristiana del Point du Jour",
-    "street": "133 Rte de la Reine",
-    "city": "92100 Boulogne-Billancourt, Francia"
+    "street": "19 Rue Victor Hugo",
+    "city": "92130 Issy-les-Moulineaux, Francia"
   },
   "contact": {
     "phone": "+33 (0)1 40 68 22 22",

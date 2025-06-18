@@ -1,11 +1,11 @@
 
 {
   "title": "Informationen zum Veranstaltungsort",
-  "description": "PARIS 2025 findet in der Christlichen Gemeinschaft Point du Jour statt, einem wunderschönen Veranstaltungsort in Boulogne-Billancourt, direkt vor den Toren von Paris.",
+  "description": "PARIS 2025 findet in der Christlichen Gemeinschaft Point du Jour statt, einem wunderschönen Veranstaltungsort in Issy-les-Moulineaux, direkt vor den Toren von Paris.",
   "address": {
     "name": "Christliche Gemeinschaft Point du Jour",
-    "street": "133 Rte de la Reine",
-    "city": "92100 Boulogne-Billancourt, Frankreich"
+    "street": "19 Rue Victor Hugo",
+    "city": "92130 Issy-les-Moulineaux, Frankreich"
   },
   "contact": {
     "phone": "+33 (0)1 40 68 22 22",

@@ -1,11 +1,11 @@
 
 {
   "title": "Venue Information",
-  "description": "PARIS 2025 will take place at the Communauté Chrétienne du Point du Jour, a beautiful venue in Boulogne-Billancourt, just outside Paris.",
+  "description": "PARIS 2025 will take place at the Communauté Chrétienne du Point du Jour, a beautiful venue in Issy-les-Moulineaux, just outside Paris.",
   "address": {
     "name": "Communauté Chrétienne du Point du Jour",
-    "street": "133 Rte de la Reine",
-    "city": "92100 Boulogne-Billancourt, France"
+    "street": "19 Rue Victor Hugo",
+    "city": "92130 Issy-les-Moulineaux, France"
   },
   "contact": {
     "phone": "+33 (0)1 40 68 22 22",

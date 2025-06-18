@@ -1,11 +1,11 @@
 
 {
   "title": "Informations sur le Lieu",
-  "description": "PARIS 2025 se tiendra à la Communauté Chrétienne du Point du Jour, un magnifique lieu à Boulogne-Billancourt, juste à l'extérieur de Paris.",
+  "description": "PARIS 2025 se tiendra à la Communauté Chrétienne du Point du Jour, un magnifique lieu à Issy-les-Moulineaux, juste à l'extérieur de Paris.",
   "address": {
     "name": "Communauté Chrétienne du Point du Jour",
-    "street": "133 Rte de la Reine",
-    "city": "92100 Boulogne-Billancourt, France"
+    "street": "19 Rue Victor Hugo",
+    "city": "92130 Issy-les-Moulineaux, France"
   },
   "contact": {
     "phone": "+33 (0)1 40 68 22 22",
