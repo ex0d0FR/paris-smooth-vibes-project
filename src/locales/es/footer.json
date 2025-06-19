@@ -1,26 +1,27 @@
 
 {
-  "description": "Construyendo Puentes Misioneros: reuniendo a líderes de pensamiento, innovadores y agentes de cambio.",
+  "description": "Construyendo puentes misioneros: reuniendo líderes de pensamiento, innovadores y agentes de cambio.",
   "globalCouncil": "El Consejo Global de Misión es el comité de continuación del movimiento Tokio 2010.",
   "kerygma": "Proclamando el Evangelio en el Corazón de París",
-  "quickLinks": "Enlaces Rápidos",
-  "conferenceInfo": "Información de la Conferencia",
+  "quickLinks": "Enlaces rápidos",
+  "conferenceInfo": "Información de la conferencia",
   "contactUs": "Contáctanos",
   "infoItems": {
-    "faqs": "Preguntas Frecuentes",
-    "travel": "Información de Viaje",
-    "visa": "Requisitos de Visa",
-    "accommodations": "Alojamiento",
-    "media": "Kit de Medios"
+    "faqs": "Preguntas frecuentes",
+    "travel": "Información de viaje",
+    "visa": "Requisitos de visa",
+    "accommodations": "Alojamientos",
+    "media": "Kit de medios",
+    "restaurants": "Restaurantes"
   },
-  "copyright": "© 2025 PARÍS 2025 - Construyendo Puentes Misioneros. Todos los derechos reservados.",
+  "copyright": "© 2025 PARIS 2025 - Construyendo puentes misioneros. Todos los derechos reservados.",
   "policies": {
-    "privacy": "Política de Privacidad",
-    "terms": "Términos de Servicio",
-    "cookies": "Política de Cookies"
+    "privacy": "Política de privacidad",
+    "terms": "Términos de servicio",
+    "cookies": "Política de cookies"
   },
   "developed": "Desarrollado con",
-  "endorsedBy": "Respaldado Por",
-  "endorsementDescription": "PARÍS 2025 es apoyado y validado por estas organizaciones misioneras clave.",
-  "endorsement": "Respaldado Por:"
+  "endorsedBy": "Avalado por",
+  "endorsementDescription": "PARIS 2025 está respaldado y validado por estas organizaciones misioneras clave.",
+  "endorsement": "Avalado por:"
 }

@@ -57,7 +57,7 @@ const Footer = () => {
               <li><Link to="/visa-requirements" className="text-white/80 hover:text-paris-gold transition-colors">{t('infoItems.visa', { ns: 'footer' })}</Link></li>
               <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('infoItems.travel', { ns: 'footer' })}</a></li>
               <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('infoItems.accommodations', { ns: 'footer' })}</a></li>
-              <li><Link to="/restaurants" onClick={scrollToTop} className="text-white/80 hover:text-paris-gold transition-colors">Restaurants</Link></li>
+              <li><Link to="/restaurants" onClick={scrollToTop} className="text-white/80 hover:text-paris-gold transition-colors">{t('infoItems.restaurants', { ns: 'footer' })}</Link></li>
             </ul>
           </div>
           

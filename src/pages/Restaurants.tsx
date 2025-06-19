@@ -1,11 +1,15 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { MapPin, Clock, Phone, Star } from 'lucide-react';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 
 const Restaurants = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   const restaurants = [
     {
       name: "Le Bistrot d'Issy",
