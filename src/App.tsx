@@ -13,6 +13,7 @@ import LegalNotice from "./pages/LegalNotice";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import VisaRequirements from "./pages/VisaRequirements";
 import Registration from "./pages/Registration";
+import Restaurants from "./pages/Restaurants";
 import { useTranslation } from 'react-i18next';
 import './i18n';
 
@@ -79,6 +80,7 @@ const App = () => (
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                   <Route path="/visa-requirements" element={<VisaRequirements />} />
                   <Route path="/registration" element={<Registration />} />
+                  <Route path="/restaurants" element={<Restaurants />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>

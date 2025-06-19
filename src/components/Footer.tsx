@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Heart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -54,6 +53,7 @@ const Footer = () => {
               <li><Link to="/visa-requirements" className="text-white/80 hover:text-paris-gold transition-colors">{t('infoItems.visa', { ns: 'footer' })}</Link></li>
               <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('infoItems.travel', { ns: 'footer' })}</a></li>
               <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('infoItems.accommodations', { ns: 'footer' })}</a></li>
+              <li><Link to="/restaurants" className="text-white/80 hover:text-paris-gold transition-colors">Restaurants</Link></li>
             </ul>
           </div>
           
