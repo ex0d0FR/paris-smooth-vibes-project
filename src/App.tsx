@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,6 +13,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import VisaRequirements from "./pages/VisaRequirements";
 import Registration from "./pages/Registration";
 import Restaurants from "./pages/Restaurants";
+import Accommodations from "./pages/Accommodations";
 import { useTranslation } from 'react-i18next';
 import './i18n';
 
@@ -81,6 +81,7 @@ const App = () => (
                   <Route path="/visa-requirements" element={<VisaRequirements />} />
                   <Route path="/registration" element={<Registration />} />
                   <Route path="/restaurants" element={<Restaurants />} />
+                  <Route path="/accommodations" element={<Accommodations />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
