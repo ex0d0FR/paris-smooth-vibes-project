@@ -1,0 +1,61 @@
+
+{
+  "title": "숙박",
+  "subtitle": "이시레물리노에 있는 파리 2025 컨퍼런스 장소 근처의 편안한 호텔과 숙박시설",
+  "sectionTitle": "장소 근처 추천 호텔",
+  "sectionDescription": "컨퍼런스 장소와의 근접성, 서비스 품질, 컨퍼런스 참석자에게 적합한 편의시설을 바탕으로 이러한 숙박시설을 선정했습니다.",
+  "hotels": {
+    "novotel": {
+      "distance": "장소에서 0.5km",
+      "description": "현대적인 객실과 우수한 컨퍼런스 시설을 갖춘 이시레물리노 중심부의 모던한 4성 호텔."
+    },
+    "berceaux": {
+      "distance": "장소에서 0.8km",
+      "description": "개인화된 서비스와 전통적인 프랑스 환대정신을 제공하는 매력적인 부티크 호텔."
+    },
+    "adagio": {
+      "distance": "장소에서 2.1km",
+      "description": "완전히 갖춰진 스튜디오와 아파트를 제공하는 장기 체류형 아파트호텔로, 긴 컨퍼런스 체류에 완벽합니다."
+    },
+    "mercure": {
+      "distance": "장소에서 3.2km",
+      "description": "현대적인 편의시설과 지하철을 통한 파리 중심부로의 쉬운 접근을 제공하는 우아한 호텔."
+    },
+    "ibis": {
+      "distance": "장소에서 1.2km",
+      "description": "신뢰할 수 있는 서비스와 현대적인 시설을 갖춘 편안하고 저렴한 숙박시설."
+    },
+    "villa": {
+      "distance": "장소에서 4.1km",
+      "description": "평화로운 환경에서 우아한 객실과 개인화된 서비스를 제공하는 럭셔리 부티크 호텔."
+    },
+    "bestWestern": {
+      "distance": "장소에서 4.8km",
+      "description": "포르트 드 베르사유 근처에 잘 위치한 호텔로 편안한 숙박시설과 컨퍼런스 편의시설을 제공합니다."
+    },
+    "henri": {
+      "distance": "장소에서 2.8km",
+      "description": "아파트 스타일의 숙박시설을 제공하는 예산 친화적인 레지던스 호텔로 장기 체류에 이상적입니다."
+    }
+  },
+  "amenities": {
+    "wifi": "WiFi",
+    "parking": "주차장",
+    "restaurant": "레스토랑",
+    "fitness": "피트니스",
+    "kitchenette": "간이주방",
+    "concierge": "컨시어지",
+    "garden": "정원",
+    "bar": "바",
+    "business center": "비즈니스 센터"
+  },
+  "tips": {
+    "title": "컨퍼런스 참석자를 위한 예약 팁",
+    "bookEarly": "더 나은 요금과 가용성을 확보하기 위해 일찍 예약하세요",
+    "mentionConference": "잠재적인 그룹 할인을 위해 예약 시 \"파리 2025 컨퍼런스\"를 언급하세요",
+    "shuttleService": "장소로의 셔틀 서비스를 제공하는 호텔을 확인하세요",
+    "metroProximity": "도시 접근이 용이한 지하철역과의 근접성을 고려하세요",
+    "wifiQuality": "원격 근무가 필요한 경우 WiFi 품질을 확인하세요",
+    "cancellationPolicy": "유연한 예약을 위해 취소 정책을 확인하세요"
+  }
+}

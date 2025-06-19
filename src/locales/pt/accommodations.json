@@ -1,0 +1,61 @@
+
+{
+  "title": "Acomodações",
+  "subtitle": "Hotéis confortáveis e acomodações perto do local da conferência PARIS 2025 em Issy-les-Moulineaux",
+  "sectionTitle": "Hotéis Recomendados Perto do Local",
+  "sectionDescription": "Selecionamos essas acomodações com base na proximidade ao local da conferência, qualidade do serviço e comodidades adequadas para participantes da conferência.",
+  "hotels": {
+    "novotel": {
+      "distance": "0.5 km do local",
+      "description": "Hotel moderno de 4 estrelas no coração de Issy-les-Moulineaux com quartos contemporâneos e excelentes instalações para conferências."
+    },
+    "berceaux": {
+      "distance": "0.8 km do local",
+      "description": "Charmoso hotel boutique com serviço personalizado e hospitalidade francesa tradicional."
+    },
+    "adagio": {
+      "distance": "2.1 km do local",
+      "description": "Apart-hotel de estadia prolongada com estúdios e apartamentos totalmente equipados, perfeito para estadias de conferências mais longas."
+    },
+    "mercure": {
+      "distance": "3.2 km do local",
+      "description": "Hotel elegante com comodidades modernas e fácil acesso ao centro de Paris via metrô."
+    },
+    "ibis": {
+      "distance": "1.2 km do local",
+      "description": "Acomodação confortável e acessível com serviço confiável e instalações modernas."
+    },
+    "villa": {
+      "distance": "4.1 km do local",
+      "description": "Hotel boutique de luxo em um ambiente tranquilo com quartos elegantes e serviço personalizado."
+    },
+    "bestWestern": {
+      "distance": "4.8 km do local",
+      "description": "Hotel bem localizado perto de Porte de Versailles com acomodações confortáveis e comodidades para conferências."
+    },
+    "henri": {
+      "distance": "2.8 km do local",
+      "description": "Hotel residência econômico com acomodações estilo apartamento, ideal para estadias prolongadas."
+    }
+  },
+  "amenities": {
+    "wifi": "WiFi",
+    "parking": "Estacionamento",
+    "restaurant": "Restaurante",
+    "fitness": "Academia",
+    "kitchenette": "Kitchenette",
+    "concierge": "Concierge",
+    "garden": "Jardim",
+    "bar": "Bar",
+    "business center": "Centro de Negócios"
+  },
+  "tips": {
+    "title": "Dicas de Reserva para Participantes da Conferência",
+    "bookEarly": "Reserve cedo para garantir melhores tarifas e disponibilidade",
+    "mentionConference": "Mencione \"Conferência PARIS 2025\" ao reservar para possíveis descontos em grupo",
+    "shuttleService": "Verifique se os hotéis oferecem serviços de transporte para o local",
+    "metroProximity": "Considere a proximidade às estações de metrô para fácil acesso à cidade",
+    "wifiQuality": "Verifique a qualidade do WiFi se o trabalho remoto for necessário",
+    "cancellationPolicy": "Verifique as políticas de cancelamento para reservas flexíveis"
+  }
+}

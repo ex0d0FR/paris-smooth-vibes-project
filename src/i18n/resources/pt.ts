@@ -11,6 +11,7 @@ import registrationJson from '@/locales/pt/registration.json';
 import footerJson from '@/locales/pt/footer.json';
 import visaJson from '@/locales/pt/visa.json';
 import faqJson from '@/locales/pt/faq.json';
+import accommodationsJson from '@/locales/pt/accommodations.json';
 
 export const ptResources = {
   common: commonJson,
@@ -24,5 +25,6 @@ export const ptResources = {
   registration: registrationJson,
   footer: footerJson,
   visa: visaJson,
-  faq: faqJson
+  faq: faqJson,
+  accommodations: accommodationsJson
 };

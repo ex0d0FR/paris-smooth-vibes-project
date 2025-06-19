@@ -12,6 +12,7 @@ import footer from '../../locales/fr/footer.json';
 import visa from '../../locales/fr/visa.json';
 import faq from '../../locales/fr/faq.json';
 import registration from '../../locales/fr/registration.json';
+import accommodations from '../../locales/fr/accommodations.json';
 
 export const frResources = {
   common,
@@ -25,5 +26,6 @@ export const frResources = {
   footer,
   visa,
   faq,
-  registration
+  registration,
+  accommodations
 };

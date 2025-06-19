@@ -12,6 +12,7 @@ import footer from '../../locales/ko/footer.json';
 import visa from '../../locales/ko/visa.json';
 import faq from '../../locales/ko/faq.json';
 import registration from '../../locales/ko/registration.json';
+import accommodations from '../../locales/ko/accommodations.json';
 
 export const koResources = {
   common,
@@ -25,5 +26,6 @@ export const koResources = {
   footer,
   visa,
   faq,
-  registration
+  registration,
+  accommodations
 };
