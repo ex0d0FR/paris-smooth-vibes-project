@@ -7,6 +7,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { t } = useTranslation(['footer', 'nav']);
   
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  
   return (
     <footer className="bg-paris-navy text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
@@ -53,7 +57,7 @@ const Footer = () => {
               <li><Link to="/visa-requirements" className="text-white/80 hover:text-paris-gold transition-colors">{t('infoItems.visa', { ns: 'footer' })}</Link></li>
               <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('infoItems.travel', { ns: 'footer' })}</a></li>
               <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('infoItems.accommodations', { ns: 'footer' })}</a></li>
-              <li><Link to="/restaurants" className="text-white/80 hover:text-paris-gold transition-colors">Restaurants</Link></li>
+              <li><Link to="/restaurants" onClick={scrollToTop} className="text-white/80 hover:text-paris-gold transition-colors">Restaurants</Link></li>
             </ul>
           </div>
           
