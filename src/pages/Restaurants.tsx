@@ -96,6 +96,10 @@ const Restaurants = () => {
     }
   ];
 
+  // Get tips items with proper type casting
+  const tipsItems = t('tips.items', { returnObjects: true }) as string[] | string;
+  const tipsArray = Array.isArray(tipsItems) ? tipsItems : [];
+
   return (
     <>
       <Helmet>
@@ -172,7 +176,7 @@ const Restaurants = () => {
             <div className="mt-12 bg-paris-blue/5 dark:bg-paris-gold/5 rounded-lg p-6">
               <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">{t('tips.title')}</h2>
               <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                {t('tips.items', { returnObjects: true }).map((tip: string, index: number) => (
+                {tipsArray.map((tip: string, index: number) => (
                   <li key={index}>• {tip}</li>
                 ))}
               </ul>
