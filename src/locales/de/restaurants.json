@@ -1,0 +1,57 @@
+
+{
+  "title": "Restaurants in der Nähe des Konferenzortes",
+  "subtitle": "Entdecken Sie großartige Restaurants in Gehweite der Salle St Nicolas in Issy-les-Moulineaux. Von traditioneller französischer Küche bis hin zu internationalen Geschmäckern - finden Sie den perfekten Ort für Ihre Mahlzeiten während der Konferenz.",
+  "restaurants": [
+    {
+      "name": "Le Bistrot d'Issy",
+      "type": "Französisches Bistro",
+      "description": "Traditionelles französisches Bistro mit klassischen Gerichten in gemütlicher Atmosphäre."
+    },
+    {
+      "name": "Pizza Roma",
+      "type": "Italienisch",
+      "description": "Authentische italienische Pizzeria mit Holzofen und frischen Zutaten."
+    },
+    {
+      "name": "Brasserie du Pont",
+      "type": "Französische Brasserie",
+      "description": "Moderne Brasserie mit französischer Küche und zeitgenössischem Touch."
+    },
+    {
+      "name": "Sushi Zen",
+      "type": "Japanisch",
+      "description": "Frisches Sushi und japanische Spezialitäten in minimalistischem Ambiente."
+    },
+    {
+      "name": "Le Comptoir Libanais",
+      "type": "Libanesisch",
+      "description": "Authentische libanesische Küche mit großzügigen Portionen und herzlicher Gastfreundschaft."
+    },
+    {
+      "name": "Café de la Mairie",
+      "type": "Französisches Café",
+      "description": "Traditionelles französisches Café, perfekt für Frühstück, Mittagessen oder Nachmittagskaffee."
+    },
+    {
+      "name": "Tandoor Palace",
+      "type": "Indisch",
+      "description": "Authentisches indisches Restaurant mit traditionell im Tandoor zubereiteten Gerichten."
+    },
+    {
+      "name": "McDonald's Issy-Les-Moulineaux",
+      "type": "Fast Food",
+      "description": "Internationale Fast-Food-Kette für schnelle und bequeme Mahlzeiten."
+    }
+  ],
+  "tips": {
+    "title": "Essenstipps",
+    "items": [
+      "Die meisten Restaurants in Frankreich servieren Mittagessen zwischen 12:00-14:30 und Abendessen ab 19:00 Uhr",
+      "Reservierungen werden empfohlen, besonders zum Abendessen",
+      "Viele Restaurants sind sonntags oder montags geschlossen - prüfen Sie vor dem Besuch",
+      "Trinkgeld ist nicht obligatorisch, aber 5-10% werden für guten Service geschätzt",
+      "Die meisten Restaurants akzeptieren Kartenzahlung, aber es ist gut, etwas Bargeld dabei zu haben"
+    ]
+  }
+}

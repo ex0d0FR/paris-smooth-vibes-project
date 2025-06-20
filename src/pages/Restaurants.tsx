@@ -10,7 +10,7 @@ const Restaurants = () => {
   const { t } = useTranslation('restaurants');
   
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
   }, []);
 
   const restaurants = [

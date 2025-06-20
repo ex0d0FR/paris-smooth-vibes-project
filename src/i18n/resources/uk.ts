@@ -1,30 +1,33 @@
 
-import commonJson from '@/locales/uk/common.json';
-import navJson from '@/locales/uk/nav.json';
-import heroJson from '@/locales/uk/hero.json';
-import aboutJson from '@/locales/uk/about.json';
-import speakersJson from '@/locales/uk/speakers.json';
-import scheduleJson from '@/locales/uk/schedule.json';
-import venueJson from '@/locales/uk/venue.json';
-import registerJson from '@/locales/uk/register.json';
-import registrationJson from '@/locales/uk/registration.json';
-import footerJson from '@/locales/uk/footer.json';
-import visaJson from '@/locales/uk/visa.json';
-import faqJson from '@/locales/uk/faq.json';
-import accommodationsJson from '@/locales/uk/accommodations.json';
+// Ukrainian translations
+import common from '../../locales/uk/common.json';
+import nav from '../../locales/uk/nav.json';
+import hero from '../../locales/uk/hero.json';
+import about from '../../locales/uk/about.json';
+import speakers from '../../locales/uk/speakers.json';
+import schedule from '../../locales/uk/schedule.json';
+import venue from '../../locales/uk/venue.json';
+import register from '../../locales/uk/register.json';
+import footer from '../../locales/uk/footer.json';
+import visa from '../../locales/uk/visa.json';
+import faq from '../../locales/uk/faq.json';
+import registration from '../../locales/uk/registration.json';
+import accommodations from '../../locales/uk/accommodations.json';
+import restaurants from '../../locales/uk/restaurants.json';
 
 export const ukResources = {
-  common: commonJson,
-  nav: navJson,
-  hero: heroJson,
-  about: aboutJson,
-  speakers: speakersJson,
-  schedule: scheduleJson,
-  venue: venueJson,
-  register: registerJson,
-  registration: registrationJson,
-  footer: footerJson,
-  visa: visaJson,
-  faq: faqJson,
-  accommodations: accommodationsJson
+  common,
+  nav,
+  hero,
+  about,
+  speakers,
+  schedule,
+  venue,
+  register,
+  footer,
+  visa,
+  faq,
+  registration,
+  accommodations,
+  restaurants
 };

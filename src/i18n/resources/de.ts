@@ -13,6 +13,7 @@ import visa from '../../locales/de/visa.json';
 import faq from '../../locales/de/faq.json';
 import registration from '../../locales/de/registration.json';
 import accommodations from '../../locales/de/accommodations.json';
+import restaurants from '../../locales/de/restaurants.json';
 
 export const deResources = {
   common,
@@ -27,5 +28,6 @@ export const deResources = {
   visa,
   faq,
   registration,
-  accommodations
+  accommodations,
+  restaurants
 };
