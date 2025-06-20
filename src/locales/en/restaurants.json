@@ -1,0 +1,57 @@
+
+{
+  "title": "Restaurants Near Conference Venue",
+  "subtitle": "Discover great dining options within walking distance of Salle St Nicolas in Issy-les-Moulineaux. From traditional French cuisine to international flavors, find the perfect place for your meals during the conference.",
+  "restaurants": [
+    {
+      "name": "Le Bistrot d'Issy",
+      "type": "French Bistro",
+      "description": "Traditional French bistro serving classic dishes in a cozy atmosphere."
+    },
+    {
+      "name": "Pizza Roma",
+      "type": "Italian",
+      "description": "Authentic Italian pizzeria with wood-fired oven and fresh ingredients."
+    },
+    {
+      "name": "Brasserie du Pont",
+      "type": "French Brasserie", 
+      "description": "Modern brasserie offering French cuisine with a contemporary twist."
+    },
+    {
+      "name": "Sushi Zen",
+      "type": "Japanese",
+      "description": "Fresh sushi and Japanese specialties in a minimalist setting."
+    },
+    {
+      "name": "Le Comptoir Libanais",
+      "type": "Lebanese",
+      "description": "Authentic Lebanese cuisine with generous portions and warm hospitality."
+    },
+    {
+      "name": "Café de la Mairie",
+      "type": "French Café",
+      "description": "Traditional French café perfect for breakfast, lunch, or afternoon coffee."
+    },
+    {
+      "name": "Tandoor Palace",
+      "type": "Indian",
+      "description": "Authentic Indian restaurant with traditional tandoor-cooked dishes."
+    },
+    {
+      "name": "McDonald's Issy-Les-Moulineaux",
+      "type": "Fast Food",
+      "description": "International fast food chain for quick and convenient meals."
+    }
+  ],
+  "tips": {
+    "title": "Dining Tips",
+    "items": [
+      "Most restaurants in France serve lunch between 12:00-14:30 and dinner from 19:00 onwards",
+      "Reservations are recommended, especially for dinner",
+      "Many restaurants are closed on Sundays or Mondays - check before visiting",
+      "Tipping is not mandatory but 5-10% is appreciated for good service",
+      "Most restaurants accept card payments, but it's good to have some cash"
+    ]
+  }
+}

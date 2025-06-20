@@ -1,0 +1,57 @@
+
+{
+  "title": "Restaurants Près du Lieu de la Conférence",
+  "subtitle": "Découvrez d'excellentes options de restauration à distance de marche de la Salle St Nicolas à Issy-les-Moulineaux. De la cuisine française traditionnelle aux saveurs internationales, trouvez l'endroit parfait pour vos repas pendant la conférence.",
+  "restaurants": [
+    {
+      "name": "Le Bistrot d'Issy",
+      "type": "Bistro Français",
+      "description": "Bistro français traditionnel servant des plats classiques dans une atmosphère chaleureuse."
+    },
+    {
+      "name": "Pizza Roma",
+      "type": "Italien",
+      "description": "Pizzeria italienne authentique avec four à bois et ingrédients frais."
+    },
+    {
+      "name": "Brasserie du Pont",
+      "type": "Brasserie Française",
+      "description": "Brasserie moderne proposant une cuisine française avec une touche contemporaine."
+    },
+    {
+      "name": "Sushi Zen",
+      "type": "Japonais",
+      "description": "Sushis frais et spécialités japonaises dans un cadre minimaliste."
+    },
+    {
+      "name": "Le Comptoir Libanais",
+      "type": "Libanais",
+      "description": "Cuisine libanaise authentique avec des portions généreuses et une hospitalité chaleureuse."
+    },
+    {
+      "name": "Café de la Mairie",
+      "type": "Café Français",
+      "description": "Café français traditionnel parfait pour le petit-déjeuner, le déjeuner ou le café de l'après-midi."
+    },
+    {
+      "name": "Tandoor Palace",
+      "type": "Indien",
+      "description": "Restaurant indien authentique avec des plats traditionnels cuits au tandoor."
+    },
+    {
+      "name": "McDonald's Issy-Les-Moulineaux",
+      "type": "Restauration Rapide",
+      "description": "Chaîne de restauration rapide internationale pour des repas rapides et pratiques."
+    }
+  ],
+  "tips": {
+    "title": "Conseils de Restauration",
+    "items": [
+      "La plupart des restaurants en France servent le déjeuner entre 12h00-14h30 et le dîner à partir de 19h00",
+      "Les réservations sont recommandées, surtout pour le dîner",
+      "Beaucoup de restaurants sont fermés le dimanche ou le lundi - vérifiez avant de visiter",
+      "Le pourboire n'est pas obligatoire mais 5-10% est apprécié pour un bon service",
+      "La plupart des restaurants acceptent les paiements par carte, mais il est bon d'avoir de l'argent liquide"
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+
+{
+  "title": "Restaurantes Perto do Local da Conferência",
+  "subtitle": "Descubra ótimas opções gastronômicas a poucos passos da Salle St Nicolas em Issy-les-Moulineaux. Da culinária francesa tradicional aos sabores internacionais, encontre o lugar perfeito para suas refeições durante a conferência.",
+  "restaurants": [
+    {
+      "name": "Le Bistrot d'Issy",
+      "type": "Bistrô Francês",
+      "description": "Bistrô francês tradicional servindo pratos clássicos em atmosfera acolhedora."
+    },
+    {
+      "name": "Pizza Roma",
+      "type": "Italiano",
+      "description": "Pizzaria italiana autêntica com forno a lenha e ingredientes frescos."
+    },
+    {
+      "name": "Brasserie du Pont",
+      "type": "Brasserie Francesa",
+      "description": "Brasserie moderna oferecendo culinária francesa com toque contemporâneo."
+    },
+    {
+      "name": "Sushi Zen",
+      "type": "Japonês",
+      "description": "Sushi fresco e especialidades japonesas em ambiente minimalista."
+    },
+    {
+      "name": "Le Comptoir Libanais",
+      "type": "Libanês",
+      "description": "Culinária libanesa autêntica com porções generosas e hospitalidade calorosa."
+    },
+    {
+      "name": "Café de la Mairie",
+      "type": "Café Francês",
+      "description": "Café francês tradicional perfeito para café da manhã, almoço ou café da tarde."
+    },
+    {
+      "name": "Tandoor Palace",
+      "type": "Indiano",
+      "description": "Restaurante indiano autêntico com pratos tradicionais cozidos no tandoor."
+    },
+    {
+      "name": "McDonald's Issy-Les-Moulineaux",
+      "type": "Fast Food",
+      "description": "Rede internacional de fast food para refeições rápidas e convenientes."
+    }
+  ],
+  "tips": {
+    "title": "Dicas de Alimentação",
+    "items": [
+      "A maioria dos restaurantes na França serve almoço entre 12:00-14:30 e jantar a partir das 19:00",
+      "Reservas são recomendadas, especialmente para o jantar",
+      "Muitos restaurantes estão fechados aos domingos ou segundas - verifique antes de visitar",
+      "Gorjeta não é obrigatória, mas 5-10% é apreciado por bom serviço",
+      "A maioria dos restaurantes aceita pagamentos com cartão, mas é bom ter dinheiro"
+    ]
+  }
+}

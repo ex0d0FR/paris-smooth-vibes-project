@@ -1,0 +1,57 @@
+
+{
+  "title": "Restaurantes Cerca del Lugar de la Conferencia",
+  "subtitle": "Descubre excelentes opciones gastronómicas a poca distancia de la Salle St Nicolas en Issy-les-Moulineaux. Desde cocina francesa tradicional hasta sabores internacionales, encuentra el lugar perfecto para tus comidas durante la conferencia.",
+  "restaurants": [
+    {
+      "name": "Le Bistrot d'Issy",
+      "type": "Bistró Francés",
+      "description": "Bistró francés tradicional que sirve platos clásicos en un ambiente acogedor."
+    },
+    {
+      "name": "Pizza Roma",
+      "type": "Italiano",
+      "description": "Pizzería italiana auténtica con horno de leña e ingredientes frescos."
+    },
+    {
+      "name": "Brasserie du Pont",
+      "type": "Brasserie Francesa",
+      "description": "Brasserie moderna que ofrece cocina francesa con un toque contemporáneo."
+    },
+    {
+      "name": "Sushi Zen",
+      "type": "Japonés",
+      "description": "Sushi fresco y especialidades japonesas en un ambiente minimalista."
+    },
+    {
+      "name": "Le Comptoir Libanais",
+      "type": "Libanés",
+      "description": "Cocina libanesa auténtica con porciones generosas y hospitalidad cálida."
+    },
+    {
+      "name": "Café de la Mairie",
+      "type": "Café Francés",
+      "description": "Café francés tradicional perfecto para el desayuno, almuerzo o café de la tarde."
+    },
+    {
+      "name": "Tandoor Palace",
+      "type": "Indio",
+      "description": "Restaurante indio auténtico con platos tradicionales cocinados en tandoor."
+    },
+    {
+      "name": "McDonald's Issy-Les-Moulineaux",
+      "type": "Comida Rápida",
+      "description": "Cadena internacional de comida rápida para comidas rápidas y convenientes."
+    }
+  ],
+  "tips": {
+    "title": "Consejos de Comida",
+    "items": [
+      "La mayoría de los restaurantes en Francia sirven almuerzo entre 12:00-14:30 y cena desde las 19:00",
+      "Se recomiendan reservas, especialmente para la cena",
+      "Muchos restaurantes están cerrados los domingos o lunes - verifica antes de visitar",
+      "La propina no es obligatoria pero se aprecia un 5-10% por buen servicio",
+      "La mayoría de los restaurantes aceptan pagos con tarjeta, pero es bueno tener algo de efectivo"
+    ]
+  }
+}

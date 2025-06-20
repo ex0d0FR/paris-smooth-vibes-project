@@ -1,0 +1,57 @@
+
+{
+  "title": "Ristoranti Vicino al Luogo della Conferenza",
+  "subtitle": "Scopri ottime opzioni gastronomiche a pochi passi dalla Salle St Nicolas a Issy-les-Moulineaux. Dalla cucina francese tradizionale ai sapori internazionali, trova il posto perfetto per i tuoi pasti durante la conferenza.",
+  "restaurants": [
+    {
+      "name": "Le Bistrot d'Issy",
+      "type": "Bistrot Francese",
+      "description": "Bistrot francese tradizionale che serve piatti classici in un'atmosfera accogliente."
+    },
+    {
+      "name": "Pizza Roma",
+      "type": "Italiano",
+      "description": "Pizzeria italiana autentica con forno a legna e ingredienti freschi."
+    },
+    {
+      "name": "Brasserie du Pont",
+      "type": "Brasserie Francese",
+      "description": "Brasserie moderna che offre cucina francese con un tocco contemporaneo."
+    },
+    {
+      "name": "Sushi Zen",
+      "type": "Giapponese",
+      "description": "Sushi fresco e specialità giapponesi in un ambiente minimalista."
+    },
+    {
+      "name": "Le Comptoir Libanais",
+      "type": "Libanese",
+      "description": "Cucina libanese autentica con porzioni generose e calorosa ospitalità."
+    },
+    {
+      "name": "Café de la Mairie",
+      "type": "Caffè Francese",
+      "description": "Caffè francese tradizionale perfetto per la colazione, pranzo o caffè pomeridiano."
+    },
+    {
+      "name": "Tandoor Palace",
+      "type": "Indiano",
+      "description": "Ristorante indiano autentico con piatti tradizionali cotti nel tandoor."
+    },
+    {
+      "name": "McDonald's Issy-Les-Moulineaux",
+      "type": "Fast Food",
+      "description": "Catena internazionale di fast food per pasti veloci e convenienti."
+    }
+  ],
+  "tips": {
+    "title": "Consigli per la Ristorazione",
+    "items": [
+      "La maggior parte dei ristoranti in Francia serve il pranzo tra le 12:00-14:30 e la cena dalle 19:00 in poi",
+      "Le prenotazioni sono consigliate, soprattutto per la cena",
+      "Molti ristoranti sono chiusi la domenica o il lunedì - controlla prima di visitare",
+      "La mancia non è obbligatoria ma il 5-10% è apprezzato per un buon servizio",
+      "La maggior parte dei ristoranti accetta pagamenti con carta, ma è bene avere contanti"
+    ]
+  }
+}

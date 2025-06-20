@@ -15,11 +15,11 @@ const Accommodations = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       <Navbar />
       
       <div className="pt-20">
-        <div className="bg-paris-navy text-white py-16">
+        <div className="bg-paris-navy dark:bg-gray-800 text-white py-16">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
               {t('title')}
@@ -32,10 +32,10 @@ const Accommodations = () => {
 
         <div className="container mx-auto px-4 py-12">
           <div className="mb-8 text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
               {t('sectionTitle')}
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               {t('sectionDescription')}
             </p>
           </div>

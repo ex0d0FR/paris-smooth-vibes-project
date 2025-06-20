@@ -12,6 +12,7 @@ import footerJson from '@/locales/pt/footer.json';
 import visaJson from '@/locales/pt/visa.json';
 import faqJson from '@/locales/pt/faq.json';
 import accommodationsJson from '@/locales/pt/accommodations.json';
+import restaurantsJson from '@/locales/pt/restaurants.json';
 
 export const ptResources = {
   common: commonJson,
@@ -26,5 +27,6 @@ export const ptResources = {
   footer: footerJson,
   visa: visaJson,
   faq: faqJson,
-  accommodations: accommodationsJson
+  accommodations: accommodationsJson,
+  restaurants: restaurantsJson
 };
