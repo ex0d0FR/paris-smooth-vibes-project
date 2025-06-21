@@ -4,6 +4,23 @@
   "subtitle": "Hotéis confortáveis e acomodações perto do local da conferência PARIS 2025 em Issy-les-Moulineaux",
   "sectionTitle": "Hotéis Recomendados Perto do Local",
   "sectionDescription": "Selecionamos essas acomodações com base na proximidade ao local da conferência, qualidade do serviço e comodidades adequadas para participantes da conferência.",
+  "search": {
+    "placeholder": "Procurar por um hotel...",
+    "allCategories": "Todas as categorias",
+    "allPrices": "Todos os preços",
+    "hotelsFound": "hotel(is) encontrado(s)",
+    "noResults": "Nenhum hotel encontrado que corresponda aos seus critérios.",
+    "categories": {
+      "luxury": "Luxo",
+      "business": "Negócios",
+      "budget": "Econômico"
+    },
+    "priceRanges": {
+      "budget": "Abaixo de €100",
+      "mid": "€100-150",
+      "luxury": "Acima de €150"
+    }
+  },
   "hotels": {
     "novotel": {
       "distance": "0.5 km do local",
