@@ -38,21 +38,24 @@ export function ThemeProvider({
   children,
   defaultTheme = "system",
 }: ThemeProviderProps) {
-  // Initialize with defaultTheme, but prefer localStorage if available
-  const [theme, setThemeState] = useState<Theme>(() => {
-    if (typeof window === "undefined") return defaultTheme;
+  // Initialize with defaultTheme first, then update from localStorage in useEffect
+  const [theme, setThemeState] = useState<Theme>(defaultTheme);
+  const [resolvedTheme, setResolvedTheme] = useState<"dark" | "light">("light");
+
+  // Initialize theme from localStorage after component mounts
+  useEffect(() => {
+    if (typeof window === "undefined") return;
     
     const storedTheme = localStorage.getItem("theme");
-    return isValidTheme(storedTheme || "") ? (storedTheme as Theme) : defaultTheme;
-  });
-
-  // Track the resolved theme (what's actually applied - dark or light)
-  const [resolvedTheme, setResolvedTheme] = useState<"dark" | "light">(
-    theme === "system" ? getSystemTheme() : (theme as "dark" | "light")
-  );
+    if (storedTheme && isValidTheme(storedTheme)) {
+      setThemeState(storedTheme as Theme);
+    }
+  }, []);
 
   // Effect to update theme when system preference changes
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     
     const handleChange = () => {
