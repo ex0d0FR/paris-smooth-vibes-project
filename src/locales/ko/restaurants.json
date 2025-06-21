@@ -2,6 +2,27 @@
 {
   "title": "컨퍼런스 장소 근처 레스토랑",
   "subtitle": "이시 레 물리노의 살 생 니콜라에서 도보 거리에 있는 훌륭한 레스토랑들을 발견하세요. 전통 프랑스 요리부터 세계 각국의 맛까지, 컨퍼런스 기간 중 식사할 완벽한 장소를 찾아보세요.",
+  "search": {
+    "referencePoint": "기준점",
+    "searchRadius": "검색 반경",
+    "meters": "미터",
+    "placeholder": "레스토랑 검색...",
+    "allCuisines": "모든 요리 유형",
+    "allStatuses": "모든 상태",
+    "noResults": "조건에 맞는 레스토랑을 찾을 수 없습니다.",
+    "cuisines": {
+      "french": "프랑스",
+      "italian": "이탈리아",
+      "japanese": "일본",
+      "lebanese": "레바논",
+      "indian": "인도",
+      "fastfood": "패스트푸드"
+    },
+    "statuses": {
+      "open": "영업중",
+      "closed": "휴업"
+    }
+  },
   "restaurants": [
     {
       "name": "Le Bistrot d'Issy",

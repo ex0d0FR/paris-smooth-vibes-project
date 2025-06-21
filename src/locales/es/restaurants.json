@@ -2,6 +2,27 @@
 {
   "title": "Restaurantes Cerca del Lugar de la Conferencia",
   "subtitle": "Descubre excelentes opciones gastronómicas a poca distancia de la Salle St Nicolas en Issy-les-Moulineaux. Desde cocina francesa tradicional hasta sabores internacionales, encuentra el lugar perfecto para tus comidas durante la conferencia.",
+  "search": {
+    "referencePoint": "Punto de referencia",
+    "searchRadius": "Radio de búsqueda",
+    "meters": "metros",
+    "placeholder": "Buscar un restaurante...",
+    "allCuisines": "Todos los tipos de cocina",
+    "allStatuses": "Todos los estados",
+    "noResults": "No se encontraron restaurantes que coincidan con tus criterios.",
+    "cuisines": {
+      "french": "Francés",
+      "italian": "Italiano",
+      "japanese": "Japonés",
+      "lebanese": "Libanés",
+      "indian": "Indio",
+      "fastfood": "Comida Rápida"
+    },
+    "statuses": {
+      "open": "Abierto",
+      "closed": "Cerrado"
+    }
+  },
   "restaurants": [
     {
       "name": "Le Bistrot d'Issy",
