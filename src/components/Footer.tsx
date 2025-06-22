@@ -24,7 +24,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t('quickLinks', { ns: 'footer' })}</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">{t('quickLinks', { ns: 'footer' })}</h3>
             <ul className="space-y-2">
               {[{
                 key: 'home',
@@ -45,7 +45,7 @@ const Footer = () => {
                 key: 'register',
                 label: t('register', { ns: 'nav' })
               }].map(item => <li key={item.key}>
-                <a href={`/#${item.key}`} className="text-white/80 hover:text-paris-gold transition-colors">
+                <a href={`/#${item.key}`} className="text-white/90 hover:text-paris-gold transition-colors text-sm md:text-base">
                   {item.label}
                 </a>
               </li>)}
@@ -53,21 +53,21 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t('conferenceInfo', { ns: 'footer' })}</h3>
-            <ul className="space-y-2">
-              <li><Link to="/visa-requirements" className="text-white/80 hover:text-paris-gold transition-colors">{t('infoItems.visa', { ns: 'footer' })}</Link></li>
-              <li><a href="#" className="text-white/80 hover:text-paris-gold transition-colors">{t('infoItems.travel', { ns: 'footer' })}</a></li>
-              <li><Link to="/accommodations" onClick={scrollToTop} className="text-white/80 hover:text-paris-gold transition-colors">{t('infoItems.accommodations', { ns: 'footer' })}</Link></li>
-              <li><Link to="/restaurants" onClick={scrollToTop} className="text-white/80 hover:text-paris-gold transition-colors">{t('infoItems.restaurants', { ns: 'footer' })}</Link></li>
+            <h3 className="text-lg font-semibold mb-4 text-white">{t('conferenceInfo', { ns: 'footer' })}</h3>
+            <ul className="space-y-3">
+              <li><Link to="/visa-requirements" className="text-white/90 hover:text-paris-gold transition-colors text-sm md:text-base block py-1">{t('infoItems.visa', { ns: 'footer' })}</Link></li>
+              <li><a href="#" className="text-white/90 hover:text-paris-gold transition-colors text-sm md:text-base block py-1">{t('infoItems.travel', { ns: 'footer' })}</a></li>
+              <li><Link to="/accommodations" onClick={scrollToTop} className="text-white/90 hover:text-paris-gold transition-colors text-sm md:text-base block py-1">{t('infoItems.accommodations', { ns: 'footer' })}</Link></li>
+              <li><Link to="/restaurants" onClick={scrollToTop} className="text-white/90 hover:text-paris-gold transition-colors text-sm md:text-base block py-1">{t('infoItems.restaurants', { ns: 'footer' })}</Link></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">{t('contactUs', { ns: 'footer' })}</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">{t('contactUs', { ns: 'footer' })}</h3>
             <div className="space-y-3">
               <div className="flex items-center">
                 <Mail className="mr-2 h-5 w-5" />
-                <a href="mailto:info@puentesparis2025.net" className="text-white/80 hover:text-paris-gold transition-colors">
+                <a href="mailto:info@puentesparis2025.net" className="text-white/90 hover:text-paris-gold transition-colors text-sm md:text-base">
                   info@puentesparis2025.net
                 </a>
               </div>
