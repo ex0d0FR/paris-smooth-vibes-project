@@ -1,10 +1,10 @@
-
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { MapPin, Clock, Phone, Star, Search } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import RestaurantDetailModal from '@/components/RestaurantDetailModal';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
@@ -13,6 +13,7 @@ const Restaurants = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [cuisineFilter, setCuisineFilter] = useState('all');
   const [statusFilter, setStatusFilter] = useState('all');
+  const [selectedRestaurant, setSelectedRestaurant] = useState(null);
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -208,7 +209,11 @@ const Restaurants = () => {
             <div className="grid gap-6">
               {filteredRestaurants.length > 0 ? (
                 filteredRestaurants.map((restaurant, index) => (
-                  <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700">
+                  <div 
+                    key={index} 
+                    className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 cursor-pointer hover:shadow-lg transition-shadow"
+                    onClick={() => setSelectedRestaurant(restaurant)}
+                  >
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex items-start justify-between mb-2">
@@ -285,6 +290,11 @@ const Restaurants = () => {
           </div>
         </div>
       </main>
+
+      <RestaurantDetailModal 
+        restaurant={selectedRestaurant}
+        onClose={() => setSelectedRestaurant(null)}
+      />
       
       <Footer />
     </>

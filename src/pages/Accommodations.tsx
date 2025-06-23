@@ -1,10 +1,10 @@
-
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Search } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import HotelCard from '../components/HotelCard';
+import HotelDetailModal from '../components/HotelDetailModal';
 import BookingTips from '../components/BookingTips';
 import { hotelsData } from '../data/hotelsData';
 import { Input } from '@/components/ui/input';
@@ -15,6 +15,7 @@ const Accommodations = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedPriceRange, setSelectedPriceRange] = useState('all');
+  const [selectedHotel, setSelectedHotel] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -132,7 +133,9 @@ const Accommodations = () => {
           {filteredHotels.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredHotels.map((hotel, index) => (
-                <HotelCard key={index} hotel={hotel} />
+                <div key={index} onClick={() => setSelectedHotel(hotel)} className="cursor-pointer">
+                  <HotelCard hotel={hotel} />
+                </div>
               ))}
             </div>
           ) : (
@@ -146,6 +149,11 @@ const Accommodations = () => {
           <BookingTips />
         </div>
       </div>
+
+      <HotelDetailModal 
+        hotel={selectedHotel}
+        onClose={() => setSelectedHotel(null)}
+      />
 
       <Footer />
     </div>
