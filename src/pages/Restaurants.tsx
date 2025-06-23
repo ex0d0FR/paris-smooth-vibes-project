@@ -189,6 +189,9 @@ const Restaurants = () => {
                     <SelectItem value="japanese">{t('search.cuisines.japanese')}</SelectItem>
                     <SelectItem value="lebanese">{t('search.cuisines.lebanese')}</SelectItem>
                     <SelectItem value="indian">{t('search.cuisines.indian')}</SelectItem>
+                    <SelectItem value="asian">{t('search.cuisines.asian')}</SelectItem>
+                    <SelectItem value="healthy">{t('search.cuisines.healthy')}</SelectItem>
+                    <SelectItem value="bakery">{t('search.cuisines.bakery')}</SelectItem>
                     <SelectItem value="fastfood">{t('search.cuisines.fastfood')}</SelectItem>
                   </SelectContent>
                 </Select>

@@ -16,7 +16,10 @@
       "japanese": "Japanese",
       "lebanese": "Lebanese",
       "indian": "Indian",
-      "fastfood": "Fast Food"
+      "fastfood": "Fast Food",
+      "asian": "Asian",
+      "healthy": "Healthy",
+      "bakery": "Bakery"
     },
     "statuses": {
       "open": "Open",
@@ -63,6 +66,86 @@
       "name": "McDonald's Issy-Les-Moulineaux",
       "type": "Fast Food",
       "description": "International fast food chain for quick and convenient meals."
+    },
+    {
+      "name": "Restaurant Issy l'Asie",
+      "type": "Asian",
+      "description": "Authentic Asian cuisine with traditional flavors and fresh ingredients."
+    },
+    {
+      "name": "Estelle et Julien",
+      "type": "French Restaurant",
+      "description": "Elegant French restaurant offering refined cuisine in an intimate setting."
+    },
+    {
+      "name": "La Côte et l'Arête",
+      "type": "Restaurant & Wine Bar",
+      "description": "Sophisticated restaurant, brasserie, and wine bar with a convivial atmosphere."
+    },
+    {
+      "name": "Le Nida",
+      "type": "Restaurant",
+      "description": "Contemporary restaurant serving creative dishes with quality ingredients."
+    },
+    {
+      "name": "Le Paradis du Fruit",
+      "type": "Healthy Bar",
+      "description": "Fresh fruit and vegetable bar specializing in healthy smoothies and cocktails."
+    },
+    {
+      "name": "Uncle Jack",
+      "type": "Fast Food",
+      "description": "Modern fast food restaurant with burgers and quick meal options."
+    },
+    {
+      "name": "Mangez Moi",
+      "type": "Fast Food",
+      "description": "Casual dining spot offering quick and tasty meal options."
+    },
+    {
+      "name": "McDonald's Paul Vaillant Couturier",
+      "type": "Fast Food",
+      "description": "International fast food chain for quick and convenient meals."
+    },
+    {
+      "name": "La Factory Burger",
+      "type": "Fast Food",
+      "description": "Burger restaurant specializing in artisanal burgers and fast casual dining."
+    },
+    {
+      "name": "Mf chicken Issy-les-Moulineaux",
+      "type": "Fast Food",
+      "description": "Chicken specialist offering fried chicken and quick meal options."
+    },
+    {
+      "name": "Aux Délices de l'Etoile Issy",
+      "type": "Bakery",
+      "description": "Traditional French bakery with fresh bread, pastries, and local specialties."
+    },
+    {
+      "name": "Boulangerie Jan",
+      "type": "Bakery",
+      "description": "Artisanal bakery offering fresh bread, croissants, and French pastries."
+    },
+    {
+      "name": "Boulangerie Issy-Val-De-Seine",
+      "type": "Bakery",
+      "description": "Local bakery serving traditional French bread and baked goods."
+    },
+    {
+      "name": "La Fournée des Isséens",
+      "type": "Bakery",
+      "description": "Community bakery specializing in fresh daily bread and local favorites."
+    },
+    {
+      "name": "Boulangerie Blavette - Au Pain d'Issy",
+      "type": "Bakery",
+      "description": "Traditional bakery offering quality bread and classic French pastries."
+    },
+    {
+      "name": "La Boulangerie Bio Selon",
+      "type": "Organic Bakery",
+      "description": "Organic bakery committed to sustainable and healthy baking practices."
     }
   ],
   "tips": {
