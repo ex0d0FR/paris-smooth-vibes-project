@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { MapPin, Clock, Phone, Star, Search } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import RestaurantDetailModal from '@/components/RestaurantDetailModal';
-import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import RestaurantSearchFilters from '@/components/RestaurantSearchFilters';
+import RestaurantList from '@/components/RestaurantList';
+import RestaurantTips from '@/components/RestaurantTips';
 
 const Restaurants = () => {
   const { t } = useTranslation('restaurants');
@@ -320,10 +321,6 @@ const Restaurants = () => {
     return matchesSearch && matchesCuisine && matchesStatus;
   });
 
-  // Get tips items with proper type casting
-  const tipsItems = t('tips.items', { returnObjects: true });
-  const tipsArray = Array.isArray(tipsItems) ? tipsItems : [];
-
   return (
     <>
       <Helmet>
@@ -357,131 +354,22 @@ const Restaurants = () => {
                 </div>
               </div>
 
-              {/* Search and Filters */}
-              <div className="flex flex-col md:flex-row gap-4 mb-8">
-                <div className="relative flex-1">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-                  <Input
-                    type="text"
-                    placeholder={t('search.placeholder')}
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10 h-12 text-base"
-                  />
-                </div>
-                
-                <Select value={cuisineFilter} onValueChange={setCuisineFilter}>
-                  <SelectTrigger className="w-full md:w-64 h-12">
-                    <SelectValue placeholder={t('search.allCuisines')} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">{t('search.allCuisines')}</SelectItem>
-                    <SelectItem value="french">{t('search.cuisines.french')}</SelectItem>
-                    <SelectItem value="italian">{t('search.cuisines.italian')}</SelectItem>
-                    <SelectItem value="japanese">{t('search.cuisines.japanese')}</SelectItem>
-                    <SelectItem value="lebanese">{t('search.cuisines.lebanese')}</SelectItem>
-                    <SelectItem value="indian">{t('search.cuisines.indian')}</SelectItem>
-                    <SelectItem value="asian">{t('search.cuisines.asian')}</SelectItem>
-                    <SelectItem value="healthy">{t('search.cuisines.healthy')}</SelectItem>
-                    <SelectItem value="bakery">{t('search.cuisines.bakery')}</SelectItem>
-                    <SelectItem value="fastfood">{t('search.cuisines.fastfood')}</SelectItem>
-                  </SelectContent>
-                </Select>
-
-                <Select value={statusFilter} onValueChange={setStatusFilter}>
-                  <SelectTrigger className="w-full md:w-48 h-12">
-                    <SelectValue placeholder={t('search.allStatuses')} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">{t('search.allStatuses')}</SelectItem>
-                    <SelectItem value="open">{t('search.statuses.open')}</SelectItem>
-                    <SelectItem value="closed">{t('search.statuses.closed')}</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+              <RestaurantSearchFilters
+                searchTerm={searchTerm}
+                cuisineFilter={cuisineFilter}
+                statusFilter={statusFilter}
+                onSearchChange={setSearchTerm}
+                onCuisineChange={setCuisineFilter}
+                onStatusChange={setStatusFilter}
+              />
             </div>
 
-            <div className="grid gap-6">
-              {filteredRestaurants.length > 0 ? (
-                filteredRestaurants.map((restaurant, index) => (
-                  <div 
-                    key={index} 
-                    className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700 cursor-pointer hover:shadow-lg transition-shadow"
-                    onClick={() => setSelectedRestaurant(restaurant)}
-                  >
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex items-start justify-between mb-2">
-                          <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                            {restaurant.name}
-                          </h3>
-                          <div className="flex items-center gap-2">
-                            <div className="flex items-center text-yellow-500">
-                              <Star size={16} fill="currentColor" />
-                              <span className="ml-1 text-sm text-gray-600 dark:text-gray-400">
-                                {restaurant.rating}
-                              </span>
-                            </div>
-                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                              restaurant.status === 'open' 
-                                ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' 
-                                : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'
-                            }`}>
-                              {t(`search.statuses.${restaurant.status}`)}
-                            </span>
-                          </div>
-                        </div>
-                        
-                        <p className="text-paris-blue dark:text-paris-gold font-medium mb-2">
-                          {t(restaurant.typeKey)}
-                        </p>
-                        
-                        <p className="text-gray-600 dark:text-gray-300 mb-4">
-                          {t(restaurant.descriptionKey)}
-                        </p>
-                        
-                        <div className="space-y-2">
-                          <div className="flex items-center text-gray-600 dark:text-gray-400">
-                            <MapPin size={16} className="mr-2 flex-shrink-0" />
-                            <span className="text-sm">{restaurant.address}</span>
-                            <span className="ml-2 text-xs bg-paris-blue/10 dark:bg-paris-gold/10 text-paris-blue dark:text-paris-gold px-2 py-1 rounded">
-                              {restaurant.distance}
-                            </span>
-                          </div>
-                          
-                          <div className="flex items-center text-gray-600 dark:text-gray-400">
-                            <Clock size={16} className="mr-2 flex-shrink-0" />
-                            <span className="text-sm">{restaurant.hours}</span>
-                          </div>
-                          
-                          <div className="flex items-center text-gray-600 dark:text-gray-400">
-                            <Phone size={16} className="mr-2 flex-shrink-0" />
-                            <a href={`tel:${restaurant.phone}`} className="text-sm hover:text-paris-blue dark:hover:text-paris-gold transition-colors">
-                              {restaurant.phone}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <div className="text-center py-12">
-                  <p className="text-gray-500 dark:text-gray-400 text-lg">
-                    {t('search.noResults')}
-                  </p>
-                </div>
-              )}
-            </div>
+            <RestaurantList
+              restaurants={filteredRestaurants}
+              onRestaurantClick={setSelectedRestaurant}
+            />
 
-            <div className="mt-12 bg-paris-blue/5 dark:bg-paris-gold/5 rounded-lg p-6">
-              <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">{t('tips.title')}</h2>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                {tipsArray.map((tip: string, index: number) => (
-                  <li key={index}>• {tip}</li>
-                ))}
-              </ul>
-            </div>
+            <RestaurantTips />
           </div>
         </div>
       </main>
