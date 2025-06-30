@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -12,6 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Heart, Users, Building, Mail, Phone, User, CheckCircle, Home } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { EMAILJS_CONFIG } from '@/config/emailjs';
 
 const Sponsors = () => {
   const { t } = useTranslation('sponsors');
@@ -45,23 +47,22 @@ const Sponsors = () => {
     setIsSubmitting(true);
 
     try {
-      // Create mailto link with form data
-      const subject = encodeURIComponent('PARIS 2025 Sponsorship Inquiry');
-      const body = encodeURIComponent(`
-Name: ${formData.firstName} ${formData.lastName}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Organization: ${formData.organization}
-Sponsorship Interest: ${formData.sponsorshipType}
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        from_email: formData.email,
+        phone: formData.phone,
+        organization: formData.organization,
+        sponsorship_type: formData.sponsorshipType,
+        message: formData.message,
+        to_email: 'info@puentesparis2025.net'
+      };
 
-Message:
-${formData.message}
-      `);
-      
-      const mailtoLink = `mailto:info@puentesparis2025.net?subject=${subject}&body=${body}`;
-      
-      // Open email client
-      window.location.href = mailtoLink;
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        templateParams,
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
       
       // Show success state
       setIsSubmitted(true);
