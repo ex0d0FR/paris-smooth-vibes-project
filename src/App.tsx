@@ -14,6 +14,7 @@ import VisaRequirements from "./pages/VisaRequirements";
 import Registration from "./pages/Registration";
 import Restaurants from "./pages/Restaurants";
 import Accommodations from "./pages/Accommodations";
+import Sponsors from "./pages/Sponsors";
 import { useTranslation } from 'react-i18next';
 import './i18n';
 
@@ -82,6 +83,7 @@ const App = () => (
                   <Route path="/registration" element={<Registration />} />
                   <Route path="/restaurants" element={<Restaurants />} />
                   <Route path="/accommodations" element={<Accommodations />} />
+                  <Route path="/sponsors" element={<Sponsors />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>

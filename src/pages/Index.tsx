@@ -8,6 +8,7 @@ import Venue from '@/components/Venue';
 import Register from '@/components/Register';
 import Footer from '@/components/Footer';
 import FAQ from '@/components/FAQ';
+import Sponsors from '@/components/Sponsors';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 
@@ -169,6 +170,7 @@ const Index = () => {
           <Venue />
           <FAQ />
           <Register />
+          <Sponsors />
         </main>
         <Footer />
       </div>
