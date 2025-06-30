@@ -1,32 +1,35 @@
 
-import commonJson from '@/locales/pt/common.json';
-import navJson from '@/locales/pt/nav.json';
-import heroJson from '@/locales/pt/hero.json';
-import aboutJson from '@/locales/pt/about.json';
-import speakersJson from '@/locales/pt/speakers.json';
-import scheduleJson from '@/locales/pt/schedule.json';
-import venueJson from '@/locales/pt/venue.json';
-import registerJson from '@/locales/pt/register.json';
-import registrationJson from '@/locales/pt/registration.json';
-import footerJson from '@/locales/pt/footer.json';
-import visaJson from '@/locales/pt/visa.json';
-import faqJson from '@/locales/pt/faq.json';
-import accommodationsJson from '@/locales/pt/accommodations.json';
-import restaurantsJson from '@/locales/pt/restaurants.json';
+// Portuguese translations
+import common from '../../locales/pt/common.json';
+import nav from '../../locales/pt/nav.json';
+import hero from '../../locales/pt/hero.json';
+import about from '../../locales/pt/about.json';
+import speakers from '../../locales/pt/speakers.json';
+import schedule from '../../locales/pt/schedule.json';
+import venue from '../../locales/pt/venue.json';
+import register from '../../locales/pt/register.json';
+import footer from '../../locales/pt/footer.json';
+import visa from '../../locales/pt/visa.json';
+import faq from '../../locales/pt/faq.json';
+import registration from '../../locales/pt/registration.json';
+import accommodations from '../../locales/pt/accommodations.json';
+import restaurants from '../../locales/pt/restaurants.json';
+import sponsors from '../../locales/pt/sponsors.json';
 
 export const ptResources = {
-  common: commonJson,
-  nav: navJson,
-  hero: heroJson,
-  about: aboutJson,
-  speakers: speakersJson,
-  schedule: scheduleJson,
-  venue: venueJson,
-  register: registerJson,
-  registration: registrationJson,
-  footer: footerJson,
-  visa: visaJson,
-  faq: faqJson,
-  accommodations: accommodationsJson,
-  restaurants: restaurantsJson
+  common,
+  nav,
+  hero,
+  about,
+  speakers,
+  schedule,
+  venue,
+  register,
+  footer,
+  visa,
+  faq,
+  registration,
+  accommodations,
+  restaurants,
+  sponsors
 };

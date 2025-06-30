@@ -1,7 +1,8 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -9,16 +10,117 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Heart, Users, Building, Mail, Phone, User } from 'lucide-react';
+import { Heart, Users, Building, Mail, Phone, User, CheckCircle, Home } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 const Sponsors = () => {
   const { t } = useTranslation('sponsors');
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    organization: '',
+    sponsorshipType: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Form submission logic would go here
-    console.log('Sponsor form submitted');
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
   };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Create mailto link with form data
+      const subject = encodeURIComponent('PARIS 2025 Sponsorship Inquiry');
+      const body = encodeURIComponent(`
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Organization: ${formData.organization}
+Sponsorship Interest: ${formData.sponsorshipType}
+
+Message:
+${formData.message}
+      `);
+      
+      const mailtoLink = `mailto:info@puentesparis2025.net?subject=${subject}&body=${body}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+      
+      // Show success state
+      setIsSubmitted(true);
+      
+      toast({
+        title: t('messageSent', 'Message sent successfully!'),
+        description: t('messageSentDescription', 'Thank you for your interest in sponsoring PARIS 2025. We\'ll get back to you soon.'),
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Error",
+        description: "There was an error sending your message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Show success message after form submission
+  if (isSubmitted) {
+    return (
+      <>
+        <Helmet>
+          <title>Message Sent - PARIS 2025 Conference</title>
+        </Helmet>
+        
+        <div className="min-h-screen">
+          <Navbar />
+          
+          <main className="pt-20">
+            <section className="py-16 bg-gradient-to-br from-paris-navy to-paris-blue text-white">
+              <div className="container mx-auto px-4 text-center">
+                <CheckCircle className="w-16 h-16 mx-auto mb-6 text-paris-gold" />
+                <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                  {t('messageSent', 'Message sent successfully!')}
+                </h1>
+                <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
+                  {t('messageSentDescription', 'Thank you for your interest in sponsoring PARIS 2025. We\'ll get back to you soon.')}
+                </p>
+                <Link to="/">
+                  <Button 
+                    size="lg" 
+                    className="bg-paris-gold hover:bg-paris-gold/90 text-white px-8 py-3 text-lg font-semibold rounded-xl"
+                  >
+                    <Home className="w-5 h-5 mr-2" />
+                    {t('backToHome', 'Back to Home')}
+                  </Button>
+                </Link>
+              </div>
+            </section>
+          </main>
+
+          <Footer />
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
@@ -110,14 +212,22 @@ const Sponsors = () => {
                             <User className="inline w-4 h-4 mr-2" />
                             {t('firstName', 'First Name')} *
                           </label>
-                          <Input required />
+                          <Input 
+                            required 
+                            value={formData.firstName}
+                            onChange={(e) => handleInputChange('firstName', e.target.value)}
+                          />
                         </div>
                         <div>
                           <label className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
                             <User className="inline w-4 h-4 mr-2" />
                             {t('lastName', 'Last Name')} *
                           </label>
-                          <Input required />
+                          <Input 
+                            required 
+                            value={formData.lastName}
+                            onChange={(e) => handleInputChange('lastName', e.target.value)}
+                          />
                         </div>
                       </div>
 
@@ -126,7 +236,12 @@ const Sponsors = () => {
                           <Mail className="inline w-4 h-4 mr-2" />
                           {t('email', 'Email Address')} *
                         </label>
-                        <Input type="email" required />
+                        <Input 
+                          type="email" 
+                          required 
+                          value={formData.email}
+                          onChange={(e) => handleInputChange('email', e.target.value)}
+                        />
                       </div>
 
                       <div>
@@ -134,7 +249,11 @@ const Sponsors = () => {
                           <Phone className="inline w-4 h-4 mr-2" />
                           {t('phone', 'Phone Number')}
                         </label>
-                        <Input type="tel" />
+                        <Input 
+                          type="tel" 
+                          value={formData.phone}
+                          onChange={(e) => handleInputChange('phone', e.target.value)}
+                        />
                       </div>
 
                       <div>
@@ -142,14 +261,17 @@ const Sponsors = () => {
                           <Building className="inline w-4 h-4 mr-2" />
                           {t('organization', 'Organization/Church')}
                         </label>
-                        <Input />
+                        <Input 
+                          value={formData.organization}
+                          onChange={(e) => handleInputChange('organization', e.target.value)}
+                        />
                       </div>
 
                       <div>
                         <label className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
                           {t('sponsorshipType', 'Sponsorship Interest')}
                         </label>
-                        <Select>
+                        <Select onValueChange={(value) => handleInputChange('sponsorshipType', value)}>
                           <SelectTrigger>
                             <SelectValue placeholder={t('selectOption', 'Select an option')} />
                           </SelectTrigger>
@@ -169,6 +291,8 @@ const Sponsors = () => {
                         <Textarea 
                           placeholder={t('messagePlaceholder', 'Tell us about your sponsorship interests and any questions you may have...')}
                           rows={4}
+                          value={formData.message}
+                          onChange={(e) => handleInputChange('message', e.target.value)}
                         />
                       </div>
 
@@ -176,8 +300,9 @@ const Sponsors = () => {
                         type="submit" 
                         size="lg" 
                         className="w-full bg-paris-gold hover:bg-paris-gold/90 text-white"
+                        disabled={isSubmitting}
                       >
-                        {t('submitForm', 'Send Message')}
+                        {isSubmitting ? 'Sending...' : t('submitForm', 'Send Message')}
                       </Button>
                     </form>
                   </CardContent>

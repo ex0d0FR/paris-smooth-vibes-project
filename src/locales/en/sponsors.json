@@ -28,5 +28,8 @@
   "customSponsorship": "Custom Sponsorship",
   "message": "Message",
   "messagePlaceholder": "Tell us about your sponsorship interests and any questions you may have...",
-  "submitForm": "Send Message"
+  "submitForm": "Send Message",
+  "messageSent": "Message sent successfully!",
+  "messageSentDescription": "Thank you for your interest in sponsoring PARIS 2025. We'll get back to you soon.",
+  "backToHome": "Back to Home"
 }

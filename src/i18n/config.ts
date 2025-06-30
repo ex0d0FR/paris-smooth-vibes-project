@@ -1,4 +1,3 @@
-
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -6,7 +5,7 @@ import Backend from 'i18next-http-backend';
 import { resources } from './resources';
 
 // Define all namespaces we use in the application
-const namespaces = ['common', 'nav', 'hero', 'about', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration', 'accommodations', 'restaurants'];
+const namespaces = ['common', 'nav', 'hero', 'about', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration', 'accommodations', 'restaurants', 'sponsors'];
 
 console.log("Initializing i18n with resources:", Object.keys(resources));
 console.log("Available languages:", Object.keys(resources).join(", "));
