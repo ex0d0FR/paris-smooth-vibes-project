@@ -9,9 +9,9 @@
 // 6. Replace the values below with your actual EmailJS credentials
 
 export const EMAILJS_CONFIG = {
-  SERVICE_ID: 'Sponsor', // Replace with your EmailJS Service ID
-  TEMPLATE_ID: 'template_emg92xf', // Replace with your EmailJS Template ID
-  PUBLIC_KEY: 'BPHIO9FGlYlAXjxSw' // Replace with your EmailJS Public Key
+  SERVICE_ID: 'YOUR_SERVICE_ID', // Replace with your EmailJS Service ID
+  TEMPLATE_ID: 'YOUR_TEMPLATE_ID', // Replace with your EmailJS Template ID
+  PUBLIC_KEY: 'YOUR_PUBLIC_KEY' // Replace with your EmailJS Public Key
 };
 
 // Email template variables that will be used:
