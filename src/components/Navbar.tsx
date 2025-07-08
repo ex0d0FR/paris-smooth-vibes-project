@@ -28,6 +28,7 @@ const Navbar = () => {
   ];
 
   const venueItems = [
+    { label: 'Venue', href: '/#venue' },
     { label: 'Visa Requirements', href: '/visa-requirements' },
     { label: 'Travel Information', href: '/travel-information' },
     { label: 'Accommodations', href: '/accommodations' },
