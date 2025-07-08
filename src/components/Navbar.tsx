@@ -28,7 +28,7 @@ const Navbar = () => {
   ];
 
   const venueItems = [
-    { label: 'Venue', href: '/#venue' },
+    { label: 'Venue', action: () => scrollToSection('venue') },
     { label: 'Visa Requirements', href: '/visa-requirements' },
     { label: 'Travel Information', href: '/travel-information' },
     { label: 'Accommodations', href: '/accommodations' },
@@ -80,14 +80,23 @@ const Navbar = () => {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg">
-              {venueItems.map((item) => (
-                <DropdownMenuItem key={item.href} asChild>
-                  <Link 
-                    to={item.href}
-                    className="w-full px-2 py-1.5 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
-                  >
-                    {item.label}
-                  </Link>
+              {venueItems.map((item, index) => (
+                <DropdownMenuItem key={item.href || index}>
+                  {item.action ? (
+                    <button
+                      onClick={item.action}
+                      className="w-full text-left px-2 py-1.5 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
+                    >
+                      {item.label}
+                    </button>
+                  ) : (
+                    <Link 
+                      to={item.href}
+                      className="w-full px-2 py-1.5 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
@@ -133,15 +142,28 @@ const Navbar = () => {
             {/* Mobile Venue Section */}
             <div className="border-b border-gray-200 dark:border-gray-700 pb-2">
               <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2">Venue</h3>
-              {venueItems.map((item) => (
-                <Link
-                  key={item.href}
-                  to={item.href}
-                  className="block text-base py-1 pl-4 text-gray-600 dark:text-gray-300 hover:text-paris-blue dark:hover:text-paris-gold"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
+              {venueItems.map((item, index) => (
+                item.action ? (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      item.action();
+                      setIsMenuOpen(false);
+                    }}
+                    className="block text-base py-1 pl-4 text-gray-600 dark:text-gray-300 hover:text-paris-blue dark:hover:text-paris-gold w-full text-left"
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className="block text-base py-1 pl-4 text-gray-600 dark:text-gray-300 hover:text-paris-blue dark:hover:text-paris-gold"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )
               ))}
             </div>
             
