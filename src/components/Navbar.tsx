@@ -1,12 +1,18 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import ThemeToggle from './ThemeToggle';
 import { useTranslation } from 'react-i18next';
 import useNavigation from '@/hooks/useNavigation';
 import { Link } from 'react-router-dom';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,8 +24,14 @@ const Navbar = () => {
     { id: 'about', label: t('about'), href: '/#about' },
     { id: 'speakers', label: t('speakers'), href: '/#speakers' },
     { id: 'schedule', label: t('schedule'), href: '/#schedule' },
-    { id: 'venue', label: t('venue'), href: '/#venue' },
     { id: 'register', label: t('register'), href: '/#register' }
+  ];
+
+  const venueItems = [
+    { label: 'Visa Requirements', href: '/visa-requirements' },
+    { label: 'Travel Information', href: '/travel-information' },
+    { label: 'Accommodations', href: '/accommodations' },
+    { label: 'Restaurants', href: '/restaurants' }
   ];
 
   return (
@@ -50,6 +62,36 @@ const Navbar = () => {
               {item.label}
             </a>
           ))}
+          
+          {/* Venue Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button 
+                variant="ghost" 
+                className={cn(
+                  "font-medium capitalize transition-all hover:text-paris-blue dark:hover:text-paris-gold p-0 h-auto",
+                  isScrolled 
+                    ? "text-paris-navy dark:text-white hover:bg-transparent" 
+                    : "text-white hover:bg-transparent"
+                )}
+              >
+                Venue <ChevronDown className="ml-1 h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg">
+              {venueItems.map((item) => (
+                <DropdownMenuItem key={item.href} asChild>
+                  <Link 
+                    to={item.href}
+                    className="w-full px-2 py-1.5 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
+                  >
+                    {item.label}
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+          
           <ThemeToggle />
           <Button 
             className="bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy"
@@ -86,6 +128,22 @@ const Navbar = () => {
                 {item.label}
               </a>
             ))}
+            
+            {/* Mobile Venue Section */}
+            <div className="border-b border-gray-200 dark:border-gray-700 pb-2">
+              <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2">Venue</h3>
+              {venueItems.map((item) => (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className="block text-base py-1 pl-4 text-gray-600 dark:text-gray-300 hover:text-paris-blue dark:hover:text-paris-gold"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+            
             <Button 
               className="bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy w-full"
               onClick={() => {
