@@ -166,7 +166,7 @@ const Index = () => {
           <Hero />
           <AboutSection />
           <Speakers />
-          <Schedule />
+          {/* <Schedule /> */}
           <Venue />
           <FAQ />
           <Register />
