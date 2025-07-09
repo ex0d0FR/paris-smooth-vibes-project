@@ -2,5 +2,18 @@
 {
   "title": "Nuestros Ponentes",
   "description": "Escucha a pioneros, misiologos y ministros que están dando forma al futuro",
-  "viewAll": "Ver Todos los Ponentes"
+  "viewAll": "Ver Todos los Ponentes",
+  "roles": {
+    "president_ceo": "Presidente/CEO",
+    "executive_director": "Director Ejecutivo",
+    "executive_member": "Miembro Ejecutivo",
+    "pastor": "Pastor",
+    "president": "Presidente",
+    "general_secretary": "Secretario General",
+    "national_director": "Director Nacional",
+    "director": "Director",
+    "founder": "Fundador",
+    "chairman": "Presidente",
+    "evangelist": "Evangelista"
+  }
 }

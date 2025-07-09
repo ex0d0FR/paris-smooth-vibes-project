@@ -2,5 +2,18 @@
 {
   "title": "Our Speakers",
   "description": "Hear from pioneers, missiologists and ministers who are shaping the future",
-  "viewAll": "View All Speakers"
+  "viewAll": "View All Speakers",
+  "roles": {
+    "president_ceo": "President/CEO",
+    "executive_director": "Executive Director",
+    "executive_member": "Executive Member",
+    "pastor": "Pastor",
+    "president": "President",
+    "general_secretary": "General Secretary",
+    "national_director": "National Director",
+    "director": "Director",
+    "founder": "Founder",
+    "chairman": "Chairman",
+    "evangelist": "Evangelist"
+  }
 }

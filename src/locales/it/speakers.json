@@ -2,5 +2,18 @@
 {
   "title": "I Nostri Relatori",
   "description": "Ascolta pionieri, missiologi e ministri che stanno plasmando il futuro",
-  "viewAll": "Vedi Tutti i Relatori"
+  "viewAll": "Vedi Tutti i Relatori",
+  "roles": {
+    "president_ceo": "Presidente/CEO",
+    "executive_director": "Direttore Esecutivo",
+    "executive_member": "Membro Esecutivo",
+    "pastor": "Pastore",
+    "president": "Presidente",
+    "general_secretary": "Segretario Generale",
+    "national_director": "Direttore Nazionale",
+    "director": "Direttore",
+    "founder": "Fondatore",
+    "chairman": "Presidente del Consiglio",
+    "evangelist": "Evangelista"
+  }
 }

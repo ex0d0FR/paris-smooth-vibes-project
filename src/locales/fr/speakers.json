@@ -2,5 +2,18 @@
 {
   "title": "Nos intervenants",
   "description": "Écoutez des pionniers, missiologues et ministres qui façonnent l'avenir",
-  "viewAll": "Voir tous les intervenants"
+  "viewAll": "Voir tous les intervenants",
+  "roles": {
+    "president_ceo": "Président/PDG",
+    "executive_director": "Directeur exécutif",
+    "executive_member": "Membre exécutif",
+    "pastor": "Pasteur",
+    "president": "Président",
+    "general_secretary": "Secrétaire général",
+    "national_director": "Directeur national",
+    "director": "Directeur",
+    "founder": "Fondateur",
+    "chairman": "Président du conseil",
+    "evangelist": "Évangéliste"
+  }
 }

@@ -2,5 +2,18 @@
 {
   "title": "Unsere Redner",
   "description": "Hören Sie von Pionieren, Missiologen und Geistlichen, die die Zukunft gestalten",
-  "viewAll": "Alle Redner ansehen"
+  "viewAll": "Alle Redner ansehen",
+  "roles": {
+    "president_ceo": "Präsident/CEO",
+    "executive_director": "Geschäftsführer",
+    "executive_member": "Vorstandsmitglied",
+    "pastor": "Pastor",
+    "president": "Präsident",
+    "general_secretary": "Generalsekretär",
+    "national_director": "Nationaler Direktor",
+    "director": "Direktor",
+    "founder": "Gründer",
+    "chairman": "Vorsitzender",
+    "evangelist": "Evangelist"
+  }
 }

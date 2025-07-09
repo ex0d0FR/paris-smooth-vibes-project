@@ -2,5 +2,18 @@
 {
   "title": "Наші спікери",
   "description": "Слухайте піонерів, місіологів та служителів, які формують майбутнє",
-  "viewAll": "Переглянути всіх спікерів"
+  "viewAll": "Переглянути всіх спікерів",
+  "roles": {
+    "president_ceo": "Президент/CEO",
+    "executive_director": "Виконавчий директор",
+    "executive_member": "Виконавчий член",
+    "pastor": "Пастор",
+    "president": "Президент",
+    "general_secretary": "Генеральний секретар",
+    "national_director": "Національний директор",
+    "director": "Директор",
+    "founder": "Засновник",
+    "chairman": "Голова",
+    "evangelist": "Євангеліст"
+  }
 }

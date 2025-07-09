@@ -5,6 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Speaker } from '@/data/speakersData';
 import { toast } from "@/components/ui/use-toast";
+import { useTranslation } from 'react-i18next';
 
 interface SpeakerCardProps {
   speaker: Speaker;
@@ -12,6 +13,7 @@ interface SpeakerCardProps {
 }
 
 const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
+  const { t } = useTranslation('speakers');
   const [imageLoaded, setImageLoaded] = useState<boolean>(false);
   const [imageError, setImageError] = useState<boolean>(false);
   
@@ -76,7 +78,9 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, index }) => {
           </Avatar>
         </div>
         <h3 className="text-xl font-semibold mb-1 text-center dark:text-white">{speaker.name}</h3>
-        <p className="text-paris-blue dark:text-paris-gold font-medium text-center">{speaker.role}</p>
+        <p className="text-paris-blue dark:text-paris-gold font-medium text-center">
+          {t(`roles.${speaker.roleKey}`, speaker.role)}
+        </p>
         <p className="text-gray-500 dark:text-gray-400 text-center">{speaker.company}</p>
       </CardContent>
     </Card>
