@@ -2,24 +2,31 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { MapPin, Clock, Phone, Globe } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 const TravelInformation = () => {
+  const { t } = useTranslation('travel');
+
   return (
     <>
       <Helmet>
-        <title>Travel Information - Paris 2025</title>
-        <meta name="description" content="Essential travel information for visitors to Paris 2025 conference" />
+        <title>{t('pageTitle')} - Paris 2025</title>
+        <meta name="description" content={t('pageDescription')} />
       </Helmet>
       
-      <div className="min-h-screen bg-gradient-to-br from-background to-muted/20 py-12">
+      <Navbar />
+      
+      <div className="min-h-screen bg-gradient-to-br from-background to-muted/20 py-12 pt-20">
         <div className="container mx-auto px-4">
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-4">
-              Travel Information
+              {t('title')}
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to know for your trip to Paris
+              {t('subtitle')}
             </p>
           </div>
 
@@ -29,27 +36,27 @@ const TravelInformation = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <MapPin className="w-5 h-5" />
-                  Getting to Paris
+                  {t('gettingToParis.title')}
                 </CardTitle>
                 <CardDescription>
-                  Transportation options to reach the city
+                  {t('gettingToParis.description')}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h4 className="font-semibold mb-2">By Air</h4>
+                  <h4 className="font-semibold mb-2">{t('gettingToParis.byAir.title')}</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Charles de Gaulle Airport (CDG) - Main international airport</li>
-                    <li>• Orly Airport (ORY) - Secondary international airport</li>
-                    <li>• Direct flights from major cities worldwide</li>
+                    <li>• {t('gettingToParis.byAir.items.0')}</li>
+                    <li>• {t('gettingToParis.byAir.items.1')}</li>
+                    <li>• {t('gettingToParis.byAir.items.2')}</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2">By Train</h4>
+                  <h4 className="font-semibold mb-2">{t('gettingToParis.byTrain.title')}</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Eurostar from London (3.5 hours)</li>
-                    <li>• High-speed trains from major European cities</li>
-                    <li>• Gare du Nord, Gare de l'Est main stations</li>
+                    <li>• {t('gettingToParis.byTrain.items.0')}</li>
+                    <li>• {t('gettingToParis.byTrain.items.1')}</li>
+                    <li>• {t('gettingToParis.byTrain.items.2')}</li>
                   </ul>
                 </div>
               </CardContent>
@@ -60,27 +67,27 @@ const TravelInformation = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Clock className="w-5 h-5" />
-                  Local Transportation
+                  {t('localTransportation.title')}
                 </CardTitle>
                 <CardDescription>
-                  Getting around in Paris
+                  {t('localTransportation.description')}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h4 className="font-semibold mb-2">Metro & RER</h4>
+                  <h4 className="font-semibold mb-2">{t('localTransportation.metro.title')}</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Extensive metro network covering the city</li>
-                    <li>• RER trains for longer distances</li>
-                    <li>• Purchase Navigo weekly passes for convenience</li>
+                    <li>• {t('localTransportation.metro.items.0')}</li>
+                    <li>• {t('localTransportation.metro.items.1')}</li>
+                    <li>• {t('localTransportation.metro.items.2')}</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2">Other Options</h4>
+                  <h4 className="font-semibold mb-2">{t('localTransportation.other.title')}</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Vélib' bike sharing system</li>
-                    <li>• Taxis and ride-sharing services</li>
-                    <li>• Walking - many attractions are close together</li>
+                    <li>• {t('localTransportation.other.items.0')}</li>
+                    <li>• {t('localTransportation.other.items.1')}</li>
+                    <li>• {t('localTransportation.other.items.2')}</li>
                   </ul>
                 </div>
               </CardContent>
@@ -91,27 +98,27 @@ const TravelInformation = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Globe className="w-5 h-5" />
-                  Weather & Climate
+                  {t('weather.title')}
                 </CardTitle>
                 <CardDescription>
-                  What to expect during your visit
+                  {t('weather.description')}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h4 className="font-semibold mb-2">Conference Period</h4>
+                  <h4 className="font-semibold mb-2">{t('weather.conference.title')}</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Average temperature: 15-20°C (59-68°F)</li>
-                    <li>• Occasional rainfall - bring an umbrella</li>
-                    <li>• Comfortable walking weather</li>
+                    <li>• {t('weather.conference.items.0')}</li>
+                    <li>• {t('weather.conference.items.1')}</li>
+                    <li>• {t('weather.conference.items.2')}</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2">What to Pack</h4>
+                  <h4 className="font-semibold mb-2">{t('weather.whatToPack.title')}</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Layers for changing temperatures</li>
-                    <li>• Comfortable walking shoes</li>
-                    <li>• Light rain jacket or umbrella</li>
+                    <li>• {t('weather.whatToPack.items.0')}</li>
+                    <li>• {t('weather.whatToPack.items.1')}</li>
+                    <li>• {t('weather.whatToPack.items.2')}</li>
                   </ul>
                 </div>
               </CardContent>
@@ -122,29 +129,29 @@ const TravelInformation = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Phone className="w-5 h-5" />
-                  Emergency Information
+                  {t('emergency.title')}
                 </CardTitle>
                 <CardDescription>
-                  Important contacts and services
+                  {t('emergency.description')}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h4 className="font-semibold mb-2">Emergency Numbers</h4>
+                  <h4 className="font-semibold mb-2">{t('emergency.numbers.title')}</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Emergency Services: 112</li>
-                    <li>• Police: 17</li>
-                    <li>• Fire Department: 18</li>
-                    <li>• Medical Emergency: 15</li>
+                    <li>• {t('emergency.numbers.items.0')}</li>
+                    <li>• {t('emergency.numbers.items.1')}</li>
+                    <li>• {t('emergency.numbers.items.2')}</li>
+                    <li>• {t('emergency.numbers.items.3')}</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2">Useful Information</h4>
+                  <h4 className="font-semibold mb-2">{t('emergency.useful.title')}</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Currency: Euro (EUR)</li>
-                    <li>• Language: French (English widely spoken)</li>
-                    <li>• Time Zone: CET (UTC+1)</li>
-                    <li>• Electrical outlets: Type C & E (220V)</li>
+                    <li>• {t('emergency.useful.items.0')}</li>
+                    <li>• {t('emergency.useful.items.1')}</li>
+                    <li>• {t('emergency.useful.items.2')}</li>
+                    <li>• {t('emergency.useful.items.3')}</li>
                   </ul>
                 </div>
               </CardContent>
@@ -152,6 +159,8 @@ const TravelInformation = () => {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </>
   );
 };

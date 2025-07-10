@@ -1,0 +1,88 @@
+{
+  "pageTitle": "Informações de viagem",
+  "pageDescription": "Informações de viagem essenciais para visitantes da conferência Paris 2025",
+  "title": "Informações de viagem",
+  "subtitle": "Tudo que você precisa saber para sua viagem a Paris",
+  "gettingToParis": {
+    "title": "Chegando a Paris",
+    "description": "Opções de transporte para chegar à cidade",
+    "byAir": {
+      "title": "De avião",
+      "items": [
+        "Aeroporto Charles de Gaulle (CDG) - Principal aeroporto internacional",
+        "Aeroporto de Orly (ORY) - Aeroporto internacional secundário",
+        "Voos diretos das principais cidades do mundo"
+      ]
+    },
+    "byTrain": {
+      "title": "De trem",
+      "items": [
+        "Eurostar de Londres (3,5 horas)",
+        "Trens de alta velocidade das principais cidades europeias",
+        "Gare du Nord, Gare de l'Est estações principais"
+      ]
+    }
+  },
+  "localTransportation": {
+    "title": "Transporte local",
+    "description": "Circulando em Paris",
+    "metro": {
+      "title": "Metro e RER",
+      "items": [
+        "Extensa rede de metrô cobrindo a cidade",
+        "Trens RER para distâncias maiores",
+        "Compre passes Navigo semanais para conveniência"
+      ]
+    },
+    "other": {
+      "title": "Outras opções",
+      "items": [
+        "Sistema de compartilhamento de bicicletas Vélib'",
+        "Táxis e serviços de carona",
+        "Caminhada - muitas atrações ficam próximas"
+      ]
+    }
+  },
+  "weather": {
+    "title": "Clima e tempo",
+    "description": "O que esperar durante sua visita",
+    "conference": {
+      "title": "Período da conferência",
+      "items": [
+        "Temperatura média: 15-20°C",
+        "Chuva ocasional - traga um guarda-chuva",
+        "Clima confortável para caminhar"
+      ]
+    },
+    "whatToPack": {
+      "title": "O que levar",
+      "items": [
+        "Roupas em camadas para mudanças de temperatura",
+        "Sapatos confortáveis para caminhada",
+        "Jaqueta leve de chuva ou guarda-chuva"
+      ]
+    }
+  },
+  "emergency": {
+    "title": "Informações de emergência",
+    "description": "Contatos e serviços importantes",
+    "numbers": {
+      "title": "Números de emergência",
+      "items": [
+        "Serviços de emergência: 112",
+        "Polícia: 17",
+        "Bombeiros: 18",
+        "Emergência médica: 15"
+      ]
+    },
+    "useful": {
+      "title": "Informações úteis",
+      "items": [
+        "Moeda: Euro (EUR)",
+        "Idioma: Francês (inglês amplamente falado)",
+        "Fuso horário: CET (UTC+1)",
+        "Tomadas elétricas: Tipo C & E (220V)"
+      ]
+    }
+  }
+}

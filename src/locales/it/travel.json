@@ -1,0 +1,88 @@
+{
+  "pageTitle": "Informazioni di viaggio",
+  "pageDescription": "Informazioni di viaggio essenziali per i visitatori della conferenza Parigi 2025",
+  "title": "Informazioni di viaggio",
+  "subtitle": "Tutto quello che devi sapere per il tuo viaggio a Parigi",
+  "gettingToParis": {
+    "title": "Arrivare a Parigi",
+    "description": "Opzioni di trasporto per raggiungere la città",
+    "byAir": {
+      "title": "In aereo",
+      "items": [
+        "Aeroporto Charles de Gaulle (CDG) - Principale aeroporto internazionale",
+        "Aeroporto di Orly (ORY) - Aeroporto internazionale secondario",
+        "Voli diretti dalle principali città del mondo"
+      ]
+    },
+    "byTrain": {
+      "title": "In treno",
+      "items": [
+        "Eurostar da Londra (3,5 ore)",
+        "Treni ad alta velocità dalle principali città europee",
+        "Gare du Nord, Gare de l'Est stazioni principali"
+      ]
+    }
+  },
+  "localTransportation": {
+    "title": "Trasporto locale",
+    "description": "Muoversi a Parigi",
+    "metro": {
+      "title": "Metro e RER",
+      "items": [
+        "Estesa rete metropolitana che copre la città",
+        "Treni RER per distanze più lunghe",
+        "Acquista abbonamenti Navigo settimanali per comodità"
+      ]
+    },
+    "other": {
+      "title": "Altre opzioni",
+      "items": [
+        "Sistema di bike sharing Vélib'",
+        "Taxi e servizi di ride-sharing",
+        "A piedi - molte attrazioni sono vicine"
+      ]
+    }
+  },
+  "weather": {
+    "title": "Tempo e clima",
+    "description": "Cosa aspettarsi durante la visita",
+    "conference": {
+      "title": "Periodo della conferenza",
+      "items": [
+        "Temperatura media: 15-20°C",
+        "Pioggia occasionale - porta un ombrello",
+        "Tempo confortevole per camminare"
+      ]
+    },
+    "whatToPack": {
+      "title": "Cosa mettere in valigia",
+      "items": [
+        "Vestiti a strati per i cambi di temperatura",
+        "Scarpe comode da passeggio",
+        "Giacca leggera impermeabile o ombrello"
+      ]
+    }
+  },
+  "emergency": {
+    "title": "Informazioni di emergenza",
+    "description": "Contatti e servizi importanti",
+    "numbers": {
+      "title": "Numeri di emergenza",
+      "items": [
+        "Servizi di emergenza: 112",
+        "Polizia: 17",
+        "Vigili del fuoco: 18",
+        "Emergenza medica: 15"
+      ]
+    },
+    "useful": {
+      "title": "Informazioni utili",
+      "items": [
+        "Valuta: Euro (EUR)",
+        "Lingua: Francese (inglese ampiamente parlato)",
+        "Fuso orario: CET (UTC+1)",
+        "Prese elettriche: Tipo C & E (220V)"
+      ]
+    }
+  }
+}

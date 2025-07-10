@@ -1,0 +1,88 @@
+{
+  "pageTitle": "Reiseinformationen",
+  "pageDescription": "Wichtige Reiseinformationen für Besucher der Paris 2025 Konferenz",
+  "title": "Reiseinformationen",
+  "subtitle": "Alles was Sie für Ihre Reise nach Paris wissen müssen",
+  "gettingToParis": {
+    "title": "Anreise nach Paris",
+    "description": "Transportoptionen um die Stadt zu erreichen",
+    "byAir": {
+      "title": "Mit dem Flugzeug",
+      "items": [
+        "Charles de Gaulle Flughafen (CDG) - Hauptinternationaler Flughafen",
+        "Orly Flughafen (ORY) - Zweiter internationaler Flughafen",
+        "Direktflüge von großen Städten weltweit"
+      ]
+    },
+    "byTrain": {
+      "title": "Mit dem Zug",
+      "items": [
+        "Eurostar von London (3,5 Stunden)",
+        "Hochgeschwindigkeitszüge von großen europäischen Städten",
+        "Gare du Nord, Gare de l'Est Hauptbahnhöfe"
+      ]
+    }
+  },
+  "localTransportation": {
+    "title": "Nahverkehr",
+    "description": "Fortbewegung in Paris",
+    "metro": {
+      "title": "Metro & RER",
+      "items": [
+        "Umfangreiches Metro-Netzwerk in der ganzen Stadt",
+        "RER-Züge für längere Strecken",
+        "Kaufen Sie Navigo Wochenkarten für Bequemlichkeit"
+      ]
+    },
+    "other": {
+      "title": "Andere Optionen",
+      "items": [
+        "Vélib' Fahrrad-Sharing-System",
+        "Taxis und Ridesharing-Services",
+        "Zu Fuß - viele Sehenswürdigkeiten sind nah beieinander"
+      ]
+    }
+  },
+  "weather": {
+    "title": "Wetter & Klima",
+    "description": "Was Sie während Ihres Besuchs erwarten können",
+    "conference": {
+      "title": "Konferenzzeit",
+      "items": [
+        "Durchschnittstemperatur: 15-20°C",
+        "Gelegentlicher Regen - bringen Sie einen Regenschirm mit",
+        "Angenehmes Wetter zum Laufen"
+      ]
+    },
+    "whatToPack": {
+      "title": "Was einpacken",
+      "items": [
+        "Schichten für wechselnde Temperaturen",
+        "Bequeme Wanderschuhe",
+        "Leichte Regenjacke oder Regenschirm"
+      ]
+    }
+  },
+  "emergency": {
+    "title": "Notfallinformationen",
+    "description": "Wichtige Kontakte und Dienste",
+    "numbers": {
+      "title": "Notrufnummern",
+      "items": [
+        "Notdienste: 112",
+        "Polizei: 17",
+        "Feuerwehr: 18",
+        "Medizinischer Notfall: 15"
+      ]
+    },
+    "useful": {
+      "title": "Nützliche Informationen",
+      "items": [
+        "Währung: Euro (EUR)",
+        "Sprache: Französisch (Englisch weit verbreitet)",
+        "Zeitzone: CET (UTC+1)",
+        "Steckdosen: Typ C & E (220V)"
+      ]
+    }
+  }
+}

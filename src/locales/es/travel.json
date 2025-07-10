@@ -1,0 +1,88 @@
+{
+  "pageTitle": "Información de viaje",
+  "pageDescription": "Información de viaje esencial para visitantes de la conferencia París 2025",
+  "title": "Información de viaje",
+  "subtitle": "Todo lo que necesitas saber para tu viaje a París",
+  "gettingToParis": {
+    "title": "Llegar a París",
+    "description": "Opciones de transporte para llegar a la ciudad",
+    "byAir": {
+      "title": "Por avión",
+      "items": [
+        "Aeropuerto Charles de Gaulle (CDG) - Principal aeropuerto internacional",
+        "Aeropuerto de Orly (ORY) - Aeropuerto internacional secundario",
+        "Vuelos directos desde las principales ciudades del mundo"
+      ]
+    },
+    "byTrain": {
+      "title": "Por tren",
+      "items": [
+        "Eurostar desde Londres (3.5 horas)",
+        "Trenes de alta velocidad desde las principales ciudades europeas",
+        "Gare du Nord, Gare de l'Est estaciones principales"
+      ]
+    }
+  },
+  "localTransportation": {
+    "title": "Transporte local",
+    "description": "Moverse por París",
+    "metro": {
+      "title": "Metro y RER",
+      "items": [
+        "Extensa red de metro que cubre la ciudad",
+        "Trenes RER para distancias más largas",
+        "Compra pases Navigo semanales para mayor comodidad"
+      ]
+    },
+    "other": {
+      "title": "Otras opciones",
+      "items": [
+        "Sistema de bicicletas compartidas Vélib'",
+        "Taxis y servicios de transporte compartido",
+        "Caminar - muchas atracciones están cerca"
+      ]
+    }
+  },
+  "weather": {
+    "title": "Clima y tiempo",
+    "description": "Qué esperar durante tu visita",
+    "conference": {
+      "title": "Período de conferencia",
+      "items": [
+        "Temperatura promedio: 15-20°C",
+        "Lluvia ocasional - trae un paraguas",
+        "Clima cómodo para caminar"
+      ]
+    },
+    "whatToPack": {
+      "title": "Qué empacar",
+      "items": [
+        "Capas para cambios de temperatura",
+        "Zapatos cómodos para caminar",
+        "Chaqueta ligera para lluvia o paraguas"
+      ]
+    }
+  },
+  "emergency": {
+    "title": "Información de emergencia",
+    "description": "Contactos y servicios importantes",
+    "numbers": {
+      "title": "Números de emergencia",
+      "items": [
+        "Servicios de emergencia: 112",
+        "Policía: 17",
+        "Bomberos: 18",
+        "Emergencia médica: 15"
+      ]
+    },
+    "useful": {
+      "title": "Información útil",
+      "items": [
+        "Moneda: Euro (EUR)",
+        "Idioma: Francés (inglés ampliamente hablado)",
+        "Zona horaria: CET (UTC+1)",
+        "Enchufes eléctricos: Tipo C y E (220V)"
+      ]
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "pageTitle": "Travel Information",
+  "pageDescription": "Essential travel information for visitors to Paris 2025 conference",
+  "title": "Travel Information",
+  "subtitle": "Everything you need to know for your trip to Paris",
+  "gettingToParis": {
+    "title": "Getting to Paris",
+    "description": "Transportation options to reach the city",
+    "byAir": {
+      "title": "By Air",
+      "items": [
+        "Charles de Gaulle Airport (CDG) - Main international airport",
+        "Orly Airport (ORY) - Secondary international airport", 
+        "Direct flights from major cities worldwide"
+      ]
+    },
+    "byTrain": {
+      "title": "By Train",
+      "items": [
+        "Eurostar from London (3.5 hours)",
+        "High-speed trains from major European cities",
+        "Gare du Nord, Gare de l'Est main stations"
+      ]
+    }
+  },
+  "localTransportation": {
+    "title": "Local Transportation",
+    "description": "Getting around in Paris",
+    "metro": {
+      "title": "Metro & RER",
+      "items": [
+        "Extensive metro network covering the city",
+        "RER trains for longer distances",
+        "Purchase Navigo weekly passes for convenience"
+      ]
+    },
+    "other": {
+      "title": "Other Options",
+      "items": [
+        "Vélib' bike sharing system",
+        "Taxis and ride-sharing services",
+        "Walking - many attractions are close together"
+      ]
+    }
+  },
+  "weather": {
+    "title": "Weather & Climate",
+    "description": "What to expect during your visit",
+    "conference": {
+      "title": "Conference Period",
+      "items": [
+        "Average temperature: 15-20°C (59-68°F)",
+        "Occasional rainfall - bring an umbrella",
+        "Comfortable walking weather"
+      ]
+    },
+    "whatToPack": {
+      "title": "What to Pack",
+      "items": [
+        "Layers for changing temperatures",
+        "Comfortable walking shoes",
+        "Light rain jacket or umbrella"
+      ]
+    }
+  },
+  "emergency": {
+    "title": "Emergency Information",
+    "description": "Important contacts and services",
+    "numbers": {
+      "title": "Emergency Numbers",
+      "items": [
+        "Emergency Services: 112",
+        "Police: 17",
+        "Fire Department: 18",
+        "Medical Emergency: 15"
+      ]
+    },
+    "useful": {
+      "title": "Useful Information",
+      "items": [
+        "Currency: Euro (EUR)",
+        "Language: French (English widely spoken)",
+        "Time Zone: CET (UTC+1)",
+        "Electrical outlets: Type C & E (220V)"
+      ]
+    }
+  }
+}

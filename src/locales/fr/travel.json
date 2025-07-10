@@ -1,0 +1,88 @@
+{
+  "pageTitle": "Informations de voyage",
+  "pageDescription": "Informations de voyage essentielles pour les visiteurs de la conférence Paris 2025",
+  "title": "Informations de voyage",
+  "subtitle": "Tout ce que vous devez savoir pour votre voyage à Paris",
+  "gettingToParis": {
+    "title": "Se rendre à Paris",
+    "description": "Options de transport pour atteindre la ville",
+    "byAir": {
+      "title": "Par avion",
+      "items": [
+        "Aéroport Charles de Gaulle (CDG) - Principal aéroport international",
+        "Aéroport d'Orly (ORY) - Aéroport international secondaire",
+        "Vols directs depuis les principales villes du monde"
+      ]
+    },
+    "byTrain": {
+      "title": "Par train",
+      "items": [
+        "Eurostar depuis Londres (3h30)",
+        "Trains à grande vitesse depuis les grandes villes européennes",
+        "Gare du Nord, Gare de l'Est principales gares"
+      ]
+    }
+  },
+  "localTransportation": {
+    "title": "Transport local",
+    "description": "Se déplacer dans Paris",
+    "metro": {
+      "title": "Métro et RER",
+      "items": [
+        "Vaste réseau de métro couvrant la ville",
+        "Trains RER pour les distances plus longues",
+        "Achetez des passes Navigo hebdomadaires pour plus de commodité"
+      ]
+    },
+    "other": {
+      "title": "Autres options",
+      "items": [
+        "Système de vélos en libre-service Vélib'",
+        "Taxis et services de covoiturage",
+        "Marche à pied - de nombreuses attractions sont proches"
+      ]
+    }
+  },
+  "weather": {
+    "title": "Météo et climat",
+    "description": "À quoi s'attendre pendant votre visite",
+    "conference": {
+      "title": "Période de conférence",
+      "items": [
+        "Température moyenne : 15-20°C",
+        "Pluies occasionnelles - apportez un parapluie",
+        "Temps agréable pour marcher"
+      ]
+    },
+    "whatToPack": {
+      "title": "Que prendre",
+      "items": [
+        "Vêtements en couches pour les changements de température",
+        "Chaussures de marche confortables",
+        "Veste de pluie légère ou parapluie"
+      ]
+    }
+  },
+  "emergency": {
+    "title": "Informations d'urgence",
+    "description": "Contacts et services importants",
+    "numbers": {
+      "title": "Numéros d'urgence",
+      "items": [
+        "Services d'urgence : 112",
+        "Police : 17",
+        "Pompiers : 18",
+        "Urgence médicale : 15"
+      ]
+    },
+    "useful": {
+      "title": "Informations utiles",
+      "items": [
+        "Monnaie : Euro (EUR)",
+        "Langue : Français (anglais largement parlé)",
+        "Fuseau horaire : CET (UTC+1)",
+        "Prises électriques : Type C et E (220V)"
+      ]
+    }
+  }
+}
