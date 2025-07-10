@@ -15,6 +15,7 @@ import registration from '../../locales/fr/registration.json';
 import accommodations from '../../locales/fr/accommodations.json';
 import restaurants from '../../locales/fr/restaurants.json';
 import sponsors from '../../locales/fr/sponsors.json';
+import travel from '../../locales/fr/travel.json';
 
 export const frResources = {
   common,
@@ -31,5 +32,6 @@ export const frResources = {
   registration,
   accommodations,
   restaurants,
-  sponsors
+  sponsors,
+  travel
 };
