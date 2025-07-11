@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { MapPin, Heart } from 'lucide-react';
 import { toast } from 'sonner';
-import EuropeMap from '@/components/prayer/EuropeMap';
+import MapboxMap from '@/components/prayer/MapboxMap';
 import CountryCard from '@/components/prayer/CountryCard';
 import TopCountriesList from '@/components/prayer/TopCountriesList';
 import PrayerStats from '@/components/prayer/PrayerStats';
@@ -114,7 +114,7 @@ const Prayer = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <EuropeMap 
+                <MapboxMap 
                   prayerCounts={prayerCounts}
                   selectedCountry={selectedCountry}
                   onCountrySelect={setSelectedCountry}
