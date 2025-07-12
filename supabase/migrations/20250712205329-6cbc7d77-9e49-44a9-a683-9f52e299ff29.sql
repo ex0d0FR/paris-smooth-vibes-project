@@ -1,0 +1,1 @@
+-- No database changes needed for adding Mapbox token to secrets
