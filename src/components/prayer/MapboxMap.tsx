@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import { supabase } from '@/integrations/supabase/client';
 
 interface PrayerCount {
   id: string;
@@ -25,6 +26,23 @@ const MapboxMap: React.FC<MapboxMapProps> = ({
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
   const [mapboxToken, setMapboxToken] = useState<string>('');
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchMapboxToken = async () => {
+      try {
+        const { data, error } = await supabase.functions.invoke('get-mapbox-token');
+        if (error) throw error;
+        setMapboxToken(data.token);
+      } catch (error) {
+        console.error('Error fetching Mapbox token:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMapboxToken();
+  }, []);
 
   useEffect(() => {
     if (!mapContainer.current || !mapboxToken) return;
@@ -182,30 +200,24 @@ const MapboxMap: React.FC<MapboxMapProps> = ({
     return '#1e40af';
   };
 
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-[500px] rounded-lg border border-border bg-muted/50">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Loading map...</p>
+        </div>
+      </div>
+    );
+  }
+
   if (!mapboxToken) {
     return (
       <div className="p-8 text-center bg-muted/50 rounded-lg border-2 border-dashed border-border">
         <div className="mb-4">
-          <h3 className="text-lg font-semibold mb-2">Mapbox Token Required</h3>
-          <p className="text-muted-foreground mb-4">
-            Please enter your Mapbox public token to display the interactive map.
-          </p>
-          <input
-            type="text"
-            placeholder="Enter your Mapbox public token..."
-            className="w-full max-w-md px-3 py-2 border border-border rounded-md"
-            onChange={(e) => setMapboxToken(e.target.value)}
-          />
-          <p className="text-xs text-muted-foreground mt-2">
-            Get your free token at{' '}
-            <a 
-              href="https://mapbox.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
-            >
-              mapbox.com
-            </a>
+          <h3 className="text-lg font-semibold mb-2">Map Unavailable</h3>
+          <p className="text-muted-foreground">
+            Unable to load the interactive map. Please check your Mapbox configuration.
           </p>
         </div>
       </div>
