@@ -133,7 +133,7 @@ const MapboxMap: React.FC<MapboxMapProps> = ({
         'source-layer': 'country_boundaries',
         filter: ['==', 'iso_3166_1_alpha_2', selectedCountry?.country_code || ''],
         paint: {
-          'line-color': 'hsl(var(--primary))',
+          'line-color': '#3b82f6',
           'line-width': 3
         }
       });
