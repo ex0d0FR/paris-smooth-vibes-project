@@ -31,9 +31,18 @@ const MapboxMap: React.FC<MapboxMapProps> = ({
   useEffect(() => {
     const fetchMapboxToken = async () => {
       try {
+        console.log('Fetching Mapbox token...');
         const { data, error } = await supabase.functions.invoke('get-mapbox-token');
+        console.log('Mapbox token response:', { data, error });
+        
         if (error) throw error;
-        setMapboxToken(data.token);
+        
+        if (data?.token) {
+          console.log('Setting Mapbox token:', data.token.substring(0, 10) + '...');
+          setMapboxToken(data.token);
+        } else {
+          console.error('No token in response:', data);
+        }
       } catch (error) {
         console.error('Error fetching Mapbox token:', error);
       } finally {
