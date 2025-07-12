@@ -45,9 +45,13 @@ const Prayer = () => {
 
   const handlePrayForCountry = async (country: PrayerCount) => {
     try {
+      // Get the current prayer count from the state to ensure we have the latest value
+      const currentCountry = prayerCounts.find(c => c.id === country.id);
+      const currentCount = currentCountry?.prayer_count || country.prayer_count;
+      
       const { error } = await supabase
         .from('prayer_counts')
-        .update({ prayer_count: country.prayer_count + 1 })
+        .update({ prayer_count: currentCount + 1 })
         .eq('id', country.id);
 
       if (error) throw error;
@@ -56,10 +60,17 @@ const Prayer = () => {
       setPrayerCounts(prev => 
         prev.map(c => 
           c.id === country.id 
-            ? { ...c, prayer_count: c.prayer_count + 1 }
+            ? { ...c, prayer_count: currentCount + 1 }
             : c
         )
       );
+
+      // Update selected country if it's the same one
+      if (selectedCountry?.id === country.id) {
+        setSelectedCountry(prev => 
+          prev ? { ...prev, prayer_count: currentCount + 1 } : null
+        );
+      }
 
       toast.success(`Thank you for praying for ${country.country_name}! 🙏`);
     } catch (error) {
