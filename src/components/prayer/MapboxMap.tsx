@@ -79,11 +79,16 @@ const MapboxMap: React.FC<MapboxMapProps> = ({
     map.current.on('load', () => {
       if (!map.current) return;
 
+      console.log('Map loaded, prayer counts:', prayerCounts);
+      console.log('Country codes:', prayerCounts.map(c => c.country_code));
+
       // Add countries data source
       map.current.addSource('countries', {
         type: 'vector',
         url: 'mapbox://mapbox.country-boundaries-v1'
       });
+
+      console.log('Added countries source');
 
       // Add country fills layer
       map.current.addLayer({
@@ -104,6 +109,8 @@ const MapboxMap: React.FC<MapboxMapProps> = ({
           'fill-opacity': 0.7
         }
       });
+
+      console.log('Added country fills layer');
 
       // Add country borders layer
       map.current.addLayer({
@@ -133,15 +140,20 @@ const MapboxMap: React.FC<MapboxMapProps> = ({
 
       // Add click handler
       map.current.on('click', 'country-fills', (e) => {
+        console.log('Country clicked:', e.features);
         if (e.features && e.features[0]) {
           const feature = e.features[0];
           const countryCode = feature.properties?.iso_3166_1_alpha_2;
+          console.log('Country code from click:', countryCode);
           const country = prayerCounts.find(c => c.country_code === countryCode);
+          console.log('Found country data:', country);
           if (country) {
             onCountrySelect(country);
           }
         }
       });
+
+      console.log('Added click handler');
 
       // Add hover cursor
       map.current.on('mouseenter', 'country-fills', () => {
