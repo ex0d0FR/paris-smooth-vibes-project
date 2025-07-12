@@ -214,11 +214,13 @@ const MapboxMap: React.FC<MapboxMapProps> = ({
   }, [selectedCountry]);
 
   const getMapboxColor = (count: number) => {
-    if (count === 0) return '#e2e8f0';
-    if (count < 10) return '#dbeafe';
-    if (count < 50) return '#93c5fd';
-    if (count < 100) return '#3b82f6';
-    return '#1e40af';
+    if (count === 0) return '#e2e8f0'; // Light gray for no prayers
+    if (count < 5) return '#fef3c7'; // Light yellow for 1-4 prayers
+    if (count < 15) return '#fed7aa'; // Light orange for 5-14 prayers
+    if (count < 30) return '#fca5a5'; // Light red for 15-29 prayers
+    if (count < 60) return '#f87171'; // Red for 30-59 prayers
+    if (count < 100) return '#dc2626'; // Dark red for 60-99 prayers
+    return '#991b1b'; // Very dark red for 100+ prayers
   };
 
   if (loading) {

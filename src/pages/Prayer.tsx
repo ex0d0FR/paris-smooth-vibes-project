@@ -80,11 +80,13 @@ const Prayer = () => {
   };
 
   const getCountryColor = (count: number) => {
-    if (count === 0) return 'fill-muted stroke-border';
-    if (count < 10) return 'fill-blue-200 stroke-blue-400';
-    if (count < 50) return 'fill-blue-400 stroke-blue-600';
-    if (count < 100) return 'fill-blue-600 stroke-blue-800';
-    return 'fill-blue-800 stroke-blue-900';
+    if (count === 0) return 'fill-slate-200 stroke-slate-300';
+    if (count < 5) return 'fill-yellow-200 stroke-yellow-400';
+    if (count < 15) return 'fill-orange-200 stroke-orange-400';
+    if (count < 30) return 'fill-red-200 stroke-red-400';
+    if (count < 60) return 'fill-red-400 stroke-red-500';
+    if (count < 100) return 'fill-red-600 stroke-red-700';
+    return 'fill-red-800 stroke-red-900';
   };
 
   if (loading) {
