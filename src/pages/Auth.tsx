@@ -17,6 +17,8 @@ export default function Auth() {
   const navigate = useNavigate();
   const { toast } = useToast();
 
+  console.log('Auth component loaded, isAuthenticated:', isAuthenticated);
+
   useEffect(() => {
     // Check if user is already authenticated
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
