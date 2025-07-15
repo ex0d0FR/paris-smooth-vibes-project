@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -7,6 +7,8 @@ import ThemeToggle from './ThemeToggle';
 import { useTranslation } from 'react-i18next';
 import useNavigation from '@/hooks/useNavigation';
 import { Link } from 'react-router-dom';
+import { supabase } from '@/integrations/supabase/client';
+import { User } from '@supabase/supabase-js';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,8 +18,30 @@ import {
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
   const { t } = useTranslation('nav');
   const { activeSection, isScrolled, scrollToSection } = useNavigation();
+
+  useEffect(() => {
+    // Get current session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        setUser(session?.user ?? null);
+      }
+    );
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    setIsMenuOpen(false);
+  };
 
   const navItems = [
     { id: 'home', label: t('home'), href: '/#home' },
@@ -103,14 +127,24 @@ const Navbar = () => {
           </DropdownMenu>
           
           <ThemeToggle />
-          <Link to="/auth">
+          {user ? (
             <Button 
               variant="outline"
               className="border-paris-blue text-paris-blue hover:bg-paris-blue hover:text-white dark:border-paris-gold dark:text-paris-gold dark:hover:bg-paris-gold dark:hover:text-paris-navy"
+              onClick={handleSignOut}
             >
-              Sign In
+              Sign Out
             </Button>
-          </Link>
+          ) : (
+            <Link to="/auth">
+              <Button 
+                variant="outline"
+                className="border-paris-blue text-paris-blue hover:bg-paris-blue hover:text-white dark:border-paris-gold dark:text-paris-gold dark:hover:bg-paris-gold dark:hover:text-paris-navy"
+              >
+                Sign In
+              </Button>
+            </Link>
+          )}
           <Button 
             className="bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy"
             onClick={() => scrollToSection('register')}
@@ -175,14 +209,24 @@ const Navbar = () => {
               ))}
             </div>
             
-            <Link to="/auth" onClick={() => setIsMenuOpen(false)}>
+            {user ? (
               <Button 
                 variant="outline"
                 className="border-paris-blue text-paris-blue hover:bg-paris-blue hover:text-white dark:border-paris-gold dark:text-paris-gold dark:hover:bg-paris-gold dark:hover:text-paris-navy w-full mb-4"
+                onClick={handleSignOut}
               >
-                Sign In
+                Sign Out
               </Button>
-            </Link>
+            ) : (
+              <Link to="/auth" onClick={() => setIsMenuOpen(false)}>
+                <Button 
+                  variant="outline"
+                  className="border-paris-blue text-paris-blue hover:bg-paris-blue hover:text-white dark:border-paris-gold dark:text-paris-gold dark:hover:bg-paris-gold dark:hover:text-paris-navy w-full mb-4"
+                >
+                  Sign In
+                </Button>
+              </Link>
+            )}
             
             <Button 
               className="bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy w-full"
