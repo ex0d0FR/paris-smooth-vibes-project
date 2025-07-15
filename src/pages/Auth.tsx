@@ -20,13 +20,18 @@ export default function Auth() {
   console.log('Auth component loaded, isAuthenticated:', isAuthenticated);
 
   useEffect(() => {
+    console.log('Auth useEffect running...');
+    
     // Check if user is already authenticated
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event, session) => {
+        console.log('Auth state change:', event, 'Session exists:', !!session?.user);
         if (session?.user) {
+          console.log('User is authenticated, redirecting to home');
           setIsAuthenticated(true);
           navigate('/');
         } else {
+          console.log('User is not authenticated');
           setIsAuthenticated(false);
         }
       }
@@ -34,7 +39,9 @@ export default function Auth() {
 
     // Check for existing session
     supabase.auth.getSession().then(({ data: { session } }) => {
+      console.log('Checking existing session:', !!session?.user);
       if (session?.user) {
+        console.log('Existing session found, redirecting to home');
         setIsAuthenticated(true);
         navigate('/');
       }
