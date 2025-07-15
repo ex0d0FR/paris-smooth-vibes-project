@@ -103,6 +103,14 @@ const Navbar = () => {
           </DropdownMenu>
           
           <ThemeToggle />
+          <Link to="/auth">
+            <Button 
+              variant="outline"
+              className="border-paris-blue text-paris-blue hover:bg-paris-blue hover:text-white dark:border-paris-gold dark:text-paris-gold dark:hover:bg-paris-gold dark:hover:text-paris-navy"
+            >
+              Sign In
+            </Button>
+          </Link>
           <Button 
             className="bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy"
             onClick={() => scrollToSection('register')}
@@ -166,6 +174,15 @@ const Navbar = () => {
                 )
               ))}
             </div>
+            
+            <Link to="/auth" onClick={() => setIsMenuOpen(false)}>
+              <Button 
+                variant="outline"
+                className="border-paris-blue text-paris-blue hover:bg-paris-blue hover:text-white dark:border-paris-gold dark:text-paris-gold dark:hover:bg-paris-gold dark:hover:text-paris-navy w-full mb-4"
+              >
+                Sign In
+              </Button>
+            </Link>
             
             <Button 
               className="bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy w-full"

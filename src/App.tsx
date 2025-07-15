@@ -7,6 +7,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "@/context/ThemeProvider";
 import { Suspense, useEffect, useState } from 'react';
 import Index from "./pages/Index";
+import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 import LegalNotice from "./pages/LegalNotice";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -79,6 +80,7 @@ const App = () => (
               <BrowserRouter>
                 <Routes>
                   <Route path="/" element={<Index />} />
+                  <Route path="/auth" element={<Auth />} />
                   <Route path="/legal-notice" element={<LegalNotice />} />
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                   <Route path="/visa-requirements" element={<VisaRequirements />} />
