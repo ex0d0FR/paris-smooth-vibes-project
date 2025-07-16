@@ -27,9 +27,9 @@ export default function Auth() {
       (event, session) => {
         console.log('Auth state change:', event, 'Session exists:', !!session?.user);
         if (session?.user) {
-          console.log('User is authenticated, redirecting to home');
+          console.log('User is authenticated, redirecting to profile');
           setIsAuthenticated(true);
-          navigate('/');
+          navigate('/profile');
         } else {
           console.log('User is not authenticated');
           setIsAuthenticated(false);
@@ -41,9 +41,9 @@ export default function Auth() {
     supabase.auth.getSession().then(({ data: { session } }) => {
       console.log('Checking existing session:', !!session?.user);
       if (session?.user) {
-        console.log('Existing session found, redirecting to home');
+        console.log('Existing session found, redirecting to profile');
         setIsAuthenticated(true);
-        navigate('/');
+        navigate('/profile');
       }
     });
 
