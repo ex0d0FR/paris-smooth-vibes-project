@@ -94,7 +94,7 @@ const Navbar = () => {
               <Button 
                 variant="ghost" 
                 className={cn(
-                  "font-medium capitalize transition-all hover:text-paris-blue dark:hover:text-paris-gold p-0 h-auto",
+                  "font-medium capitalize transition-all hover:text-paris-blue dark:hover:text-paris-gold p-0 h-auto text-base",
                   isScrolled 
                     ? "text-paris-navy dark:text-white hover:bg-transparent" 
                     : "text-white hover:bg-transparent"
