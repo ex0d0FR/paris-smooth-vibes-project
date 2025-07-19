@@ -24,12 +24,24 @@ export default function Auth() {
     
     // Check if user is already authenticated
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
+      async (event, session) => {
         console.log('Auth state change:', event, 'Session exists:', !!session?.user);
         if (session?.user) {
-          console.log('User is authenticated, redirecting to profile');
-          setIsAuthenticated(true);
-          navigate('/profile');
+          // Check if user has a profile before redirecting
+          const { data: profileData } = await supabase
+            .from('profiles')
+            .select('*')
+            .eq('user_id', session.user.id)
+            .maybeSingle();
+          
+          if (profileData) {
+            console.log('User is authenticated with profile, redirecting to profile');
+            setIsAuthenticated(true);
+            navigate('/profile');
+          } else {
+            console.log('User is authenticated but has no profile, staying on auth page');
+            setIsAuthenticated(false);
+          }
         } else {
           console.log('User is not authenticated');
           setIsAuthenticated(false);
@@ -38,12 +50,24 @@ export default function Auth() {
     );
 
     // Check for existing session
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    supabase.auth.getSession().then(async ({ data: { session } }) => {
       console.log('Checking existing session:', !!session?.user);
       if (session?.user) {
-        console.log('Existing session found, redirecting to profile');
-        setIsAuthenticated(true);
-        navigate('/profile');
+        // Check if user has a profile before redirecting
+        const { data: profileData } = await supabase
+          .from('profiles')
+          .select('*')
+          .eq('user_id', session.user.id)
+          .maybeSingle();
+        
+        if (profileData) {
+          console.log('Existing session found with profile, redirecting to profile');
+          setIsAuthenticated(true);
+          navigate('/profile');
+        } else {
+          console.log('Existing session found but no profile, staying on auth page');
+          setIsAuthenticated(false);
+        }
       }
     });
 
@@ -131,13 +155,8 @@ export default function Auth() {
             variant: "destructive"
           });
         }
-      } else {
-        toast({
-          title: "Welcome back!",
-          description: "You have successfully signed in.",
-          variant: "default"
-        });
       }
+      // Note: Success message and redirect will be handled by auth state change
     } catch (error: any) {
       toast({
         title: "An error occurred",
