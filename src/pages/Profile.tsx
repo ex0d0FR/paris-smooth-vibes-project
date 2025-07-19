@@ -147,12 +147,26 @@ const Profile = () => {
   if (!user || !profile) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Card>
-          <CardContent className="p-6">
-            <p>Failed to load profile data</p>
-            <Button onClick={() => navigate('/auth')} className="mt-4">
-              Sign In Again
-            </Button>
+        <Card className="max-w-md">
+          <CardHeader>
+            <CardTitle>Profile Not Found</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-muted-foreground">
+              Your account exists but your profile data couldn't be loaded. This might happen if you haven't completed registration.
+            </p>
+            <div className="flex flex-col gap-2">
+              <Button onClick={() => navigate('/auth')} variant="default">
+                Try Sign In Again
+              </Button>
+              <Button onClick={() => navigate('/')} variant="outline">
+                Go to Home Page
+              </Button>
+              <Button onClick={handleSignOut} variant="ghost" size="sm">
+                <LogOut className="h-4 w-4 mr-2" />
+                Sign Out
+              </Button>
+            </div>
           </CardContent>
         </Card>
       </div>
