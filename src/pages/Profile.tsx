@@ -58,14 +58,22 @@ const Profile = () => {
 
   const fetchUserData = async (userId: string) => {
     try {
-      // Fetch profile
+      // Fetch profile - use maybeSingle() to avoid error when no profile exists
       const { data: profileData, error: profileError } = await supabase
         .from('profiles')
         .select('*')
         .eq('user_id', userId)
-        .single();
+        .maybeSingle();
 
       if (profileError) throw profileError;
+      
+      // If no profile exists, we'll handle this in the UI
+      if (!profileData) {
+        setProfile(null);
+        setLoading(false);
+        return;
+      }
+      
       setProfile(profileData);
 
       // Fetch user roles
@@ -87,6 +95,7 @@ const Profile = () => {
       }
     } catch (error) {
       console.error('Error fetching user data:', error);
+      // Only show toast error for actual database errors, not missing profile
       toast({
         title: "Error",
         description: "Failed to load profile data",
