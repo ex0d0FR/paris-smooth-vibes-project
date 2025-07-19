@@ -19,6 +19,7 @@ import {
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [user, setUser] = useState<User | null>(null);
+  const [userRole, setUserRole] = useState<string | null>(null);
   const { t } = useTranslation('nav');
   const { activeSection, isScrolled, scrollToSection } = useNavigation();
 
@@ -26,17 +27,35 @@ const Navbar = () => {
     // Get current session
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null);
+      if (session?.user) {
+        fetchUserRole(session.user.id);
+      }
     });
 
     // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event, session) => {
         setUser(session?.user ?? null);
+        if (session?.user) {
+          fetchUserRole(session.user.id);
+        } else {
+          setUserRole(null);
+        }
       }
     );
 
     return () => subscription.unsubscribe();
   }, []);
+
+  const fetchUserRole = async (userId: string) => {
+    try {
+      const { data: primaryRole } = await supabase
+        .rpc('get_user_primary_role', { _user_id: userId });
+      setUserRole(primaryRole);
+    } catch (error) {
+      console.error('Error fetching user role:', error);
+    }
+  };
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
@@ -58,6 +77,8 @@ const Navbar = () => {
     { label: 'Accommodations', href: '/accommodations' },
     { label: 'Restaurants', href: '/restaurants' }
   ];
+
+  const showAdminLink = userRole === 'dev' || userRole === 'admin';
 
   return (
     <header className={cn(
@@ -128,13 +149,26 @@ const Navbar = () => {
           
           <ThemeToggle />
           {user ? (
-            <Button 
-              variant="outline"
-              className="border-paris-blue text-paris-blue hover:bg-paris-blue hover:text-white dark:border-paris-gold dark:text-paris-gold dark:hover:bg-paris-gold dark:hover:text-paris-navy"
-              onClick={handleSignOut}
-            >
-              Sign Out
-            </Button>
+            <div className="flex items-center gap-2">
+              {showAdminLink && (
+                <Link to="/admin">
+                  <Button 
+                    variant="outline"
+                    size="sm"
+                    className="border-paris-blue text-paris-blue hover:bg-paris-blue hover:text-white dark:border-paris-gold dark:text-paris-gold dark:hover:bg-paris-gold dark:hover:text-paris-navy"
+                  >
+                    Admin
+                  </Button>
+                </Link>
+              )}
+              <Button 
+                variant="outline"
+                className="border-paris-blue text-paris-blue hover:bg-paris-blue hover:text-white dark:border-paris-gold dark:text-paris-gold dark:hover:bg-paris-gold dark:hover:text-paris-navy"
+                onClick={handleSignOut}
+              >
+                Sign Out
+              </Button>
+            </div>
           ) : (
             <Link to="/auth">
               <Button 
@@ -208,6 +242,17 @@ const Navbar = () => {
                 )
               ))}
             </div>
+            
+            {user && showAdminLink && (
+              <Link to="/admin" onClick={() => setIsMenuOpen(false)}>
+                <Button 
+                  variant="outline"
+                  className="border-paris-blue text-paris-blue hover:bg-paris-blue hover:text-white dark:border-paris-gold dark:text-paris-gold dark:hover:bg-paris-gold dark:hover:text-paris-navy w-full mb-4"
+                >
+                  Admin Dashboard
+                </Button>
+              </Link>
+            )}
             
             {user ? (
               <Button 

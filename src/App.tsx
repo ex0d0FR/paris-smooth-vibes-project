@@ -21,6 +21,7 @@ import Profile from "./pages/Profile";
 import TravelInformation from "./pages/TravelInformation";
 import { useTranslation } from 'react-i18next';
 import './i18n';
+import AdminDashboard from "./pages/AdminDashboard";
 
 const queryClient = new QueryClient();
 
@@ -91,6 +92,7 @@ const App = () => (
                   <Route path="/sponsors" element={<Sponsors />} />
                   <Route path="/prayer" element={<Prayer />} />
                   <Route path="/profile" element={<Profile />} />
+                  <Route path="/admin" element={<AdminDashboard />} />
                   <Route path="/travel-information" element={<TravelInformation />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
