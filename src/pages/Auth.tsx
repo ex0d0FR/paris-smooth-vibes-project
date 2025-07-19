@@ -14,6 +14,7 @@ export default function Auth() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [needsProfileSetup, setNeedsProfileSetup] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -37,10 +38,12 @@ export default function Auth() {
           if (profileData) {
             console.log('User is authenticated with profile, redirecting to profile');
             setIsAuthenticated(true);
+            setNeedsProfileSetup(false);
             navigate('/profile');
           } else {
-            console.log('User is authenticated but has no profile, staying on auth page');
+            console.log('User is authenticated but has no profile, needs setup');
             setIsAuthenticated(false);
+            setNeedsProfileSetup(true);
           }
         } else {
           console.log('User is not authenticated');
@@ -63,10 +66,12 @@ export default function Auth() {
         if (profileData) {
           console.log('Existing session found with profile, redirecting to profile');
           setIsAuthenticated(true);
+          setNeedsProfileSetup(false);
           navigate('/profile');
         } else {
-          console.log('Existing session found but no profile, staying on auth page');
+          console.log('Existing session found but no profile, needs setup');
           setIsAuthenticated(false);
+          setNeedsProfileSetup(true);
         }
       }
     });
@@ -175,10 +180,21 @@ export default function Auth() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-background px-4">
       <Card className="w-full max-w-md">
+        {needsProfileSetup && (
+          <div className="bg-orange-50 dark:bg-orange-950 border-l-4 border-orange-400 p-4 mb-4">
+            <div className="flex">
+              <div className="ml-3">
+                <p className="text-sm text-orange-700 dark:text-orange-300">
+                  <strong>Registration Incomplete:</strong> Your account exists but your profile needs to be set up. Please complete your registration below.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
         <CardHeader className="text-center">
           <CardTitle className="text-2xl font-bold">Welcome</CardTitle>
           <CardDescription>
-            Sign in to your account or create a new one
+            {needsProfileSetup ? "Complete your registration" : "Sign in to your account or create a new one"}
           </CardDescription>
         </CardHeader>
         <CardContent>
