@@ -89,6 +89,9 @@ const TaskDashboard = () => {
         return;
       }
 
+      console.log('Creating board with user ID:', session.user.id);
+      console.log('Board title:', newBoardTitle.trim());
+
       const { data, error } = await supabase
         .from('boards')
         .insert({
@@ -100,8 +103,12 @@ const TaskDashboard = () => {
         .select()
         .single();
 
-      if (error) throw error;
+      if (error) {
+        console.error('Board creation error:', error);
+        throw error;
+      }
 
+      console.log('Board created successfully:', data);
       setBoards([data, ...boards]);
       setNewBoardTitle('');
       setNewBoardDescription('');
