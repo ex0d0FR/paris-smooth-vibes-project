@@ -9,6 +9,7 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { format } from 'date-fns';
+import UserAssignmentSelect from './UserAssignmentSelect';
 
 interface TaskCard {
   id: string;
@@ -82,7 +83,8 @@ const CardModal: React.FC<CardModalProps> = ({ card, isOpen, onClose, canEdit, o
           priority: editedCard.priority,
           status: editedCard.status,
           due_date: editedCard.due_date,
-          labels: editedCard.labels
+          labels: editedCard.labels,
+          assigned_to: editedCard.assigned_to
         })
         .eq('id', card.id);
 
@@ -287,6 +289,28 @@ const CardModal: React.FC<CardModalProps> = ({ card, isOpen, onClose, canEdit, o
                   </Select>
                 ) : (
                   <Badge variant="secondary">{card.status.replace('_', ' ')}</Badge>
+                )}
+              </div>
+
+              {/* Assignment */}
+              <div>
+                <h3 className="text-sm font-medium mb-2 flex items-center gap-2">
+                  <User className="h-4 w-4" />
+                  Assignment
+                </h3>
+                {canEdit ? (
+                  <UserAssignmentSelect
+                    value={editedCard.assigned_to}
+                    onValueChange={(userId) => setEditedCard({ 
+                      ...editedCard, 
+                      assigned_to: userId || undefined 
+                    })}
+                    placeholder="Assign to volunteer..."
+                  />
+                ) : (
+                  <p className="text-sm">
+                    {card.assigned_to ? 'Assigned' : 'Unassigned'}
+                  </p>
                 )}
               </div>
 

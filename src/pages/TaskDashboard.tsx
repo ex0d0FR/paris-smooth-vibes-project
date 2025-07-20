@@ -99,7 +99,9 @@ const TaskDashboard = () => {
           title: newBoardTitle.trim(),
           description: newBoardDescription.trim() || null,
           created_by: session.user.id,
-          visibility: 'private'
+          visibility: 'private',
+          category: 'Other',
+          status: 'active'
         })
         .select()
         .single();
@@ -134,7 +136,7 @@ const TaskDashboard = () => {
     board.description?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const canCreateBoards = userRole && ['dev', 'admin', 'team_leader', 'volunteer'].includes(userRole);
+  const canCreateBoards = userRole && ['dev', 'admin', 'team_leader'].includes(userRole);
 
   if (loading) {
     return (

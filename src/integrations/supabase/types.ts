@@ -14,6 +14,38 @@ export type Database = {
   }
   public: {
     Tables: {
+      board_assignments: {
+        Row: {
+          assigned_at: string | null
+          assigned_by: string
+          board_id: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          assigned_at?: string | null
+          assigned_by: string
+          board_id: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          assigned_at?: string | null
+          assigned_by?: string
+          board_id?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "board_assignments_board_id_fkey"
+            columns: ["board_id"]
+            isOneToOne: false
+            referencedRelation: "boards"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       board_members: {
         Row: {
           added_at: string | null
@@ -51,33 +83,39 @@ export type Database = {
       }
       boards: {
         Row: {
+          category: string | null
           created_at: string | null
           created_by: string
           description: string | null
           id: string
           is_archived: boolean | null
+          status: string | null
           team_id: string | null
           title: string
           updated_at: string | null
           visibility: Database["public"]["Enums"]["board_visibility"] | null
         }
         Insert: {
+          category?: string | null
           created_at?: string | null
           created_by: string
           description?: string | null
           id?: string
           is_archived?: boolean | null
+          status?: string | null
           team_id?: string | null
           title: string
           updated_at?: string | null
           visibility?: Database["public"]["Enums"]["board_visibility"] | null
         }
         Update: {
+          category?: string | null
           created_at?: string | null
           created_by?: string
           description?: string | null
           id?: string
           is_archived?: boolean | null
+          status?: string | null
           team_id?: string | null
           title?: string
           updated_at?: string | null

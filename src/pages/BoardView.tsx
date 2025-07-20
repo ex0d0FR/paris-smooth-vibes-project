@@ -8,12 +8,15 @@ import { useToast } from '@/hooks/use-toast';
 import Navbar from '@/components/Navbar';
 import NavigationMenu from '@/components/NavigationMenu';
 import Board from '@/components/task/Board';
+import BoardSettingsModal from '@/components/task/BoardSettingsModal';
 
 interface BoardData {
   id: string;
   title: string;
   description?: string;
   visibility: 'private' | 'team' | 'public';
+  status: string;
+  category?: string;
   created_by: string;
   is_archived: boolean;
 }
@@ -26,6 +29,7 @@ const BoardView = () => {
   const [board, setBoard] = useState<BoardData | null>(null);
   const [loading, setLoading] = useState(true);
   const [canEdit, setCanEdit] = useState(false);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   useEffect(() => {
     if (boardId) {
@@ -122,11 +126,12 @@ const BoardView = () => {
               
               {canEdit && (
                 <div className="flex items-center gap-2">
-                  <Button variant="outline" size="sm" className="gap-2">
-                    <Users className="h-4 w-4" />
-                    Members
-                  </Button>
-                  <Button variant="outline" size="sm" className="gap-2">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="gap-2"
+                    onClick={() => setIsSettingsOpen(true)}
+                  >
                     <Settings className="h-4 w-4" />
                     Settings
                   </Button>
@@ -141,6 +146,16 @@ const BoardView = () => {
           <Board boardId={boardId!} canEdit={canEdit} />
         </div>
       </div>
+
+      {/* Settings Modal */}
+      {board && (
+        <BoardSettingsModal
+          board={board}
+          isOpen={isSettingsOpen}
+          onClose={() => setIsSettingsOpen(false)}
+          onUpdate={fetchBoard}
+        />
+      )}
     </div>
   );
 };
