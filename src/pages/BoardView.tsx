@@ -77,9 +77,8 @@ const BoardView = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-background">
-        <Navbar />
         <NavigationMenu variant="compact" />
-        <div className="pt-20 p-6">
+        <div className="p-6">
           <div className="container mx-auto">
             <div className="flex items-center justify-center h-64">
               <div className="text-center">
@@ -97,9 +96,8 @@ const BoardView = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
       <NavigationMenu variant="compact" />
-      <div className="pt-20">
+      <div>
         {/* Board Header */}
         <div className="border-b border-border bg-card">
           <div className="container mx-auto px-6 py-4">
