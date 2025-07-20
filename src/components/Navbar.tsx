@@ -150,6 +150,17 @@ const Navbar = () => {
           <ThemeToggle />
           {user ? (
             <div className="flex items-center gap-2">
+              {user && (
+                <Link to="/tasks">
+                  <Button 
+                    variant="outline"
+                    size="sm"
+                    className="border-paris-blue text-paris-blue hover:bg-paris-blue hover:text-white dark:border-paris-gold dark:text-paris-gold dark:hover:bg-paris-gold dark:hover:text-paris-navy"
+                  >
+                    Tasks
+                  </Button>
+                </Link>
+              )}
               {showAdminLink && (
                 <Link to="/admin">
                   <Button 
@@ -242,6 +253,17 @@ const Navbar = () => {
                 )
               ))}
             </div>
+            
+            {user && (
+              <Link to="/tasks" onClick={() => setIsMenuOpen(false)}>
+                <Button 
+                  variant="outline"
+                  className="border-paris-blue text-paris-blue hover:bg-paris-blue hover:text-white dark:border-paris-gold dark:text-paris-gold dark:hover:bg-paris-gold dark:hover:text-paris-navy w-full mb-4"
+                >
+                  Task Boards
+                </Button>
+              </Link>
+            )}
             
             {user && showAdminLink && (
               <Link to="/admin" onClick={() => setIsMenuOpen(false)}>

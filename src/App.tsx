@@ -22,6 +22,8 @@ import TravelInformation from "./pages/TravelInformation";
 import { useTranslation } from 'react-i18next';
 import './i18n';
 import AdminDashboard from "./pages/AdminDashboard";
+import TaskDashboard from "./pages/TaskDashboard";
+import BoardView from "./pages/BoardView";
 
 const queryClient = new QueryClient();
 
@@ -93,6 +95,8 @@ const App = () => (
                   <Route path="/prayer" element={<Prayer />} />
                   <Route path="/profile" element={<Profile />} />
                   <Route path="/admin" element={<AdminDashboard />} />
+                  <Route path="/tasks" element={<TaskDashboard />} />
+                  <Route path="/boards/:boardId" element={<BoardView />} />
                   <Route path="/travel-information" element={<TravelInformation />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
