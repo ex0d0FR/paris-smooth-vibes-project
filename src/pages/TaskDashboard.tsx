@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import Navbar from '@/components/Navbar';
+import NavigationMenu from '@/components/NavigationMenu';
 import { format } from 'date-fns';
 
 interface Board {
@@ -139,6 +140,7 @@ const TaskDashboard = () => {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />
+        <NavigationMenu variant="compact" />
         <div className="pt-20 p-6">
           <div className="container mx-auto">
             <div className="flex items-center justify-center h-64">
@@ -156,6 +158,7 @@ const TaskDashboard = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <NavigationMenu variant="compact" />
       <div className="pt-20 p-6">
         <div className="container mx-auto">
           {/* Header */}

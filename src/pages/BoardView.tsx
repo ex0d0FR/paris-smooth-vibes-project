@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import Navbar from '@/components/Navbar';
+import NavigationMenu from '@/components/NavigationMenu';
 import Board from '@/components/task/Board';
 
 interface BoardData {
@@ -77,6 +78,7 @@ const BoardView = () => {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />
+        <NavigationMenu variant="compact" />
         <div className="pt-20 p-6">
           <div className="container mx-auto">
             <div className="flex items-center justify-center h-64">
@@ -96,6 +98,7 @@ const BoardView = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+      <NavigationMenu variant="compact" />
       <div className="pt-20">
         {/* Board Header */}
         <div className="border-b border-border bg-card">

@@ -10,6 +10,7 @@ import { useToast } from '@/hooks/use-toast';
 import UserManagementTable from '@/components/admin/UserManagementTable';
 import RoleAssignmentModal from '@/components/admin/RoleAssignmentModal';
 import UserStatsCards from '@/components/admin/UserStatsCards';
+import NavigationMenu from '@/components/NavigationMenu';
 
 type UserRole = 'dev' | 'admin' | 'team_leader' | 'volunteer' | 'guest';
 
@@ -150,24 +151,16 @@ const AdminDashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background p-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center mb-6">
-          <div>
+    <div className="min-h-screen bg-background">
+      <NavigationMenu />
+      <div className="p-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-6">
             <h1 className="text-3xl font-bold">Admin Dashboard</h1>
             <p className="text-muted-foreground">
               Manage users and roles ({userRole === 'dev' ? 'Developer' : 'Administrator'})
             </p>
           </div>
-          <div className="flex gap-2">
-            <Button variant="outline" onClick={() => navigate('/profile')}>
-              My Profile
-            </Button>
-            <Button variant="outline" onClick={() => navigate('/')}>
-              Back to Home
-            </Button>
-          </div>
-        </div>
 
         <UserStatsCards users={users} />
 
@@ -199,6 +192,7 @@ const AdminDashboard = () => {
             onRoleUpdate={handleRoleUpdate}
           />
         )}
+        </div>
       </div>
     </div>
   );

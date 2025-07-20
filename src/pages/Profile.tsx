@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Loader2, LogOut, Settings, Users } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import NavigationMenu from '@/components/NavigationMenu';
 
 type UserRole = 'dev' | 'admin' | 'team_leader' | 'volunteer' | 'guest';
 
@@ -179,20 +180,13 @@ const Profile = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background p-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold">User Profile</h1>
-          <div className="flex gap-2">
-            <Button variant="outline" onClick={() => navigate('/')}>
-              Back to Home
-            </Button>
-            <Button variant="outline" onClick={handleSignOut}>
-              <LogOut className="h-4 w-4 mr-2" />
-              Sign Out
-            </Button>
+    <div className="min-h-screen bg-background">
+      <NavigationMenu />
+      <div className="p-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-6">
+            <h1 className="text-3xl font-bold">User Profile</h1>
           </div>
-        </div>
 
         <div className="grid gap-6 md:grid-cols-2">
           {/* Profile Information */}
@@ -318,6 +312,7 @@ const Profile = () => {
             </CardContent>
           </Card>
         )}
+        </div>
       </div>
     </div>
   );
