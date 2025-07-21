@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Settings, Trash2, Users, Eye, EyeOff, Archive } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
@@ -75,6 +76,7 @@ const BoardSettingsModal: React.FC<BoardSettingsModalProps> = ({
   const [teamLeaders, setTeamLeaders] = useState<User[]>([]);
   const [selectedLeader, setSelectedLeader] = useState('');
   const [loading, setLoading] = useState(false);
+  const [assignmentLoading, setAssignmentLoading] = useState(false);
   const { toast } = useToast();
   const navigate = useNavigate();
 
@@ -89,58 +91,77 @@ const BoardSettingsModal: React.FC<BoardSettingsModalProps> = ({
     try {
       const { data, error } = await supabase
         .from('board_assignments')
-        .select('*')
+        .select(`
+          *,
+          profiles!inner (
+            user_id,
+            username,
+            avatar_url
+          )
+        `)
         .eq('board_id', board.id);
 
       if (error) throw error;
       
-      // Fetch user profiles separately
-      const assignmentsWithUsers = await Promise.all(
-        (data || []).map(async (assignment) => {
-          const { data: profile } = await supabase
-            .from('profiles')
-            .select('*')
-            .eq('user_id', assignment.user_id)
-            .single();
-          
-          return {
-            ...assignment,
-            user: profile
-          };
-        })
-      );
+      const assignmentsWithUsers = (data || []).map(assignment => ({
+        ...assignment,
+        user: {
+          id: assignment.profiles.user_id,
+          username: assignment.profiles.username,
+          avatar_url: assignment.profiles.avatar_url
+        }
+      }));
       
       setAssignments(assignmentsWithUsers);
     } catch (error) {
       console.error('Error fetching assignments:', error);
+      toast({
+        title: "Error",
+        description: "Failed to load board assignments",
+        variant: "destructive",
+      });
     }
   };
 
   const fetchTeamLeaders = async () => {
     try {
+      console.log('Fetching team leaders...');
+      
       const { data, error } = await supabase
         .from('user_roles')
-        .select('user_id')
+        .select(`
+          user_id,
+          profiles!inner (
+            user_id,
+            username,
+            avatar_url
+          )
+        `)
         .eq('role', 'team_leader')
         .eq('is_active', true);
 
-      if (error) throw error;
+      if (error) {
+        console.error('Error fetching team leaders:', error);
+        throw error;
+      }
       
-      // Fetch profiles separately
-      const profiles = await Promise.all(
-        (data || []).map(async (role) => {
-          const { data: profile } = await supabase
-            .from('profiles')
-            .select('*')
-            .eq('user_id', role.user_id)
-            .single();
-          return profile;
-        })
-      );
+      const leaders = (data || [])
+        .filter(role => role.profiles && role.user_id) // Ensure valid data
+        .map(role => ({
+          id: role.user_id,
+          username: role.profiles.username,
+          avatar_url: role.profiles.avatar_url
+        }));
       
-      setTeamLeaders(profiles.filter(Boolean));
+      console.log('Team leaders fetched:', leaders);
+      setTeamLeaders(leaders);
     } catch (error) {
       console.error('Error fetching team leaders:', error);
+      toast({
+        title: "Error",
+        description: "Failed to load team leaders",
+        variant: "destructive",
+      });
     }
   };
 
@@ -178,11 +199,44 @@ const BoardSettingsModal: React.FC<BoardSettingsModalProps> = ({
   };
 
   const assignTeamLeader = async () => {
-    if (!selectedLeader) return;
+    if (!selectedLeader) {
+      toast({
+        title: "Error",
+        description: "Please select a team leader",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Validate that the selected leader exists in our team leaders list
+    const selectedLeaderData = teamLeaders.find(leader => leader.id === selectedLeader);
+    if (!selectedLeaderData) {
+      console.error('Selected leader not found in team leaders list:', selectedLeader);
+      toast({
+        title: "Error",
+        description: "Invalid team leader selection",
+        variant: "destructive",
+      });
+      return;
+    }
 
     try {
+      setAssignmentLoading(true);
       const { data: { session } } = await supabase.auth.getSession();
-      if (!session?.user) return;
+      if (!session?.user) {
+        toast({
+          title: "Error",
+          description: "You must be logged in to assign team leaders",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      console.log('Assigning team leader:', {
+        board_id: board.id,
+        user_id: selectedLeader,
+        assigned_by: session.user.id
+      });
 
       const { error } = await supabase
         .from('board_assignments')
@@ -192,11 +246,14 @@ const BoardSettingsModal: React.FC<BoardSettingsModalProps> = ({
           assigned_by: session.user.id
         });
 
-      if (error) throw error;
+      if (error) {
+        console.error('Assignment error:', error);
+        throw error;
+      }
 
       toast({
         title: "Success",
-        description: "Team leader assigned successfully",
+        description: `Successfully assigned ${selectedLeaderData.username || 'team leader'} to the board`,
       });
       setSelectedLeader('');
       fetchAssignments();
@@ -204,9 +261,11 @@ const BoardSettingsModal: React.FC<BoardSettingsModalProps> = ({
       console.error('Error assigning team leader:', error);
       toast({
         title: "Error",
-        description: "Failed to assign team leader",
+        description: error.message || "Failed to assign team leader",
         variant: "destructive",
       });
+    } finally {
+      setAssignmentLoading(false);
     }
   };
 
@@ -410,8 +469,11 @@ const BoardSettingsModal: React.FC<BoardSettingsModalProps> = ({
                       ))}
                   </SelectContent>
                 </Select>
-                <Button onClick={assignTeamLeader} disabled={!selectedLeader}>
-                  Assign
+                <Button 
+                  onClick={assignTeamLeader} 
+                  disabled={!selectedLeader || assignmentLoading}
+                >
+                  {assignmentLoading ? 'Assigning...' : 'Assign'}
                 </Button>
               </div>
             </div>
