@@ -89,28 +89,37 @@ const BoardSettingsModal: React.FC<BoardSettingsModalProps> = ({
 
   const fetchAssignments = async () => {
     try {
-      const { data, error } = await supabase
+      const { data: assignments, error } = await supabase
         .from('board_assignments')
-        .select(`
-          *,
-          profiles!inner (
-            user_id,
-            username,
-            avatar_url
-          )
-        `)
+        .select('*')
         .eq('board_id', board.id);
 
       if (error) throw error;
       
-      const assignmentsWithUsers = (data || []).map(assignment => ({
-        ...assignment,
-        user: {
-          id: assignment.profiles.user_id,
-          username: assignment.profiles.username,
-          avatar_url: assignment.profiles.avatar_url
-        }
-      }));
+      // Get user IDs and fetch profiles separately
+      const userIds = assignments?.map(a => a.user_id) || [];
+      let assignmentsWithUsers: any[] = [];
+      
+      if (userIds.length > 0) {
+        const { data: profiles, error: profilesError } = await supabase
+          .from('profiles')
+          .select('user_id, username, avatar_url')
+          .in('user_id', userIds);
+
+        if (profilesError) throw profilesError;
+        
+        assignmentsWithUsers = (assignments || []).map(assignment => {
+          const profile = profiles?.find(p => p.user_id === assignment.user_id);
+          return {
+            ...assignment,
+            user: profile ? {
+              id: assignment.user_id,
+              username: profile.username,
+              avatar_url: profile.avatar_url
+            } : null
+          };
+        }).filter(a => a.user !== null);
+      }
       
       setAssignments(assignmentsWithUsers);
     } catch (error) {
@@ -127,16 +136,10 @@ const BoardSettingsModal: React.FC<BoardSettingsModalProps> = ({
     try {
       console.log('Fetching team leaders...');
       
-      const { data, error } = await supabase
+      // Fetch user roles first
+      const { data: userRoles, error } = await supabase
         .from('user_roles')
-        .select(`
-          user_id,
-          profiles!inner (
-            user_id,
-            username,
-            avatar_url
-          )
-        `)
+        .select('user_id')
         .eq('role', 'team_leader')
         .eq('is_active', true);
 
@@ -145,13 +148,25 @@ const BoardSettingsModal: React.FC<BoardSettingsModalProps> = ({
         throw error;
       }
       
-      const leaders = (data || [])
-        .filter(role => role.profiles && role.user_id) // Ensure valid data
-        .map(role => ({
-          id: role.user_id,
-          username: role.profiles.username,
-          avatar_url: role.profiles.avatar_url
+      // Get unique user IDs
+      const userIds = userRoles?.map(ur => ur.user_id) || [];
+      let leaders: User[] = [];
+      
+      if (userIds.length > 0) {
+        // Fetch profiles for these users
+        const { data: profiles, error: profilesError } = await supabase
+          .from('profiles')
+          .select('user_id, username, avatar_url')
+          .in('user_id', userIds);
+
+        if (profilesError) throw profilesError;
+        
+        leaders = (profiles || []).map(profile => ({
+          id: profile.user_id,
+          username: profile.username,
+          avatar_url: profile.avatar_url
         }));
+      }
       
       console.log('Team leaders fetched:', leaders);
       setTeamLeaders(leaders);

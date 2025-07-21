@@ -38,18 +38,10 @@ const UserAssignmentSelect: React.FC<UserAssignmentSelectProps> = ({
     try {
       console.log('Fetching users with role filter:', roleFilter);
       
-      // Fetch users with roles by joining with auth.users to ensure they exist
+      // Fetch users with roles
       const { data: usersWithRoles, error: usersError } = await supabase
         .from('user_roles')
-        .select(`
-          user_id,
-          role,
-          profiles!inner (
-            user_id,
-            username,
-            avatar_url
-          )
-        `)
+        .select('user_id, role')
         .eq('is_active', true)
         .in('role', roleFilter as any);
 
@@ -58,44 +50,62 @@ const UserAssignmentSelect: React.FC<UserAssignmentSelectProps> = ({
         throw usersError;
       }
 
-      console.log('Users with roles fetched:', usersWithRoles);
+      // Get unique user IDs
+      const userIds = [...new Set(usersWithRoles?.map(ur => ur.user_id) || [])];
+      
+      // Fetch profiles for these users
+      let roleUsers: UserProfile[] = [];
+      if (userIds.length > 0) {
+        const { data: profiles, error: profilesError } = await supabase
+          .from('profiles')
+          .select('user_id, username, avatar_url')
+          .in('user_id', userIds);
 
-      // Transform the data to match our interface
-      const roleUsers: UserProfile[] = (usersWithRoles || [])
-        .filter(item => item.profiles && item.user_id) // Ensure valid data
-        .map(item => ({
-          id: item.user_id,
-          username: item.profiles.username,
-          avatar_url: item.profiles.avatar_url,
-          role: item.role
-        }));
+        if (profilesError) {
+          console.error('Error fetching profiles:', profilesError);
+        } else {
+          // Combine role data with profile data
+          roleUsers = (usersWithRoles || [])
+            .map(userRole => {
+              const profile = profiles?.find(p => p.user_id === userRole.user_id);
+              return profile ? {
+                id: userRole.user_id,
+                username: profile.username,
+                avatar_url: profile.avatar_url,
+                role: userRole.role
+              } : null;
+            })
+            .filter((user): user is NonNullable<typeof user> => user !== null);
+        }
+      }
 
       // If boardId is provided, also include users assigned to this board
       let boardUsers: UserProfile[] = [];
       if (boardId) {
         const { data: boardAssignments, error: boardError } = await supabase
           .from('board_assignments')
-          .select(`
-            user_id,
-            profiles!inner (
-              user_id,
-              username,
-              avatar_url
-            )
-          `)
+          .select('user_id')
           .eq('board_id', boardId);
 
         if (boardError) {
           console.error('Error fetching board assignments:', boardError);
-        } else {
-          boardUsers = (boardAssignments || [])
-            .filter(assignment => assignment.profiles && assignment.user_id)
-            .map(assignment => ({
-              id: assignment.user_id,
-              username: assignment.profiles.username,
-              avatar_url: assignment.profiles.avatar_url,
+        } else if (boardAssignments?.length) {
+          const boardUserIds = boardAssignments.map(ba => ba.user_id);
+          
+          // Fetch profiles for board assigned users
+          const { data: boardProfiles, error: boardProfilesError } = await supabase
+            .from('profiles')
+            .select('user_id, username, avatar_url')
+            .in('user_id', boardUserIds);
+
+          if (!boardProfilesError && boardProfiles) {
+            boardUsers = boardProfiles.map(profile => ({
+              id: profile.user_id,
+              username: profile.username,
+              avatar_url: profile.avatar_url,
               role: 'assigned'
             }));
+          }
         }
       }
 
