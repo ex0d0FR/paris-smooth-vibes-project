@@ -32,11 +32,13 @@ const BoardView = () => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   useEffect(() => {
-    if (boardId) {
+    if (boardId && boardId !== ':boardId') {
       fetchBoard();
       checkPermissions();
+    } else if (!boardId) {
+      navigate('/tasks');
     }
-  }, [boardId]);
+  }, [boardId, navigate]);
 
   const fetchBoard = async () => {
     try {
@@ -64,7 +66,7 @@ const BoardView = () => {
   const checkPermissions = async () => {
     try {
       const { data: { session } } = await supabase.auth.getSession();
-      if (!session?.user) return;
+      if (!session?.user || !boardId) return;
 
       const { data: canEditBoard } = await supabase
         .rpc('can_edit_board', { 
