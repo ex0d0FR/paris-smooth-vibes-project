@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
@@ -113,31 +112,8 @@ const Hero = () => {
         }}>
           {t('description')}
         </p>
-        
-        {/* Translation Notice */}
-        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4 max-w-3xl mx-auto mb-8 reveal" style={{
-          transitionDelay: '500ms'
-        }}>
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <Globe className="text-paris-gold h-5 w-5" />
-            <p className="text-paris-gold font-semibold text-sm uppercase tracking-wide">{t('translation.title')}</p>
-          </div>
-          <p className="text-white text-sm leading-relaxed">
-            {t('translation.notice')}
-          </p>
-          <p className="text-white text-sm mt-2">
-            {t('translation.contact')}{' '}
-            <a 
-              href="mailto:translation@paris2025.org" 
-              className="text-paris-gold hover:text-white transition-colors underline"
-            >
-              translation@paris2025.org
-            </a>
-          </p>
-        </div>
-        
         <div className="flex justify-center gap-4 reveal" style={{
-          transitionDelay: '700ms'
+          transitionDelay: '600ms'
         }}>
           <Button 
             onClick={scrollToRegister} 

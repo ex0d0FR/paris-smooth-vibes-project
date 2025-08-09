@@ -31,5 +31,10 @@
     "attendee": "asistente"
   },
   "questions": "¿Tienes preguntas sobre el registro o necesitas ayuda?",
-  "contact": "Contáctanos"
+  "contact": "Contáctanos",
+  "translation": {
+    "title": "Soporte de Idiomas",
+    "notice": "Habrá traducción simultánea disponible en español y francés durante toda la conferencia.",
+    "contact": "¿Necesitas traducción a otro idioma? Contáctanos en:"
+  }
 }

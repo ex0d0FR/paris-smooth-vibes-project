@@ -1,16 +1,10 @@
-
 {
   "title": "Register for PARIS 2025",
   "description": "Secure your spot at the most anticipated global conference of the year. Early bird pricing available for a limited time.",
-  "registerNow": "Register Now",
-  "toast": {
-    "title": "Registration Started",
-    "description": "You've selected the {{tier}} package. Please complete your registration."
-  },
   "tiers": {
+    "attendee": "attendee",
     "inPerson": {
       "name": "In-Person",
-      "price": "€60",
       "description": "Complete on-site experience",
       "features": {
         "full": "Full conference access (all 3 days)",
@@ -22,14 +16,22 @@
     },
     "virtual": {
       "name": "Evening pass",
-      "price": "€20",
       "description": "Join us from 7pm",
       "features": {
         "access": "Night access to the conference (all 3 nights)"
       }
-    },
-    "attendee": "attendee"
+    }
   },
+  "registerNow": "Register Now",
   "questions": "Have questions about registration or need assistance?",
-  "contact": "Contact Us"
+  "contact": "Contact Us",
+  "translation": {
+    "title": "Language Support",
+    "notice": "Simultaneous translation will be available in Spanish and French throughout the conference.",
+    "contact": "Need translation into another language? Please contact us at:"
+  },
+  "toast": {
+    "title": "Registration Started",
+    "description": "Redirecting you to complete your {{tier}} registration..."
+  }
 }

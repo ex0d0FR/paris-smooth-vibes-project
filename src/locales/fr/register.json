@@ -31,5 +31,10 @@
     "attendee": "participant"
   },
   "questions": "Vous avez des questions sur l'inscription ou besoin d'aide ?",
-  "contact": "Contactez-nous"
+  "contact": "Contactez-nous",
+  "translation": {
+    "title": "Support Linguistique",
+    "notice": "Une traduction simultanée sera disponible en espagnol et en français pendant toute la conférence.",
+    "contact": "Besoin d'une traduction dans une autre langue ? Contactez-nous à :"
+  }
 }
