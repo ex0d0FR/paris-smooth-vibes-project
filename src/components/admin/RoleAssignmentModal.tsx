@@ -80,10 +80,13 @@ const RoleAssignmentModal = ({
 
       // Then, insert new active roles
       if (selectedRoles.length > 0) {
+        // Get current user ID to track who assigned the roles
+        const { data: { session } } = await supabase.auth.getSession();
+        
         const rolesToInsert = selectedRoles.map(role => ({
           user_id: user.user_id,
           role: role,
-          assigned_by: currentUserRole === 'dev' || currentUserRole === 'admin' ? null : null,
+          assigned_by: session?.user?.id,
           is_active: true
         }));
 
@@ -105,7 +108,7 @@ const RoleAssignmentModal = ({
 
       onRoleUpdate();
     } catch (error: any) {
-      console.error('Error updating roles:', error);
+      // Log error for debugging but don't expose sensitive information
       toast({
         title: "Error",
         description: error.message || "Failed to update user roles",

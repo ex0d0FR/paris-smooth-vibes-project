@@ -7,9 +7,7 @@ import { resources } from './resources';
 // Define all namespaces we use in the application
 const namespaces = ['common', 'nav', 'hero', 'about', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration', 'accommodations', 'restaurants', 'sponsors'];
 
-console.log("Initializing i18n with resources:", Object.keys(resources));
-console.log("Available languages:", Object.keys(resources).join(", "));
-console.log("Available namespaces:", namespaces.join(", "));
+// Debug information removed for production security
 
 i18n
   .use(Backend)
@@ -18,7 +16,7 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
-    debug: true, // Enable debug to see what's happening with translations
+    debug: false, // Disabled for production security
     interpolation: {
       escapeValue: false, // React already escapes values
     },
@@ -39,16 +37,8 @@ i18n
     if (err) {
       console.error("i18n initialization error:", err);
     } else {
-      console.log("i18n initialized successfully");
-      console.log("Current language:", i18n.language);
-      console.log("Available namespaces:", i18n.options.ns);
-      console.log("Loaded namespaces:", i18n.reportNamespaces?.getUsedNamespaces());
-      
       // Force load all namespaces
-      i18n.loadNamespaces(namespaces).then(() => {
-        console.log("All namespaces loaded successfully");
-        console.log("Loaded namespaces:", i18n.reportNamespaces?.getUsedNamespaces());
-      }).catch(err => {
+      i18n.loadNamespaces(namespaces).catch(err => {
         console.error("Error loading namespaces:", err);
       });
     }
@@ -58,26 +48,11 @@ i18n
 i18n.on('languageChanged', (lng) => {
   const simpleLng = lng.split('-')[0]; // Strip region code
   document.documentElement.setAttribute('lang', simpleLng);
-  console.log("Language changed to:", simpleLng);
-  console.log("Available namespaces:", i18n.options.ns);
-  console.log("Used namespaces:", i18n.reportNamespaces?.getUsedNamespaces());
   
   // Force reload the footer namespace on language change
-  i18n.loadNamespaces('footer').then(() => {
-    console.log("Footer namespace reloaded after language change");
-  }).catch(err => {
+  i18n.loadNamespaces('footer').catch(err => {
     console.error("Failed to reload footer namespace:", err);
   });
-});
-
-// Add additional event listeners for better debugging
-i18n.on('initialized', () => {
-  console.log("i18n initialized event fired!");
-  console.log("Current language:", i18n.language);
-});
-
-i18n.on('loaded', (loaded) => {
-  console.log("i18n resources loaded event fired!", loaded);
 });
 
 i18n.on('failedLoading', (lng, ns, msg) => {
