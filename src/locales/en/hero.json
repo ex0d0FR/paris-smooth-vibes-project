@@ -5,5 +5,10 @@
   "subtitle": "BUILDING MISSIONARY BRIDGES",
   "description": "Join us for a Europe-wide conference, bringing together pioneers, missiologists and ministers in the heart of Paris.",
   "registerNow": "Register Now",
-  "learnMore": "Learn More"
+  "learnMore": "Learn More",
+  "translation": {
+    "title": "Language Support",
+    "notice": "Simultaneous translation will be available in Spanish and French throughout the conference.",
+    "contact": "Need translation into another language? Please contact us at:"
+  }
 }

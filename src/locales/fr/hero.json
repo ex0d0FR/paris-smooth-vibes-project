@@ -5,5 +5,10 @@
   "subtitle": "CONSTRUISONS DES PONTS MISSIONNAIRES",
   "description": "Rejoignez-nous pour une conférence à l'échelle européenne, rassemblant des pionniers, des missiologues et des ministres au cœur de Paris.",
   "registerNow": "Inscrivez-vous maintenant",
-  "learnMore": "En savoir plus"
+  "learnMore": "En savoir plus",
+  "translation": {
+    "title": "Support Linguistique",
+    "notice": "Une traduction simultanée sera disponible en espagnol et en français pendant toute la conférence.",
+    "contact": "Besoin d'une traduction dans une autre langue ? Contactez-nous à :"
+  }
 }
