@@ -1,19 +1,54 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Bed, MapPin, Phone, Mail, Clock, Wifi, Car, Users, Coffee } from 'lucide-react';
+import { ArrowLeft, Bed, MapPin, Phone, Mail, Clock, Wifi, Car, Users, Coffee, CheckCircle, Euro } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { toast } from 'sonner';
 
 const LodgingHelp = () => {
   const { t } = useTranslation('accommodations');
+  const [selectedOption, setSelectedOption] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    specialRequests: ''
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!selectedOption) {
+      toast.error('Please select an accommodation option');
+      return;
+    }
+    if (!formData.name || !formData.email) {
+      toast.error('Please fill in all required fields');
+      return;
+    }
+    
+    toast.success('Accommodation request submitted successfully! We will contact you within 24 hours.');
+    
+    // Reset form
+    setSelectedOption('');
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      specialRequests: ''
+    });
+  };
 
   const services = [
     {
@@ -119,6 +154,173 @@ const LodgingHelp = () => {
                   </Button>
                 ))}
               </div>
+            </div>
+
+            {/* Accommodation Booking Form */}
+            <div className="bg-card rounded-lg border p-8 mb-12">
+              <h2 className="text-2xl font-bold text-foreground mb-6 text-center">
+                Book Your Accommodation
+              </h2>
+              <p className="text-muted-foreground text-center mb-8">
+                Choose between our two accommodation options for the PARIS 2025 conference
+              </p>
+              
+              <form onSubmit={handleSubmit} className="max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  {/* Option 1: Conference Venue */}
+                  <Card className={`cursor-pointer transition-all ${selectedOption === 'venue' ? 'ring-2 ring-primary bg-primary/5' : 'hover:bg-muted/50'}`}>
+                    <CardHeader>
+                      <div className="flex items-start justify-between">
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-3 mb-2">
+                            <RadioGroup value={selectedOption} onValueChange={setSelectedOption} className="flex">
+                              <div className="flex items-center space-x-2">
+                                <RadioGroupItem value="venue" id="venue" />
+                                <Label htmlFor="venue" className="cursor-pointer">
+                                  <CardTitle className="text-xl">Sala ST Nicolas</CardTitle>
+                                </Label>
+                              </div>
+                            </RadioGroup>
+                          </div>
+                          <CardDescription className="text-base mb-3">
+                            Sleep at the conference venue for maximum convenience
+                          </CardDescription>
+                          <div className="space-y-2">
+                            <div className="flex items-center text-sm text-muted-foreground">
+                              <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
+                              Walking distance to all sessions
+                            </div>
+                            <div className="flex items-center text-sm text-muted-foreground">
+                              <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
+                              No commute required
+                            </div>
+                            <div className="flex items-center text-sm text-muted-foreground">
+                              <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
+                              Basic sleeping arrangements
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <div className="flex items-center text-2xl font-bold text-primary">
+                            <Euro className="h-6 w-6 mr-1" />
+                            220
+                          </div>
+                          <div className="text-sm text-muted-foreground">per person</div>
+                        </div>
+                      </div>
+                    </CardHeader>
+                  </Card>
+
+                  {/* Option 2: Church */}
+                  <Card className={`cursor-pointer transition-all ${selectedOption === 'church' ? 'ring-2 ring-primary bg-primary/5' : 'hover:bg-muted/50'}`}>
+                    <CardHeader>
+                      <div className="flex items-start justify-between">
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-3 mb-2">
+                            <RadioGroup value={selectedOption} onValueChange={setSelectedOption} className="flex">
+                              <div className="flex items-center space-x-2">
+                                <RadioGroupItem value="church" id="church" />
+                                <Label htmlFor="church" className="cursor-pointer">
+                                  <CardTitle className="text-xl">Church Accommodation</CardTitle>
+                                </Label>
+                              </div>
+                            </RadioGroup>
+                          </div>
+                          <CardDescription className="text-base mb-3">
+                            Free accommodation in a local church community
+                          </CardDescription>
+                          <div className="space-y-2">
+                            <div className="flex items-center text-sm text-muted-foreground">
+                              <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
+                              Completely free
+                            </div>
+                            <div className="flex items-center text-sm text-muted-foreground">
+                              <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
+                              Community atmosphere
+                            </div>
+                            <div className="flex items-center text-sm text-muted-foreground">
+                              <Clock className="h-4 w-4 mr-2 text-amber-600" />
+                              1 hour commute to venue
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-2xl font-bold text-green-600">
+                            FREE
+                          </div>
+                          <div className="text-sm text-muted-foreground">per person</div>
+                        </div>
+                      </div>
+                    </CardHeader>
+                  </Card>
+                </div>
+
+                {/* Contact Information Form */}
+                {selectedOption && (
+                  <div className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <Label htmlFor="name" className="text-sm font-medium mb-2 block">
+                          Full Name *
+                        </Label>
+                        <Input
+                          id="name"
+                          type="text"
+                          value={formData.name}
+                          onChange={(e) => setFormData({...formData, name: e.target.value})}
+                          placeholder="Enter your full name"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="email" className="text-sm font-medium mb-2 block">
+                          Email Address *
+                        </Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={(e) => setFormData({...formData, email: e.target.value})}
+                          placeholder="Enter your email"
+                          required
+                        />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <Label htmlFor="phone" className="text-sm font-medium mb-2 block">
+                        Phone Number
+                      </Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                        placeholder="Enter your phone number"
+                      />
+                    </div>
+                    
+                    <div>
+                      <Label htmlFor="special-requests" className="text-sm font-medium mb-2 block">
+                        Special Requests or Dietary Requirements
+                      </Label>
+                      <Textarea
+                        id="special-requests"
+                        value={formData.specialRequests}
+                        onChange={(e) => setFormData({...formData, specialRequests: e.target.value})}
+                        placeholder="Any special requirements, dietary restrictions, or accessibility needs..."
+                        rows={4}
+                      />
+                    </div>
+                    
+                    <div className="flex justify-center">
+                      <Button type="submit" className="px-8 py-3 text-lg">
+                        Submit Accommodation Request
+                      </Button>
+                    </div>
+                  </div>
+                )}
+              </form>
             </div>
 
             {/* Services Grid */}
