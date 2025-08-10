@@ -166,94 +166,92 @@ const LodgingHelp = () => {
               </p>
               
               <form onSubmit={handleSubmit} className="max-w-4xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                  {/* Option 1: Conference Venue */}
-                  <Card className={`cursor-pointer transition-all ${selectedOption === 'venue' ? 'ring-2 ring-primary bg-primary/5' : 'hover:bg-muted/50'}`}>
-                    <CardHeader>
-                      <div className="flex items-start justify-between">
-                        <div className="flex-1">
-                          <div className="flex items-center space-x-3 mb-2">
-                            <RadioGroup value={selectedOption} onValueChange={setSelectedOption} className="flex">
+                <RadioGroup value={selectedOption} onValueChange={setSelectedOption}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    {/* Option 1: Conference Venue */}
+                    <Card className={`cursor-pointer transition-all ${selectedOption === 'venue' ? 'ring-2 ring-primary bg-primary/5' : 'hover:bg-muted/50'}`}>
+                      <CardHeader>
+                        <div className="flex items-start justify-between">
+                          <div className="flex-1">
+                            <div className="flex items-center space-x-3 mb-2">
                               <div className="flex items-center space-x-2">
                                 <RadioGroupItem value="venue" id="venue" />
                                 <Label htmlFor="venue" className="cursor-pointer">
                                   <CardTitle className="text-xl">Sala ST Nicolas</CardTitle>
                                 </Label>
                               </div>
-                            </RadioGroup>
+                            </div>
+                            <CardDescription className="text-base mb-3">
+                              Sleep at the conference venue for maximum convenience
+                            </CardDescription>
+                            <div className="space-y-2">
+                              <div className="flex items-center text-sm text-muted-foreground">
+                                <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
+                                Walking distance to all sessions
+                              </div>
+                              <div className="flex items-center text-sm text-muted-foreground">
+                                <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
+                                No commute required
+                              </div>
+                              <div className="flex items-center text-sm text-muted-foreground">
+                                <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
+                                Basic sleeping arrangements
+                              </div>
+                            </div>
                           </div>
-                          <CardDescription className="text-base mb-3">
-                            Sleep at the conference venue for maximum convenience
-                          </CardDescription>
-                          <div className="space-y-2">
-                            <div className="flex items-center text-sm text-muted-foreground">
-                              <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
-                              Walking distance to all sessions
+                          <div className="text-right">
+                            <div className="flex items-center text-2xl font-bold text-primary">
+                              <Euro className="h-6 w-6 mr-1" />
+                              220
                             </div>
-                            <div className="flex items-center text-sm text-muted-foreground">
-                              <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
-                              No commute required
-                            </div>
-                            <div className="flex items-center text-sm text-muted-foreground">
-                              <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
-                              Basic sleeping arrangements
-                            </div>
+                            <div className="text-sm text-muted-foreground">per person</div>
                           </div>
                         </div>
-                        <div className="text-right">
-                          <div className="flex items-center text-2xl font-bold text-primary">
-                            <Euro className="h-6 w-6 mr-1" />
-                            220
-                          </div>
-                          <div className="text-sm text-muted-foreground">per person</div>
-                        </div>
-                      </div>
-                    </CardHeader>
-                  </Card>
+                      </CardHeader>
+                    </Card>
 
-                  {/* Option 2: Church */}
-                  <Card className={`cursor-pointer transition-all ${selectedOption === 'church' ? 'ring-2 ring-primary bg-primary/5' : 'hover:bg-muted/50'}`}>
-                    <CardHeader>
-                      <div className="flex items-start justify-between">
-                        <div className="flex-1">
-                          <div className="flex items-center space-x-3 mb-2">
-                            <RadioGroup value={selectedOption} onValueChange={setSelectedOption} className="flex">
+                    {/* Option 2: Church */}
+                    <Card className={`cursor-pointer transition-all ${selectedOption === 'church' ? 'ring-2 ring-primary bg-primary/5' : 'hover:bg-muted/50'}`}>
+                      <CardHeader>
+                        <div className="flex items-start justify-between">
+                          <div className="flex-1">
+                            <div className="flex items-center space-x-3 mb-2">
                               <div className="flex items-center space-x-2">
                                 <RadioGroupItem value="church" id="church" />
                                 <Label htmlFor="church" className="cursor-pointer">
                                   <CardTitle className="text-xl">Church Accommodation</CardTitle>
                                 </Label>
                               </div>
-                            </RadioGroup>
+                            </div>
+                            <CardDescription className="text-base mb-3">
+                              Free accommodation in a local church community
+                            </CardDescription>
+                            <div className="space-y-2">
+                              <div className="flex items-center text-sm text-muted-foreground">
+                                <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
+                                Completely free
+                              </div>
+                              <div className="flex items-center text-sm text-muted-foreground">
+                                <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
+                                Community atmosphere
+                              </div>
+                              <div className="flex items-center text-sm text-muted-foreground">
+                                <Clock className="h-4 w-4 mr-2 text-amber-600" />
+                                1 hour commute to venue
+                              </div>
+                            </div>
                           </div>
-                          <CardDescription className="text-base mb-3">
-                            Free accommodation in a local church community
-                          </CardDescription>
-                          <div className="space-y-2">
-                            <div className="flex items-center text-sm text-muted-foreground">
-                              <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
-                              Completely free
+                          <div className="text-right">
+                            <div className="text-2xl font-bold text-green-600">
+                              FREE
                             </div>
-                            <div className="flex items-center text-sm text-muted-foreground">
-                              <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
-                              Community atmosphere
-                            </div>
-                            <div className="flex items-center text-sm text-muted-foreground">
-                              <Clock className="h-4 w-4 mr-2 text-amber-600" />
-                              1 hour commute to venue
-                            </div>
+                            <div className="text-sm text-muted-foreground">per person</div>
                           </div>
                         </div>
-                        <div className="text-right">
-                          <div className="text-2xl font-bold text-green-600">
-                            FREE
-                          </div>
-                          <div className="text-sm text-muted-foreground">per person</div>
-                        </div>
-                      </div>
-                    </CardHeader>
-                  </Card>
-                </div>
+                      </CardHeader>
+                    </Card>
+                  </div>
+                </RadioGroup>
 
                 {/* Contact Information Form */}
                 {selectedOption && (
