@@ -141,15 +141,13 @@ const LodgingHelp = () => {
                   <Button
                     key={index}
                     variant="outline"
-                    className="justify-start h-auto p-4"
+                    className="justify-start h-auto p-4 flex items-center"
                     onClick={() => window.location.href = contact.action}
                   >
-                    <div className="flex items-center">
-                      {contact.icon}
-                      <div className="ml-3 text-left">
-                        <div className="font-medium">{contact.label}</div>
-                        <div className="text-sm text-muted-foreground">{contact.value}</div>
-                      </div>
+                    {contact.icon}
+                    <div className="ml-3 text-left">
+                      <div className="font-medium">{contact.label}</div>
+                      <div className="text-sm text-muted-foreground">{contact.value}</div>
                     </div>
                   </Button>
                 ))}
