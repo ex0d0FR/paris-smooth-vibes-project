@@ -167,13 +167,21 @@ const Register = () => {
             transitionDelay: '400ms'
           }}>
           <p className="text-white/80 mb-4">{t('questions', 'Have questions about registration or need assistance?')}</p>
-          <Button 
-            className="bg-transparent hover:bg-white/10 text-white border border-white/30 px-6 py-2"
-            onClick={() => window.location.href = 'mailto:info@puentesparis2025.net'}
-          >
-            <Mail className="w-4 h-4 mr-2" />
-            {t('contact', 'Contact Us')}
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              className="bg-transparent hover:bg-white/10 text-white border border-white/30 px-6 py-2"
+              onClick={() => window.location.href = 'mailto:info@puentesparis2025.net'}
+            >
+              <Mail className="w-4 h-4 mr-2" />
+              {t('contact', 'Contact Us')}
+            </Button>
+            <Button 
+              className="bg-paris-gold hover:bg-yellow-500 text-paris-navy border border-paris-gold px-6 py-2"
+              onClick={() => navigate('/lodging-help')}
+            >
+              Lodging options help
+            </Button>
+          </div>
         </div>
       </div>
     </section>

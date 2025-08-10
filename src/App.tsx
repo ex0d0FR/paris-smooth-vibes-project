@@ -19,6 +19,7 @@ import Sponsors from "./pages/Sponsors";
 import Prayer from "./pages/Prayer";
 import Profile from "./pages/Profile";
 import TravelInformation from "./pages/TravelInformation";
+import LodgingHelp from "./pages/LodgingHelp";
 import { useTranslation } from 'react-i18next';
 import './i18n';
 import AdminDashboard from "./pages/AdminDashboard";
@@ -98,6 +99,7 @@ const App = () => (
                   <Route path="/tasks" element={<TaskDashboard />} />
                   <Route path="/boards/:boardId" element={<BoardView />} />
                   <Route path="/travel-information" element={<TravelInformation />} />
+                  <Route path="/lodging-help" element={<LodgingHelp />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
