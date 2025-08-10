@@ -365,9 +365,9 @@ const LodgingHelp = () => {
                   <p className="text-sm text-muted-foreground mb-4">
                     View our recommended hotels and accommodations
                   </p>
-                  <Button variant="outline" asChild>
-                    <Link to="/accommodations">View Hotels</Link>
-                  </Button>
+                  <Link to="/accommodations">
+                    <Button variant="outline">View Hotels</Button>
+                  </Link>
                 </div>
                 
                 <div className="text-center">
@@ -378,9 +378,9 @@ const LodgingHelp = () => {
                   <p className="text-sm text-muted-foreground mb-4">
                     Transportation and travel guides
                   </p>
-                  <Button variant="outline" asChild>
-                    <Link to="/travel-information">Travel Guide</Link>
-                  </Button>
+                  <Link to="/travel-information">
+                    <Button variant="outline">Travel Guide</Button>
+                  </Link>
                 </div>
                 
                 <div className="text-center">
@@ -391,9 +391,9 @@ const LodgingHelp = () => {
                   <p className="text-sm text-muted-foreground mb-4">
                     Restaurant recommendations near venues
                   </p>
-                  <Button variant="outline" asChild>
-                    <Link to="/restaurants">Find Restaurants</Link>
-                  </Button>
+                  <Link to="/restaurants">
+                    <Button variant="outline">Find Restaurants</Button>
+                  </Link>
                 </div>
               </div>
             </div>
