@@ -455,6 +455,32 @@ const LodgingHelp = () => {
               </div>
             </div>
           </div>
+
+          {/* Language Support Section */}
+          <div className="container mx-auto px-4 py-12">
+            <div className="max-w-4xl mx-auto text-center">
+              <Card className="bg-gradient-to-r from-primary/10 to-accent/10 border-primary/20">
+                <CardHeader className="text-center">
+                  <div className="flex justify-center items-center gap-2 mb-4">
+                    <div className="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center">
+                      <span className="text-primary-foreground font-bold text-sm">🌐</span>
+                    </div>
+                    <CardTitle className="text-2xl font-bold text-primary">
+                      {t('translation.title')}
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="text-center space-y-4">
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    {t('translation.notice')}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {t('translation.contact')}
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </main>
         
         <Footer />

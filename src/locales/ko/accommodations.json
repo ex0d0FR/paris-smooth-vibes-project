@@ -1,5 +1,10 @@
 
 {
+  "translation": {
+    "title": "언어 지원",
+    "notice": "컨퍼런스는 모든 세션에서 영어와 프랑스어로 진행됩니다.",
+    "contact": "다른 언어로 번역이 필요하신가요? 다음으로 연락해 주세요: info@puentesparis2025.net"
+  },
   "title": "숙박",
   "subtitle": "이시레물리노에 있는 파리 2025 컨퍼런스 장소 근처의 편안한 호텔과 숙박시설",
   "sectionTitle": "장소 근처 추천 호텔",
