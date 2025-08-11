@@ -81,14 +81,14 @@ const LodgingHelp = () => {
     {
       icon: <Mail className="h-5 w-5" />,
       label: "Email Support",
-      value: "lodging@puentesparis2025.net",
-      action: "mailto:lodging@puentesparis2025.net"
+      value: "info@puentesparis2025.net",
+      action: "mailto:info@puentesparis2025.net"
     },
     {
       icon: <Phone className="h-5 w-5" />,
       label: "Phone Support",
-      value: "+33 1 42 34 56 78",
-      action: "tel:+33142345678"
+      value: "+33 7 49 44 26 26",
+      action: "tel:+33749442626"
     }
   ];
 
