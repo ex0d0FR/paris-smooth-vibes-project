@@ -175,7 +175,7 @@ const LodgingHelp = () => {
                               <div className="flex items-center space-x-2">
                                 <RadioGroupItem value="venue" id="venue" />
                                 <Label htmlFor="venue" className="cursor-pointer">
-                                  <CardTitle className="text-xl">Sala ST Nicolas</CardTitle>
+                                  <CardTitle className="text-xl">Salle St Nicolas</CardTitle>
                                 </Label>
                               </div>
                             </div>
