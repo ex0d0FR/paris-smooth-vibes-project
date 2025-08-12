@@ -45,22 +45,18 @@ const Prayer = () => {
 
   const handlePrayForCountry = async (country: PrayerCount) => {
     try {
-      // Get the current prayer count from the state to ensure we have the latest value
-      const currentCountry = prayerCounts.find(c => c.id === country.id);
-      const currentCount = currentCountry?.prayer_count || country.prayer_count;
-      
-      const { error } = await supabase
-        .from('prayer_counts')
-        .update({ prayer_count: currentCount + 1 })
-        .eq('id', country.id);
+      // Use secure RPC to increment on the server
+      const { data, error } = await (supabase.rpc as any)('increment_prayer_count', { _id: country.id });
 
       if (error) throw error;
 
-      // Update local state
+      const updated = (data as unknown as PrayerCount) || { ...country, prayer_count: (country.prayer_count || 0) + 1 };
+
+      // Update local state with server value
       setPrayerCounts(prev => 
         prev.map(c => 
           c.id === country.id 
-            ? { ...c, prayer_count: currentCount + 1 }
+            ? { ...c, prayer_count: updated.prayer_count }
             : c
         )
       );
@@ -68,14 +64,14 @@ const Prayer = () => {
       // Update selected country if it's the same one
       if (selectedCountry?.id === country.id) {
         setSelectedCountry(prev => 
-          prev ? { ...prev, prayer_count: currentCount + 1 } : null
+          prev ? { ...prev, prayer_count: updated.prayer_count } : null
         );
       }
 
       toast.success(`Thank you for praying for ${country.country_name}! 🙏`);
     } catch (error) {
       console.error('Error updating prayer count:', error);
-      toast.error('Failed to record your prayer');
+      toast.error('Please sign in to record your prayer');
     }
   };
 
