@@ -118,6 +118,7 @@ const Footer = () => {
             <Link to="/privacy-policy" className="hover:text-paris-gold transition-colors">{t('policies.privacy', { ns: 'footer' })}</Link>
             <Link to="/legal-notice" className="hover:text-paris-gold transition-colors">Legal Notice</Link>
             <Link to="/legal-notice" className="hover:text-paris-gold transition-colors">{t('policies.cookies', { ns: 'footer' })}</Link>
+            <Link to="/auth" className="hover:text-paris-gold transition-colors">Sign In</Link>
           </div>
         </div>
       </div>
