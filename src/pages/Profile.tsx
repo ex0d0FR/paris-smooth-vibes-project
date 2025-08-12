@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
@@ -6,9 +7,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Loader2, LogOut, Settings, Users } from 'lucide-react';
+import { Loader2, LogOut, Settings, Users, ShieldCheck } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import NavigationMenu from '@/components/NavigationMenu';
+import ProfileSetupForm from '@/components/profile/ProfileSetupForm';
 
 type UserRole = 'dev' | 'admin' | 'team_leader' | 'volunteer' | 'guest';
 
@@ -19,6 +21,14 @@ interface UserProfile {
   avatar_url: string | null;
   bio: string | null;
   role: string;
+  // Added optional extended fields
+  phone_number?: string | null;
+  city?: string | null;
+  country?: string | null;
+  church_name?: string | null;
+  email?: string | null;
+  is_active?: boolean | null;
+  account_status?: 'pending' | 'approved' | 'denied';
 }
 
 interface UserRoleData {
@@ -75,7 +85,7 @@ const Profile = () => {
         return;
       }
       
-      setProfile(profileData);
+      setProfile(profileData as UserProfile);
 
       // Fetch user roles
       const { data: rolesData, error: rolesError } = await supabase
@@ -143,6 +153,9 @@ const Profile = () => {
     return names[role] || 'Guest';
   };
 
+  const isProfileIncomplete = !!profile && (!profile.phone_number || !profile.city || !profile.country);
+  const status = profile?.account_status || 'pending';
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -188,6 +201,35 @@ const Profile = () => {
             <h1 className="text-3xl font-bold">User Profile</h1>
           </div>
 
+          {(isProfileIncomplete || status === 'pending') && (
+            <Card className="mb-6 border-yellow-200 bg-yellow-50">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <ShieldCheck className="h-5 w-5 text-yellow-600" />
+                  Complete your registration
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-sm text-muted-foreground">
+                  Please provide your phone number, city and country so an admin can verify your account.
+                </p>
+                <ProfileSetupForm
+                  userId={user.id}
+                  initialValues={{
+                    phone_number: profile.phone_number ?? '',
+                    city: profile.city ?? '',
+                    country: profile.country ?? '',
+                    church_name: profile.church_name ?? '',
+                  }}
+                  onCompleted={() => fetchUserData(user.id)}
+                />
+                <div className="text-xs text-muted-foreground">
+                  Current status: <span className="font-medium capitalize">{status}</span>
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
         <div className="grid gap-6 md:grid-cols-2">
           {/* Profile Information */}
           <Card>
@@ -209,16 +251,39 @@ const Profile = () => {
                   <h3 className="text-lg font-semibold">
                     {profile.username || 'No username set'}
                   </h3>
-                  <p className="text-muted-foreground">{user.email}</p>
+                  <p className="text-muted-foreground">{profile.email || user.email}</p>
                 </div>
               </div>
 
-              {profile.bio && (
+              {profile.phone_number && (
                 <div>
-                  <h4 className="font-medium mb-1">Bio</h4>
-                  <p className="text-sm text-muted-foreground">{profile.bio}</p>
+                  <h4 className="font-medium mb-1">Phone</h4>
+                  <p className="text-sm text-muted-foreground">{profile.phone_number}</p>
                 </div>
               )}
+
+              {(profile.city || profile.country) && (
+                <div>
+                  <h4 className="font-medium mb-1">Location</h4>
+                  <p className="text-sm text-muted-foreground">
+                    {[profile.city, profile.country].filter(Boolean).join(', ')}
+                  </p>
+                </div>
+              )}
+
+              {profile.church_name && (
+                <div>
+                  <h4 className="font-medium mb-1">Church</h4>
+                  <p className="text-sm text-muted-foreground">{profile.church_name}</p>
+                </div>
+              )}
+
+              <div>
+                <h4 className="font-medium mb-1">Account Status</h4>
+                <Badge variant="outline" className="capitalize">
+                  {status}
+                </Badge>
+              </div>
 
               <div>
                 <h4 className="font-medium mb-1">Account Created</h4>
@@ -306,7 +371,7 @@ const Profile = () => {
               {primaryRole === 'guest' && (
                 <div className="text-center p-6">
                   <h3 className="text-lg font-semibold mb-2">Guest Area</h3>
-                  <p className="text-muted-foreground">Welcome! Your account is pending role assignment. Please contact an administrator.</p>
+                  <p className="text-muted-foreground">Welcome! Your account is pending role assignment. Please complete your registration details above and wait for admin approval.</p>
                 </div>
               )}
             </CardContent>

@@ -16,12 +16,17 @@ type UserRole = 'dev' | 'admin' | 'team_leader' | 'volunteer' | 'guest';
 
 interface UserWithProfile {
   user_id: string;
-  email: string;
+  email: string | null;
   username: string | null;
   created_at: string;
   roles: UserRole[];
   primary_role: UserRole;
   is_active: boolean;
+  phone_number?: string | null;
+  city?: string | null;
+  country?: string | null;
+  church_name?: string | null;
+  account_status?: 'pending' | 'approved' | 'denied';
 }
 
 const AdminDashboard = () => {
@@ -75,10 +80,10 @@ const AdminDashboard = () => {
 
   const fetchUsers = async () => {
     try {
-      // Get all profiles with user data
+      // Get profiles with extended fields
       const { data: profiles, error: profilesError } = await supabase
         .from('profiles')
-        .select('user_id, username, created_at')
+        .select('user_id, username, email, phone_number, city, country, church_name, account_status, is_active, created_at')
         .order('created_at', { ascending: false });
 
       if (profilesError) throw profilesError;
@@ -92,8 +97,8 @@ const AdminDashboard = () => {
       if (rolesError) throw rolesError;
 
       // Combine the data
-      const usersWithRoles: UserWithProfile[] = profiles.map(profile => {
-        const roles = userRoles
+      const usersWithRoles: UserWithProfile[] = (profiles || []).map(profile => {
+        const roles = (userRoles || [])
           .filter(role => role.user_id === profile.user_id)
           .map(role => role.role as UserRole);
         
@@ -108,12 +113,17 @@ const AdminDashboard = () => {
 
         return {
           user_id: profile.user_id,
-          email: profile.username || 'No email',
+          email: profile.email || null,
           username: profile.username,
           created_at: profile.created_at,
           roles,
           primary_role: getPrimaryRole(roles),
-          is_active: true
+          is_active: profile.is_active ?? true,
+          phone_number: profile.phone_number || null,
+          city: profile.city || null,
+          country: profile.country || null,
+          church_name: profile.church_name || null,
+          account_status: (profile.account_status as 'pending' | 'approved' | 'denied') || 'pending',
         };
       });
 
@@ -137,6 +147,42 @@ const AdminDashboard = () => {
     await fetchUsers();
     setIsRoleModalOpen(false);
     setSelectedUser(null);
+  };
+
+  const handleApprove = async (user: UserWithProfile) => {
+    const { error } = await supabase.rpc('admin_set_user_access', {
+      _user_id: user.user_id,
+      _status: 'approved',
+    });
+    if (error) {
+      console.error('Approve error:', error);
+      toast({
+        title: 'Error',
+        description: 'Could not approve user.',
+        variant: 'destructive',
+      });
+      return;
+    }
+    toast({ title: 'Approved', description: 'User approved successfully.' });
+    await fetchUsers();
+  };
+
+  const handleDeny = async (user: UserWithProfile) => {
+    const { error } = await supabase.rpc('admin_set_user_access', {
+      _user_id: user.user_id,
+      _status: 'denied',
+    });
+    if (error) {
+      console.error('Deny error:', error);
+      toast({
+        title: 'Error',
+        description: 'Could not deny user.',
+        variant: 'destructive',
+      });
+      return;
+    }
+    toast({ title: 'Denied', description: 'User access denied.' });
+    await fetchUsers();
   };
 
   if (loading) {
@@ -176,6 +222,8 @@ const AdminDashboard = () => {
               users={users}
               currentUserRole={userRole}
               onRoleAssignment={handleRoleAssignment}
+              onApprove={handleApprove}
+              onDeny={handleDeny}
             />
           </CardContent>
         </Card>

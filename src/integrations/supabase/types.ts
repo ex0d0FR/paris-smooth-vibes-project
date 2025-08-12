@@ -284,30 +284,51 @@ export type Database = {
       }
       profiles: {
         Row: {
+          account_status: Database["public"]["Enums"]["account_status"]
           avatar_url: string | null
           bio: string | null
+          church_name: string | null
+          city: string | null
+          country: string | null
           created_at: string
+          email: string | null
           id: string
+          is_active: boolean
+          phone_number: string | null
           role: string
           updated_at: string
           user_id: string
           username: string | null
         }
         Insert: {
+          account_status?: Database["public"]["Enums"]["account_status"]
           avatar_url?: string | null
           bio?: string | null
+          church_name?: string | null
+          city?: string | null
+          country?: string | null
           created_at?: string
+          email?: string | null
           id?: string
+          is_active?: boolean
+          phone_number?: string | null
           role?: string
           updated_at?: string
           user_id: string
           username?: string | null
         }
         Update: {
+          account_status?: Database["public"]["Enums"]["account_status"]
           avatar_url?: string | null
           bio?: string | null
+          church_name?: string | null
+          city?: string | null
+          country?: string | null
           created_at?: string
+          email?: string | null
           id?: string
+          is_active?: boolean
+          phone_number?: string | null
           role?: string
           updated_at?: string
           user_id?: string
@@ -353,6 +374,17 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      admin_set_user_access: {
+        Args: {
+          _user_id: string
+          _status: Database["public"]["Enums"]["account_status"]
+        }
+        Returns: undefined
+      }
+      are_collaborators: {
+        Args: { _user1: string; _user2: string }
+        Returns: boolean
+      }
       can_access_board: {
         Args: { _user_id: string; _board_id: string }
         Returns: boolean
@@ -372,8 +404,20 @@ export type Database = {
         }
         Returns: boolean
       }
+      increment_prayer_count: {
+        Args: { _id: string }
+        Returns: {
+          country_code: string
+          country_name: string
+          created_at: string
+          id: string
+          prayer_count: number
+          updated_at: string
+        }
+      }
     }
     Enums: {
+      account_status: "pending" | "approved" | "denied"
       app_role: "dev" | "admin" | "team_leader" | "volunteer" | "guest"
       board_member_role: "owner" | "admin" | "member" | "viewer"
       board_visibility: "private" | "team" | "public"
@@ -506,6 +550,7 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
+      account_status: ["pending", "approved", "denied"],
       app_role: ["dev", "admin", "team_leader", "volunteer", "guest"],
       board_member_role: ["owner", "admin", "member", "viewer"],
       board_visibility: ["private", "team", "public"],
