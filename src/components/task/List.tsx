@@ -8,6 +8,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import TaskCardComponent from './Card';
+import { useDroppable, useDraggable } from '@dnd-kit/core';
 
 interface TaskList {
   id: string;
@@ -49,20 +50,20 @@ const TaskList: React.FC<ListProps> = ({ list, canEdit, onUpdate }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editTitle, setEditTitle] = useState(list.title);
   const { toast } = useToast();
+  const { setNodeRef: setDroppableRef, isOver } = useDroppable({ id: list.id, data: { type: 'list', listId: list.id } });
 
   useEffect(() => {
     fetchCards();
     
     // Set up real-time subscription for cards
     const channel = supabase
-      .channel('schema-db-changes')
+      .channel('cards-realtime')
       .on(
         'postgres_changes',
         {
           event: '*',
           schema: 'public',
           table: 'cards',
-          filter: `list_id=eq.${list.id}`
         },
         () => {
           fetchCards();
@@ -199,6 +200,20 @@ const TaskList: React.FC<ListProps> = ({ list, canEdit, onUpdate }) => {
     }
   };
 
+  // Draggable wrapper for cards
+  const DraggableCard: React.FC<{ card: TaskCard }> = ({ card }) => {
+    const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
+      id: card.id,
+      data: { type: 'card', cardId: card.id, fromListId: list.id }
+    });
+    const style = transform ? { transform: `translate3d(${transform.x}px, ${transform.y}px, 0)` } : undefined;
+    return (
+      <div ref={setNodeRef} style={style} {...listeners} {...attributes} className={`select-none ${isDragging ? 'opacity-50' : ''}`}>
+        <TaskCardComponent card={card} canEdit={canEdit} onUpdate={fetchCards} />
+      </div>
+    );
+  };
+
   return (
     <UICard className="w-72 flex-shrink-0 h-fit">
       <CardHeader className="pb-3">
@@ -243,7 +258,7 @@ const TaskList: React.FC<ListProps> = ({ list, canEdit, onUpdate }) => {
         </div>
       </CardHeader>
       
-      <CardContent className="space-y-2">
+      <CardContent ref={setDroppableRef} className={`space-y-2 ${isOver ? 'ring-2 ring-primary/50' : ''}`}>
         {/* Cards */}
         {loading ? (
           <div className="text-center py-4">
@@ -252,12 +267,7 @@ const TaskList: React.FC<ListProps> = ({ list, canEdit, onUpdate }) => {
         ) : (
           <>
             {cards.map((card) => (
-              <TaskCardComponent
-                key={card.id} 
-                card={card} 
-                canEdit={canEdit}
-                onUpdate={fetchCards}
-              />
+              <DraggableCard key={card.id} card={card} />
             ))}
           </>
         )}
