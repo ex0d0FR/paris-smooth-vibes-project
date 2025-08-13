@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Plus, MoreHorizontal, Edit2, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -7,8 +7,9 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import TaskCardComponent from './Card';
-import { useDroppable, useDraggable } from '@dnd-kit/core';
+import DraggableCard from './DraggableCard';
+import { useDroppable } from '@dnd-kit/core';
+import ErrorBoundary from '../ErrorBoundary';
 
 interface TaskList {
   id: string;
@@ -50,33 +51,13 @@ const TaskList: React.FC<ListProps> = ({ list, canEdit, onUpdate }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editTitle, setEditTitle] = useState(list.title);
   const { toast } = useToast();
-  const { setNodeRef: setDroppableRef, isOver } = useDroppable({ id: list.id, data: { type: 'list', listId: list.id } });
+  
+  const { setNodeRef: setDroppableRef, isOver } = useDroppable({ 
+    id: list.id, 
+    data: { type: 'list', listId: list.id } 
+  });
 
-  useEffect(() => {
-    fetchCards();
-    
-    // Set up real-time subscription for cards
-    const channel = supabase
-      .channel('cards-realtime')
-      .on(
-        'postgres_changes',
-        {
-          event: '*',
-          schema: 'public',
-          table: 'cards',
-        },
-        () => {
-          fetchCards();
-        }
-      )
-      .subscribe();
-
-    return () => {
-      supabase.removeChannel(channel);
-    };
-  }, [list.id]);
-
-  const fetchCards = async () => {
+  const fetchCards = useCallback(async () => {
     try {
       const { data, error } = await supabase
         .from('cards')
@@ -97,9 +78,35 @@ const TaskList: React.FC<ListProps> = ({ list, canEdit, onUpdate }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [list.id, toast]);
 
-  const createCard = async () => {
+  useEffect(() => {
+    fetchCards();
+    
+    // Set up real-time subscription for cards in this specific list
+    const channel = supabase
+      .channel(`cards-realtime-${list.id}`)
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'cards',
+          filter: `list_id=eq.${list.id}`
+        },
+        () => {
+          fetchCards();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [fetchCards]);
+
+
+  const createCard = useCallback(async () => {
     if (!newCardTitle.trim()) return;
 
     try {
@@ -139,7 +146,7 @@ const TaskList: React.FC<ListProps> = ({ list, canEdit, onUpdate }) => {
         variant: "destructive",
       });
     }
-  };
+  }, [newCardTitle, cards, list.id, toast]);
 
   const updateListTitle = async () => {
     if (!editTitle.trim() || editTitle === list.title) {
@@ -200,118 +207,117 @@ const TaskList: React.FC<ListProps> = ({ list, canEdit, onUpdate }) => {
     }
   };
 
-  // Draggable wrapper for cards
-  const DraggableCard: React.FC<{ card: TaskCard }> = ({ card }) => {
-    const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
-      id: card.id,
-      data: { type: 'card', cardId: card.id, fromListId: list.id }
-    });
-    const style = transform ? { transform: `translate3d(${transform.x}px, ${transform.y}px, 0)` } : undefined;
-    return (
-      <div ref={setNodeRef} style={style} {...listeners} {...attributes} className={`select-none ${isDragging ? 'opacity-50' : ''}`}>
-        <TaskCardComponent card={card} canEdit={canEdit} onUpdate={fetchCards} />
-      </div>
-    );
-  };
+  const memoizedCards = useMemo(() => cards, [cards]);
 
   return (
-    <UICard className="w-72 flex-shrink-0 h-fit">
-      <CardHeader className="pb-3">
-        <div className="flex items-center justify-between">
-          {isEditing ? (
-            <Input
-              value={editTitle}
-              onChange={(e) => setEditTitle(e.target.value)}
-              onBlur={updateListTitle}
-              onKeyPress={(e) => e.key === 'Enter' && updateListTitle()}
-              className="text-sm font-medium"
-              autoFocus
-            />
+    <ErrorBoundary>
+      <UICard className="w-72 flex-shrink-0 h-fit">
+        <CardHeader className="pb-3">
+          <div className="flex items-center justify-between">
+            {isEditing ? (
+              <Input
+                value={editTitle}
+                onChange={(e) => setEditTitle(e.target.value)}
+                onBlur={updateListTitle}
+                onKeyPress={(e) => e.key === 'Enter' && updateListTitle()}
+                className="text-sm font-medium"
+                autoFocus
+              />
+            ) : (
+              <CardTitle 
+                className="text-sm font-medium cursor-pointer"
+                onClick={() => canEdit && setIsEditing(true)}
+              >
+                {list.title} ({memoizedCards.length})
+              </CardTitle>
+            )}
+            
+            {canEdit && (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="sm" className="h-6 w-6 p-0">
+                    <MoreHorizontal className="h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem onClick={() => setIsEditing(true)}>
+                    <Edit2 className="h-4 w-4 mr-2" />
+                    Edit Title
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={deleteList} className="text-destructive">
+                    <Trash2 className="h-4 w-4 mr-2" />
+                    Delete List
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            )}
+          </div>
+        </CardHeader>
+        
+        <CardContent 
+          ref={setDroppableRef} 
+          className={`space-y-2 min-h-[100px] ${isOver ? 'ring-2 ring-primary/50 bg-primary/5' : ''}`}
+        >
+          {/* Cards */}
+          {loading ? (
+            <div className="text-center py-4">
+              <div className="animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-primary mx-auto"></div>
+            </div>
           ) : (
-            <CardTitle 
-              className="text-sm font-medium cursor-pointer"
-              onClick={() => canEdit && setIsEditing(true)}
-            >
-              {list.title} ({cards.length})
-            </CardTitle>
+            <>
+              {memoizedCards.map((card) => (
+                <DraggableCard 
+                  key={card.id} 
+                  card={card} 
+                  listId={list.id}
+                  canEdit={canEdit}
+                  onUpdate={fetchCards}
+                />
+              ))}
+            </>
           )}
           
+          {/* Add Card Button */}
           {canEdit && (
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="h-6 w-6 p-0">
-                  <MoreHorizontal className="h-4 w-4" />
+            <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
+              <DialogTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  className="w-full justify-start text-muted-foreground hover:text-foreground"
+                  size="sm"
+                >
+                  <Plus className="h-4 w-4 mr-2" />
+                  Add a card
                 </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setIsEditing(true)}>
-                  <Edit2 className="h-4 w-4 mr-2" />
-                  Edit Title
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={deleteList} className="text-destructive">
-                  <Trash2 className="h-4 w-4 mr-2" />
-                  Delete List
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Create New Card</DialogTitle>
+                </DialogHeader>
+                <div className="space-y-4">
+                  <div>
+                    <Input
+                      placeholder="Card title"
+                      value={newCardTitle}
+                      onChange={(e) => setNewCardTitle(e.target.value)}
+                      onKeyPress={(e) => e.key === 'Enter' && createCard()}
+                    />
+                  </div>
+                  <div className="flex justify-end gap-2">
+                    <Button variant="outline" onClick={() => setIsCreateDialogOpen(false)}>
+                      Cancel
+                    </Button>
+                    <Button onClick={createCard} disabled={!newCardTitle.trim()}>
+                      Create Card
+                    </Button>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           )}
-        </div>
-      </CardHeader>
-      
-      <CardContent ref={setDroppableRef} className={`space-y-2 ${isOver ? 'ring-2 ring-primary/50' : ''}`}>
-        {/* Cards */}
-        {loading ? (
-          <div className="text-center py-4">
-            <div className="animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-primary mx-auto"></div>
-          </div>
-        ) : (
-          <>
-            {cards.map((card) => (
-              <DraggableCard key={card.id} card={card} />
-            ))}
-          </>
-        )}
-        
-        {/* Add Card Button */}
-        {canEdit && (
-          <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
-            <DialogTrigger asChild>
-              <Button 
-                variant="ghost" 
-                className="w-full justify-start text-muted-foreground hover:text-foreground"
-                size="sm"
-              >
-                <Plus className="h-4 w-4 mr-2" />
-                Add a card
-              </Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Create New Card</DialogTitle>
-              </DialogHeader>
-              <div className="space-y-4">
-                <div>
-                  <Input
-                    placeholder="Card title"
-                    value={newCardTitle}
-                    onChange={(e) => setNewCardTitle(e.target.value)}
-                    onKeyPress={(e) => e.key === 'Enter' && createCard()}
-                  />
-                </div>
-                <div className="flex justify-end gap-2">
-                  <Button variant="outline" onClick={() => setIsCreateDialogOpen(false)}>
-                    Cancel
-                  </Button>
-                  <Button onClick={createCard} disabled={!newCardTitle.trim()}>
-                    Create Card
-                  </Button>
-                </div>
-              </div>
-            </DialogContent>
-          </Dialog>
-        )}
-      </CardContent>
-    </UICard>
+        </CardContent>
+      </UICard>
+    </ErrorBoundary>
   );
 };
 

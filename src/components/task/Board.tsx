@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -7,6 +7,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import TaskList from './List';
 import { DndContext, useSensors, useSensor, PointerSensor, DragEndEvent } from '@dnd-kit/core';
+import ErrorBoundary from '../ErrorBoundary';
 
 interface BoardList {
   id: string;
@@ -30,23 +31,30 @@ const Board: React.FC<BoardProps> = ({ boardId, canEdit }) => {
   const [newListTitle, setNewListTitle] = useState('');
   const { toast } = useToast();
   const sensors = useSensors(
-    useSensor(PointerSensor, { activationConstraint: { distance: 5 } })
+    useSensor(PointerSensor, { 
+      activationConstraint: { distance: 8 }
+    })
   );
 
-  const handleDragEnd = async (event: DragEndEvent) => {
+  const handleDragEnd = useCallback(async (event: DragEndEvent) => {
     const { active, over } = event;
-    if (!over) return;
+    
+    // Safety checks
+    if (!over || !active?.data?.current) return;
 
-    const activeData: any = active.data.current;
-    const overData: any = (over as any).data?.current;
+    const activeData = active.data.current;
+    const overData = over.data?.current;
 
-    // Only handle dragging cards between lists for now
+    // Only handle dragging cards between lists
     if (activeData?.type === 'card' && overData?.type === 'list') {
       const fromListId = activeData.fromListId;
       const toListId = overData.listId;
+      
+      // Don't move if dropping on same list
       if (!fromListId || !toListId || fromListId === toListId) return;
 
       try {
+        // Get max position in target list
         const { data: maxRow, error: posErr } = await supabase
           .from('cards')
           .select('position')
@@ -54,22 +62,36 @@ const Board: React.FC<BoardProps> = ({ boardId, canEdit }) => {
           .order('position', { ascending: false })
           .limit(1)
           .maybeSingle();
+        
         if (posErr) throw posErr;
+        
         const nextPos = (maxRow?.position ?? -1) + 1;
 
+        // Update card list and position
         const { error: updateErr } = await supabase
           .from('cards')
-          .update({ list_id: toListId, position: nextPos })
+          .update({ 
+            list_id: toListId, 
+            position: nextPos 
+          })
           .eq('id', String(active.id));
+        
         if (updateErr) throw updateErr;
 
-        toast({ title: 'Card moved', description: 'The card was moved successfully.' });
-      } catch (e) {
-        console.error('Error moving card:', e);
-        toast({ title: 'Move failed', description: 'Could not move card.', variant: 'destructive' });
+        toast({ 
+          title: 'Card moved', 
+          description: 'The card was moved successfully.' 
+        });
+      } catch (error) {
+        console.error('Error moving card:', error);
+        toast({ 
+          title: 'Move failed', 
+          description: 'Could not move card.', 
+          variant: 'destructive' 
+        });
       }
     }
-  };
+  }, [toast]);
 
   useEffect(() => {
     fetchLists();
@@ -169,59 +191,61 @@ const Board: React.FC<BoardProps> = ({ boardId, canEdit }) => {
   }
 
   return (
-    <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
-      <div className="flex gap-6 overflow-x-auto pb-6">
-        {/* Lists */}
-        {lists.map((list) => (
-          <TaskList
-            key={list.id}
-            list={list}
-            canEdit={canEdit}
-            onUpdate={fetchLists}
-          />
-        ))}
-        
-        {/* Add List Button */}
-        {canEdit && (
-          <div className="flex-shrink-0">
-            <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
-              <DialogTrigger asChild>
-                <Button 
-                  variant="outline" 
-                  className="h-full min-h-[200px] w-72 border-dashed border-2 hover:border-primary/50 flex flex-col items-center justify-center gap-2"
-                >
-                  <Plus className="h-6 w-6" />
-                  Add List
-                </Button>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Create New List</DialogTitle>
-                </DialogHeader>
-                <div className="space-y-4">
-                  <div>
-                    <Input
-                      placeholder="List title"
-                      value={newListTitle}
-                      onChange={(e) => setNewListTitle(e.target.value)}
-                      onKeyPress={(e) => e.key === 'Enter' && createList()}
-                    />
+    <ErrorBoundary>
+      <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
+        <div className="flex gap-6 overflow-x-auto pb-6 select-none">
+          {/* Lists */}
+          {lists.map((list) => (
+            <TaskList
+              key={list.id}
+              list={list}
+              canEdit={canEdit}
+              onUpdate={fetchLists}
+            />
+          ))}
+          
+          {/* Add List Button */}
+          {canEdit && (
+            <div className="flex-shrink-0">
+              <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button 
+                    variant="outline" 
+                    className="h-full min-h-[200px] w-72 border-dashed border-2 hover:border-primary/50 flex flex-col items-center justify-center gap-2"
+                  >
+                    <Plus className="h-6 w-6" />
+                    Add List
+                  </Button>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Create New List</DialogTitle>
+                  </DialogHeader>
+                  <div className="space-y-4">
+                    <div>
+                      <Input
+                        placeholder="List title"
+                        value={newListTitle}
+                        onChange={(e) => setNewListTitle(e.target.value)}
+                        onKeyPress={(e) => e.key === 'Enter' && createList()}
+                      />
+                    </div>
+                    <div className="flex justify-end gap-2">
+                      <Button variant="outline" onClick={() => setIsCreateDialogOpen(false)}>
+                        Cancel
+                      </Button>
+                      <Button onClick={createList} disabled={!newListTitle.trim()}>
+                        Create List
+                      </Button>
+                    </div>
                   </div>
-                  <div className="flex justify-end gap-2">
-                    <Button variant="outline" onClick={() => setIsCreateDialogOpen(false)}>
-                      Cancel
-                    </Button>
-                    <Button onClick={createList} disabled={!newListTitle.trim()}>
-                      Create List
-                    </Button>
-                  </div>
-                </div>
-              </DialogContent>
-            </Dialog>
-          </div>
-        )}
-      </div>
-    </DndContext>
+                </DialogContent>
+              </Dialog>
+            </div>
+          )}
+        </div>
+      </DndContext>
+    </ErrorBoundary>
   );
 };
 
