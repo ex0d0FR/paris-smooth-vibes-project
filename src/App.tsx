@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "@/context/ThemeProvider";
 import { Suspense, useEffect, useState } from 'react';
+import FloatingSocialMedia from "@/components/FloatingSocialMedia";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
@@ -73,6 +74,7 @@ const App = () => (
         <TooltipProvider>
           <Toaster />
           <Sonner />
+          <FloatingSocialMedia />
           <Suspense fallback={
             <div className="flex h-screen items-center justify-center">
               <div className="text-center">
