@@ -83,7 +83,7 @@ const TaskList: React.FC<ListProps> = ({ list, canEdit, onUpdate }) => {
   useEffect(() => {
     fetchCards();
     
-    // Set up real-time subscription for cards in this specific list
+    // Set up real-time subscription for all cards changes, not just this list
     const channel = supabase
       .channel(`cards-realtime-${list.id}`)
       .on(
@@ -91,10 +91,10 @@ const TaskList: React.FC<ListProps> = ({ list, canEdit, onUpdate }) => {
         {
           event: '*',
           schema: 'public',
-          table: 'cards',
-          filter: `list_id=eq.${list.id}`
+          table: 'cards'
         },
-        () => {
+        (payload) => {
+          // Always refetch when any card changes to ensure proper updates
           fetchCards();
         }
       )
