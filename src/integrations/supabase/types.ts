@@ -282,6 +282,39 @@ export type Database = {
         }
         Relationships: []
       }
+      profile_access_log: {
+        Row: {
+          access_type: string
+          accessed_user_id: string
+          accessor_user_id: string
+          board_id: string | null
+          created_at: string | null
+          id: string
+          ip_address: unknown | null
+          user_agent: string | null
+        }
+        Insert: {
+          access_type: string
+          accessed_user_id: string
+          accessor_user_id: string
+          board_id?: string | null
+          created_at?: string | null
+          id?: string
+          ip_address?: unknown | null
+          user_agent?: string | null
+        }
+        Update: {
+          access_type?: string
+          accessed_user_id?: string
+          accessor_user_id?: string
+          board_id?: string | null
+          created_at?: string | null
+          id?: string
+          ip_address?: unknown | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           account_status: Database["public"]["Enums"]["account_status"]
@@ -423,6 +456,38 @@ export type Database = {
       can_edit_board: {
         Args: { _user_id: string; _board_id: string }
         Returns: boolean
+      }
+      get_board_collaborators: {
+        Args: { _board_id: string }
+        Returns: {
+          user_id: string
+          username: string
+          avatar_url: string
+          city: string
+          country: string
+          role_name: string
+          relationship: string
+        }[]
+      }
+      get_collaborator_info: {
+        Args: { _user_id: string }
+        Returns: {
+          user_id: string
+          username: string
+          avatar_url: string
+          city: string
+          country: string
+          is_active: boolean
+          account_status: string
+        }[]
+      }
+      get_user_contact_info: {
+        Args: { _user_id: string }
+        Returns: {
+          email: string
+          phone_number: string
+          church_name: string
+        }[]
       }
       get_user_primary_role: {
         Args: { _user_id: string }

@@ -80,7 +80,7 @@ const AdminDashboard = () => {
 
   const fetchUsers = async () => {
     try {
-      // Get profiles with extended fields
+      // Get profiles with extended fields - admins can see all data
       const { data: profiles, error: profilesError } = await supabase
         .from('profiles')
         .select('user_id, username, email, phone_number, city, country, church_name, account_status, is_active, created_at')
