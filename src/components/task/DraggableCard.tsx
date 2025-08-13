@@ -32,7 +32,7 @@ const DraggableCard: React.FC<DraggableCardProps> = ({ card, listId, canEdit, on
       type: 'card', 
       cardId: card.id, 
       fromListId: listId,
-      card: card 
+      card: { ...card, list_id: listId }
     }
   });
 

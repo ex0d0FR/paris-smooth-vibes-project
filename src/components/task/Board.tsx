@@ -45,50 +45,105 @@ const Board: React.FC<BoardProps> = ({ boardId, canEdit }) => {
     const activeData = active.data.current;
     const overData = over.data?.current;
 
-    // Only handle dragging cards between lists
-    if (activeData?.type === 'card' && overData?.type === 'list') {
+    // Handle dragging cards
+    if (activeData?.type === 'card') {
+      const cardId = String(active.id);
       const fromListId = activeData.fromListId;
-      const toListId = overData.listId;
       
-      // Don't move if dropping on same list
-      if (!fromListId || !toListId || fromListId === toListId) return;
-
-      try {
-        // Get max position in target list
-        const { data: maxRow, error: posErr } = await supabase
-          .from('cards')
-          .select('position')
-          .eq('list_id', toListId)
-          .order('position', { ascending: false })
-          .limit(1)
-          .maybeSingle();
+      // Handle dropping on a list (between lists or within same list)
+      if (overData?.type === 'list') {
+        const toListId = overData.listId;
         
-        if (posErr) throw posErr;
-        
-        const nextPos = (maxRow?.position ?? -1) + 1;
+        if (!fromListId || !toListId) return;
 
-        // Update card list and position
-        const { error: updateErr } = await supabase
-          .from('cards')
-          .update({ 
-            list_id: toListId, 
-            position: nextPos 
-          })
-          .eq('id', String(active.id));
-        
-        if (updateErr) throw updateErr;
+        try {
+          // Get max position in target list
+          const { data: maxRow, error: posErr } = await supabase
+            .from('cards')
+            .select('position')
+            .eq('list_id', toListId)
+            .order('position', { ascending: false })
+            .limit(1)
+            .maybeSingle();
+          
+          if (posErr) throw posErr;
+          
+          const nextPos = (maxRow?.position ?? -1) + 1;
 
-        toast({ 
-          title: 'Card moved', 
-          description: 'The card was moved successfully.' 
-        });
-      } catch (error) {
-        console.error('Error moving card:', error);
-        toast({ 
-          title: 'Move failed', 
-          description: 'Could not move card.', 
-          variant: 'destructive' 
-        });
+          // Update card list and position
+          const { error: updateErr } = await supabase
+            .from('cards')
+            .update({ 
+              list_id: toListId, 
+              position: nextPos 
+            })
+            .eq('id', cardId);
+          
+          if (updateErr) throw updateErr;
+
+          // Force refresh of both lists
+          setTimeout(() => {
+            window.location.reload();
+          }, 500);
+          
+        } catch (error) {
+          console.error('Error moving card:', error);
+          toast({ 
+            title: 'Move failed', 
+            description: 'Could not move card.', 
+            variant: 'destructive' 
+          });
+        }
+      }
+      
+      // Handle dropping on another card (reordering within list or between lists)
+      else if (overData?.type === 'card') {
+        const overCard = overData.card;
+        const toListId = overCard.list_id || fromListId;
+        
+        if (!fromListId || !toListId) return;
+
+        try {
+          // Calculate new position based on where we're dropping
+          let newPosition = overCard.position;
+          
+          // If moving to different list, add to end
+          if (fromListId !== toListId) {
+            const { data: maxRow } = await supabase
+              .from('cards')
+              .select('position')
+              .eq('list_id', toListId)
+              .order('position', { ascending: false })
+              .limit(1)
+              .maybeSingle();
+            
+            newPosition = (maxRow?.position ?? -1) + 1;
+          }
+
+          // Update card
+          const { error: updateErr } = await supabase
+            .from('cards')
+            .update({ 
+              list_id: toListId, 
+              position: newPosition 
+            })
+            .eq('id', cardId);
+          
+          if (updateErr) throw updateErr;
+
+          // Force refresh
+          setTimeout(() => {
+            window.location.reload();
+          }, 500);
+          
+        } catch (error) {
+          console.error('Error reordering card:', error);
+          toast({ 
+            title: 'Reorder failed', 
+            description: 'Could not reorder card.', 
+            variant: 'destructive' 
+          });
+        }
       }
     }
   }, [toast]);
