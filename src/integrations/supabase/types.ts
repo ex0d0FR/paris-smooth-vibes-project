@@ -295,7 +295,6 @@ export type Database = {
           id: string
           is_active: boolean
           phone_number: string | null
-          role: string
           updated_at: string
           user_id: string
           username: string | null
@@ -312,7 +311,6 @@ export type Database = {
           id?: string
           is_active?: boolean
           phone_number?: string | null
-          role?: string
           updated_at?: string
           user_id: string
           username?: string | null
@@ -329,10 +327,39 @@ export type Database = {
           id?: string
           is_active?: boolean
           phone_number?: string | null
-          role?: string
           updated_at?: string
           user_id?: string
           username?: string | null
+        }
+        Relationships: []
+      }
+      role_audit_log: {
+        Row: {
+          action: string
+          assigned_by: string
+          created_at: string | null
+          id: string
+          new_roles: string[] | null
+          old_roles: string[] | null
+          target_user_id: string
+        }
+        Insert: {
+          action: string
+          assigned_by: string
+          created_at?: string | null
+          id?: string
+          new_roles?: string[] | null
+          old_roles?: string[] | null
+          target_user_id: string
+        }
+        Update: {
+          action?: string
+          assigned_by?: string
+          created_at?: string | null
+          id?: string
+          new_roles?: string[] | null
+          old_roles?: string[] | null
+          target_user_id?: string
         }
         Relationships: []
       }
@@ -384,6 +411,10 @@ export type Database = {
       are_collaborators: {
         Args: { _user1: string; _user2: string }
         Returns: boolean
+      }
+      assign_user_roles: {
+        Args: { _target_user_id: string; _roles: string[]; _action?: string }
+        Returns: undefined
       }
       can_access_board: {
         Args: { _user_id: string; _board_id: string }

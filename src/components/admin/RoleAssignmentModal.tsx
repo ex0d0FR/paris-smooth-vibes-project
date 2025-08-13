@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/dialog';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { useSecurityMonitoring } from '@/hooks/useSecurityMonitoring';
 import { Loader2 } from 'lucide-react';
 
 type UserRole = 'dev' | 'admin' | 'team_leader' | 'volunteer' | 'guest';
@@ -42,6 +43,7 @@ const RoleAssignmentModal = ({
   const [selectedRoles, setSelectedRoles] = useState<UserRole[]>(user.roles);
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
+  const { checkRoleAssignmentAttempt } = useSecurityMonitoring();
 
   const availableRoles: { role: UserRole; label: string; description: string }[] = [
     { role: 'dev', label: 'Developer', description: 'Full system access (super admin)' },
@@ -70,35 +72,21 @@ const RoleAssignmentModal = ({
   const handleSaveRoles = async () => {
     setLoading(true);
     try {
-      // First, deactivate all current roles for this user
-      const { error: deactivateError } = await supabase
-        .from('user_roles')
-        .update({ is_active: false })
-        .eq('user_id', user.user_id);
-
-      if (deactivateError) throw deactivateError;
-
-      // Then, insert new active roles
-      if (selectedRoles.length > 0) {
-        // Get current user ID to track who assigned the roles
-        const { data: { session } } = await supabase.auth.getSession();
-        
-        const rolesToInsert = selectedRoles.map(role => ({
-          user_id: user.user_id,
-          role: role,
-          assigned_by: session?.user?.id,
-          is_active: true
-        }));
-
-        const { error: insertError } = await supabase
-          .from('user_roles')
-          .upsert(rolesToInsert, { 
-            onConflict: 'user_id,role',
-            ignoreDuplicates: false 
-          });
-
-        if (insertError) throw insertError;
+      // Pre-validate role assignment with security monitoring
+      const canAssign = await checkRoleAssignmentAttempt(user.user_id, selectedRoles);
+      if (!canAssign) {
+        setLoading(false);
+        return;
       }
+
+      // Use the secure role assignment function
+      const { error } = await supabase.rpc('assign_user_roles', {
+        _target_user_id: user.user_id,
+        _roles: selectedRoles,
+        _action: 'replace'
+      });
+
+      if (error) throw error;
 
       toast({
         title: "Success",
@@ -108,7 +96,7 @@ const RoleAssignmentModal = ({
 
       onRoleUpdate();
     } catch (error: any) {
-      // Log error for debugging but don't expose sensitive information
+      console.error('Role assignment error:', error);
       toast({
         title: "Error",
         description: error.message || "Failed to update user roles",

@@ -20,7 +20,6 @@ interface UserProfile {
   username: string | null;
   avatar_url: string | null;
   bio: string | null;
-  role: string;
   // Added optional extended fields
   phone_number?: string | null;
   city?: string | null;
