@@ -1,4 +1,4 @@
-import { Instagram, Facebook } from 'lucide-react';
+import { Instagram, Facebook, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const FloatingSocialMedia = () => {
@@ -6,16 +6,23 @@ const FloatingSocialMedia = () => {
     {
       name: 'Instagram',
       icon: Instagram,
-      url: 'https://instagram.com/paris2025conference',
+      url: 'https://www.instagram.com/bridges.paris2025/',
       bgColor: 'bg-gradient-to-r from-purple-500 to-pink-500',
       hoverColor: 'hover:from-purple-600 hover:to-pink-600'
     },
     {
       name: 'Facebook',
       icon: Facebook,
-      url: 'https://facebook.com/paris2025conference',
+      url: 'https://www.facebook.com/profile.php?id=61578602319876',
       bgColor: 'bg-blue-600',
       hoverColor: 'hover:bg-blue-700'
+    },
+    {
+      name: 'YouTube',
+      icon: Youtube,
+      url: 'https://www.youtube.com/@bridgesParis2025',
+      bgColor: 'bg-red-600',
+      hoverColor: 'hover:bg-red-700'
     }
   ];
 
