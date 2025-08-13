@@ -68,7 +68,7 @@ const Profile = () => {
 
   const fetchUserData = async (userId: string) => {
     try {
-      // Fetch profile - use maybeSingle() to avoid error when no profile exists
+      // Fetch basic profile data
       const { data: profileData, error: profileError } = await supabase
         .from('profiles')
         .select('*')
@@ -83,8 +83,22 @@ const Profile = () => {
         setLoading(false);
         return;
       }
+
+      // Fetch contact info separately using secure function
+      const { data: contactData } = await supabase
+        .rpc('get_user_contact_info', { _user_id: userId });
+
+      const contactInfo = contactData?.[0] || null;
       
-      setProfile(profileData as UserProfile);
+      // Combine profile and contact data
+      const combinedProfile = {
+        ...profileData,
+        phone_number: contactInfo?.phone_number || null,
+        church_name: contactInfo?.church_name || null,
+        email: contactInfo?.email || null
+      } as UserProfile;
+      
+      setProfile(combinedProfile);
 
       // Fetch user roles
       const { data: rolesData, error: rolesError } = await supabase

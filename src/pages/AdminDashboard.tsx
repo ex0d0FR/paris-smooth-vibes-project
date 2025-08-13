@@ -80,10 +80,10 @@ const AdminDashboard = () => {
 
   const fetchUsers = async () => {
     try {
-      // Get profiles with extended fields - admins can see all data
+      // Get basic profiles data (no sensitive fields in main table now)
       const { data: profiles, error: profilesError } = await supabase
         .from('profiles')
-        .select('user_id, username, email, phone_number, city, country, church_name, account_status, is_active, created_at')
+        .select('user_id, username, city, country, account_status, is_active, created_at')
         .order('created_at', { ascending: false });
 
       if (profilesError) throw profilesError;
@@ -96,36 +96,44 @@ const AdminDashboard = () => {
 
       if (rolesError) throw rolesError;
 
-      // Combine the data
-      const usersWithRoles: UserWithProfile[] = (profiles || []).map(profile => {
-        const roles = (userRoles || [])
-          .filter(role => role.user_id === profile.user_id)
-          .map(role => role.role as UserRole);
-        
-        // Get primary role using hierarchy
-        const getPrimaryRole = (roles: UserRole[]): UserRole => {
-          const hierarchy: UserRole[] = ['dev', 'admin', 'team_leader', 'volunteer', 'guest'];
-          for (const role of hierarchy) {
-            if (roles.includes(role)) return role;
-          }
-          return 'guest';
-        };
+      // Combine the data with contact info for each user
+      const usersWithRoles: UserWithProfile[] = await Promise.all(
+        (profiles || []).map(async (profile) => {
+          const roles = (userRoles || [])
+            .filter(role => role.user_id === profile.user_id)
+            .map(role => role.role as UserRole);
+          
+          // Get primary role using hierarchy
+          const getPrimaryRole = (roles: UserRole[]): UserRole => {
+            const hierarchy: UserRole[] = ['dev', 'admin', 'team_leader', 'volunteer', 'guest'];
+            for (const role of hierarchy) {
+              if (roles.includes(role)) return role;
+            }
+            return 'guest';
+          };
 
-        return {
-          user_id: profile.user_id,
-          email: profile.email || null,
-          username: profile.username,
-          created_at: profile.created_at,
-          roles,
-          primary_role: getPrimaryRole(roles),
-          is_active: profile.is_active ?? true,
-          phone_number: profile.phone_number || null,
-          city: profile.city || null,
-          country: profile.country || null,
-          church_name: profile.church_name || null,
-          account_status: (profile.account_status as 'pending' | 'approved' | 'denied') || 'pending',
-        };
-      });
+          // Get contact info using secure function (admins have access)
+          const { data: contactData } = await supabase
+            .rpc('get_user_contact_info', { _user_id: profile.user_id });
+
+          const contactInfo = contactData?.[0] || null;
+
+          return {
+            user_id: profile.user_id,
+            email: contactInfo?.email || null,
+            username: profile.username,
+            created_at: profile.created_at,
+            roles,
+            primary_role: getPrimaryRole(roles),
+            is_active: profile.is_active ?? true,
+            phone_number: contactInfo?.phone_number || null,
+            city: profile.city || null,
+            country: profile.country || null,
+            church_name: contactInfo?.church_name || null,
+            account_status: (profile.account_status as 'pending' | 'approved' | 'denied') || 'pending',
+          };
+        })
+      );
 
       setUsers(usersWithRoles);
     } catch (error) {

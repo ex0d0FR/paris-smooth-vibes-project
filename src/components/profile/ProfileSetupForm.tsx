@@ -47,34 +47,48 @@ const ProfileSetupForm: React.FC<ProfileSetupFormProps> = ({ userId, initialValu
     }
 
     setSaving(true);
-    const { error } = await supabase
-      .from('profiles')
-      .update({
-        phone_number: values.phone_number || null,
-        city: values.city || null,
-        country: values.country || null,
-        church_name: values.church_name || null,
-      })
-      .eq('user_id', userId);
+    
+    try {
+      // Update basic profile info (city, country)
+      const { error: profileError } = await supabase
+        .from('profiles')
+        .update({
+          city: values.city || null,
+          country: values.country || null,
+        })
+        .eq('user_id', userId);
 
-    setSaving(false);
+      if (profileError) throw profileError;
 
-    if (error) {
+      // Update contact info (phone, church) in separate table
+      const { error: contactError } = await supabase
+        .from('profile_contact_info')
+        .upsert({
+          user_id: userId,
+          phone_number: values.phone_number || null,
+          church_name: values.church_name || null,
+        }, {
+          onConflict: 'user_id'
+        });
+
+      if (contactError) throw contactError;
+
+      toast({
+        title: 'Profile updated',
+        description: 'Thanks! Your registration details were saved.',
+      });
+
+      onCompleted?.();
+    } catch (error) {
       console.error('Profile update error:', error);
       toast({
         title: 'Error',
         description: 'Could not save your information. Please try again.',
         variant: 'destructive',
       });
-      return;
+    } finally {
+      setSaving(false);
     }
-
-    toast({
-      title: 'Profile updated',
-      description: 'Thanks! Your registration details were saved.',
-    });
-
-    onCompleted?.();
   };
 
   return (

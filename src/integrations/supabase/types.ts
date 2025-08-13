@@ -315,19 +315,46 @@ export type Database = {
         }
         Relationships: []
       }
+      profile_contact_info: {
+        Row: {
+          church_name: string | null
+          created_at: string
+          email: string | null
+          id: string
+          phone_number: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          church_name?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          phone_number?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          church_name?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          phone_number?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           account_status: Database["public"]["Enums"]["account_status"]
           avatar_url: string | null
           bio: string | null
-          church_name: string | null
           city: string | null
           country: string | null
           created_at: string
-          email: string | null
           id: string
           is_active: boolean
-          phone_number: string | null
           updated_at: string
           user_id: string
           username: string | null
@@ -336,14 +363,11 @@ export type Database = {
           account_status?: Database["public"]["Enums"]["account_status"]
           avatar_url?: string | null
           bio?: string | null
-          church_name?: string | null
           city?: string | null
           country?: string | null
           created_at?: string
-          email?: string | null
           id?: string
           is_active?: boolean
-          phone_number?: string | null
           updated_at?: string
           user_id: string
           username?: string | null
@@ -352,14 +376,11 @@ export type Database = {
           account_status?: Database["public"]["Enums"]["account_status"]
           avatar_url?: string | null
           bio?: string | null
-          church_name?: string | null
           city?: string | null
           country?: string | null
           created_at?: string
-          email?: string | null
           id?: string
           is_active?: boolean
-          phone_number?: string | null
           updated_at?: string
           user_id?: string
           username?: string | null
