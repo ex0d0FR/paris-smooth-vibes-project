@@ -81,10 +81,10 @@ const Board: React.FC<BoardProps> = ({ boardId, canEdit }) => {
           
           if (updateErr) throw updateErr;
 
-          // Force refresh of both lists
-          setTimeout(() => {
-            window.location.reload();
-          }, 500);
+          toast({ 
+            title: 'Card moved', 
+            description: 'The card was moved successfully.' 
+          });
           
         } catch (error) {
           console.error('Error moving card:', error);
@@ -131,10 +131,10 @@ const Board: React.FC<BoardProps> = ({ boardId, canEdit }) => {
           
           if (updateErr) throw updateErr;
 
-          // Force refresh
-          setTimeout(() => {
-            window.location.reload();
-          }, 500);
+          toast({ 
+            title: 'Card moved', 
+            description: 'The card was moved successfully.' 
+          });
           
         } catch (error) {
           console.error('Error reordering card:', error);
