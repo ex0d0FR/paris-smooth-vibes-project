@@ -27,15 +27,15 @@ const YouTubeVideoSection: React.FC = () => {
   const videos = [
     {
       id: "d8KdWfdVJ4c",
-      title: "Obed Alvarez - In Spanish"
+      titleKey: "highlights.videos.obed"
     },
     {
-      id: "3MV9aGGW9So",
-      title: "Yong Cho - In English"
+      id: "3MV9aGGW9So", 
+      titleKey: "highlights.videos.yong"
     },
     {
       id: "rt8lSMiJFIM",
-      title: "Hisham Kamel - In Arabic"
+      titleKey: "highlights.videos.hisham"
     }
   ];
 
@@ -54,9 +54,9 @@ const YouTubeVideoSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {videos.map((video, index) => (
             <div key={index} className="space-y-4">
-              <YouTubeVideo videoId={video.id} title={video.title} />
+              <YouTubeVideo videoId={video.id} title={t(video.titleKey)} />
               <h3 className="text-lg font-semibold text-center text-foreground">
-                {video.title}
+                {t(video.titleKey)}
               </h3>
             </div>
           ))}

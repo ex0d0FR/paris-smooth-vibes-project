@@ -13,6 +13,11 @@
   },
   "highlights": {
     "title": "Konferenz-Highlights",
-    "subtitle": "Erhalten Sie einen Einblick in das, was Sie bei PARIS 2025 erwartet"
+    "subtitle": "Erhalten Sie einen Einblick in das, was Sie bei PARIS 2025 erwartet",
+    "videos": {
+      "obed": "Obed Alvarez - Auf Spanisch",
+      "yong": "Yong Cho - Auf Englisch",
+      "hisham": "Hisham Kamel - Auf Arabisch"
+    }
   }
 }

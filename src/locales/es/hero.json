@@ -13,6 +13,11 @@
   },
   "highlights": {
     "title": "Destacados de la Conferencia",
-    "subtitle": "Obtén un vistazo de lo que te espera en PARIS 2025"
+    "subtitle": "Obtén un vistazo de lo que te espera en PARIS 2025",
+    "videos": {
+      "obed": "Obed Alvarez - En Español",
+      "yong": "Yong Cho - En Inglés",
+      "hisham": "Hisham Kamel - En Árabe"
+    }
   }
 }

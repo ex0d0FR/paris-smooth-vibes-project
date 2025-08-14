@@ -13,6 +13,11 @@
   },
   "highlights": {
     "title": "Conference Highlights",
-    "subtitle": "Get a glimpse of what awaits you at PARIS 2025"
+    "subtitle": "Get a glimpse of what awaits you at PARIS 2025",
+    "videos": {
+      "obed": "Obed Alvarez - In Spanish",
+      "yong": "Yong Cho - In English", 
+      "hisham": "Hisham Kamel - In Arabic"
+    }
   }
 }

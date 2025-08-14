@@ -13,6 +13,11 @@
   },
   "highlights": {
     "title": "Points Forts de la Conférence",
-    "subtitle": "Découvrez ce qui vous attend à PARIS 2025"
+    "subtitle": "Découvrez ce qui vous attend à PARIS 2025",
+    "videos": {
+      "obed": "Obed Alvarez - En Espagnol",
+      "yong": "Yong Cho - En Anglais",
+      "hisham": "Hisham Kamel - En Arabe"
+    }
   }
 }
