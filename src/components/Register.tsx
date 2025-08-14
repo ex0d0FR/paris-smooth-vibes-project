@@ -179,7 +179,7 @@ const Register = () => {
               className="bg-paris-gold hover:bg-yellow-500 text-paris-navy border border-paris-gold px-6 py-2"
               onClick={() => navigate('/lodging-help')}
             >
-              Lodging options help
+              {t('lodgingOptionsHelp', 'Lodging options help')}
             </Button>
           </div>
         </div>

@@ -33,5 +33,6 @@
   "toast": {
     "title": "Registration Started",
     "description": "Redirecting you to complete your {{tier}} registration..."
-  }
+  },
+  "lodgingOptionsHelp": "Lodging Options Help"
 }

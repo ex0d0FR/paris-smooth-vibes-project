@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { MapPin, Clock, Phone, Globe } from 'lucide-react';
@@ -8,6 +8,10 @@ import Footer from '@/components/Footer';
 
 const TravelInformation = () => {
   const { t } = useTranslation('travel');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

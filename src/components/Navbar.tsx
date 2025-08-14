@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 import ThemeToggle from './ThemeToggle';
 import { useTranslation } from 'react-i18next';
 import useNavigation from '@/hooks/useNavigation';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { User } from '@supabase/supabase-js';
 import {
@@ -22,6 +22,8 @@ const Navbar = () => {
   const [userRole, setUserRole] = useState<string | null>(null);
   const { t } = useTranslation('nav');
   const { activeSection, isScrolled, scrollToSection } = useNavigation();
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     // Get current session
@@ -66,8 +68,7 @@ const Navbar = () => {
     { id: 'home', label: t('home'), href: '/#home' },
     { id: 'about', label: t('about'), href: '/#about' },
     { id: 'speakers', label: t('speakers'), href: '/#speakers' },
-    { id: 'schedule', label: t('schedule'), href: '/#schedule' },
-    { id: 'register', label: t('register'), href: '/#register' }
+    { id: 'schedule', label: t('schedule'), href: '/#schedule' }
   ];
 
   const venueItems = [
@@ -75,7 +76,8 @@ const Navbar = () => {
     { label: 'Visa Requirements', href: '/visa-requirements' },
     { label: 'Travel Information', href: '/travel-information' },
     { label: 'Accommodations', href: '/accommodations' },
-    { label: 'Restaurants', href: '/restaurants' }
+    { label: 'Restaurants', href: '/restaurants' },
+    { label: t('lodgingHelp', 'Lodging Options Help'), href: '/lodging-help' }
   ];
 
   const showAdminLink = userRole === 'dev' || userRole === 'admin';
@@ -181,12 +183,22 @@ const Navbar = () => {
               </Button>
             </div>
             ) : null}
-          <Button 
-            className="bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy"
-            onClick={() => scrollToSection('register')}
-          >
-            {t('register')}
-          </Button>
+          {isHomePage ? (
+            <Button 
+              className="bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy"
+              onClick={() => scrollToSection('register')}
+            >
+              {t('register')}
+            </Button>
+          ) : (
+            <Link to="/registration">
+              <Button 
+                className="bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy"
+              >
+                {t('register')}
+              </Button>
+            </Link>
+          )}
         </nav>
         
         {/* Mobile Menu Button */}
@@ -277,15 +289,25 @@ const Navbar = () => {
               </Button>
               ) : null}
             
-            <Button 
-              className="bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy w-full"
-              onClick={() => {
-                scrollToSection('register');
-                setIsMenuOpen(false);
-              }}
-            >
-              {t('register')}
-            </Button>
+            {isHomePage ? (
+              <Button 
+                className="bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy w-full"
+                onClick={() => {
+                  scrollToSection('register');
+                  setIsMenuOpen(false);
+                }}
+              >
+                {t('register')}
+              </Button>
+            ) : (
+              <Link to="/registration" onClick={() => setIsMenuOpen(false)}>
+                <Button 
+                  className="bg-paris-blue hover:bg-paris-navy text-white dark:bg-paris-gold dark:hover:bg-yellow-500 dark:text-paris-navy w-full"
+                >
+                  {t('register')}
+                </Button>
+              </Link>
+            )}
           </div>
         </div>
       </div>
