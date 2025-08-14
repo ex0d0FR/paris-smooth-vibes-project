@@ -24,15 +24,15 @@ const YouTubeVideo: React.FC<YouTubeVideoProps> = ({ videoId, title }) => {
 const YouTubeVideoSection: React.FC = () => {
   const videos = [
     {
-      id: "d8KdWfdVJ4c&list=PLPA0T6fRB9PhVWN4OXmTxAV-AMqTSTSy-&index=5", // Replace with actual video IDs
+      id: "PLPA0T6fRB9PhVWN4OXmTxAV-AMqTSTSy-&index=5",
       title: "Conference Overview"
     },
     {
-      id: "dQw4w9WgXcQ", // Replace with actual video IDs
+      id: "PLPA0T6fRB9PhgA1qGV5DArm7E8vVY2BXR&index=2&t=4s",
       title: "Speaker Highlights"
     },
     {
-      id: "dQw4w9WgXcQ", // Replace with actual video IDs
+      id: "PLPA0T6fRB9PjzCg5yCvQ8mE8kn3GlCEuR&index=10&t=7s",
       title: "Paris 2025 Preview"
     }
   ];
