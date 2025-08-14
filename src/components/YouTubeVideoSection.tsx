@@ -25,15 +25,15 @@ const YouTubeVideoSection: React.FC = () => {
   const videos = [
     {
       id: "d8KdWfdVJ4c",
-      title: "Conference Overview"
+      title: "Obed Alvarez - In Spanish"
     },
     {
       id: "3MV9aGGW9So",
-      title: "Speaker Highlights"
+      title: "Yong Cho - In English"
     },
     {
       id: "rt8lSMiJFIM",
-      title: "Paris 2025 Preview"
+      title: "Hisham Kamel - In Arabic"
     }
   ];
 
