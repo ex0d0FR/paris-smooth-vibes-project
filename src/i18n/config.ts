@@ -5,7 +5,7 @@ import Backend from 'i18next-http-backend';
 import { resources } from './resources';
 
 // Define all namespaces we use in the application
-const namespaces = ['common', 'nav', 'hero', 'about', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration', 'accommodations', 'restaurants', 'sponsors'];
+const namespaces = ['common', 'nav', 'hero', 'about', 'speakers', 'schedule', 'venue', 'register', 'footer', 'visa', 'faq', 'registration', 'accommodations', 'restaurants', 'sponsors', 'travel', 'lodging'];
 
 // Debug information removed for production security
 

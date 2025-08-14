@@ -1,0 +1,115 @@
+{
+  "title": "Hilfe bei Unterkunftsoptionen",
+  "description": "Unser engagiertes Unterkunfts-Support-Team ist hier, um Ihnen dabei zu helfen, die perfekte Unterkunft für Ihren Aufenthalt während der PARIS 2025 Konferenz zu finden.",
+  "backToHome": "Zurück zur Startseite",
+  "urgentAssistance": {
+    "title": "Brauchen Sie dringende Hilfe?",
+    "description": "Kontaktieren Sie unser Unterkunfts-Support-Team direkt für sofortige Hilfe bei Unterkunftsproblemen.",
+    "emailLabel": "Email-Support",
+    "phoneLabel": "Telefon-Support"
+  },
+  "booking": {
+    "title": "Buchen Sie Ihre Unterkunft",
+    "description": "Wählen Sie zwischen unseren zwei Unterkunftsoptionen für die PARIS 2025 Konferenz",
+    "venue": {
+      "title": "Salle St Nicolas",
+      "description": "Schlafen Sie am Konferenzort für maximale Bequemlichkeit",
+      "features": {
+        "walking": "Fußläufig zu allen Sitzungen",
+        "noCommute": "Kein Pendeln erforderlich",
+        "basic": "Grundlegende Schlafgelegenheiten"
+      },
+      "price": "pro Person"
+    },
+    "church": {
+      "title": "Kirchen-Unterkunft",
+      "description": "Kostenlose Unterkunft in einer lokalen Kirchengemeinde",
+      "features": {
+        "free": "Völlig kostenlos",
+        "community": "Gemeinschaftsatmosphäre",
+        "commute": "1 Stunde Fahrt zum Veranstaltungsort"
+      },
+      "price": "pro Person"
+    },
+    "form": {
+      "fullName": "Vollständiger Name",
+      "fullNameRequired": "Vollständiger Name *",
+      "emailAddress": "E-Mail-Adresse",
+      "emailAddressRequired": "E-Mail-Adresse *",
+      "phoneNumber": "Telefonnummer",
+      "specialRequests": "Spezielle Wünsche oder Diätanforderungen",
+      "namePlaceholder": "Geben Sie Ihren vollständigen Namen ein",
+      "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
+      "phonePlaceholder": "Geben Sie Ihre Telefonnummer ein",
+      "specialPlaceholder": "Besondere Anforderungen, Diätbeschränkungen oder Barrierefreiheit...",
+      "submit": "Unterkunftsanfrage senden",
+      "selectOption": "Bitte wählen Sie eine Unterkunftsoption",
+      "fillRequired": "Bitte füllen Sie alle erforderlichen Felder aus",
+      "success": "Unterkunftsanfrage erfolgreich gesendet! Wir werden Sie innerhalb von 24 Stunden kontaktieren."
+    }
+  },
+  "services": {
+    "location": {
+      "title": "Standort-Hilfe",
+      "description": "Erhalten Sie Hilfe beim Finden von Unterkünften in der Nähe des Konferenzorts",
+      "details": ["Entfernung zum Veranstaltungsort", "Transportmöglichkeiten", "Stadtteil-Führer"]
+    },
+    "booking": {
+      "title": "Buchungs-Support",
+      "description": "Direkte Hilfe bei Hotelreservierungen und Buchungen",
+      "details": ["Gruppenrabatte", "Spezielle Konferenztarife", "Buchungsänderungen"]
+    },
+    "group": {
+      "title": "Gruppenunterkünfte",
+      "description": "Koordinierte Unterbringung für Teams und große Gruppen",
+      "details": ["Blockbuchungen", "Benachbarte Zimmer", "Gruppen-Check-in"]
+    },
+    "lastMinute": {
+      "title": "Last-Minute-Hilfe",
+      "description": "Notfall-Unterkunftshilfe",
+      "details": ["Buchungen am selben Tag", "Alternative Optionen", "Stornierungsunterstützung"]
+    }
+  },
+  "additionalResources": {
+    "title": "Zusätzliche Ressourcen",
+    "browse": {
+      "title": "Unterkünfte durchsuchen",
+      "description": "Sehen Sie unsere empfohlenen Hotels und Unterkünfte",
+      "button": "Hotels anzeigen"
+    },
+    "travel": {
+      "title": "Reiseinformationen",
+      "description": "Transport- und Reiseführer",
+      "button": "Reiseführer"
+    },
+    "dining": {
+      "title": "Lokale Gastronomie",
+      "description": "Entdecken Sie Restaurants und Cafés in der Nähe des Veranstaltungsorts",
+      "button": "Restaurants anzeigen"
+    }
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "q1": {
+      "question": "Wann sollte ich meine Unterkunft buchen?",
+      "answer": "Wir empfehlen, so früh wie möglich zu buchen. Pariser Unterkünfte füllen sich schnell, besonders während Konferenzzeiten."
+    },
+    "q2": {
+      "question": "Gibt es Gruppenrabatte?",
+      "answer": "Ja! Wir bieten spezielle Gruppentarife für Buchungen von 5 oder mehr Zimmern. Kontaktieren Sie unser Support-Team für Details."
+    },
+    "q3": {
+      "question": "Was ist, wenn ich meine Buchung stornieren muss?",
+      "answer": "Stornierungsrichtlinien variieren je nach Unterkunft. Unser Support-Team kann Ihnen helfen, die Bedingungen zu verstehen und bei Änderungen zu helfen."
+    },
+    "q4": {
+      "question": "Ist Transport inbegriffen?",
+      "answer": "Transport ist nicht in den Unterkunftspreisen enthalten. Wir stellen jedoch detaillierte Anleitungen zur Verfügung, wie Sie von verschiedenen Standorten zum Veranstaltungsort gelangen."
+    }
+  },
+  "languageSupport": {
+    "title": "Sprachunterstützung",
+    "notice": "Simultanübersetzung wird während der gesamten Konferenz auf Spanisch und Französisch verfügbar sein.",
+    "contact": "Benötigen Sie Übersetzung in eine andere Sprache? Kontaktieren Sie uns unter:"
+  }
+}

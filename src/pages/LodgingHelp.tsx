@@ -14,7 +14,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
 
 const LodgingHelp = () => {
-  const { t } = useTranslation('accommodations');
+  const { t } = useTranslation('lodging');
   const [selectedOption, setSelectedOption] = useState('');
   const [formData, setFormData] = useState({
     name: '',
@@ -30,15 +30,15 @@ const LodgingHelp = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedOption) {
-      toast.error('Please select an accommodation option');
+      toast.error(t('booking.form.selectOption'));
       return;
     }
     if (!formData.name || !formData.email) {
-      toast.error('Please fill in all required fields');
+      toast.error(t('booking.form.fillRequired'));
       return;
     }
     
-    toast.success('Accommodation request submitted successfully! We will contact you within 24 hours.');
+    toast.success(t('booking.form.success'));
     
     // Reset form
     setSelectedOption('');
@@ -53,40 +53,40 @@ const LodgingHelp = () => {
   const services = [
     {
       icon: <MapPin className="h-6 w-6" />,
-      title: "Location Assistance",
-      description: "Get help finding accommodations near the conference venue",
-      details: ["Distance from venue", "Transportation options", "Neighborhood guides"]
+      title: t('services.location.title'),
+      description: t('services.location.description'),
+      details: t('services.location.details', { returnObjects: true }) as string[]
     },
     {
       icon: <Phone className="h-6 w-6" />,
-      title: "Booking Support", 
-      description: "Direct assistance with hotel reservations and booking",
-      details: ["Group discounts", "Special conference rates", "Booking modifications"]
+      title: t('services.booking.title'), 
+      description: t('services.booking.description'),
+      details: t('services.booking.details', { returnObjects: true }) as string[]
     },
     {
       icon: <Users className="h-6 w-6" />,
-      title: "Group Accommodations",
-      description: "Coordinated lodging for teams and large groups",
-      details: ["Block reservations", "Adjacent rooms", "Group check-in"]
+      title: t('services.group.title'),
+      description: t('services.group.description'),
+      details: t('services.group.details', { returnObjects: true }) as string[]
     },
     {
       icon: <Clock className="h-6 w-6" />,
-      title: "Last-Minute Help",
-      description: "Emergency accommodation assistance",
-      details: ["Same-day bookings", "Alternative options", "Cancellation support"]
+      title: t('services.lastMinute.title'),
+      description: t('services.lastMinute.description'),
+      details: t('services.lastMinute.details', { returnObjects: true }) as string[]
     }
   ];
 
   const urgentContacts = [
     {
       icon: <Mail className="h-5 w-5" />,
-      label: "Email Support",
+      label: t('urgentAssistance.emailLabel'),
       value: "info@puentesparis2025.net",
       action: "mailto:info@puentesparis2025.net"
     },
     {
       icon: <Phone className="h-5 w-5" />,
-      label: "Phone Support",
+      label: t('urgentAssistance.phoneLabel'),
       value: "+33 7 49 44 26 26",
       action: "tel:+33749442626"
     }
@@ -95,8 +95,8 @@ const LodgingHelp = () => {
   return (
     <>
       <Helmet>
-        <title>Lodging Options Help - PARIS 2025</title>
-        <meta name="description" content="Get assistance with accommodation options for the PARIS 2025 conference. Our lodging support team is here to help you find the perfect place to stay." />
+        <title>{t('title')} - PARIS 2025</title>
+        <meta name="description" content={t('description')} />
       </Helmet>
       
       <div className="min-h-screen bg-background">
@@ -110,7 +110,7 @@ const LodgingHelp = () => {
                 className="inline-flex items-center text-primary hover:text-primary/80 transition-colors mb-4"
               >
                 <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to Home
+                {t('backToHome')}
               </Link>
               
               <div className="text-center max-w-4xl mx-auto">
@@ -118,11 +118,10 @@ const LodgingHelp = () => {
                   <Bed className="h-8 w-8 text-primary" />
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-                  Lodging Options Help
+                  {t('title')}
                 </h1>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Our dedicated lodging support team is here to help you find the perfect accommodation 
-                  for your stay during the PARIS 2025 conference.
+                  {t('description')}
                 </p>
               </div>
             </div>
@@ -131,10 +130,10 @@ const LodgingHelp = () => {
             <div className="bg-primary/5 border-l-4 border-primary rounded-lg p-6 mb-12">
               <h2 className="text-xl font-semibold text-foreground mb-4 flex items-center">
                 <Clock className="h-5 w-5 mr-2 text-primary" />
-                Need Urgent Assistance?
+                {t('urgentAssistance.title')}
               </h2>
               <p className="text-muted-foreground mb-4">
-                Contact our lodging support team directly for immediate help with accommodation issues.
+                {t('urgentAssistance.description')}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {urgentContacts.map((contact, index) => (
@@ -157,10 +156,10 @@ const LodgingHelp = () => {
             {/* Accommodation Booking Form */}
             <div className="bg-card rounded-lg border p-8 mb-12">
               <h2 className="text-2xl font-bold text-foreground mb-6 text-center">
-                Book Your Accommodation
+                {t('booking.title')}
               </h2>
               <p className="text-muted-foreground text-center mb-8">
-                Choose between our two accommodation options for the PARIS 2025 conference
+                {t('booking.description')}
               </p>
               
               <form onSubmit={handleSubmit} className="max-w-4xl mx-auto">
@@ -175,25 +174,25 @@ const LodgingHelp = () => {
                               <div className="flex items-center space-x-2">
                                 <RadioGroupItem value="venue" id="venue" />
                                 <Label htmlFor="venue" className="cursor-pointer">
-                                  <CardTitle className="text-xl">Salle St Nicolas</CardTitle>
+                                   <CardTitle className="text-xl">{t('booking.venue.title')}</CardTitle>
                                 </Label>
                               </div>
                             </div>
                             <CardDescription className="text-base mb-3">
-                              Sleep at the conference venue for maximum convenience
+                              {t('booking.venue.description')}
                             </CardDescription>
                             <div className="space-y-2">
                               <div className="flex items-center text-sm text-muted-foreground">
                                 <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
-                                Walking distance to all sessions
+                                {t('booking.venue.features.walking')}
                               </div>
                               <div className="flex items-center text-sm text-muted-foreground">
                                 <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
-                                No commute required
+                                {t('booking.venue.features.noCommute')}
                               </div>
                               <div className="flex items-center text-sm text-muted-foreground">
                                 <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
-                                Basic sleeping arrangements
+                                {t('booking.venue.features.basic')}
                               </div>
                             </div>
                           </div>
@@ -202,7 +201,7 @@ const LodgingHelp = () => {
                               <Euro className="h-6 w-6 mr-1" />
                               220
                             </div>
-                            <div className="text-sm text-muted-foreground">per person</div>
+                            <div className="text-sm text-muted-foreground">{t('booking.venue.price')}</div>
                           </div>
                         </div>
                       </CardHeader>
@@ -217,25 +216,25 @@ const LodgingHelp = () => {
                               <div className="flex items-center space-x-2">
                                 <RadioGroupItem value="church" id="church" />
                                 <Label htmlFor="church" className="cursor-pointer">
-                                  <CardTitle className="text-xl">Church Accommodation</CardTitle>
+                                   <CardTitle className="text-xl">{t('booking.church.title')}</CardTitle>
                                 </Label>
                               </div>
                             </div>
                             <CardDescription className="text-base mb-3">
-                              Free accommodation in a local church community
+                              {t('booking.church.description')}
                             </CardDescription>
                             <div className="space-y-2">
                               <div className="flex items-center text-sm text-muted-foreground">
                                 <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
-                                Completely free
+                                {t('booking.church.features.free')}
                               </div>
                               <div className="flex items-center text-sm text-muted-foreground">
                                 <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
-                                Community atmosphere
+                                {t('booking.church.features.community')}
                               </div>
                               <div className="flex items-center text-sm text-muted-foreground">
                                 <Clock className="h-4 w-4 mr-2 text-amber-600" />
-                                1 hour commute to venue
+                                {t('booking.church.features.commute')}
                               </div>
                             </div>
                           </div>
@@ -243,7 +242,7 @@ const LodgingHelp = () => {
                             <div className="text-2xl font-bold text-green-600">
                               FREE
                             </div>
-                            <div className="text-sm text-muted-foreground">per person</div>
+                            <div className="text-sm text-muted-foreground">{t('booking.church.price')}</div>
                           </div>
                         </div>
                       </CardHeader>
@@ -257,27 +256,27 @@ const LodgingHelp = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <Label htmlFor="name" className="text-sm font-medium mb-2 block">
-                          Full Name *
+                          {t('booking.form.fullNameRequired')}
                         </Label>
                         <Input
                           id="name"
                           type="text"
                           value={formData.name}
                           onChange={(e) => setFormData({...formData, name: e.target.value})}
-                          placeholder="Enter your full name"
+                          placeholder={t('booking.form.namePlaceholder')}
                           required
                         />
                       </div>
                       <div>
                         <Label htmlFor="email" className="text-sm font-medium mb-2 block">
-                          Email Address *
+                          {t('booking.form.emailAddressRequired')}
                         </Label>
                         <Input
                           id="email"
                           type="email"
                           value={formData.email}
                           onChange={(e) => setFormData({...formData, email: e.target.value})}
-                          placeholder="Enter your email"
+                          placeholder={t('booking.form.emailPlaceholder')}
                           required
                         />
                       </div>
@@ -285,33 +284,33 @@ const LodgingHelp = () => {
                     
                     <div>
                       <Label htmlFor="phone" className="text-sm font-medium mb-2 block">
-                        Phone Number
+                        {t('booking.form.phoneNumber')}
                       </Label>
                       <Input
                         id="phone"
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                        placeholder="Enter your phone number"
+                        placeholder={t('booking.form.phonePlaceholder')}
                       />
                     </div>
                     
                     <div>
                       <Label htmlFor="special-requests" className="text-sm font-medium mb-2 block">
-                        Special Requests or Dietary Requirements
+                        {t('booking.form.specialRequests')}
                       </Label>
                       <Textarea
                         id="special-requests"
                         value={formData.specialRequests}
                         onChange={(e) => setFormData({...formData, specialRequests: e.target.value})}
-                        placeholder="Any special requirements, dietary restrictions, or accessibility needs..."
+                        placeholder={t('booking.form.specialPlaceholder')}
                         rows={4}
                       />
                     </div>
                     
                     <div className="flex justify-center">
                       <Button type="submit" className="px-8 py-3 text-lg">
-                        Submit Accommodation Request
+                        {t('booking.form.submit')}
                       </Button>
                     </div>
                   </div>
@@ -466,16 +465,16 @@ const LodgingHelp = () => {
                       <span className="text-primary-foreground font-bold text-sm">🌐</span>
                     </div>
                     <CardTitle className="text-2xl font-bold text-primary">
-                      {t('translation.title')}
-                    </CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent className="text-center space-y-4">
-                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    {t('translation.notice')}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    {t('translation.contact')}
+                     {t('languageSupport.title')}
+                   </CardTitle>
+                 </div>
+               </CardHeader>
+               <CardContent className="text-center space-y-4">
+                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                   {t('languageSupport.notice')}
+                 </p>
+                 <p className="text-sm text-muted-foreground">
+                   {t('languageSupport.contact')}
                   </p>
                 </CardContent>
               </Card>

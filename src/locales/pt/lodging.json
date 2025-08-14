@@ -1,0 +1,115 @@
+{
+  "title": "Ajuda com Opções de Hospedagem",
+  "description": "Nossa equipe dedicada de suporte à hospedagem está aqui para ajudá-lo a encontrar a acomodação perfeita para sua estadia durante a conferência PARIS 2025.",
+  "backToHome": "Voltar ao Início",
+  "urgentAssistance": {
+    "title": "Precisa de Assistência Urgente?",
+    "description": "Entre em contato diretamente com nossa equipe de suporte à hospedagem para ajuda imediata com problemas de acomodação.",
+    "emailLabel": "Suporte por Email",
+    "phoneLabel": "Suporte por Telefone"
+  },
+  "booking": {
+    "title": "Reserve sua Hospedagem",
+    "description": "Escolha entre nossas duas opções de hospedagem para a conferência PARIS 2025",
+    "venue": {
+      "title": "Salle St Nicolas",
+      "description": "Durma no local da conferência para máxima conveniência",
+      "features": {
+        "walking": "Distância a pé de todas as sessões",
+        "noCommute": "Não requer deslocamento",
+        "basic": "Arranjos básicos para dormir"
+      },
+      "price": "por pessoa"
+    },
+    "church": {
+      "title": "Acomodação na Igreja",
+      "description": "Acomodação gratuita em uma comunidade de igreja local",
+      "features": {
+        "free": "Completamente gratuito",
+        "community": "Atmosfera comunitária",
+        "commute": "1 hora de viagem até o local"
+      },
+      "price": "por pessoa"
+    },
+    "form": {
+      "fullName": "Nome Completo",
+      "fullNameRequired": "Nome Completo *",
+      "emailAddress": "Endereço de Email",
+      "emailAddressRequired": "Endereço de Email *",
+      "phoneNumber": "Número de Telefone",
+      "specialRequests": "Solicitações Especiais ou Requisitos Dietéticos",
+      "namePlaceholder": "Digite seu nome completo",
+      "emailPlaceholder": "Digite seu email",
+      "phonePlaceholder": "Digite seu número de telefone",
+      "specialPlaceholder": "Quaisquer requisitos especiais, restrições dietéticas ou necessidades de acessibilidade...",
+      "submit": "Enviar Solicitação de Hospedagem",
+      "selectOption": "Por favor, selecione uma opção de hospedagem",
+      "fillRequired": "Por favor, preencha todos os campos obrigatórios",
+      "success": "Solicitação de hospedagem enviada com sucesso! Entraremos em contato em 24 horas."
+    }
+  },
+  "services": {
+    "location": {
+      "title": "Assistência de Localização",
+      "description": "Obtenha ajuda para encontrar acomodações perto do local da conferência",
+      "details": ["Distância do local", "Opções de transporte", "Guias do bairro"]
+    },
+    "booking": {
+      "title": "Suporte de Reservas",
+      "description": "Assistência direta com reservas de hotel e reservas",
+      "details": ["Descontos de grupo", "Tarifas especiais da conferência", "Modificações de reserva"]
+    },
+    "group": {
+      "title": "Acomodações em Grupo",
+      "description": "Hospedagem coordenada para equipes e grupos grandes",
+      "details": ["Reservas em bloco", "Quartos adjacentes", "Check-in em grupo"]
+    },
+    "lastMinute": {
+      "title": "Ajuda de Última Hora",
+      "description": "Assistência de acomodação de emergência",
+      "details": ["Reservas no mesmo dia", "Opções alternativas", "Suporte de cancelamento"]
+    }
+  },
+  "additionalResources": {
+    "title": "Recursos Adicionais",
+    "browse": {
+      "title": "Explorar Hospedagens",
+      "description": "Veja nossos hotéis e acomodações recomendados",
+      "button": "Ver Hotéis"
+    },
+    "travel": {
+      "title": "Informações de Viagem",
+      "description": "Guias de transporte e viagem",
+      "button": "Guia de Viagem"
+    },
+    "dining": {
+      "title": "Gastronomia Local",
+      "description": "Descubra restaurantes e cafés perto do local",
+      "button": "Ver Restaurantes"
+    }
+  },
+  "faq": {
+    "title": "Perguntas Frequentes",
+    "q1": {
+      "question": "Quando devo reservar minha hospedagem?",
+      "answer": "Recomendamos reservar o mais cedo possível. As acomodações parisienses se esgotam rapidamente, especialmente durante períodos de conferências."
+    },
+    "q2": {
+      "question": "Há descontos de grupo disponíveis?",
+      "answer": "Sim! Oferecemos tarifas especiais de grupo para reservas de 5 ou mais quartos. Entre em contato com nossa equipe de suporte para detalhes."
+    },
+    "q3": {
+      "question": "E se eu precisar cancelar minha reserva?",
+      "answer": "As políticas de cancelamento variam por acomodação. Nossa equipe de suporte pode ajudá-lo a entender os termos e auxiliar com modificações."
+    },
+    "q4": {
+      "question": "O transporte está incluído?",
+      "answer": "O transporte não está incluído nos preços de hospedagem. No entanto, fornecemos guias detalhados sobre como chegar ao local de diferentes localizações."
+    }
+  },
+  "languageSupport": {
+    "title": "Suporte de Idiomas",
+    "notice": "Tradução simultânea estará disponível em espanhol e francês durante toda a conferência.",
+    "contact": "Precisa de tradução em outro idioma? Entre em contato conosco em:"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "title": "Aide aux Options d'Hébergement",
+  "description": "Notre équipe de support dédiée à l'hébergement est là pour vous aider à trouver l'hébergement parfait pour votre séjour lors de la conférence PARIS 2025.",
+  "backToHome": "Retour à l'accueil",
+  "urgentAssistance": {
+    "title": "Besoin d'une Assistance Urgente ?",
+    "description": "Contactez directement notre équipe de support hébergement pour une aide immédiate avec les problèmes d'hébergement.",
+    "emailLabel": "Support Email",
+    "phoneLabel": "Support Téléphonique"
+  },
+  "booking": {
+    "title": "Réservez Votre Hébergement",
+    "description": "Choisissez entre nos deux options d'hébergement pour la conférence PARIS 2025",
+    "venue": {
+      "title": "Salle St Nicolas",
+      "description": "Dormez sur le lieu de la conférence pour un maximum de commodité",
+      "features": {
+        "walking": "À distance de marche de toutes les sessions",
+        "noCommute": "Aucun trajet requis",
+        "basic": "Arrangements de couchage de base"
+      },
+      "price": "par personne"
+    },
+    "church": {
+      "title": "Hébergement en Église",
+      "description": "Hébergement gratuit dans une communauté d'église locale",
+      "features": {
+        "free": "Complètement gratuit",
+        "community": "Atmosphère communautaire",
+        "commute": "1 heure de trajet jusqu'au lieu"
+      },
+      "price": "par personne"
+    },
+    "form": {
+      "fullName": "Nom Complet",
+      "fullNameRequired": "Nom Complet *",
+      "emailAddress": "Adresse Email",
+      "emailAddressRequired": "Adresse Email *",
+      "phoneNumber": "Numéro de Téléphone",
+      "specialRequests": "Demandes Spéciales ou Exigences Alimentaires",
+      "namePlaceholder": "Entrez votre nom complet",
+      "emailPlaceholder": "Entrez votre email",
+      "phonePlaceholder": "Entrez votre numéro de téléphone",
+      "specialPlaceholder": "Toute exigence spéciale, restriction alimentaire ou besoins d'accessibilité...",
+      "submit": "Soumettre la Demande d'Hébergement",
+      "selectOption": "Veuillez sélectionner une option d'hébergement",
+      "fillRequired": "Veuillez remplir tous les champs requis",
+      "success": "Demande d'hébergement soumise avec succès ! Nous vous contactera dans les 24 heures."
+    }
+  },
+  "services": {
+    "location": {
+      "title": "Assistance de Localisation",
+      "description": "Obtenez de l'aide pour trouver des hébergements près du lieu de la conférence",
+      "details": ["Distance du lieu", "Options de transport", "Guides de quartier"]
+    },
+    "booking": {
+      "title": "Support de Réservation",
+      "description": "Assistance directe avec les réservations d'hôtel et la réservation",
+      "details": ["Remises de groupe", "Tarifs spéciaux conférence", "Modifications de réservation"]
+    },
+    "group": {
+      "title": "Hébergements de Groupe",
+      "description": "Hébergement coordonné pour les équipes et les grands groupes",
+      "details": ["Réservations en bloc", "Chambres adjacentes", "Enregistrement de groupe"]
+    },
+    "lastMinute": {
+      "title": "Aide de Dernière Minute",
+      "description": "Assistance d'hébergement d'urgence",
+      "details": ["Réservations le jour même", "Options alternatives", "Support d'annulation"]
+    }
+  },
+  "additionalResources": {
+    "title": "Ressources Supplémentaires",
+    "browse": {
+      "title": "Parcourir les Hébergements",
+      "description": "Consultez nos hôtels et hébergements recommandés",
+      "button": "Voir les Hôtels"
+    },
+    "travel": {
+      "title": "Informations de Voyage",
+      "description": "Guides de transport et de voyage",
+      "button": "Guide de Voyage"
+    },
+    "dining": {
+      "title": "Restaurants Locaux",
+      "description": "Découvrez les restaurants et cafés près du lieu",
+      "button": "Voir les Restaurants"
+    }
+  },
+  "faq": {
+    "title": "Questions Fréquemment Posées",
+    "q1": {
+      "question": "Quand dois-je réserver mon hébergement ?",
+      "answer": "Nous recommandons de réserver le plus tôt possible. Les hébergements parisiens se remplissent rapidement, surtout pendant les périodes de conférence."
+    },
+    "q2": {
+      "question": "Y a-t-il des remises de groupe disponibles ?",
+      "answer": "Oui ! Nous offrons des tarifs spéciaux de groupe pour les réservations de 5 chambres ou plus. Contactez notre équipe de support pour plus de détails."
+    },
+    "q3": {
+      "question": "Que faire si je dois annuler ma réservation ?",
+      "answer": "Les politiques d'annulation varient selon l'hébergement. Notre équipe de support peut vous aider à comprendre les conditions et assister avec les modifications."
+    },
+    "q4": {
+      "question": "Le transport est-il inclus ?",
+      "answer": "Le transport n'est pas inclus dans les prix d'hébergement. Cependant, nous fournissons des guides détaillés pour se rendre au lieu depuis différents endroits."
+    }
+  },
+  "languageSupport": {
+    "title": "Support Linguistique",
+    "notice": "Une traduction simultanée sera disponible en espagnol et en français pendant toute la conférence.",
+    "contact": "Besoin d'une traduction dans une autre langue ? Contactez-nous à :"
+  }
+}

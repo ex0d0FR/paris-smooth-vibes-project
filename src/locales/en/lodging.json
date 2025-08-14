@@ -1,0 +1,115 @@
+{
+  "title": "Lodging Options Help",
+  "description": "Our dedicated lodging support team is here to help you find the perfect accommodation for your stay during the PARIS 2025 conference.",
+  "backToHome": "Back to Home",
+  "urgentAssistance": {
+    "title": "Need Urgent Assistance?",
+    "description": "Contact our lodging support team directly for immediate help with accommodation issues.",
+    "emailLabel": "Email Support",
+    "phoneLabel": "Phone Support"
+  },
+  "booking": {
+    "title": "Book Your Accommodation", 
+    "description": "Choose between our two accommodation options for the PARIS 2025 conference",
+    "venue": {
+      "title": "Salle St Nicolas",
+      "description": "Sleep at the conference venue for maximum convenience",
+      "features": {
+        "walking": "Walking distance to all sessions",
+        "noCommute": "No commute required", 
+        "basic": "Basic sleeping arrangements"
+      },
+      "price": "per person"
+    },
+    "church": {
+      "title": "Church Accommodation",
+      "description": "Free accommodation in a local church community",
+      "features": {
+        "free": "Completely free",
+        "community": "Community atmosphere",
+        "commute": "1 hour commute to venue"
+      },
+      "price": "per person"
+    },
+    "form": {
+      "fullName": "Full Name",
+      "fullNameRequired": "Full Name *",
+      "emailAddress": "Email Address",
+      "emailAddressRequired": "Email Address *",
+      "phoneNumber": "Phone Number",
+      "specialRequests": "Special Requests or Dietary Requirements",
+      "namePlaceholder": "Enter your full name",
+      "emailPlaceholder": "Enter your email",
+      "phonePlaceholder": "Enter your phone number",
+      "specialPlaceholder": "Any special requirements, dietary restrictions, or accessibility needs...",
+      "submit": "Submit Accommodation Request",
+      "selectOption": "Please select an accommodation option",
+      "fillRequired": "Please fill in all required fields",
+      "success": "Accommodation request submitted successfully! We will contact you within 24 hours."
+    }
+  },
+  "services": {
+    "location": {
+      "title": "Location Assistance",
+      "description": "Get help finding accommodations near the conference venue",
+      "details": ["Distance from venue", "Transportation options", "Neighborhood guides"]
+    },
+    "booking": {
+      "title": "Booking Support",
+      "description": "Direct assistance with hotel reservations and booking", 
+      "details": ["Group discounts", "Special conference rates", "Booking modifications"]
+    },
+    "group": {
+      "title": "Group Accommodations",
+      "description": "Coordinated lodging for teams and large groups",
+      "details": ["Block reservations", "Adjacent rooms", "Group check-in"]
+    },
+    "lastMinute": {
+      "title": "Last-Minute Help",
+      "description": "Emergency accommodation assistance",
+      "details": ["Same-day bookings", "Alternative options", "Cancellation support"]
+    }
+  },
+  "additionalResources": {
+    "title": "Additional Resources",
+    "browse": {
+      "title": "Browse Accommodations",
+      "description": "View our recommended hotels and accommodations",
+      "button": "View Hotels"
+    },
+    "travel": {
+      "title": "Travel Information", 
+      "description": "Transportation and travel guides",
+      "button": "Travel Guide"
+    },
+    "dining": {
+      "title": "Local Dining",
+      "description": "Discover restaurants and cafes near the venue",
+      "button": "View Restaurants"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": {
+      "question": "When should I book my accommodation?",
+      "answer": "We recommend booking as early as possible. Paris accommodations fill up quickly, especially during conference periods."
+    },
+    "q2": {
+      "question": "Are there group discounts available?",
+      "answer": "Yes! We offer special group rates for bookings of 5 or more rooms. Contact our support team for details."
+    },
+    "q3": {
+      "question": "What if I need to cancel my booking?",
+      "answer": "Cancellation policies vary by accommodation. Our support team can help you understand the terms and assist with modifications."
+    },
+    "q4": {
+      "question": "Is transportation included?",
+      "answer": "Transportation is not included in accommodation prices. However, we provide detailed guides on getting to the venue from different locations."
+    }
+  },
+  "languageSupport": {
+    "title": "Language Support",
+    "notice": "Simultaneous translation will be available in Spanish and French throughout the conference.",
+    "contact": "Need translation in another language? Contact us at:"
+  }
+}
