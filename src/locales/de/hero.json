@@ -5,5 +5,14 @@
   "subtitle": "MISSIONARISCHE BRÜCKEN BAUEN",
   "description": "Nehmen Sie an einer europaweiten Konferenz teil, die Pioniere, Missionswissenschaftler und Geistliche im Herzen von Paris zusammenbringt.",
   "registerNow": "Jetzt Registrieren",
-  "learnMore": "Mehr Erfahren"
+  "learnMore": "Mehr Erfahren",
+  "translation": {
+    "title": "Sprachunterstützung",
+    "notice": "Simultanübersetzung wird während der gesamten Konferenz auf Spanisch und Französisch verfügbar sein.",
+    "contact": "Benötigen Sie eine Übersetzung in eine andere Sprache? Kontaktieren Sie uns unter:"
+  },
+  "highlights": {
+    "title": "Konferenz-Highlights",
+    "subtitle": "Erhalten Sie einen Einblick in das, was Sie bei PARIS 2025 erwartet"
+  }
 }

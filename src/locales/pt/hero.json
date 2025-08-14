@@ -5,5 +5,14 @@
   "subtitle": "CONSTRUINDO PONTES MISSIONÁRIAS",
   "description": "Junte-se a uma conferência de alcance europeu, reunindo pioneiros, missiologistas e ministros no coração de Paris.",
   "registerNow": "Registre-se Agora",
-  "learnMore": "Saiba Mais"
+  "learnMore": "Saiba Mais",
+  "translation": {
+    "title": "Suporte de idiomas",
+    "notice": "A tradução simultânea estará disponível em espanhol e francês durante toda a conferência.",
+    "contact": "Precisa de tradução para outro idioma? Entre em contato conosco em:"
+  },
+  "highlights": {
+    "title": "Destaques da Conferência",
+    "subtitle": "Tenha uma prévia do que espera por você em PARIS 2025"
+  }
 }
