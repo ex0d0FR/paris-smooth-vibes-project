@@ -149,7 +149,7 @@ const Register = () => {
             <Globe className="text-paris-gold h-5 w-5" />
             <p className="text-paris-gold font-semibold text-sm uppercase tracking-wide">{t('translation.title')}</p>
           </div>
-          <p className="text-white text-sm leading-relaxed">
+          <p className="text-white text-sm leading-relaxed text-center">
             {t('translation.notice')}
           </p>
           <p className="text-white text-sm mt-2">
