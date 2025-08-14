@@ -15,7 +15,6 @@ import { toast } from 'sonner';
 
 const LodgingHelp = () => {
   const { t } = useTranslation('lodging');
-  const [selectedOption, setSelectedOption] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,10 +28,6 @@ const LodgingHelp = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!selectedOption) {
-      toast.error(t('booking.form.selectOption'));
-      return;
-    }
     if (!formData.name || !formData.email) {
       toast.error(t('booking.form.fillRequired'));
       return;
@@ -41,7 +36,6 @@ const LodgingHelp = () => {
     toast.success(t('booking.form.success'));
     
     // Reset form
-    setSelectedOption('');
     setFormData({
       name: '',
       email: '',
@@ -49,33 +43,6 @@ const LodgingHelp = () => {
       specialRequests: ''
     });
   };
-
-  const services = [
-    {
-      icon: <MapPin className="h-6 w-6" />,
-      title: t('services.location.title'),
-      description: t('services.location.description'),
-      details: t('services.location.details', { returnObjects: true }) as string[]
-    },
-    {
-      icon: <Phone className="h-6 w-6" />,
-      title: t('services.booking.title'), 
-      description: t('services.booking.description'),
-      details: t('services.booking.details', { returnObjects: true }) as string[]
-    },
-    {
-      icon: <Users className="h-6 w-6" />,
-      title: t('services.group.title'),
-      description: t('services.group.description'),
-      details: t('services.group.details', { returnObjects: true }) as string[]
-    },
-    {
-      icon: <Clock className="h-6 w-6" />,
-      title: t('services.lastMinute.title'),
-      description: t('services.lastMinute.description'),
-      details: t('services.lastMinute.details', { returnObjects: true }) as string[]
-    }
-  ];
 
   const urgentContacts = [
     {
@@ -154,35 +121,102 @@ const LodgingHelp = () => {
             </div>
 
 
-            {/* Services Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              {services.map((service, index) => (
-                <Card key={index} className="h-full">
-                  <CardHeader>
-                    <div className="flex items-center space-x-3">
-                      <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                        {service.icon}
+            {/* Church Accommodation Booking */}
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
+                {t('booking.title')}
+              </h2>
+              
+              <div className="max-w-2xl mx-auto">
+                <Card className="h-full border-2 border-primary/20 bg-gradient-to-br from-background to-primary/5">
+                  <CardHeader className="text-center">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center space-x-3">
+                        <div className="p-3 bg-primary/10 rounded-lg">
+                          <Bed className="h-6 w-6 text-primary" />
+                        </div>
+                        <CardTitle className="text-xl">{t('booking.church.title')}</CardTitle>
                       </div>
-                      <div>
-                        <CardTitle className="text-xl">{service.title}</CardTitle>
+                      <div className="text-right">
+                        <div className="text-2xl font-bold text-green-600 dark:text-green-400">FREE</div>
+                        <div className="text-sm text-muted-foreground">{t('booking.church.price')}</div>
                       </div>
                     </div>
                     <CardDescription className="text-base">
-                      {service.description}
+                      {t('booking.church.description')}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-2">
-                      {service.details.map((detail, detailIndex) => (
-                        <li key={detailIndex} className="flex items-center text-sm text-muted-foreground">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
-                          {detail}
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="space-y-3 mb-6">
+                      <div className="flex items-center text-sm">
+                        <CheckCircle className="h-4 w-4 text-green-600 mr-3" />
+                        {t('booking.church.features.free')}
+                      </div>
+                      <div className="flex items-center text-sm">
+                        <CheckCircle className="h-4 w-4 text-green-600 mr-3" />
+                        {t('booking.church.features.community')}
+                      </div>
+                      <div className="flex items-center text-sm">
+                        <Clock className="h-4 w-4 text-orange-500 mr-3" />
+                        {t('booking.church.features.commute')}
+                      </div>
+                    </div>
+                    
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <Label htmlFor="name">{t('booking.form.fullNameRequired')}</Label>
+                          <Input
+                            id="name"
+                            type="text"
+                            placeholder={t('booking.form.namePlaceholder')}
+                            value={formData.name}
+                            onChange={(e) => setFormData({...formData, name: e.target.value})}
+                            required
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="email">{t('booking.form.emailAddressRequired')}</Label>
+                          <Input
+                            id="email"
+                            type="email"
+                            placeholder={t('booking.form.emailPlaceholder')}
+                            value={formData.email}
+                            onChange={(e) => setFormData({...formData, email: e.target.value})}
+                            required
+                          />
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <Label htmlFor="phone">{t('booking.form.phoneNumber')}</Label>
+                        <Input
+                          id="phone"
+                          type="tel"
+                          placeholder={t('booking.form.phonePlaceholder')}
+                          value={formData.phone}
+                          onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                        />
+                      </div>
+                      
+                      <div>
+                        <Label htmlFor="special">{t('booking.form.specialRequests')}</Label>
+                        <Textarea
+                          id="special"
+                          placeholder={t('booking.form.specialPlaceholder')}
+                          value={formData.specialRequests}
+                          onChange={(e) => setFormData({...formData, specialRequests: e.target.value})}
+                          rows={3}
+                        />
+                      </div>
+                      
+                      <Button type="submit" className="w-full">
+                        {t('booking.form.submit')}
+                      </Button>
+                    </form>
                   </CardContent>
                 </Card>
-              ))}
+              </div>
             </div>
 
             {/* Additional Resources */}
@@ -233,84 +267,6 @@ const LodgingHelp = () => {
               </div>
             </div>
 
-            {/* FAQ Section */}
-            <div className="mt-12">
-              <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
-                {t('faq.title')}
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">{t('faq.q1.question')}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      {t('faq.q1.answer')}
-                    </p>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">{t('faq.q2.question')}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      {t('faq.q2.answer')}
-                    </p>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">{t('faq.q3.question')}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      {t('faq.q3.answer')}
-                    </p>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">{t('faq.q4.question')}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      {t('faq.q4.answer')}
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-
-          {/* Language Support Section */}
-          <div className="container mx-auto px-4 py-12">
-            <div className="max-w-4xl mx-auto text-center">
-              <Card className="bg-gradient-to-r from-primary/10 to-accent/10 border-primary/20">
-                <CardHeader className="text-center">
-                  <div className="flex justify-center items-center gap-2 mb-4">
-                    <div className="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center">
-                      <span className="text-primary-foreground font-bold text-sm">🌐</span>
-                    </div>
-                    <CardTitle className="text-2xl font-bold text-primary">
-                     {t('languageSupport.title')}
-                   </CardTitle>
-                 </div>
-               </CardHeader>
-               <CardContent className="text-center space-y-4">
-                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                   {t('languageSupport.notice')}
-                 </p>
-                 <p className="text-sm text-muted-foreground">
-                   {t('languageSupport.contact')}
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
           </div>
         </main>
         
