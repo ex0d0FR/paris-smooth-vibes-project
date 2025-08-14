@@ -152,7 +152,7 @@ const Register = () => {
           <p className="text-white text-sm leading-relaxed text-center">
             {t('translation.notice')}
           </p>
-          <p className="text-white text-sm mt-2">
+          <p className="text-white text-sm mt-2 text-center">
             {t('translation.contact')}{' '}
             <a 
               href="mailto:info@puentesparis2025.net" 
