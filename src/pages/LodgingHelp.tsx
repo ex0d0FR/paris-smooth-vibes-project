@@ -352,7 +352,7 @@ const LodgingHelp = () => {
             {/* Additional Resources */}
             <div className="bg-card rounded-lg border p-8">
               <h2 className="text-2xl font-bold text-foreground mb-6 text-center">
-                Additional Resources
+                {t('additionalResources.title')}
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -360,12 +360,12 @@ const LodgingHelp = () => {
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-4">
                     <Bed className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="font-semibold mb-2">Browse Accommodations</h3>
+                  <h3 className="font-semibold mb-2">{t('additionalResources.browse.title')}</h3>
                   <p className="text-sm text-muted-foreground mb-4">
-                    View our recommended hotels and accommodations
+                    {t('additionalResources.browse.description')}
                   </p>
                   <Link to="/accommodations">
-                    <Button variant="outline">View Hotels</Button>
+                    <Button variant="outline">{t('additionalResources.browse.button')}</Button>
                   </Link>
                 </div>
                 
@@ -373,12 +373,12 @@ const LodgingHelp = () => {
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-4">
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="font-semibold mb-2">Travel Information</h3>
+                  <h3 className="font-semibold mb-2">{t('additionalResources.travel.title')}</h3>
                   <p className="text-sm text-muted-foreground mb-4">
-                    Transportation and travel guides
+                    {t('additionalResources.travel.description')}
                   </p>
                   <Link to="/travel-information">
-                    <Button variant="outline">Travel Guide</Button>
+                    <Button variant="outline">{t('additionalResources.travel.button')}</Button>
                   </Link>
                 </div>
                 
@@ -386,12 +386,12 @@ const LodgingHelp = () => {
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-4">
                     <Coffee className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="font-semibold mb-2">Local Dining</h3>
+                  <h3 className="font-semibold mb-2">{t('additionalResources.dining.title')}</h3>
                   <p className="text-sm text-muted-foreground mb-4">
-                    Restaurant recommendations near venues
+                    {t('additionalResources.dining.description')}
                   </p>
                   <Link to="/restaurants">
-                    <Button variant="outline">Find Restaurants</Button>
+                    <Button variant="outline">{t('additionalResources.dining.button')}</Button>
                   </Link>
                 </div>
               </div>
@@ -400,54 +400,50 @@ const LodgingHelp = () => {
             {/* FAQ Section */}
             <div className="mt-12">
               <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
-                Frequently Asked Questions
+                {t('faq.title')}
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-lg">What if I need to cancel my booking?</CardTitle>
+                    <CardTitle className="text-lg">{t('faq.q1.question')}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground">
-                      Our team can help you navigate cancellation policies and find alternative 
-                      accommodations if needed. Contact us as soon as possible for assistance.
+                      {t('faq.q1.answer')}
                     </p>
                   </CardContent>
                 </Card>
                 
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-lg">Are there group discounts available?</CardTitle>
+                    <CardTitle className="text-lg">{t('faq.q2.question')}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground">
-                      Yes! We work with hotels to secure special conference rates and group discounts. 
-                      Contact our team for group booking assistance.
+                      {t('faq.q2.answer')}
                     </p>
                   </CardContent>
                 </Card>
                 
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-lg">How close are the recommended hotels?</CardTitle>
+                    <CardTitle className="text-lg">{t('faq.q3.question')}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground">
-                      All recommended accommodations are within walking distance or a short metro 
-                      ride from the conference venue in Issy-les-Moulineaux.
+                      {t('faq.q3.answer')}
                     </p>
                   </CardContent>
                 </Card>
                 
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-lg">What amenities should I look for?</CardTitle>
+                    <CardTitle className="text-lg">{t('faq.q4.question')}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground">
-                      Consider WiFi quality, proximity to metro stations, breakfast options, and 
-                      business facilities for conference preparation.
+                      {t('faq.q4.answer')}
                     </p>
                   </CardContent>
                 </Card>
