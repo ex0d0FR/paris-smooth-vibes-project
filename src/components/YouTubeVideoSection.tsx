@@ -24,7 +24,7 @@ const YouTubeVideo: React.FC<YouTubeVideoProps> = ({ videoId, title }) => {
 const YouTubeVideoSection: React.FC = () => {
   const videos = [
     {
-      id: "dQw4w9WgXcQ", // Replace with actual video IDs
+      id: "https://youtu.be/d8KdWfdVJ4c?si=dMvPTbMuo4SiB1l_", // Replace with actual video IDs
       title: "Conference Overview"
     },
     {
