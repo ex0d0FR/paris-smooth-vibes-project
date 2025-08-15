@@ -138,8 +138,7 @@ const LodgingHelp = () => {
                         <CardTitle className="text-xl">{t('booking.church.title')}</CardTitle>
                       </div>
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-green-600 dark:text-green-400">FREE</div>
-                        <div className="text-sm text-muted-foreground">{t('booking.church.price')}</div>
+                        <div className="text-sm font-medium text-primary">{t('booking.church.price')}</div>
                       </div>
                     </div>
                     <CardDescription className="text-base">
