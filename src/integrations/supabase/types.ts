@@ -7,7 +7,7 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instanciate createClient with right options
+  // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
     PostgrestVersion: "12.2.3 (519615d)"
@@ -457,8 +457,8 @@ export type Database = {
     Functions: {
       admin_set_user_access: {
         Args: {
-          _user_id: string
           _status: Database["public"]["Enums"]["account_status"]
+          _user_id: string
         }
         Returns: undefined
       }
@@ -467,47 +467,47 @@ export type Database = {
         Returns: boolean
       }
       assign_user_roles: {
-        Args: { _target_user_id: string; _roles: string[]; _action?: string }
+        Args: { _action?: string; _roles: string[]; _target_user_id: string }
         Returns: undefined
       }
       can_access_board: {
-        Args: { _user_id: string; _board_id: string }
+        Args: { _board_id: string; _user_id: string }
         Returns: boolean
       }
       can_edit_board: {
-        Args: { _user_id: string; _board_id: string }
+        Args: { _board_id: string; _user_id: string }
         Returns: boolean
       }
       get_board_collaborators: {
         Args: { _board_id: string }
         Returns: {
-          user_id: string
-          username: string
           avatar_url: string
           city: string
           country: string
-          role_name: string
           relationship: string
+          role_name: string
+          user_id: string
+          username: string
         }[]
       }
       get_collaborator_info: {
         Args: { _user_id: string }
         Returns: {
-          user_id: string
-          username: string
+          account_status: string
           avatar_url: string
           city: string
           country: string
           is_active: boolean
-          account_status: string
+          user_id: string
+          username: string
         }[]
       }
       get_user_contact_info: {
         Args: { _user_id: string }
         Returns: {
+          church_name: string
           email: string
           phone_number: string
-          church_name: string
         }[]
       }
       get_user_primary_role: {
@@ -516,8 +516,8 @@ export type Database = {
       }
       has_role: {
         Args: {
-          _user_id: string
           _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
         }
         Returns: boolean
       }
