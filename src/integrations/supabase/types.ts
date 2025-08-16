@@ -452,42 +452,7 @@ export type Database = {
       }
     }
     Views: {
-      safe_profiles: {
-        Row: {
-          account_status: Database["public"]["Enums"]["account_status"] | null
-          avatar_url: string | null
-          city: string | null
-          country: string | null
-          created_at: string | null
-          is_active: boolean | null
-          updated_at: string | null
-          user_id: string | null
-          username: string | null
-        }
-        Insert: {
-          account_status?: Database["public"]["Enums"]["account_status"] | null
-          avatar_url?: string | null
-          city?: string | null
-          country?: string | null
-          created_at?: string | null
-          is_active?: boolean | null
-          updated_at?: string | null
-          user_id?: string | null
-          username?: string | null
-        }
-        Update: {
-          account_status?: Database["public"]["Enums"]["account_status"] | null
-          avatar_url?: string | null
-          city?: string | null
-          country?: string | null
-          created_at?: string | null
-          is_active?: boolean | null
-          updated_at?: string | null
-          user_id?: string | null
-          username?: string | null
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Functions: {
       admin_set_user_access: {
