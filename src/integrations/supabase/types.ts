@@ -537,6 +537,16 @@ export type Database = {
           username: string
         }[]
       }
+      get_safe_profile_info: {
+        Args: { _user_id: string }
+        Returns: {
+          avatar_url: string
+          city: string
+          country: string
+          user_id: string
+          username: string
+        }[]
+      }
       get_user_contact_info: {
         Args: { _user_id: string }
         Returns: {
