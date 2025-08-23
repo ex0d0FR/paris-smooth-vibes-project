@@ -1,0 +1,47 @@
+{
+  "title": "Invitation Letter Request - PARIS 2025",
+  "subtitle": "Request an official invitation letter for visa application purposes",
+  "description": "Request an official invitation letter for visa application to attend PARIS 2025 conference",
+  "backToHome": "Back to Home",
+  "formTitle": "Personal Information",
+  "formDescription": "Please fill out all fields to request your invitation letter",
+  "fields": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "organization": "Church/Ministry/Organization",
+    "language": "Preferred Letter Language",
+    "purpose": "Purpose of Visit",
+    "address": "Complete Address",
+    "nationality": "Nationality"
+  },
+  "placeholders": {
+    "firstName": "Enter your first name",
+    "lastName": "Enter your last name",
+    "email": "Enter your email address",
+    "phone": "Enter your phone number",
+    "organization": "Enter your organization name",
+    "language": "Select preferred language",
+    "purpose": "Describe your purpose for attending the conference and how it relates to your ministry/organization",
+    "address": "Enter your complete address including country",
+    "nationality": "Enter your nationality"
+  },
+  "notice": {
+    "title": "Important Notice",
+    "text": "Processing time for invitation letters is 5-7 business days. Please submit your request well in advance of your visa application deadline."
+  },
+  "submit": "Submit Request",
+  "submitting": "Submitting Request...",
+  "success": {
+    "title": "Request Submitted Successfully",
+    "description": "Your invitation letter request has been sent. We will contact you within 5-7 business days."
+  },
+  "error": {
+    "title": "Submission Failed",
+    "description": "There was an error sending your request. Please try again or contact us directly."
+  },
+  "contact": {
+    "text": "Questions? Contact us at"
+  }
+}

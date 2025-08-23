@@ -1,0 +1,47 @@
+{
+  "title": "Solicitud de Carta de Invitación - PARÍS 2025",
+  "subtitle": "Solicite una carta de invitación oficial para fines de solicitud de visa",
+  "description": "Solicite una carta de invitación oficial para la aplicación de visa para asistir a la conferencia PARÍS 2025",
+  "backToHome": "Volver al Inicio",
+  "formTitle": "Información Personal",
+  "formDescription": "Por favor complete todos los campos para solicitar su carta de invitación",
+  "fields": {
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Dirección de Correo Electrónico",
+    "phone": "Número de Teléfono",
+    "organization": "Iglesia/Ministerio/Organización",
+    "language": "Idioma Preferido de la Carta",
+    "purpose": "Propósito de la Visita",
+    "address": "Dirección Completa",
+    "nationality": "Nacionalidad"
+  },
+  "placeholders": {
+    "firstName": "Ingrese su nombre",
+    "lastName": "Ingrese su apellido",
+    "email": "Ingrese su dirección de correo electrónico",
+    "phone": "Ingrese su número de teléfono",
+    "organization": "Ingrese el nombre de su organización",
+    "language": "Seleccione el idioma preferido",
+    "purpose": "Describa su propósito para asistir a la conferencia y cómo se relaciona con su ministerio/organización",
+    "address": "Ingrese su dirección completa incluyendo el país",
+    "nationality": "Ingrese su nacionalidad"
+  },
+  "notice": {
+    "title": "Aviso Importante",
+    "text": "El tiempo de procesamiento para las cartas de invitación es de 5-7 días hábiles. Por favor envíe su solicitud con suficiente anticipación antes de la fecha límite de su aplicación de visa."
+  },
+  "submit": "Enviar Solicitud",
+  "submitting": "Enviando Solicitud...",
+  "success": {
+    "title": "Solicitud Enviada Exitosamente",
+    "description": "Su solicitud de carta de invitación ha sido enviada. Nos pondremos en contacto con usted en 5-7 días hábiles."
+  },
+  "error": {
+    "title": "Envío Fallido",
+    "description": "Hubo un error al enviar su solicitud. Por favor intente de nuevo o contáctenos directamente."
+  },
+  "contact": {
+    "text": "¿Preguntas? Contáctenos en"
+  }
+}

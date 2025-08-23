@@ -1,0 +1,47 @@
+{
+  "title": "초청장 요청 - 파리 2025",
+  "subtitle": "비자 신청을 위한 공식 초청장을 요청하세요",
+  "description": "파리 2025 컨퍼런스 참석을 위한 비자 신청용 공식 초청장을 요청하세요",
+  "backToHome": "홈으로 돌아가기",
+  "formTitle": "개인 정보",
+  "formDescription": "초청장을 요청하려면 모든 필드를 입력해 주세요",
+  "fields": {
+    "firstName": "이름",
+    "lastName": "성",
+    "email": "이메일 주소",
+    "phone": "전화번호",
+    "organization": "교회/사역/기관",
+    "language": "선호하는 편지 언어",
+    "purpose": "방문 목적",
+    "address": "전체 주소",
+    "nationality": "국적"
+  },
+  "placeholders": {
+    "firstName": "이름을 입력하세요",
+    "lastName": "성을 입력하세요",
+    "email": "이메일 주소를 입력하세요",
+    "phone": "전화번호를 입력하세요",
+    "organization": "기관명을 입력하세요",
+    "language": "선호하는 언어를 선택하세요",
+    "purpose": "컨퍼런스 참석 목적과 귀하의 사역/기관과의 관련성을 설명하세요",
+    "address": "국가를 포함한 전체 주소를 입력하세요",
+    "nationality": "국적을 입력하세요"
+  },
+  "notice": {
+    "title": "중요 공지",
+    "text": "초청장 처리 시간은 5-7 영업일입니다. 비자 신청 마감일 이전에 충분한 여유를 두고 요청하세요."
+  },
+  "submit": "요청 제출",
+  "submitting": "요청 제출 중...",
+  "success": {
+    "title": "요청이 성공적으로 제출됨",
+    "description": "초청장 요청이 전송되었습니다. 5-7 영업일 내에 연락드리겠습니다."
+  },
+  "error": {
+    "title": "제출 실패",
+    "description": "요청을 보내는 중 오류가 발생했습니다. 다시 시도하거나 직접 문의해 주세요."
+  },
+  "contact": {
+    "text": "궁금한 점이 있으신가요? 문의처:"
+  }
+}

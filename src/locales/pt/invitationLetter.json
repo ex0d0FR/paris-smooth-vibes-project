@@ -1,0 +1,47 @@
+{
+  "title": "Solicitação de Carta de Convite - PARIS 2025",
+  "subtitle": "Solicite uma carta de convite oficial para fins de aplicação de visto",
+  "description": "Solicite uma carta de convite oficial para aplicação de visto para participar da conferência PARIS 2025",
+  "backToHome": "Voltar ao Início",
+  "formTitle": "Informações Pessoais",
+  "formDescription": "Por favor, preencha todos os campos para solicitar sua carta de convite",
+  "fields": {
+    "firstName": "Nome",
+    "lastName": "Sobrenome",
+    "email": "Endereço de Email",
+    "phone": "Número de Telefone",
+    "organization": "Igreja/Ministério/Organização",
+    "language": "Idioma Preferido da Carta",
+    "purpose": "Propósito da Visita",
+    "address": "Endereço Completo",
+    "nationality": "Nacionalidade"
+  },
+  "placeholders": {
+    "firstName": "Digite seu nome",
+    "lastName": "Digite seu sobrenome",
+    "email": "Digite seu endereço de email",
+    "phone": "Digite seu número de telefone",
+    "organization": "Digite o nome da sua organização",
+    "language": "Selecione o idioma preferido",
+    "purpose": "Descreva seu propósito para participar da conferência e como se relaciona com seu ministério/organização",
+    "address": "Digite seu endereço completo incluindo o país",
+    "nationality": "Digite sua nacionalidade"
+  },
+  "notice": {
+    "title": "Aviso Importante",
+    "text": "O tempo de processamento para cartas de convite é de 5-7 dias úteis. Por favor, envie sua solicitação bem antes do prazo da sua aplicação de visto."
+  },
+  "submit": "Enviar Solicitação",
+  "submitting": "Enviando Solicitação...",
+  "success": {
+    "title": "Solicitação Enviada com Sucesso",
+    "description": "Sua solicitação de carta de convite foi enviada. Entraremos em contato em 5-7 dias úteis."
+  },
+  "error": {
+    "title": "Falha no Envio",
+    "description": "Houve um erro ao enviar sua solicitação. Por favor, tente novamente ou entre em contato conosco diretamente."
+  },
+  "contact": {
+    "text": "Dúvidas? Entre em contato conosco em"
+  }
+}

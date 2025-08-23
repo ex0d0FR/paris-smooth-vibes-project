@@ -1,0 +1,47 @@
+{
+  "title": "Demande de Lettre d'Invitation - PARIS 2025",
+  "subtitle": "Demandez une lettre d'invitation officielle pour votre demande de visa",
+  "description": "Demandez une lettre d'invitation officielle pour votre demande de visa pour assister à la conférence PARIS 2025",
+  "backToHome": "Retour à l'Accueil",
+  "formTitle": "Informations Personnelles",
+  "formDescription": "Veuillez remplir tous les champs pour demander votre lettre d'invitation",
+  "fields": {
+    "firstName": "Prénom",
+    "lastName": "Nom de Famille",
+    "email": "Adresse Email",
+    "phone": "Numéro de Téléphone",
+    "organization": "Église/Ministère/Organisation",
+    "language": "Langue Préférée de la Lettre",
+    "purpose": "Objet de la Visite",
+    "address": "Adresse Complète",
+    "nationality": "Nationalité"
+  },
+  "placeholders": {
+    "firstName": "Entrez votre prénom",
+    "lastName": "Entrez votre nom de famille",
+    "email": "Entrez votre adresse email",
+    "phone": "Entrez votre numéro de téléphone",
+    "organization": "Entrez le nom de votre organisation",
+    "language": "Sélectionnez la langue préférée",
+    "purpose": "Décrivez votre objectif de participation à la conférence et comment cela se rapporte à votre ministère/organisation",
+    "address": "Entrez votre adresse complète y compris le pays",
+    "nationality": "Entrez votre nationalité"
+  },
+  "notice": {
+    "title": "Avis Important",
+    "text": "Le temps de traitement des lettres d'invitation est de 5-7 jours ouvrables. Veuillez soumettre votre demande bien avant la date limite de votre demande de visa."
+  },
+  "submit": "Soumettre la Demande",
+  "submitting": "Soumission en Cours...",
+  "success": {
+    "title": "Demande Soumise avec Succès",
+    "description": "Votre demande de lettre d'invitation a été envoyée. Nous vous contacterons dans les 5-7 jours ouvrables."
+  },
+  "error": {
+    "title": "Échec de Soumission",
+    "description": "Une erreur s'est produite lors de l'envoi de votre demande. Veuillez réessayer ou nous contacter directement."
+  },
+  "contact": {
+    "text": "Des questions ? Contactez-nous à"
+  }
+}

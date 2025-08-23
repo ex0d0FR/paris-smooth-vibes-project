@@ -1,0 +1,47 @@
+{
+  "title": "Einladungsbrief Anfrage - PARIS 2025",
+  "subtitle": "Beantragen Sie einen offiziellen Einladungsbrief für Ihren Visumantrag",
+  "description": "Beantragen Sie einen offiziellen Einladungsbrief für Ihren Visumantrag zur Teilnahme an der PARIS 2025 Konferenz",
+  "backToHome": "Zurück zur Startseite",
+  "formTitle": "Persönliche Informationen",
+  "formDescription": "Bitte füllen Sie alle Felder aus, um Ihren Einladungsbrief zu beantragen",
+  "fields": {
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "email": "E-Mail-Adresse",
+    "phone": "Telefonnummer",
+    "organization": "Kirche/Ministerium/Organisation",
+    "language": "Bevorzugte Sprache des Briefes",
+    "purpose": "Zweck des Besuchs",
+    "address": "Vollständige Adresse",
+    "nationality": "Nationalität"
+  },
+  "placeholders": {
+    "firstName": "Geben Sie Ihren Vornamen ein",
+    "lastName": "Geben Sie Ihren Nachnamen ein",
+    "email": "Geben Sie Ihre E-Mail-Adresse ein",
+    "phone": "Geben Sie Ihre Telefonnummer ein",
+    "organization": "Geben Sie den Namen Ihrer Organisation ein",
+    "language": "Wählen Sie die bevorzugte Sprache",
+    "purpose": "Beschreiben Sie Ihren Zweck für die Teilnahme an der Konferenz und wie es sich auf Ihr Ministerium/Organisation bezieht",
+    "address": "Geben Sie Ihre vollständige Adresse einschließlich Land ein",
+    "nationality": "Geben Sie Ihre Nationalität ein"
+  },
+  "notice": {
+    "title": "Wichtiger Hinweis",
+    "text": "Die Bearbeitungszeit für Einladungsbriefe beträgt 5-7 Werktage. Bitte reichen Sie Ihren Antrag rechtzeitig vor Ihrem Visumantragstermin ein."
+  },
+  "submit": "Antrag Einreichen",
+  "submitting": "Antrag wird eingereicht...",
+  "success": {
+    "title": "Antrag Erfolgreich Eingereicht",
+    "description": "Ihr Einladungsbrief-Antrag wurde gesendet. Wir werden uns innerhalb von 5-7 Werktagen bei Ihnen melden."
+  },
+  "error": {
+    "title": "Einreichung Fehlgeschlagen",
+    "description": "Es gab einen Fehler beim Senden Ihres Antrags. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt."
+  },
+  "contact": {
+    "text": "Fragen? Kontaktieren Sie uns unter"
+  }
+}
