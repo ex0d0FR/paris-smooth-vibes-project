@@ -14,8 +14,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
-import emailjs from '@emailjs/browser';
-import { EMAILJS_CONFIG } from '@/config/emailjs';
+import { supabase } from '@/integrations/supabase/client';
 
 const formSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
@@ -55,36 +54,23 @@ const InvitationLetter = () => {
     setIsSubmitting(true);
     
     try {
-      const emailParams = {
-        from_name: `${data.firstName} ${data.lastName}`,
-        from_email: data.email,
-        phone: data.phone,
-        organization: data.organization,
-        language: data.language,
-        purpose: data.purpose,
-        address: data.address,
-        nationality: data.nationality,
-        to_email: 'info@puentesparis2025.net',
-        message: `Invitation Letter Request
+      const { error } = await supabase.functions.invoke('send-invitation-request', {
+        body: {
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          phone: data.phone,
+          organization: data.organization,
+          language: data.language,
+          purpose: data.purpose,
+          address: data.address,
+          nationality: data.nationality,
+        },
+      });
 
-Name: ${data.firstName} ${data.lastName}
-Email: ${data.email}
-Phone: ${data.phone}
-Organization/Ministry: ${data.organization}
-Nationality: ${data.nationality}
-Preferred Language: ${data.language}
-Address: ${data.address}
-
-Purpose of Visit:
-${data.purpose}`,
-      };
-
-      await emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID,
-        emailParams,
-        EMAILJS_CONFIG.PUBLIC_KEY
-      );
+      if (error) {
+        throw error;
+      }
 
       toast({
         title: t('success.title', 'Request Submitted Successfully'),
