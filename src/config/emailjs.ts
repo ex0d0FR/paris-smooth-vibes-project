@@ -1,16 +1,24 @@
-
 // EmailJS Configuration
 // To set up EmailJS:
 // 1. Go to https://www.emailjs.com/
 // 2. Create an account and verify your email
 // 3. Create a new service (Gmail, Outlook, etc.)
-// 4. Create an email template
+// 4. Create an email template with these variables:
+//    - from_name: {{from_name}}
+//    - from_email: {{from_email}}
+//    - phone: {{phone}}
+//    - organization: {{organization}}
+//    - language: {{language}}
+//    - purpose: {{purpose}}
+//    - address: {{address}}
+//    - nationality: {{nationality}}
+//    - to_email: {{to_email}}
 // 5. Get your Service ID, Template ID, and Public Key
 // 6. Replace the values below with your actual EmailJS credentials
 
 export const EMAILJS_CONFIG = {
-  SERVICE_ID: 'YOUR_SERVICE_ID', // Replace with your EmailJS Service ID
-  TEMPLATE_ID: 'YOUR_TEMPLATE_ID', // Replace with your EmailJS Template ID
+  SERVICE_ID: 'service_paris2025', // Replace with your EmailJS Service ID
+  TEMPLATE_ID: 'template_invitation', // Replace with your EmailJS Template ID
   PUBLIC_KEY: 'YOUR_PUBLIC_KEY' // Replace with your EmailJS Public Key
 };
 
@@ -19,6 +27,8 @@ export const EMAILJS_CONFIG = {
 // - from_email: Sender's email address
 // - phone: Sender's phone number
 // - organization: Sender's organization/church
-// - sponsorship_type: Type of sponsorship interest
-// - message: Custom message from sender
+// - language: Preferred letter language
+// - purpose: Purpose of visit description
+// - address: Full address including country
+// - nationality: Sender's nationality
 // - to_email: Recipient email (info@puentesparis2025.net)

@@ -217,6 +217,60 @@ export type Database = {
           },
         ]
       }
+      invitation_requests: {
+        Row: {
+          address: string
+          created_at: string
+          email: string
+          first_name: string
+          id: string
+          language: string
+          last_name: string
+          nationality: string
+          organization: string | null
+          phone: string | null
+          processed_at: string | null
+          processed_by: string | null
+          purpose: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          address: string
+          created_at?: string
+          email: string
+          first_name: string
+          id?: string
+          language: string
+          last_name: string
+          nationality: string
+          organization?: string | null
+          phone?: string | null
+          processed_at?: string | null
+          processed_by?: string | null
+          purpose: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          address?: string
+          created_at?: string
+          email?: string
+          first_name?: string
+          id?: string
+          language?: string
+          last_name?: string
+          nationality?: string
+          organization?: string | null
+          phone?: string | null
+          processed_at?: string | null
+          processed_by?: string | null
+          purpose?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       lists: {
         Row: {
           board_id: string
