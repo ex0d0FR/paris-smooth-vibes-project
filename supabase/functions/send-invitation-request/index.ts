@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.50.3';
+import { Resend } from "npm:resend@2.0.0";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -62,7 +63,54 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Request saved to database:", savedRequest.id);
 
-    // Email sending is now handled by the frontend via EmailJS
+    // Send emails using Resend (confirmation to user and notification to admin)
+    try {
+      const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+
+      const userEmail = await resend.emails.send({
+        from: "Invitations <info@puentesparis2025.net>",
+        to: [requestData.email],
+        subject: "Invitation Letter Request Received - PARIS 2025",
+        html: `
+          <h1>Dear ${requestData.firstName} ${requestData.lastName},</h1>
+          <p>Thank you for submitting your invitation letter request for the PARIS 2025 conference.</p>
+          <h2>Request Details:</h2>
+          <ul>
+            <li><strong>Name:</strong> ${requestData.firstName} ${requestData.lastName}</li>
+            <li><strong>Email:</strong> ${requestData.email}</li>
+            <li><strong>Organization:</strong> ${requestData.organization || 'Not specified'}</li>
+            <li><strong>Nationality:</strong> ${requestData.nationality}</li>
+            <li><strong>Language:</strong> ${requestData.language}</li>
+          </ul>
+          <p><strong>Important:</strong> Processing time for invitation letters is 5-7 business days. We will contact you once your invitation letter is ready.</p>
+          <p>If you have any questions, please contact us at info@puentesparis2025.net</p>
+          <p>Best regards,<br/>The PARIS 2025 Conference Team</p>
+        `,
+      });
+
+      const adminEmail = await resend.emails.send({
+        from: "Invitations <info@puentesparis2025.net>",
+        to: ["info@puentesparis2025.net"],
+        subject: "New Invitation Letter Request",
+        html: `
+          <h1>New Invitation Request</h1>
+          <ul>
+            <li><strong>Name:</strong> ${requestData.firstName} ${requestData.lastName}</li>
+            <li><strong>Email:</strong> ${requestData.email}</li>
+            <li><strong>Phone:</strong> ${requestData.phone || 'N/A'}</li>
+            <li><strong>Organization:</strong> ${requestData.organization || 'N/A'}</li>
+            <li><strong>Nationality:</strong> ${requestData.nationality}</li>
+            <li><strong>Language:</strong> ${requestData.language}</li>
+            <li><strong>Address:</strong> ${requestData.address}</li>
+            <li><strong>Purpose:</strong> ${requestData.purpose}</li>
+          </ul>
+        `,
+      });
+
+      console.log("Emails sent via Resend:", { userEmail, adminEmail });
+    } catch (emailError) {
+      console.error("Email sending failed, but request saved:", emailError);
+    }
 
     return new Response(
       JSON.stringify({ 

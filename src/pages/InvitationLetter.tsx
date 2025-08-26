@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import emailjs from '@emailjs/browser';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -16,7 +15,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
 import { supabase } from '@/integrations/supabase/client';
-import { EMAILJS_CONFIG } from '@/config/emailjs';
 
 const formSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
@@ -56,60 +54,23 @@ const InvitationLetter = () => {
     setIsSubmitting(true);
     
     try {
-      // First, save to database via Supabase function
+      // Save to database and let the Edge Function handle emails via Resend
       const { data: result, error } = await supabase.functions.invoke('send-invitation-request', {
         body: data
       });
 
       if (error) {
         console.error('Supabase function error:', error);
-        throw new Error(error.message || 'Failed to save request to database');
+        throw new Error(error.message || 'Failed to submit request');
       }
 
-      console.log('Request saved to database:', result);
-
-      // Then send emails via EmailJS
-      const templateParams = {
-        from_name: `${data.firstName} ${data.lastName}`,
-        from_email: data.email,
-        phone: data.phone || 'Not provided',
-        organization: data.organization || 'Not provided',
-        language: data.language,
-        purpose: data.purpose,
-        address: data.address,
-        nationality: data.nationality,
-        to_email: data.email // Send confirmation to user
-      };
-
-      // Send confirmation email to user
-      await emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID,
-        templateParams,
-        EMAILJS_CONFIG.PUBLIC_KEY
-      );
-
-      // Send notification to admin
-      const adminParams = {
-        ...templateParams,
-        to_email: 'info@puentesparis2025.net'
-      };
-
-      await emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID,
-        adminParams,
-        EMAILJS_CONFIG.PUBLIC_KEY
-      );
-
-      console.log('Emails sent successfully via EmailJS');
+      console.log('Request submitted successfully:', result);
 
       toast({
         title: t('success.title'),
         description: t('success.description'),
       });
       
-      // Reset form after successful submission
       form.reset();
     } catch (error: any) {
       console.error('Submission error:', error);
