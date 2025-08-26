@@ -15,8 +15,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
 import { supabase } from '@/integrations/supabase/client';
-import emailjs from '@emailjs/browser';
-import { EMAILJS_CONFIG } from '@/config/emailjs';
 
 const formSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters'),
@@ -56,55 +54,30 @@ const InvitationLetter = () => {
     setIsSubmitting(true);
     
     try {
-      // Save to database first
-      const { error: dbError } = await supabase.functions.invoke('send-invitation-request', {
+      // Submit request via Supabase function (handles both database save and email)
+      const { data: result, error } = await supabase.functions.invoke('send-invitation-request', {
         body: data
       });
 
-      if (dbError) {
-        console.error('Error submitting invitation request:', dbError);
-        toast({
-          title: t("error.title"),
-          description: t("error.description"),
-          variant: "destructive",
-        });
-        return;
+      if (error) {
+        console.error('Supabase function error:', error);
+        throw new Error(error.message || 'Failed to submit request');
       }
 
-      // Send email via EmailJS
-      const emailData = {
-        from_name: `${data.firstName} ${data.lastName}`,
-        from_email: data.email,
-        phone: data.phone || 'Not provided',
-        organization: data.organization || 'Not provided',
-        language: data.language,
-        purpose: data.purpose,
-        address: data.address,
-        nationality: data.nationality,
-        to_email: 'info@puentesparis2025.net'
-      };
-
-      const emailResult = await emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID,
-        emailData,
-        EMAILJS_CONFIG.PUBLIC_KEY
-      );
-
-      console.log('Email sent successfully:', emailResult);
+      console.log('Request submitted successfully:', result);
 
       toast({
-        title: t("success.title"),
-        description: t("success.description"),
+        title: t('success.title'),
+        description: t('success.description'),
       });
       
       // Reset form after successful submission
       form.reset();
-    } catch (error) {
-      console.error('Error:', error);
+    } catch (error: any) {
+      console.error('Submission error:', error);
       toast({
-        title: t("error.title"),
-        description: t("error.description"),
+        title: t('error.title'),
+        description: t('error.description'),
         variant: "destructive",
       });
     } finally {
