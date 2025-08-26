@@ -19,7 +19,7 @@
 export const EMAILJS_CONFIG = {
   SERVICE_ID: 'puentesParis', // Replace with your EmailJS Service ID
   TEMPLATE_ID: 'template_yjs45hm', // Replace with your EmailJS Template ID
-  PUBLIC_KEY: 'sg6kJuqGNacHm2_Un' // Replace with your EmailJS Public Key
+  PUBLIC_KEY: 'Gm-hmr2B5CQH9F2w-nntP' // Replace with your EmailJS Public Key
 };
 
 // Email template variables that will be used:
