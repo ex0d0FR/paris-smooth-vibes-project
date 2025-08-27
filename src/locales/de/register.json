@@ -8,15 +8,29 @@
     "description": "Sie haben das {{tier}}-Paket ausgewählt. Bitte schließen Sie Ihre Anmeldung im Popup-Fenster ab."
   },
   "tiers": {
-    "inPerson": {
-      "name": "Vor Ort",
+    "fullPass": {
+      "name": "Vollständiger PASS",
       "price": "€60",
-      "description": "Komplettes Vor-Ort-Erlebnis",
+      "description": "Tag und Abend inklusive",
       "features": {
         "full": "Voller Konferenzzugang (alle 4 Tage)",
         "workshops": "Alle Workshops inklusive",
         "networking": "Networking-Sessions",
         "coffee": "Kaffeepausen",
+        "materials": "Konferenzmaterialien"
+      }
+    },
+    "accommodation": {
+      "name": "Vollständiger PASS + Unterkunft",
+      "price": "€255",
+      "description": "Komplettes Erlebnis mit Unterkunft vor Ort",
+      "features": {
+        "full": "Voller Konferenzzugang (alle 4 Tage)",
+        "accommodation": "Unterkunft vor Ort (3 Nächte: 28-30)",
+        "breakfast": "Frühstück inklusive",
+        "lunches": "Mittagessen inklusive",
+        "workshops": "Alle Workshops inklusive",
+        "networking": "Networking-Sessions",
         "materials": "Konferenzmaterialien"
       }
     },

@@ -8,15 +8,29 @@
     "description": "Vous avez sélectionné le forfait {{tier}}. Veuillez compléter votre inscription."
   },
   "tiers": {
-    "inPerson": {
-      "name": "En présentiel",
+    "fullPass": {
+      "name": "PASS Complet",
       "price": "€60",
-      "description": "Expérience complète sur place",
+      "description": "Jour et Soir inclus",
       "features": {
         "full": "Accès complet à la conférence (les 4 jours)",
         "workshops": "Tous les ateliers inclus",
         "networking": "Sessions de réseautage",
         "coffee": "Pauses café",
+        "materials": "Matériels de conférence"
+      }
+    },
+    "accommodation": {
+      "name": "PASS Complet + Hébergement",
+      "price": "€255",
+      "description": "Expérience complète avec hébergement sur place",
+      "features": {
+        "full": "Accès complet à la conférence (les 4 jours)",
+        "accommodation": "Hébergement sur place (3 nuits : 28-30)",
+        "breakfast": "Petit-déjeuner inclus",
+        "lunches": "Déjeuners inclus",
+        "workshops": "Tous les ateliers inclus",
+        "networking": "Sessions de réseautage",
         "materials": "Matériels de conférence"
       }
     },

@@ -49,12 +49,12 @@ const Register = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* In-Person Card */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          {/* Full PASS Card */}
           <div className="bg-[#1a1f2c] text-white rounded-xl shadow-lg p-6 flex flex-col justify-between reveal border-2 border-paris-gold">
             <div>
-              <h3 className="text-2xl font-semibold mb-2">{t('tiers.inPerson.name', 'In-Person')}</h3>
-              <p className="text-gray-300 mb-4">{t('tiers.inPerson.description', 'Complete on-site experience')}</p>
+              <h3 className="text-2xl font-semibold mb-2">{t('tiers.fullPass.name', 'Full PASS')}</h3>
+              <p className="text-gray-300 mb-4">{t('tiers.fullPass.description', 'Day and Evening included')}</p>
               
               <div className="mb-4">
                 <div className="text-3xl font-bold mb-2">
@@ -68,38 +68,105 @@ const Register = () => {
                   <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                   </svg>
-                  <span>{t('tiers.inPerson.features.full', 'Full conference access (all 4 days)')}</span>
+                  <span>{t('tiers.fullPass.features.full', 'Full conference access (all 4 days)')}</span>
                 </div>
                 <div className="flex items-start">
                   <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                   </svg>
-                  <span>{t('tiers.inPerson.features.workshops', 'All workshops included')}</span>
+                  <span>{t('tiers.fullPass.features.workshops', 'All workshops included')}</span>
                 </div>
                 <div className="flex items-start">
                   <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                   </svg>
-                  <span>{t('tiers.inPerson.features.networking', 'Networking sessions')}</span>
+                  <span>{t('tiers.fullPass.features.networking', 'Networking sessions')}</span>
                 </div>
                 <div className="flex items-start">
                   <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                   </svg>
-                  <span>{t('tiers.inPerson.features.coffee', 'Coffee breaks')}</span>
+                  <span>{t('tiers.fullPass.features.coffee', 'Coffee breaks')}</span>
                 </div>
                 <div className="flex items-start">
                   <svg className="w-5 h-5 text-paris-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                   </svg>
-                  <span>{t('tiers.inPerson.features.materials', 'Conference materials')}</span>
+                  <span>{t('tiers.fullPass.features.materials', 'Conference materials')}</span>
                 </div>
               </div>
             </div>
             <div>
               <Button 
                 className="w-full bg-paris-gold hover:bg-yellow-500 text-[#1a1f2c] font-bold py-3 text-lg"
-                onClick={() => handleRegisterClick('inPerson')}
+                onClick={() => handleRegisterClick('fullPass')}
+              >
+                {t('registerNow', 'Register Now')}
+              </Button>
+            </div>
+          </div>
+
+          {/* Full PASS + Accommodation Card */}
+          <div className="bg-[#1a1f2c] text-white rounded-xl shadow-lg p-6 flex flex-col justify-between reveal border-2 border-green-500" style={{
+            transitionDelay: '100ms'
+          }}>
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-xl font-semibold">{t('tiers.accommodation.name', 'Full PASS + Accommodation')}</h3>
+                <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full">RECOMMENDED</span>
+              </div>
+              <p className="text-gray-300 mb-4">{t('tiers.accommodation.description', 'Complete experience with on-site accommodation')}</p>
+              
+              <div className="mb-4">
+                <div className="text-3xl font-bold mb-2">
+                  €255
+                  <span className="text-sm text-gray-300 ml-1">/ {t('tiers.attendee', 'attendee')}</span>
+                </div>
+              </div>
+              
+              <div className="space-y-3 mb-6">
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                  </svg>
+                  <span>{t('tiers.accommodation.features.full', 'Full conference access (all 4 days)')}</span>
+                </div>
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                  </svg>
+                  <span>{t('tiers.accommodation.features.accommodation', 'On-site accommodation (3 nights: 28-30)')}</span>
+                </div>
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                  </svg>
+                  <span>{t('tiers.accommodation.features.breakfast', 'Breakfast included')}</span>
+                </div>
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                  </svg>
+                  <span>{t('tiers.accommodation.features.lunches', 'Lunches included')}</span>
+                </div>
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                  </svg>
+                  <span>{t('tiers.accommodation.features.workshops', 'All workshops included')}</span>
+                </div>
+                <div className="flex items-start">
+                  <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                  </svg>
+                  <span>{t('tiers.accommodation.features.materials', 'Conference materials')}</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <Button 
+                className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 text-lg"
+                onClick={() => handleRegisterClick('accommodation')}
               >
                 {t('registerNow', 'Register Now')}
               </Button>

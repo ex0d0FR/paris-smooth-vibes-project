@@ -8,15 +8,29 @@
     "description": "{{tier}} 패키지를 선택하셨습니다. 팝업 창에서 등록을 완료해 주세요."
   },
   "tiers": {
-    "inPerson": {
-      "name": "현장 참석",
+    "fullPass": {
+      "name": "전체 패스",
       "price": "€60",
-      "description": "완전한 현장 경험",
+      "description": "주간 및 야간 포함",
       "features": {
         "full": "컨퍼런스 전체 이용 (4일 모두)",
         "workshops": "모든 워크샵 포함",
         "networking": "네트워킹 세션",
         "coffee": "커피 브레이크",
+        "materials": "컨퍼런스 자료"
+      }
+    },
+    "accommodation": {
+      "name": "전체 패스 + 숙박",
+      "price": "€255",
+      "description": "현장 숙박이 포함된 완전한 경험",
+      "features": {
+        "full": "컨퍼런스 전체 이용 (4일 모두)",
+        "accommodation": "현장 숙박 (3박: 28-30일)",
+        "breakfast": "아침 식사 포함",
+        "lunches": "점심 식사 포함",
+        "workshops": "모든 워크샵 포함",
+        "networking": "네트워킹 세션",
         "materials": "컨퍼런스 자료"
       }
     },

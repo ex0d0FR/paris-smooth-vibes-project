@@ -8,15 +8,29 @@
     "description": "Você selecionou o pacote {{tier}}. Por favor, complete sua inscrição na janela pop-up."
   },
   "tiers": {
-    "inPerson": {
-      "name": "Presencial",
+    "fullPass": {
+      "name": "PASSE Completo",
       "price": "€60",
-      "description": "Experiência completa no local",
+      "description": "Dia e Noite incluídos",
       "features": {
         "full": "Acesso completo à conferência (todos os 4 dias)",
         "workshops": "Todos os workshops incluídos",
         "networking": "Sessões de networking",
         "coffee": "Intervalos para café",
+        "materials": "Materiais da conferência"
+      }
+    },
+    "accommodation": {
+      "name": "PASSE Completo + Hospedagem",
+      "price": "€255",
+      "description": "Experiência completa com hospedagem no local",
+      "features": {
+        "full": "Acesso completo à conferência (todos os 4 dias)",
+        "accommodation": "Hospedagem no local (3 noites: 28-30)",
+        "breakfast": "Café da manhã incluído",
+        "lunches": "Almoços incluídos",
+        "workshops": "Todos os workshops incluídos",
+        "networking": "Sessões de networking",
         "materials": "Materiais da conferência"
       }
     },

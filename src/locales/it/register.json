@@ -8,15 +8,29 @@
     "description": "Hai selezionato il pacchetto {{tier}}. Completa la tua registrazione nella finestra popup."
   },
   "tiers": {
-    "inPerson": {
-      "name": "In Presenza",
+    "fullPass": {
+      "name": "PASS Completo",
       "price": "€60",
-      "description": "Esperienza completa in loco",
+      "description": "Giorno e Sera inclusi",
       "features": {
         "full": "Accesso completo alla conferenza (tutti i 4 giorni)",
         "workshops": "Tutti i workshop inclusi",
         "networking": "Sessioni di networking",
         "coffee": "Pause caffè",
+        "materials": "Materiali della conferenza"
+      }
+    },
+    "accommodation": {
+      "name": "PASS Completo + Alloggio",
+      "price": "€255",
+      "description": "Esperienza completa con alloggio in loco",
+      "features": {
+        "full": "Accesso completo alla conferenza (tutti i 4 giorni)",
+        "accommodation": "Alloggio in loco (3 notti: 28-30)",
+        "breakfast": "Colazione inclusa",
+        "lunches": "Pranzi inclusi",
+        "workshops": "Tutti i workshop inclusi",
+        "networking": "Sessioni di networking",
         "materials": "Materiali della conferenza"
       }
     },

@@ -3,14 +3,28 @@
   "description": "Secure your spot at the most anticipated global conference of the year. Early bird pricing available for a limited time.",
   "tiers": {
     "attendee": "attendee",
-    "inPerson": {
-      "name": "In-Person",
-      "description": "Complete on-site experience",
+    "fullPass": {
+      "name": "Full PASS",
+      "description": "Day and Evening included",
       "features": {
         "full": "Full conference access (all 4 days)",
         "workshops": "All workshops included",
         "networking": "Networking sessions",
         "coffee": "Coffee breaks",
+        "materials": "Conference materials"
+      }
+    },
+    "accommodation": {
+      "name": "Full PASS + Accommodation",
+      "price": "€255",
+      "description": "Complete experience with on-site accommodation",
+      "features": {
+        "full": "Full conference access (all 4 days)",
+        "accommodation": "On-site accommodation (3 nights: 28-30)",
+        "breakfast": "Breakfast included",
+        "lunches": "Lunches included",
+        "workshops": "All workshops included",
+        "networking": "Networking sessions",
         "materials": "Conference materials"
       }
     },
