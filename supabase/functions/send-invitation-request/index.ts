@@ -30,7 +30,14 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const requestData: InvitationRequest = await req.json();
     
-    console.log("Processing invitation request for:", requestData.email);
+    // Extract client information for security tracking
+    const ipAddress = req.headers.get('x-forwarded-for')?.split(',')[0] || 
+                     req.headers.get('x-real-ip') || 
+                     req.headers.get('cf-connecting-ip') || 
+                     'unknown';
+    const userAgent = req.headers.get('user-agent') || 'unknown';
+    
+    console.log("Processing invitation request for:", requestData.email, "from IP:", ipAddress);
 
     // Initialize Supabase client
     const supabase = createClient(
@@ -38,7 +45,7 @@ const handler = async (req: Request): Promise<Response> => {
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
     );
 
-    // Save to database
+    // Save to database with security information
     const { data: savedRequest, error: dbError } = await supabase
       .from('invitation_requests')
       .insert({
@@ -51,17 +58,55 @@ const handler = async (req: Request): Promise<Response> => {
         purpose: requestData.purpose,
         address: requestData.address,
         nationality: requestData.nationality,
-        status: 'pending'
+        status: 'pending',
+        ip_address: ipAddress !== 'unknown' ? ipAddress : null,
+        user_agent: userAgent
       })
       .select()
       .single();
 
     if (dbError) {
       console.error("Database error:", dbError);
-      throw new Error("Failed to save request to database");
+      
+      // Log security event for failed attempts
+      try {
+        await supabase.rpc('log_invitation_security_event', {
+          _event_type: 'submission_failed',
+          _email: requestData.email,
+          _ip_address: ipAddress !== 'unknown' ? ipAddress : null,
+          _user_agent: userAgent,
+          _details: { error: dbError.message }
+        });
+      } catch (logError) {
+        console.error("Failed to log security event:", logError);
+      }
+      
+      // Handle specific validation errors with user-friendly messages
+      if (dbError.message.includes('Rate limit exceeded')) {
+        throw new Error('You have submitted too many requests recently. Please try again later.');
+      } else if (dbError.message.includes('already exists within the last 24 hours')) {
+        throw new Error('You have already submitted a request recently. Please check your email or wait 24 hours before submitting again.');
+      } else if (dbError.message.includes('Invalid email format')) {
+        throw new Error('Please enter a valid email address.');
+      } else {
+        throw new Error("Failed to save request. Please try again.");
+      }
     }
 
     console.log("Request saved to database:", savedRequest.id);
+
+    // Log successful submission for security monitoring
+    try {
+      await supabase.rpc('log_invitation_security_event', {
+        _event_type: 'submission_success',
+        _email: requestData.email,
+        _ip_address: ipAddress !== 'unknown' ? ipAddress : null,
+        _user_agent: userAgent,
+        _details: { request_id: savedRequest.id }
+      });
+    } catch (logError) {
+      console.error("Failed to log security event:", logError);
+    }
 
     // Send emails using Resend (confirmation to user and notification to admin)
     try {
@@ -128,13 +173,17 @@ const handler = async (req: Request): Promise<Response> => {
     );
   } catch (error: any) {
     console.error("Error processing invitation request:", error);
+    
+    // Return specific error messages for better user experience
+    const errorMessage = error.message || 'An unexpected error occurred. Please try again.';
+    
     return new Response(
       JSON.stringify({ 
         success: false, 
-        error: error.message 
+        error: errorMessage
       }),
       {
-        status: 500,
+        status: errorMessage.includes('Rate limit') || errorMessage.includes('already exists') ? 429 : 500,
         headers: { 
           "Content-Type": "application/json", 
           ...corsHeaders 

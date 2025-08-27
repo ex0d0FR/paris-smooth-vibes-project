@@ -74,9 +74,25 @@ const InvitationLetter = () => {
       form.reset();
     } catch (error: any) {
       console.error('Submission error:', error);
+      
+      // Handle specific error types with appropriate messages
+      let errorMessage = t('error.description');
+      let errorTitle = t('error.title');
+      
+      if (error.message?.includes('Rate limit') || error.message?.includes('too many requests')) {
+        errorTitle = 'Rate Limit Exceeded';
+        errorMessage = 'You have submitted too many requests recently. Please try again later.';
+      } else if (error.message?.includes('already exists') || error.message?.includes('already submitted')) {
+        errorTitle = 'Duplicate Request';
+        errorMessage = 'You have already submitted a request recently. Please check your email or wait 24 hours before submitting again.';
+      } else if (error.message?.includes('Invalid email')) {
+        errorTitle = 'Invalid Email';
+        errorMessage = 'Please enter a valid email address.';
+      }
+      
       toast({
-        title: t('error.title'),
-        description: t('error.description'),
+        title: errorTitle,
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {

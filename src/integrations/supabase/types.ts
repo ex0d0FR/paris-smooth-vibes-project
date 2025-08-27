@@ -224,6 +224,7 @@ export type Database = {
           email: string
           first_name: string
           id: string
+          ip_address: unknown | null
           language: string
           last_name: string
           nationality: string
@@ -234,6 +235,7 @@ export type Database = {
           purpose: string
           status: string
           updated_at: string
+          user_agent: string | null
         }
         Insert: {
           address: string
@@ -241,6 +243,7 @@ export type Database = {
           email: string
           first_name: string
           id?: string
+          ip_address?: unknown | null
           language: string
           last_name: string
           nationality: string
@@ -251,6 +254,7 @@ export type Database = {
           purpose: string
           status?: string
           updated_at?: string
+          user_agent?: string | null
         }
         Update: {
           address?: string
@@ -258,6 +262,7 @@ export type Database = {
           email?: string
           first_name?: string
           id?: string
+          ip_address?: unknown | null
           language?: string
           last_name?: string
           nationality?: string
@@ -268,6 +273,37 @@ export type Database = {
           purpose?: string
           status?: string
           updated_at?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
+      invitation_security_log: {
+        Row: {
+          created_at: string | null
+          details: Json | null
+          email: string | null
+          event_type: string
+          id: string
+          ip_address: unknown | null
+          user_agent: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          details?: Json | null
+          email?: string | null
+          event_type: string
+          id?: string
+          ip_address?: unknown | null
+          user_agent?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          details?: Json | null
+          email?: string | null
+          event_type?: string
+          id?: string
+          ip_address?: unknown | null
+          user_agent?: string | null
         }
         Relationships: []
       }
@@ -532,6 +568,14 @@ export type Database = {
         Args: { _board_id: string; _user_id: string }
         Returns: boolean
       }
+      check_duplicate_invitation_request: {
+        Args: { _email: string }
+        Returns: boolean
+      }
+      check_invitation_rate_limit: {
+        Args: { _email: string; _ip_address: unknown }
+        Returns: boolean
+      }
       get_board_collaborators: {
         Args: { _board_id: string }
         Returns: {
@@ -595,6 +639,16 @@ export type Database = {
           prayer_count: number
           updated_at: string
         }
+      }
+      log_invitation_security_event: {
+        Args: {
+          _details?: Json
+          _email?: string
+          _event_type: string
+          _ip_address?: unknown
+          _user_agent?: string
+        }
+        Returns: undefined
       }
       secure_contact_access: {
         Args: { _access_type?: string; _target_user_id: string }
