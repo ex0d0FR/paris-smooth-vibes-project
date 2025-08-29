@@ -17,9 +17,9 @@
 // 6. Replace the values below with your actual EmailJS credentials
 
 export const EMAILJS_CONFIG = {
-  SERVICE_ID: 'puentesParis', // Replace with your EmailJS Service ID
-  TEMPLATE_ID: 'template_yjs45hm', // Replace with your EmailJS Template ID
-  PUBLIC_KEY: 'Gm-hmr2B5CQH9F2w-nntP' // Replace with your EmailJS Public Key
+  SERVICE_ID: import.meta.env.VITE_EMAILJS_SERVICE_ID || 'puentesParis',
+  TEMPLATE_ID: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_yjs45hm',
+  PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'Gm-hmr2B5CQH9F2w-nntP'
 };
 
 // Email template variables that will be used:
