@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import emailjs from '@emailjs/browser';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -13,7 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Heart, Users, Building, Mail, Phone, User, CheckCircle, Home } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import { EMAILJS_CONFIG } from '@/config/emailjs';
+import { supabase } from '@/integrations/supabase/client';
 
 const Sponsors = () => {
   const { t } = useTranslation('sponsors');
@@ -29,6 +29,7 @@ const Sponsors = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -44,25 +45,29 @@ const Sponsors = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!captchaToken) {
+      toast({
+        title: "Verification Required",
+        description: "Please complete the security verification.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      const templateParams = {
-        from_name: `${formData.firstName} ${formData.lastName}`,
-        from_email: formData.email,
-        phone: formData.phone,
-        organization: formData.organization,
-        sponsorship_type: formData.sponsorshipType,
-        message: formData.message,
-        to_email: 'info@puentesparis2025.net'
-      };
+      const { data, error } = await supabase.functions.invoke('secure-sponsor-form', {
+        body: {
+          ...formData,
+          captchaToken
+        }
+      });
 
-      await emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID,
-        templateParams,
-        EMAILJS_CONFIG.PUBLIC_KEY
-      );
+      if (error) {
+        throw error;
+      }
       
       // Show success state
       setIsSubmitted(true);
@@ -71,11 +76,17 @@ const Sponsors = () => {
         title: t('messageSent', 'Message sent successfully!'),
         description: t('messageSentDescription', 'Thank you for your interest in sponsoring PARIS 2025. We\'ll get back to you soon.'),
       });
-    } catch (error) {
-      console.error('Error sending email:', error);
+    } catch (error: any) {
+      console.error('Error sending form:', error);
+      
+      let errorMessage = "There was an error sending your message. Please try again.";
+      if (error.message?.includes('Rate limit')) {
+        errorMessage = "Too many requests. Please wait a moment before trying again.";
+      }
+      
       toast({
         title: "Error",
-        description: "There was an error sending your message. Please try again.",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {
@@ -297,11 +308,21 @@ const Sponsors = () => {
                         />
                       </div>
 
+                      {/* Security Verification */}
+                      <div className="flex justify-center">
+                        <HCaptcha
+                          sitekey="10000000-ffff-ffff-ffff-000000000001" // Test key, replace with real key
+                          onVerify={(token) => setCaptchaToken(token)}
+                          onExpire={() => setCaptchaToken(null)}
+                          onError={() => setCaptchaToken(null)}
+                        />
+                      </div>
+
                       <Button 
                         type="submit" 
                         size="lg" 
                         className="w-full bg-paris-gold hover:bg-paris-gold/90 text-white"
-                        disabled={isSubmitting}
+                        disabled={isSubmitting || !captchaToken}
                       >
                         {isSubmitting ? 'Sending...' : t('submitForm', 'Send Message')}
                       </Button>

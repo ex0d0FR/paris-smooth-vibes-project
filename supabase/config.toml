@@ -2,3 +2,6 @@ project_id = "naliruurguhzkuhwdwiy"
 
 [functions.get-mapbox-token]
 verify_jwt = false
+
+[functions.secure-sponsor-form]
+verify_jwt = false

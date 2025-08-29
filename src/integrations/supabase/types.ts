@@ -507,6 +507,51 @@ export type Database = {
         }
         Relationships: []
       }
+      sponsor_form_submissions: {
+        Row: {
+          created_at: string
+          email: string
+          first_name: string
+          id: string
+          ip_address: unknown | null
+          last_name: string
+          message: string | null
+          organization: string | null
+          phone: string | null
+          sponsorship_type: string | null
+          status: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          first_name: string
+          id?: string
+          ip_address?: unknown | null
+          last_name: string
+          message?: string | null
+          organization?: string | null
+          phone?: string | null
+          sponsorship_type?: string | null
+          status?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          first_name?: string
+          id?: string
+          ip_address?: unknown | null
+          last_name?: string
+          message?: string | null
+          organization?: string | null
+          phone?: string | null
+          sponsorship_type?: string | null
+          status?: string | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           assigned_at: string | null
@@ -573,6 +618,10 @@ export type Database = {
         Returns: boolean
       }
       check_invitation_rate_limit: {
+        Args: { _email: string; _ip_address: unknown }
+        Returns: boolean
+      }
+      check_sponsor_rate_limit: {
         Args: { _email: string; _ip_address: unknown }
         Returns: boolean
       }
