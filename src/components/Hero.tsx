@@ -124,7 +124,7 @@ const Hero = () => {
               className="font-semibold" 
               icon={<Globe size={18} />}
             >
-              {t('registerNow')}
+              {t('registerEarlyBird')}
             </Button>
           </div>
         </div>
