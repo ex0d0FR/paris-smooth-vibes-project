@@ -112,7 +112,7 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-8 text-center text-white/60 text-sm">
           <div className="flex flex-wrap justify-center items-center gap-2">
             <p>{t('copyright', { ns: 'footer' })}</p>
-            <p className="italic">{t('developed', { ns: 'footer' })} <Heart size={14} className="inline text-paris-gold" /> for "Soli Deo Gloria"</p>
+            <p className="italic">{t('developed', { ns: 'footer' })} <Heart size={14} className="inline text-paris-gold" /> by <a href="https://engadi.com" target="_blank" rel="noopener noreferrer" className="text-paris-gold hover:text-yellow-400 transition-colors">engadi.com</a></p>
           </div>
           <div className="mt-2 flex justify-center space-x-4">
             <Link to="/privacy-policy" className="hover:text-paris-gold transition-colors">{t('policies.privacy', { ns: 'footer' })}</Link>
