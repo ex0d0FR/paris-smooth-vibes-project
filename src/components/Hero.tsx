@@ -119,10 +119,9 @@ const Hero = () => {
           }}>
             <Button 
               onClick={scrollToRegister} 
-              size="claire" 
-              variant="claire" 
-              className="font-semibold" 
-              icon={<Globe size={18} />}
+              size="lg"
+              className="bg-gradient-to-r from-paris-gold via-yellow-400 to-paris-gold hover:from-yellow-400 hover:via-paris-gold hover:to-yellow-400 text-paris-navy font-bold text-lg px-8 py-6 h-auto rounded-2xl shadow-2xl hover:shadow-paris-gold/50 transform hover:scale-105 transition-all duration-300 animate-pulse border-2 border-paris-gold/30" 
+              icon={<Globe size={22} />}
             >
               {t('registerEarlyBird')}
             </Button>
