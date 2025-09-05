@@ -76,7 +76,7 @@ const InvitationLetter = () => {
               {/* Typeform embed */}
               <div 
                 data-tf-live="01K4D0TWTJRWMKZX57AWA4FK7Y"
-                style={{ minHeight: '800px' }}
+                style={{ minHeight: '1000px' }}
               ></div>
 
               <div className="mt-6 text-center text-sm text-gray-600">
