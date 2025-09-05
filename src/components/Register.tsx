@@ -248,14 +248,12 @@ const Register = () => {
             >
               {t('lodgingOptionsHelp', 'Lodging options help')}
             </Button>
-            {/* Temporarily hidden - Invitation Letter button
             <Button 
               className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-6 py-2"
               onClick={() => navigate('/invitation-letter')}
             >
               {t('invitationLetter', 'Invitation Letter')}
             </Button>
-            */}
           </div>
         </div>
       </div>
