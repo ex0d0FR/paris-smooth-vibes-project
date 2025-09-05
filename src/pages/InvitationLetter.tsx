@@ -1,104 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { toast } from '@/hooks/use-toast';
-import { ArrowLeft, Send, FileText } from 'lucide-react';
+import { ArrowLeft, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
-import { supabase } from '@/integrations/supabase/client';
-
-const formSchema = z.object({
-  firstName: z.string().min(2, 'First name must be at least 2 characters'),
-  lastName: z.string().min(2, 'Last name must be at least 2 characters'),
-  email: z.string().email('Please enter a valid email address'),
-  phone: z.string().min(6, 'Please enter a valid phone number'),
-  organization: z.string().min(2, 'Organization/ministry name is required'),
-  language: z.string().min(1, 'Please select a preferred language'),
-  purpose: z.string().min(10, 'Please provide details about your purpose'),
-  address: z.string().min(10, 'Please provide your complete address'),
-  nationality: z.string().min(2, 'Please specify your nationality'),
-});
-
-type FormData = z.infer<typeof formSchema>;
 
 const InvitationLetter = () => {
   const { t } = useTranslation('invitationLetter');
   const navigate = useNavigate();
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const form = useForm<FormData>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      organization: '',
-      language: '',
-      purpose: '',
-      address: '',
-      nationality: '',
-    },
-  });
+  useEffect(() => {
+    // Load Typeform embed script
+    const script = document.createElement('script');
+    script.src = '//embed.typeform.com/next/embed.js';
+    script.async = true;
+    document.head.appendChild(script);
 
-  const onSubmit = async (data: FormData) => {
-    setIsSubmitting(true);
-    
-    try {
-      // Save to database and let the Edge Function handle emails via Resend
-      const { data: result, error } = await supabase.functions.invoke('send-invitation-request', {
-        body: data
-      });
-
-      if (error) {
-        console.error('Supabase function error:', error);
-        throw new Error(error.message || 'Failed to submit request');
+    return () => {
+      // Cleanup script when component unmounts
+      const existingScript = document.querySelector('script[src="//embed.typeform.com/next/embed.js"]');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
       }
-
-      console.log('Request submitted successfully:', result);
-
-      toast({
-        title: t('success.title'),
-        description: t('success.description'),
-      });
-      
-      form.reset();
-    } catch (error: any) {
-      console.error('Submission error:', error);
-      
-      // Handle specific error types with appropriate messages
-      let errorMessage = t('error.description');
-      let errorTitle = t('error.title');
-      
-      if (error.message?.includes('Rate limit') || error.message?.includes('too many requests')) {
-        errorTitle = 'Rate Limit Exceeded';
-        errorMessage = 'You have submitted too many requests recently. Please try again later.';
-      } else if (error.message?.includes('already exists') || error.message?.includes('already submitted')) {
-        errorTitle = 'Duplicate Request';
-        errorMessage = 'You have already submitted a request recently. Please check your email or wait 24 hours before submitting again.';
-      } else if (error.message?.includes('Invalid email')) {
-        errorTitle = 'Invalid Email';
-        errorMessage = 'Please enter a valid email address.';
-      }
-      
-      toast({
-        title: errorTitle,
-        description: errorMessage,
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    };
+  }, []);
 
   return (
     <>
@@ -135,7 +62,7 @@ const InvitationLetter = () => {
               </p>
             </div>
 
-            {/* Form */}
+            {/* Typeform Embed */}
             <div className="bg-white rounded-lg shadow-xl p-6 md:p-8">
               <div className="mb-6">
                 <h2 className="text-2xl font-semibold text-paris-navy mb-2">
@@ -146,188 +73,11 @@ const InvitationLetter = () => {
                 </p>
               </div>
 
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <FormField
-                      control={form.control}
-                      name="firstName"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>{t('fields.firstName', 'First Name')}</FormLabel>
-                          <FormControl>
-                            <Input {...field} placeholder={t('placeholders.firstName', 'Enter your first name')} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="lastName"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>{t('fields.lastName', 'Last Name')}</FormLabel>
-                          <FormControl>
-                            <Input {...field} placeholder={t('placeholders.lastName', 'Enter your last name')} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  </div>
-
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>{t('fields.email', 'Email Address')}</FormLabel>
-                        <FormControl>
-                          <Input {...field} type="email" placeholder={t('placeholders.email', 'Enter your email address')} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <FormField
-                      control={form.control}
-                      name="phone"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>{t('fields.phone', 'Phone Number')}</FormLabel>
-                          <FormControl>
-                            <Input {...field} placeholder={t('placeholders.phone', 'Enter your phone number')} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="nationality"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>{t('fields.nationality', 'Nationality')}</FormLabel>
-                          <FormControl>
-                            <Input {...field} placeholder={t('placeholders.nationality', 'Enter your nationality')} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  </div>
-
-                  <FormField
-                    control={form.control}
-                    name="organization"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>{t('fields.organization', 'Church/Ministry/Organization')}</FormLabel>
-                        <FormControl>
-                          <Input {...field} placeholder={t('placeholders.organization', 'Enter your organization name')} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
-                    name="language"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>{t('fields.language', 'Preferred Letter Language')}</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder={t('placeholders.language', 'Select preferred language')} />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="english">English</SelectItem>
-                            <SelectItem value="french">Français</SelectItem>
-                            <SelectItem value="spanish">Español</SelectItem>
-                            <SelectItem value="portuguese">Português</SelectItem>
-                            <SelectItem value="german">Deutsch</SelectItem>
-                            <SelectItem value="italian">Italiano</SelectItem>
-                            <SelectItem value="korean">한국어</SelectItem>
-                            <SelectItem value="ukrainian">Українська</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
-                    name="address"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>{t('fields.address', 'Complete Address')}</FormLabel>
-                        <FormControl>
-                          <Textarea 
-                            {...field} 
-                            placeholder={t('placeholders.address', 'Enter your complete address including country')}
-                            rows={3}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
-                    name="purpose"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>{t('fields.purpose', 'Purpose of Visit')}</FormLabel>
-                        <FormControl>
-                          <Textarea 
-                            {...field} 
-                            placeholder={t('placeholders.purpose', 'Describe your purpose for attending the conference and how it relates to your ministry/organization')}
-                            rows={4}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                    <h3 className="font-semibold text-blue-900 mb-2">
-                      {t('notice.title', 'Important Notice')}
-                    </h3>
-                    <p className="text-blue-800 text-sm">
-                      {t('notice.text', 'Processing time for invitation letters is 5-7 business days. Please submit your request well in advance of your visa application deadline.')}
-                    </p>
-                  </div>
-
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-paris-gold hover:bg-yellow-500 text-paris-navy font-semibold py-3 text-lg"
-                  >
-                    {isSubmitting ? (
-                      <div className="flex items-center">
-                        <div className="animate-spin rounded-full h-4 w-4 border-t-2 border-b-2 border-paris-navy mr-2"></div>
-                        {t('submitting', 'Submitting Request...')}
-                      </div>
-                    ) : (
-                      <>
-                        <Send className="w-4 h-4 mr-2" />
-                        {t('submit', 'Submit Request')}
-                      </>
-                    )}
-                  </Button>
-                </form>
-              </Form>
+              {/* Typeform embed */}
+              <div 
+                data-tf-live="01K4D0TWTJRWMKZX57AWA4FK7Y"
+                style={{ minHeight: '600px' }}
+              ></div>
 
               <div className="mt-6 text-center text-sm text-gray-600">
                 <p>
