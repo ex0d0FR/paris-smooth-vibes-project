@@ -38,7 +38,7 @@ const InvitationLetter = () => {
         <Navbar />
         
         <main className="container mx-auto px-4 py-8">
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             {/* Header */}
             <div className="text-center mb-8">
               <Button
@@ -76,7 +76,7 @@ const InvitationLetter = () => {
               {/* Typeform embed */}
               <div 
                 data-tf-live="01K4D0TWTJRWMKZX57AWA4FK7Y"
-                style={{ minHeight: '600px' }}
+                style={{ minHeight: '800px' }}
               ></div>
 
               <div className="mt-6 text-center text-sm text-gray-600">
