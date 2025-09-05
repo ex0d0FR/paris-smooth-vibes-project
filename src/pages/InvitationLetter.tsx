@@ -63,20 +63,10 @@ const InvitationLetter = () => {
             </div>
 
             {/* Typeform Embed */}
-            <div className="bg-white rounded-lg shadow-xl p-6 md:p-8">
-              <div className="mb-6">
-                <h2 className="text-2xl font-semibold text-paris-navy mb-2">
-                  {t('formTitle', 'Personal Information')}
-                </h2>
-                <p className="text-gray-600">
-                  {t('formDescription', 'Please fill out all fields to request your invitation letter')}
-                </p>
-              </div>
-
+            <div className="bg-white rounded-lg shadow-xl overflow-hidden">
               {/* Typeform embed */}
               <div 
                 data-tf-live="01K4D0TWTJRWMKZX57AWA4FK7Y"
-                style={{ minHeight: '1000px' }}
               ></div>
 
               <div className="mt-6 text-center text-sm text-gray-600">
