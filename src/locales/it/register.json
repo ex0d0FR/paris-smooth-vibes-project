@@ -21,20 +21,6 @@
         "materials": "Materiali della conferenza"
       }
     },
-    "accommodation": {
-      "name": "PASS Completo + Alloggio",
-      "price": "€255",
-      "description": "Esperienza completa con alloggio in loco",
-      "features": {
-        "full": "Accesso completo alla conferenza (tutti i 4 giorni)",
-        "accommodation": "Alloggio in loco (3 notti: 28-30)",
-        "breakfast": "Colazione inclusa",
-        "lunches": "Pranzi inclusi",
-        "workshops": "Tutti i workshop inclusi",
-        "networking": "Sessioni di networking",
-        "materials": "Materiali della conferenza"
-      }
-    },
     "virtual": {
       "name": "Pass serale",
       "price": "€20",

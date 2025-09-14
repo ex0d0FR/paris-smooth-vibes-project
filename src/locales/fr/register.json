@@ -21,20 +21,6 @@
         "materials": "Matériels de conférence"
       }
     },
-    "accommodation": {
-      "name": "PASS Complet + Hébergement",
-      "price": "€255",
-      "description": "Expérience complète avec hébergement sur place",
-      "features": {
-        "full": "Accès complet à la conférence (les 4 jours)",
-        "accommodation": "Hébergement sur place (3 nuits : 28-30)",
-        "breakfast": "Petit-déjeuner inclus",
-        "lunches": "Déjeuners inclus",
-        "workshops": "Tous les ateliers inclus",
-        "networking": "Sessions de réseautage",
-        "materials": "Matériels de conférence"
-      }
-    },
     "virtual": {
       "name": "Pass soirée",
       "price": "€20",

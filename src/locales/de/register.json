@@ -21,20 +21,6 @@
         "materials": "Konferenzmaterialien"
       }
     },
-    "accommodation": {
-      "name": "Vollständiger PASS + Unterkunft",
-      "price": "€255",
-      "description": "Komplettes Erlebnis mit Unterkunft vor Ort",
-      "features": {
-        "full": "Voller Konferenzzugang (alle 4 Tage)",
-        "accommodation": "Unterkunft vor Ort (3 Nächte: 28-30)",
-        "breakfast": "Frühstück inklusive",
-        "lunches": "Mittagessen inklusive",
-        "workshops": "Alle Workshops inklusive",
-        "networking": "Networking-Sessions",
-        "materials": "Konferenzmaterialien"
-      }
-    },
     "virtual": {
       "name": "Abendpass",
       "price": "€20",

@@ -21,20 +21,6 @@
         "materials": "Materiales de la conferencia"
       }
     },
-    "accommodation": {
-      "name": "PASE Completo + Alojamiento",
-      "price": "€255",
-      "description": "Experiencia completa con alojamiento en el lugar",
-      "features": {
-        "full": "Acceso completo a la conferencia (los 4 días)",
-        "accommodation": "Alojamiento en el lugar (3 noches: 28-30)",
-        "breakfast": "Desayuno incluido",
-        "lunches": "Almuerzos incluidos",
-        "workshops": "Todos los talleres incluidos",
-        "networking": "Sesiones de networking",
-        "materials": "Materiales de la conferencia"
-      }
-    },
     "virtual": {
       "name": "Pase nocturno",
       "price": "€20",

@@ -21,20 +21,6 @@
         "materials": "컨퍼런스 자료"
       }
     },
-    "accommodation": {
-      "name": "전체 패스 + 숙박",
-      "price": "€255",
-      "description": "현장 숙박이 포함된 완전한 경험",
-      "features": {
-        "full": "컨퍼런스 전체 이용 (4일 모두)",
-        "accommodation": "현장 숙박 (3박: 28-30일)",
-        "breakfast": "아침 식사 포함",
-        "lunches": "점심 식사 포함",
-        "workshops": "모든 워크샵 포함",
-        "networking": "네트워킹 세션",
-        "materials": "컨퍼런스 자료"
-      }
-    },
     "virtual": {
       "name": "저녁 패스",
       "price": "€20",

@@ -14,20 +14,6 @@
         "materials": "Conference materials"
       }
     },
-    "accommodation": {
-      "name": "Full PASS + Accommodation",
-      "price": "€255",
-      "description": "Complete experience with on-site accommodation",
-      "features": {
-        "full": "Full conference access (all 4 days)",
-        "accommodation": "On-site accommodation (3 nights: 28-30)",
-        "breakfast": "Breakfast included",
-        "lunches": "Lunches included",
-        "workshops": "All workshops included",
-        "networking": "Networking sessions",
-        "materials": "Conference materials"
-      }
-    },
     "virtual": {
       "name": "Evening pass",
       "description": "Join us from 7pm",

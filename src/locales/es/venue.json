@@ -1,11 +1,11 @@
 
 {
   "title": "Información del Lugar",
-  "description": "PARÍS 2025 se llevará a cabo en Salle St Nicolas, un hermoso lugar en Issy-les-Moulineaux, a las afueras de París.",
+  "description": "PARÍS 2025 se llevará a cabo en Communauté Chrétienne du Point du Jour, un hermoso lugar en Boulogne-Billancourt, a las afueras de París.",
   "address": {
-    "name": "Salle St Nicolas",
-    "street": "19 Rue Victor Hugo",
-    "city": "92130 Issy-les-Moulineaux, Francia"
+    "name": "Communauté Chrétienne du Point du Jour",
+    "street": "133 Rte de la Reine",
+    "city": "92100 Boulogne-Billancourt, Francia"
   },
   "contact": {
     "phone": "+33 (0)1 40 68 22 22",
@@ -13,13 +13,13 @@
   },
   "transport": {
     "title": "Desde París y la región de Île-de-France",
-    "walk5": "5 minutos a pie",
-    "corentin": "Parada Corentin Celton - Metro línea 12, autobús 126, autobús 189, autobús 394",
-    "mairie": "Parada Mairie d'Issy - Metro línea 12, autobús 190, autobús 123, autobús 169, autobús 290 y autobús 323",
-    "freres": "Parada Issy - frères Voisin autobús 39 y autobús 169",
-    "walk10": "10 minutos a pie o 5 minutos en metro",
-    "porte": "Parada Porte de Versailles - Tranvía T3a, Tranvía T2, Metro línea 12, autobús 80",
-    "walk15": "15 minutos a pie o 10 minutos en autobús",
-    "rer": "RER C Issy-Val-de-Seine, Tranvía T2, autobús 189, autobús 290, autobús 323 y autobús 394"
+    "walk5": "5 minutos a pie desde la estación de metro",
+    "corentin": "Metro línea 10 - estación Boulogne Pont de Saint-Cloud",
+    "mairie": "Metro línea 9 - estación Pont de Sèvres (10 minutos a pie)",
+    "freres": "Autobús 52, 72, 126, 160, 175 - varias paradas cercanas",
+    "walk10": "10 minutos desde metro línea 10",
+    "porte": "Tranvía T2 - estación Parc de Saint-Cloud",
+    "walk15": "15 minutos desde Pont de Sèvres (Metro 9)",
+    "rer": "RER C - estación Boulogne Pont de Saint-Cloud, luego 10 minutos a pie"
   }
 }
