@@ -1,7 +1,6 @@
-
 {
   "title": "Restaurants Near Conference Venue",
-  "subtitle": "Discover great dining options within walking distance of Salle St Nicolas in Issy-les-Moulineaux. From traditional French cuisine to international flavors, find the perfect place for your meals during the conference.",
+  "subtitle": "Discover great dining options within walking distance of Communauté Chrétienne du Point du Jour in Boulogne-Billancourt. From traditional French cuisine to international flavors, find the perfect place for your meals during the conference.",
   "search": {
     "referencePoint": "Reference Point",
     "searchRadius": "Search Radius",
@@ -28,124 +27,79 @@
   },
   "restaurants": [
     {
-      "name": "Le Bistrot d'Issy",
-      "type": "French Bistro",
-      "description": "Traditional French bistro serving classic dishes in a cozy atmosphere."
+      "name": "Loulou Boulogne",
+      "type": "French Brasserie",
+      "description": "Modern French brasserie with outdoor terrace on the Seine island, perfect for lunch or dinner."
     },
     {
-      "name": "Pizza Roma",
+      "name": "Les Galopins Boulogne",
+      "type": "Traditional French",
+      "description": "Charming bistro serving traditional French cuisine with seasonal ingredients and friendly service."
+    },
+    {
+      "name": "La Machine à Coudes",
+      "type": "Fine Dining",
+      "description": "Upscale restaurant offering refined French cuisine with creative presentations and excellent wine selection."
+    },
+    {
+      "name": "Volfoni Boulogne-Billancourt",
       "type": "Italian",
-      "description": "Authentic Italian pizzeria with wood-fired oven and fresh ingredients."
+      "description": "Authentic Italian restaurant serving fresh pasta, wood-fired pizzas, and traditional Italian specialties."
     },
     {
-      "name": "Brasserie du Pont",
-      "type": "French Brasserie", 
-      "description": "Modern brasserie offering French cuisine with a contemporary twist."
-    },
-    {
-      "name": "Sushi Zen",
+      "name": "Sushi Shop Boulogne",
       "type": "Japanese",
-      "description": "Fresh sushi and Japanese specialties in a minimalist setting."
+      "description": "Fresh sushi and Japanese cuisine with takeaway and delivery options for quick meals."
     },
     {
-      "name": "Le Comptoir Libanais",
-      "type": "Lebanese",
-      "description": "Authentic Lebanese cuisine with generous portions and warm hospitality."
+      "name": "Le Bistrot du Point du Jour",
+      "type": "Café & Bistro",
+      "description": "Local neighborhood bistro serving coffee, light meals, and French classics in a casual atmosphere."
     },
     {
-      "name": "Café de la Mairie",
-      "type": "French Café",
-      "description": "Traditional French café perfect for breakfast, lunch, or afternoon coffee."
-    },
-    {
-      "name": "Tandoor Palace",
+      "name": "Tandoor Palace Boulogne",
       "type": "Indian",
-      "description": "Authentic Indian restaurant with traditional tandoor-cooked dishes."
+      "description": "Authentic Indian restaurant with traditional tandoor cooking and spicy curries."
     },
     {
-      "name": "McDonald's Issy-Les-Moulineaux",
+      "name": "McDonald's Boulogne-Billancourt",
       "type": "Fast Food",
-      "description": "International fast food chain for quick and convenient meals."
+      "description": "International fast food chain offering quick meals and familiar favorites."
     },
     {
-      "name": "Restaurant Issy l'Asie",
-      "type": "Asian",
-      "description": "Authentic Asian cuisine with traditional flavors and fresh ingredients."
+      "name": "Le Comptoir Libanais Boulogne",
+      "type": "Lebanese",
+      "description": "Fresh Lebanese cuisine with mezze platters, grilled meats, and vegetarian options."
     },
     {
-      "name": "Estelle et Julien",
-      "type": "French Restaurant",
-      "description": "Elegant French restaurant offering refined cuisine in an intimate setting."
+      "name": "Brasserie Point du Jour",
+      "type": "French Brasserie",
+      "description": "Classic French brasserie with traditional dishes and local atmosphere."
     },
     {
-      "name": "La Côte et l'Arête",
-      "type": "Restaurant & Wine Bar",
-      "description": "Sophisticated restaurant, brasserie, and wine bar with a convivial atmosphere."
+      "name": "Pizza Corner Boulogne",
+      "type": "Italian",
+      "description": "Casual pizzeria serving wood-fired pizzas and Italian comfort food."
     },
     {
-      "name": "Le Nida",
-      "type": "Restaurant",
-      "description": "Contemporary restaurant serving creative dishes with quality ingredients."
+      "name": "Le Paradis du Fruit Boulogne",
+      "type": "Healthy",
+      "description": "Fresh fruit juices, salads, and healthy meals for health-conscious diners."
     },
     {
-      "name": "Le Paradis du Fruit",
-      "type": "Healthy Bar",
-      "description": "Fresh fruit and vegetable bar specializing in healthy smoothies and cocktails."
-    },
-    {
-      "name": "Uncle Jack",
-      "type": "Fast Food",
-      "description": "Modern fast food restaurant with burgers and quick meal options."
-    },
-    {
-      "name": "Mangez Moi",
-      "type": "Fast Food",
-      "description": "Casual dining spot offering quick and tasty meal options."
-    },
-    {
-      "name": "McDonald's Paul Vaillant Couturier",
-      "type": "Fast Food",
-      "description": "International fast food chain for quick and convenient meals."
-    },
-    {
-      "name": "La Factory Burger",
-      "type": "Fast Food",
-      "description": "Burger restaurant specializing in artisanal burgers and fast casual dining."
-    },
-    {
-      "name": "Mf chicken Issy-les-Moulineaux",
-      "type": "Fast Food",
-      "description": "Chicken specialist offering fried chicken and quick meal options."
-    },
-    {
-      "name": "Aux Délices de l'Etoile Issy",
+      "name": "Boulangerie du Point du Jour",
       "type": "Bakery",
-      "description": "Traditional French bakery with fresh bread, pastries, and local specialties."
+      "description": "Traditional French bakery with fresh bread, pastries, and breakfast items."
     },
     {
-      "name": "Boulangerie Jan",
+      "name": "Boulangerie Patisserie Vincent",
       "type": "Bakery",
-      "description": "Artisanal bakery offering fresh bread, croissants, and French pastries."
+      "description": "Artisanal bakery and patisserie with high-quality breads, cakes, and French pastries."
     },
     {
-      "name": "Boulangerie Issy-Val-De-Seine",
-      "type": "Bakery",
-      "description": "Local bakery serving traditional French bread and baked goods."
-    },
-    {
-      "name": "La Fournée des Isséens",
-      "type": "Bakery",
-      "description": "Community bakery specializing in fresh daily bread and local favorites."
-    },
-    {
-      "name": "Boulangerie Blavette - Au Pain d'Issy",
-      "type": "Bakery",
-      "description": "Traditional bakery offering quality bread and classic French pastries."
-    },
-    {
-      "name": "La Boulangerie Bio Selon",
-      "type": "Organic Bakery",
-      "description": "Organic bakery committed to sustainable and healthy baking practices."
+      "name": "La Factory Burger Boulogne",
+      "type": "Fast Food",
+      "description": "Gourmet burger restaurant with creative combinations and quality ingredients."
     }
   ],
   "tips": {

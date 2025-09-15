@@ -1,34 +1,13 @@
-
 export const hotelsData = [
   {
-    name: "Novotel Paris Issy Les Moulineaux",
-    address: "2 Rue Guynemer, 92130 Issy-les-Moulineaux",
-    phone: "+33 1 46 62 04 18",
+    name: "Hotel Paris Boulogne",
+    address: "87 Avenue Édouard Vaillant, 92100 Boulogne-Billancourt",
+    phone: "+33 1 46 99 10 40",
     rating: 4.2,
-    distanceKey: "hotels.novotel.distance",
-    price: "€150-200/night",
-    amenities: ["wifi", "parking", "restaurant", "fitness"],
-    descriptionKey: "hotels.novotel.description"
-  },
-  {
-    name: "Hotel des Berceaux",
-    address: "17 Rue du Général Leclerc, 92130 Issy-les-Moulineaux",
-    phone: "+33 1 46 62 70 00",
-    rating: 3.8,
-    distanceKey: "hotels.berceaux.distance",
-    price: "€80-120/night",
-    amenities: ["wifi", "restaurant"],
-    descriptionKey: "hotels.berceaux.description"
-  },
-  {
-    name: "Aparthotel Adagio Paris Malakoff Châtillon",
-    address: "131 Avenue Pierre Brossolette, 92240 Malakoff",
-    phone: "+33 1 46 12 65 65",
-    rating: 4.0,
-    distanceKey: "hotels.adagio.distance",
-    price: "€100-140/night",
-    amenities: ["wifi", "parking", "kitchenette", "fitness"],
-    descriptionKey: "hotels.adagio.description"
+    distanceKey: "hotels.parisBoulogne.distance",
+    price: "€120-180/night",
+    amenities: ["wifi", "parking", "restaurant", "bar"],
+    descriptionKey: "hotels.parisBoulogne.description"
   },
   {
     name: "Hotel Mercure Paris Boulogne",
@@ -41,14 +20,34 @@ export const hotelsData = [
     descriptionKey: "hotels.mercure.description"
   },
   {
-    name: "Ibis Paris Issy Les Moulineaux Val de Seine",
-    address: "45 Boulevard Rodin, 92130 Issy-les-Moulineaux",
-    phone: "+33 1 58 04 20 00",
-    rating: 3.9,
+    name: "Ibis Paris Boulogne-Billancourt",
+    address: "12 Rue de la Ferme, 92100 Boulogne-Billancourt",
+    phone: "+33 1 46 21 08 08",
+    rating: 4.0,
     distanceKey: "hotels.ibis.distance",
     price: "€90-130/night",
     amenities: ["wifi", "parking", "restaurant"],
     descriptionKey: "hotels.ibis.description"
+  },
+  {
+    name: "Bijou Hôtel Paris Boulogne",
+    address: "8 Avenue Édouard Vaillant, 92100 Boulogne-Billancourt",
+    phone: "+33 1 46 05 32 45",
+    rating: 4.3,
+    distanceKey: "hotels.bijou.distance",
+    price: "€100-150/night",
+    amenities: ["wifi", "garden", "concierge"],
+    descriptionKey: "hotels.bijou.description"
+  },
+  {
+    name: "Acropolis Hotel Paris Boulogne",
+    address: "9 Avenue Édouard Vaillant, 92100 Boulogne-Billancourt",
+    phone: "+33 1 46 99 00 88",
+    rating: 3.8,
+    distanceKey: "hotels.acropolis.distance",
+    price: "€80-120/night",
+    amenities: ["wifi", "bar"],
+    descriptionKey: "hotels.acropolis.description"
   },
   {
     name: "Hotel Villa Sorel",
@@ -71,13 +70,13 @@ export const hotelsData = [
     descriptionKey: "hotels.bestWestern.description"
   },
   {
-    name: "Hôtel Résidence Henri IV",
-    address: "50 Rue de Vanves, 92170 Vanves",
-    phone: "+33 1 46 42 87 87",
-    rating: 3.6,
-    distanceKey: "hotels.henri.distance",
-    price: "€70-100/night",
-    amenities: ["wifi", "kitchenette"],
-    descriptionKey: "hotels.henri.description"
+    name: "Aparthotel Adagio Paris Malakoff Châtillon",
+    address: "131 Avenue Pierre Brossolette, 92240 Malakoff",
+    phone: "+33 1 46 12 65 65",
+    rating: 4.0,
+    distanceKey: "hotels.adagio.distance",
+    price: "€100-140/night",
+    amenities: ["wifi", "parking", "kitchenette", "fitness"],
+    descriptionKey: "hotels.adagio.description"
   }
 ];

@@ -6,7 +6,7 @@
     "contact": "Need translation into another language? Please contact us at: info@puentesparis2025.net"
   },
   "title": "Accommodations",
-  "subtitle": "Comfortable hotels and accommodations near the PARIS 2025 conference venue in Issy-les-Moulineaux",
+  "subtitle": "Comfortable hotels and accommodations near the PARIS 2025 conference venue in Boulogne-Billancourt",
   "sectionTitle": "Recommended Hotels Near the Venue",
   "sectionDescription": "We've selected these accommodations based on their proximity to the conference venue, quality of service, and amenities suitable for conference attendees.",
   "search": {
@@ -27,37 +27,37 @@
     }
   },
   "hotels": {
-    "novotel": {
-      "distance": "0.5 km from venue",
-      "description": "Modern 4-star hotel in the heart of Issy-les-Moulineaux with contemporary rooms and excellent conference facilities."
-    },
-    "berceaux": {
+    "parisBoulogne": {
       "distance": "0.8 km from venue",
-      "description": "Charming boutique hotel with personalized service and traditional French hospitality."
-    },
-    "adagio": {
-      "distance": "2.1 km from venue",
-      "description": "Extended-stay aparthotel with fully equipped studios and apartments, perfect for longer conferences stays."
+      "description": "Modern 4-star hotel in Boulogne-Billancourt with contemporary rooms and excellent conference facilities."
     },
     "mercure": {
-      "distance": "3.2 km from venue",
-      "description": "Elegant hotel with modern amenities and easy access to central Paris via metro."
+      "distance": "0.6 km from venue",
+      "description": "Elegant hotel with modern amenities in the heart of Boulogne-Billancourt, very close to the venue."
     },
     "ibis": {
       "distance": "1.2 km from venue",
-      "description": "Comfortable and affordable accommodation with reliable service and modern facilities."
+      "description": "Comfortable and affordable accommodation with reliable service and modern facilities in Boulogne-Billancourt."
+    },
+    "bijou": {
+      "distance": "0.7 km from venue",
+      "description": "Charming boutique hotel with personalized service and peaceful atmosphere in Boulogne-Billancourt."
+    },
+    "acropolis": {
+      "distance": "0.9 km from venue",
+      "description": "Budget-friendly hotel offering comfortable accommodations with good value for money."
     },
     "villa": {
-      "distance": "4.1 km from venue",
-      "description": "Luxury boutique hotel in a peaceful setting with elegant rooms and personalized service."
+      "distance": "3.1 km from venue",
+      "description": "Luxury boutique hotel in nearby 16th arrondissement with elegant rooms and personalized service."
     },
     "bestWestern": {
-      "distance": "4.8 km from venue",
+      "distance": "4.2 km from venue",
       "description": "Well-located hotel near Porte de Versailles with comfortable accommodations and conference amenities."
     },
-    "henri": {
+    "adagio": {
       "distance": "2.8 km from venue",
-      "description": "Budget-friendly residence hotel with apartment-style accommodations, ideal for extended stays."
+      "description": "Extended-stay aparthotel with fully equipped studios and apartments, perfect for longer conference stays."
     }
   },
   "amenities": {
