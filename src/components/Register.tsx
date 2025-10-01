@@ -100,7 +100,7 @@ const Register = () => {
                 className="w-full bg-paris-gold hover:bg-yellow-500 text-[#1a1f2c] font-bold py-3 text-lg"
                 onClick={() => handleRegisterClick('fullPass')}
               >
-                {t('registerEarlyBird', '€40 until 15 September')}
+                {t('registerNow', 'Register Now')}
               </Button>
             </div>
           </div>
