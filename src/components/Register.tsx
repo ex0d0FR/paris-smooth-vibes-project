@@ -57,7 +57,7 @@ const Register = () => {
               
               <div className="mb-4">
                 <div className="text-3xl font-bold mb-2">
-                  €60
+                  €40
                   <span className="text-sm text-gray-300 ml-1">/ {t('tiers.attendee', 'attendee')}</span>
                 </div>
               </div>
@@ -100,7 +100,7 @@ const Register = () => {
                 className="w-full bg-paris-gold hover:bg-yellow-500 text-[#1a1f2c] font-bold py-3 text-lg"
                 onClick={() => handleRegisterClick('fullPass')}
               >
-                {t('registerEarlyBird', '€60 until 15 September')}
+                {t('registerEarlyBird', '€40 until 15 September')}
               </Button>
             </div>
           </div>
@@ -115,7 +115,7 @@ const Register = () => {
               
               <div className="mb-4">
                 <div className="text-3xl font-bold mb-2">
-                  €20
+                  {t('tiers.virtual.price', 'Free')}
                   <span className="text-sm text-gray-300 ml-1">/ {t('tiers.attendee', 'attendee')}</span>
                 </div>
               </div>

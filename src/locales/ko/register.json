@@ -3,7 +3,7 @@
   "title": "파리 2025 등록",
   "description": "올해 가장 기대되는 글로벌 컨퍼런스에 자리를 확보하세요. 한정된 시간 동안 얼리버드 가격이 제공됩니다.",
   "registerNow": "지금 등록",
-  "registerEarlyBird": "9월 15일까지 €60",
+  "registerEarlyBird": "9월 15일까지 €40",
   "toast": {
     "title": "등록 시작됨",
     "description": "{{tier}} 패키지를 선택하셨습니다. 팝업 창에서 등록을 완료해 주세요."
@@ -11,7 +11,7 @@
   "tiers": {
     "fullPass": {
       "name": "전체 패스",
-      "price": "€60",
+      "price": "€40",
       "description": "주간 및 야간 포함",
       "features": {
         "full": "컨퍼런스 전체 이용 (4일 모두)",
@@ -23,8 +23,8 @@
     },
     "virtual": {
       "name": "저녁 패스",
-      "price": "€20",
-      "description": "오후 7시부터 함께하세요",
+      "price": "무료",
+      "description": "오후 7시부터 함께하세요 - 등록 필요",
       "features": {
         "access": "컨퍼런스 야간 접근 (4일 밤 모두)"
       }

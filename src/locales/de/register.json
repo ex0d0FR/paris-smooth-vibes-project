@@ -3,7 +3,7 @@
   "title": "Anmeldung für PARIS 2025",
   "description": "Sichern Sie sich Ihren Platz auf der meisterwarteten globalen Konferenz des Jahres. Frühbucherpreise für begrenzte Zeit verfügbar.",
   "registerNow": "Jetzt anmelden",
-  "registerEarlyBird": "€60 bis 15. September",
+  "registerEarlyBird": "€40 bis 15. September",
   "toast": {
     "title": "Anmeldung gestartet",
     "description": "Sie haben das {{tier}}-Paket ausgewählt. Bitte schließen Sie Ihre Anmeldung im Popup-Fenster ab."
@@ -11,7 +11,7 @@
   "tiers": {
     "fullPass": {
       "name": "Vollständiger PASS",
-      "price": "€60",
+      "price": "€40",
       "description": "Tag und Abend inklusive",
       "features": {
         "full": "Voller Konferenzzugang (alle 4 Tage)",
@@ -23,8 +23,8 @@
     },
     "virtual": {
       "name": "Abendpass",
-      "price": "€20",
-      "description": "Begleiten Sie uns ab 19 Uhr",
+      "price": "Kostenlos",
+      "description": "Begleiten Sie uns ab 19 Uhr - Anmeldung erforderlich",
       "features": {
         "access": "Nächtlicher Zugang zur Konferenz (alle 4 Nächte)"
       }
