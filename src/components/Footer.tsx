@@ -36,9 +36,6 @@ const Footer = () => {
                 key: 'speakers',
                 label: t('speakers', { ns: 'nav' })
               }, {
-                key: 'schedule',
-                label: t('schedule', { ns: 'nav' })
-              }, {
                 key: 'venue',
                 label: t('venue', { ns: 'nav' })
               }, {
