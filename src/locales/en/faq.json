@@ -23,7 +23,7 @@
     },
     "price": {
       "question": "What is the price?",
-      "answer": "The 4-day pass for one adult costs 60 euros until 31 August 2025, and 80 euros from 1 September 2025."
+      "answer": "The 4-day pass for one adult costs 40 euros, and 20 euros for under 26 years old."
     },
     "refund": {
       "question": "I want to get a refund for my ticket, how does it work?",

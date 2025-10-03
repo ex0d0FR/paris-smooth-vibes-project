@@ -23,7 +23,7 @@
     },
     "price": {
       "question": "Qual è il prezzo?",
-      "answer": "Il pass di 4 giorni per un adulto costa 60 euro fino al 31 agosto 2025, e 80 euro dal 1° settembre 2025."
+      "answer": "Il pass di 4 giorni per un adulto costa 40 euro, e 20 euro per under 26."
     },
     "refund": {
       "question": "Voglio ottenere un rimborso per il mio biglietto, come funziona?",

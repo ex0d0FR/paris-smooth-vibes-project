@@ -23,7 +23,7 @@
     },
     "price": {
       "question": "Qual é o preço?",
-      "answer": "O passe de 4 dias para adulto custa 60 euros até 31 de agosto de 2025, e 80 euros a partir de 1 de setembro de 2025."
+      "answer": "O passe de 4 dias para adulto custa 40 euros, e 20 euros para menores de 26 anos."
     },
     "refund": {
       "question": "Quero um reembolso do meu ingresso, como funciona?",

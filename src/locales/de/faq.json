@@ -23,7 +23,7 @@
     },
     "price": {
       "question": "Wie hoch ist der Preis?",
-      "answer": "Der 4-Tage-Pass für einen Erwachsenen kostet 60 Euro bis zum 31. August 2025 und 80 Euro ab dem 1. September 2025."
+      "answer": "Der 4-Tage-Pass für einen Erwachsenen kostet 40 Euro, und 20 Euro für unter 26-Jährige."
     },
     "refund": {
       "question": "Ich möchte eine Rückerstattung für mein Ticket, wie funktioniert das?",
