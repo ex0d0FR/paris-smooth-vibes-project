@@ -170,7 +170,7 @@ const Index = () => {
           <Venue />
           <FAQ />
           <Register />
-          <Sponsors />
+          {/* <Sponsors /> */}
         </main>
         <Footer />
       </div>

@@ -68,7 +68,7 @@ const Navbar = () => {
     { id: 'home', label: t('home'), href: '/#home' },
     { id: 'about', label: t('about'), href: '/#about' },
     { id: 'speakers', label: t('speakers'), href: '/#speakers' },
-    { id: 'schedule', label: t('schedule'), href: '/#schedule' }
+    { id: 'faq', label: t('faq'), href: '/#faq' }
   ];
 
   const venueItems = [
